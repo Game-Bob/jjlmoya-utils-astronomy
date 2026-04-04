@@ -1,0 +1,846 @@
+---
+import type { DeepSpaceScopeUI } from "./index";
+import type { KnownLocale } from "../../types";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  ui: DeepSpaceScopeUI;
+  locale?: KnownLocale;
+}
+
+const { ui } = Astro.props;
+---
+
+<div class="scope-container" id="scope-container" aria-label={ui.toolTitle}>
+  <div id="world-layer" class="world-layer">
+    <canvas id="sky-canvas" class="sky-canvas"></canvas>
+    <div id="objects-layer" class="objects-layer"></div>
+  </div>
+
+  <div class="scope-vignette"></div>
+  <div id="pollution-layer" class="scope-pollution-layer"></div>
+
+  <div class="scope-drag-hint">
+    <span class="hint-mobile">{ui.dragHintMobile}</span>
+    <span class="hint-desktop">{ui.dragHint}</span>
+  </div>
+
+  <div id="info-modal" class="scope-modal" aria-hidden="true">
+    <div class="scope-modal-content" id="modal-content">
+      <div class="modal-header">
+        <div class="modal-header-info">
+          <div id="modal-icon" class="modal-icon"></div>
+          <div>
+            <h3 id="modal-title" class="modal-title">Object Name</h3>
+            <p id="modal-type" class="modal-type">Type</p>
+          </div>
+        </div>
+        <button id="close-modal" class="modal-close" aria-label="Cerrar">
+          <Icon name="mdi:close" />
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-stat">
+          <span class="modal-stat-label">{ui.magnitudeLabel}</span>
+          <span id="modal-mag" class="modal-stat-value">1.5</span>
+        </div>
+        <div class="modal-stat">
+          <span class="modal-stat-label">{ui.coordinatesLabel}</span>
+          <div class="modal-coords">
+            <div id="modal-az" class="modal-coord">Az: 120°</div>
+            <div id="modal-alt" class="modal-coord modal-coord-secondary">
+              Alt: 45°
+            </div>
+          </div>
+        </div>
+        <p id="modal-desc" class="modal-desc">Description...</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="scope-controls-wrapper">
+    <div class="scope-controls">
+      <div class="scope-control-grid">
+        <div class="scope-control-group">
+          <div class="scope-control-header">
+            <label for="aperture" class="scope-control-label scope-label-cyan">
+              <Icon name="mdi:telescope" />
+              {ui.apertureLabel}
+            </label>
+            <span id="aperture-display" class="scope-control-value">200mm</span>
+          </div>
+          <input
+            type="range"
+            id="aperture"
+            min="0"
+            max="100"
+            step="1"
+            value="50"
+            class="scope-range scope-range-cyan"
+            aria-label={ui.apertureLabel}
+          />
+        </div>
+
+        <div class="scope-limit-display">
+          <div class="scope-limit-label">{ui.limitMagLabel}</div>
+          <div id="limit-mag" class="scope-limit-value">12.5</div>
+          <div class="scope-azimuth" id="azimuth-display">
+            {ui.azimuthLabel}: 0°
+          </div>
+        </div>
+
+        <div class="scope-control-group">
+          <div class="scope-control-header">
+            <label for="bortle" class="scope-control-label scope-label-amber">
+              <Icon name="mdi:weather-night" />
+              {ui.bortleLabel}
+            </label>
+            <span id="bortle-display" class="scope-control-value">Class 5</span>
+          </div>
+          <input
+            type="range"
+            id="bortle"
+            min="1"
+            max="9"
+            step="1"
+            value="5"
+            class="scope-range scope-range-amber"
+            aria-label={ui.bortleLabel}
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="scope-legend">
+      <span class="legend-item legend-planet">
+        <Icon name="mdi:circle" />
+        {ui.planetLabel}
+      </span>
+      <span class="legend-item legend-star">
+        <Icon name="mdi:star-four-points" />
+        {ui.starLabel}
+      </span>
+      <span class="legend-item legend-deep">
+        <Icon name="mdi:creation" />
+        {ui.deepSpaceLabel}
+      </span>
+    </div>
+  </div>
+</div>
+
+<script>
+  import {
+    DEEP_SPACE_OBJECTS,
+    calculateLimitingMagnitude,
+    apertureSliderToMm,
+  } from "./logic";
+
+  const container = document.getElementById("scope-container");
+  const canvas = document.getElementById("sky-canvas") as HTMLCanvasElement;
+  const ctx = canvas?.getContext("2d");
+  const objectsLayer = document.getElementById("objects-layer");
+  const apertureInput = document.getElementById("aperture") as HTMLInputElement;
+  const bortleInput = document.getElementById("bortle") as HTMLInputElement;
+  const pollutionLayer = document.getElementById("pollution-layer");
+  const limitMagDisplay = document.getElementById("limit-mag");
+  const azimuthDisplay = document.getElementById("azimuth-display");
+
+  let panAngle = 0;
+  let isDragging = false;
+  let startX = 0;
+  let startPan = 0;
+  let dragDistance = 0;
+
+  const FOV = 100;
+
+  let stars: { az: number; alt: number; mag: number }[] = [];
+  function initStars() {
+    stars = [];
+    for (let i = 0; i < 3000; i++) {
+      stars.push({
+        az: Math.random() * 360,
+        alt: Math.random() * 100,
+        mag: Math.pow(Math.random(), 0.8) * 15,
+      });
+    }
+  }
+
+  function initObjectsDOM() {
+    if (!objectsLayer) return;
+    objectsLayer.innerHTML = "";
+    DEEP_SPACE_OBJECTS.forEach((obj, idx) => {
+      const el = document.createElement("div");
+      el.id = `obj-${idx}`;
+      el.className = "scope-object";
+      el.dataset.mag = obj.mag.toString();
+      el.innerHTML = `
+        <div class="scope-obj-icon ${obj.color}">
+          <span class="iconify" data-icon="${obj.icon}"></span>
+        </div>
+        <div class="scope-obj-label">
+          <span class="scope-obj-name">${obj.name}</span>
+          <span class="scope-obj-mag">Mag ${obj.mag}</span>
+        </div>
+      `;
+      el.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (dragDistance < 5) openModal(obj);
+      });
+      objectsLayer.appendChild(el);
+    });
+  }
+
+  const modal = document.getElementById("info-modal");
+  const modalContent = document.getElementById("modal-content");
+  const closeModalBtn = document.getElementById("close-modal");
+
+  function openModal(obj: (typeof DEEP_SPACE_OBJECTS)[0]) {
+    if (!modal || !modalContent) return;
+    document.getElementById("modal-title")!.innerText = obj.name;
+    document.getElementById("modal-type")!.innerText = obj.type;
+    document.getElementById("modal-mag")!.innerText = obj.mag.toString();
+    document.getElementById("modal-az")!.innerText = `Azimuth: ${obj.az}°`;
+    document.getElementById("modal-alt")!.innerText = `Altitud: ${obj.alt}°`;
+    const iconEl = document.getElementById("modal-icon");
+    if (iconEl) {
+      iconEl.innerHTML = `<span class="iconify ${obj.color}" data-icon="${obj.icon}" style="font-size:2.5rem"></span>`;
+    }
+    const descEl = document.getElementById("modal-desc");
+    if (descEl) {
+      descEl.innerText =
+        obj.desc ||
+        `Un objeto fascinante del espacio profundo. Magnitud ${obj.mag}.`;
+    }
+    modal.classList.remove("modal-hidden");
+    modalContent.classList.remove("modal-scale-out");
+    modalContent.classList.add("modal-scale-in");
+  }
+
+  function closeModal() {
+    if (!modal || !modalContent) return;
+    modal.classList.add("modal-hidden");
+    modalContent.classList.remove("modal-scale-in");
+    modalContent.classList.add("modal-scale-out");
+  }
+
+  closeModalBtn?.addEventListener("click", closeModal);
+  modal?.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  function getShortestDelta(target: number, current: number) {
+    const delta = target - current;
+    return ((delta + 540) % 360) - 180;
+  }
+
+  function updateDisplays(limit: number, apertureMM: number, bortle: number) {
+    document.getElementById("aperture-display")!.innerText = `${apertureMM}mm`;
+    document.getElementById("bortle-display")!.innerText = `Clase ${bortle}`;
+    if (limitMagDisplay) limitMagDisplay.innerText = limit.toFixed(1);
+    if (azimuthDisplay)
+      azimuthDisplay.innerText = `AZ: ${Math.round(panAngle)}°`;
+    if (pollutionLayer) {
+      const opacity = (bortle - 1) * 0.08;
+      pollutionLayer.style.backgroundColor = `rgba(217, 119, 6, ${opacity})`;
+    }
+  }
+
+  function renderStars(w: number, h: number, limit: number) {
+    if (!ctx) return;
+    const ppd = w / FOV;
+    stars.forEach((s) => {
+      if (s.mag > limit) return;
+      const delta = getShortestDelta(s.az, panAngle);
+      if (Math.abs(delta) >= FOV / 2 + 10) return;
+      const x = w / 2 + delta * ppd;
+      const y = h - (s.alt / 100) * h;
+      const margin = limit - s.mag;
+      const alpha = Math.min(1, margin * 0.4);
+      const size = Math.max(0.6, 3 - s.mag / 4);
+      ctx.fillStyle = `rgba(255,255,255, ${alpha})`;
+      ctx.beginPath();
+      ctx.arc(x, y, size, 0, Math.PI * 2);
+      ctx.fill();
+    });
+  }
+
+  function updateObjectElement(
+    el: HTMLElement,
+    obj: (typeof DEEP_SPACE_OBJECTS)[0],
+    limit: number,
+  ) {
+    const delta = getShortestDelta(obj.az, panAngle);
+    if (Math.abs(delta) >= FOV / 2 + 20) {
+      el.style.display = "none";
+      return;
+    }
+    el.style.display = "flex";
+    el.style.left = `${50 + (delta / (FOV / 2)) * 50}%`;
+    el.style.top = `${100 - obj.alt}%`;
+    const label = el.querySelector(".scope-obj-label") as HTMLElement | null;
+    label?.style.setProperty("opacity", limit - obj.mag > 2.0 ? "1" : "0");
+  }
+
+  function renderObjects(limit: number) {
+    DEEP_SPACE_OBJECTS.forEach((obj, idx) => {
+      const el = document.getElementById(`obj-${idx}`);
+      if (!el) return;
+      if (obj.mag > limit) {
+        el.style.display = "none";
+        return;
+      }
+      updateObjectElement(el, obj, limit);
+    });
+  }
+
+  function render() {
+    if (!ctx || !canvas) return;
+    const w = (canvas.width = canvas.offsetWidth);
+    const h = (canvas.height = canvas.offsetHeight);
+    ctx.clearRect(0, 0, w, h);
+    const sliderVal = parseInt(apertureInput.value);
+    const bortle = parseInt(bortleInput.value);
+    const limit = calculateLimitingMagnitude(sliderVal, bortle);
+    const apertureMM = apertureSliderToMm(sliderVal);
+    updateDisplays(limit, apertureMM, bortle);
+    renderStars(w, h, limit);
+    renderObjects(limit);
+  }
+
+  container?.addEventListener("mousedown", (e) => {
+    const target = e.target as HTMLElement;
+    if (target.tagName === "INPUT" || target.tagName === "BUTTON" || target.closest(".scope-controls-wrapper")) return;
+    isDragging = true;
+    startX = e.clientX;
+    startPan = panAngle;
+    dragDistance = 0;
+    container.style.cursor = "grabbing";
+  });
+
+  window.addEventListener("mousemove", (e) => {
+    if (!isDragging || !container) return;
+    const dx = e.clientX - startX;
+    dragDistance += Math.abs(e.movementX);
+    const degreesPerPixel = FOV / container.offsetWidth;
+    let newPan = startPan - dx * degreesPerPixel;
+    if (newPan < 0) newPan += 360;
+    if (newPan >= 360) newPan -= 360;
+    panAngle = newPan;
+    requestAnimationFrame(render);
+  });
+
+  window.addEventListener("mouseup", () => {
+    isDragging = false;
+    if (container) container.style.cursor = "grab";
+  });
+
+  container?.addEventListener("touchstart", (e) => {
+    const target = e.target as HTMLElement;
+    if (target.tagName === "INPUT" || target.closest(".scope-controls-wrapper")) return;
+    isDragging = true;
+    startX = e.touches[0]!.clientX;
+    startPan = panAngle;
+    dragDistance = 0;
+  });
+
+  window.addEventListener("touchmove", (e) => {
+    if (!isDragging || !container) return;
+    const dx = e.touches[0].clientX - startX;
+    dragDistance += Math.abs(dx);
+    const degreesPerPixel = FOV / container.offsetWidth;
+    let newPan = startPan - dx * degreesPerPixel;
+    if (newPan < 0) newPan += 360;
+    if (newPan >= 360) newPan -= 360;
+    panAngle = newPan;
+    requestAnimationFrame(render);
+  });
+
+  window.addEventListener("touchend", () => (isDragging = false));
+
+  const iconifyScript = document.createElement("script");
+  iconifyScript.src = "https://code.iconify.design/3/3.1.0/iconify.min.js";
+  document.head.appendChild(iconifyScript);
+
+  initStars();
+  initObjectsDOM();
+  apertureInput.addEventListener("input", () => requestAnimationFrame(render));
+  bortleInput.addEventListener("input", () => requestAnimationFrame(render));
+  window.addEventListener("resize", () => requestAnimationFrame(render));
+  setTimeout(render, 50);
+</script>
+
+<style is:global>
+  .scope-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background: var(--color-bg-deep, #000);
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    border: 1px solid rgba(100, 116, 139, 0.3);
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .scope-container {
+      height: 800px;
+    }
+  }
+
+  .scope-container:active {
+    cursor: grabbing;
+  }
+
+  .world-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+  }
+
+  .sky-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .objects-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .scope-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at center,
+      transparent 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+    pointer-events: none;
+    z-index: 20;
+  }
+
+  .scope-pollution-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    background: transparent;
+    transition: background-color 0.5s ease;
+  }
+
+  .scope-drag-hint {
+    position: absolute;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 30;
+    opacity: 0.7;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.25rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.625rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    white-space: nowrap;
+  }
+
+  .hint-mobile {
+    display: inline;
+  }
+
+  .hint-desktop {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .hint-mobile {
+      display: none;
+    }
+    .hint-desktop {
+      display: inline;
+    }
+  }
+
+  .scope-object {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+    will-change: transform;
+    pointer-events: auto;
+    cursor: pointer;
+  }
+
+  .scope-object:hover .scope-obj-icon {
+    transform: scale(1.25);
+  }
+
+  .scope-obj-icon {
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+  }
+
+  @media (min-width: 768px) {
+    .scope-obj-icon {
+      font-size: 3rem;
+    }
+  }
+
+  .scope-obj-label {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .scope-obj-name {
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    white-space: nowrap;
+  }
+
+  .scope-obj-mag {
+    font-size: 0.5rem;
+    color: rgba(148, 163, 184, 0.8);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0 0.25rem;
+    border-radius: 0.2rem;
+    margin-top: 0.125rem;
+  }
+
+  .scope-modal {
+    position: absolute;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    transition: opacity 0.3s ease;
+  }
+
+  .scope-modal.modal-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .scope-modal-content {
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+    max-width: 22rem;
+    width: calc(100% - 3rem);
+    transition: transform 0.3s ease;
+  }
+
+  .modal-scale-in {
+    transform: scale(1);
+  }
+  .modal-scale-out {
+    transform: scale(0.95);
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .modal-header-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .modal-icon {
+    font-size: 2.5rem;
+  }
+
+  .modal-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .modal-type {
+    font-size: 0.625rem;
+    color: var(--text-muted, #94a3b8);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0.25rem 0 0;
+  }
+
+  .modal-close {
+    background: none;
+    border: none;
+    color: var(--text-muted, #94a3b8);
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0;
+    transition: color 0.2s ease;
+  }
+
+  .modal-close:hover {
+    color: #fff;
+  }
+
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .modal-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+  }
+
+  .modal-stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted, #94a3b8);
+    text-transform: uppercase;
+  }
+
+  .modal-stat-value {
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .modal-coords {
+    text-align: right;
+  }
+
+  .modal-coord {
+    font-size: 0.75rem;
+    color: #fff;
+  }
+
+  .modal-coord-secondary {
+    color: var(--text-muted, #94a3b8);
+  }
+
+  .modal-desc {
+    font-size: 0.875rem;
+    color: var(--text-muted, #94a3b8);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .scope-controls-wrapper {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    z-index: 40;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    pointer-events: auto;
+  }
+
+  .scope-controls {
+    width: 100%;
+    max-width: 56rem;
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  }
+
+  @media (min-width: 768px) {
+    .scope-controls {
+      padding: 1.5rem;
+    }
+  }
+
+  .scope-control-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .scope-control-grid {
+      grid-template-columns: 1fr auto 1fr;
+      gap: 2rem;
+    }
+  }
+
+  .scope-control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .scope-control-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .scope-control-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .scope-label-cyan {
+    color: var(--color-cyan, #06b6d4);
+  }
+  .scope-label-amber {
+    color: var(--color-amber, #f59e0b);
+  }
+
+  .scope-control-value {
+    color: #fff;
+    font-size: 0.875rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+  }
+
+  .scope-range {
+    width: 100%;
+    height: 0.375rem;
+    background: rgba(100, 116, 139, 0.4);
+    border-radius: 9999px;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .scope-range-cyan {
+    accent-color: var(--color-cyan, #06b6d4);
+  }
+  .scope-range-amber {
+    accent-color: var(--color-amber, #f59e0b);
+  }
+
+  .scope-limit-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .scope-limit-display {
+      border-top: none;
+      border-bottom: none;
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0 2rem;
+    }
+  }
+
+  .scope-limit-label {
+    font-size: 0.625rem;
+    color: var(--text-muted, #94a3b8);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.25rem;
+  }
+
+  .scope-limit-value {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+
+  .scope-azimuth {
+    font-size: 0.625rem;
+    color: var(--color-cyan, #06b6d4);
+    opacity: 0.5;
+    margin-top: 0.5rem;
+  }
+
+  .scope-legend {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted, #64748b);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  @media (min-width: 768px) {
+    .scope-legend {
+      gap: 2rem;
+    }
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .legend-planet {
+    color: #fef9c3;
+  }
+  .legend-star {
+    color: #fff;
+  }
+  .legend-deep {
+    color: var(--color-indigo, #818cf8);
+  }
+</style>
