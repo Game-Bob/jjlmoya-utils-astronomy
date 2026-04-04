@@ -1,5 +1,10 @@
-export { templateCategory } from './category';
-export { default as TemplateCategorySEO } from './category/seo.astro';
+export * from './tool/bortleVisualizer';
+export * from './tool/deepSpaceScope';
+export * from './tool/starExposureCalculator';
+export * from './tool/telescopeResolution';
+
+export { astronomyCategory } from './category';
+export { default as AstronomyCategorySEO } from './category/seo.astro';
 
 export type {
   KnownLocale,
@@ -10,9 +15,8 @@ export type {
   CategoryLocaleContent,
   LocaleLoader,
   LocaleMap,
-  TemplateToolEntry,
-  TemplateCategoryEntry,
-  ToolDefinition,
+  AstronomyToolEntry,
+  AstronomyCategoryEntry,
 } from './types';
 
 export { ALL_TOOLS } from './tools';

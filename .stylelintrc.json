@@ -8,7 +8,6 @@
         {
             "files": ["src/tool/**/*.css", "src/tool/**/*.astro", "src/pages/**/*.astro"],
             "rules": {
-                "scale-unlimited/declaration-strict-value": null,
                 "color-named": null,
                 "property-no-vendor-prefix": null,
                 "selector-pseudo-element-colon-notation": null,
@@ -47,3 +46,4 @@
         "property-disallowed-list": ["font-family"]
     }
 }
+
