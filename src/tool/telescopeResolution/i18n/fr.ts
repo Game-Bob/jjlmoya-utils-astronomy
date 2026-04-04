@@ -51,7 +51,7 @@ const howTo: TelescopeResolutionLocaleContent['howTo'] = [
 ];
 
 const bibliography: TelescopeResolutionLocaleContent['bibliography'] = [
-  { name: 'Sky & Telescope - Résolution du Télescope', url: 'https://skyandtelescope.org/astronomy-resources/telescope-equations/' },
+  { name: 'Sky & Telescope - Résolution du Télescope', url: 'https://skyandtelescope.org/stargazing-and-observing/celestial-objects-to-watch/telescope-calculator/' },
   { name: 'British Astronomical Association - Échelle de Seeing', url: 'https://www.britastro.org/' },
   { name: 'Turbulence Atmosphérique (Wikipedia)', url: 'https://en.wikipedia.org/wiki/Astronomical_seeing' },
 ];
@@ -160,7 +160,9 @@ export const content: TelescopeResolutionLocaleContent = {
   ui,
   seo,
   faq,
+  faqTitle: 'Questions Fréquentes',
   bibliography,
+  bibliographyTitle: 'Références Bibliographiques',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

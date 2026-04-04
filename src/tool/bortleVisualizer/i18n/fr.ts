@@ -145,7 +145,9 @@ export const content: BortleVisualizerLocaleContent = {
   ui,
   seo,
   faq,
+  faqTitle: 'Questions Fréquentes',
   bibliography,
+  bibliographyTitle: 'Références Bibliographiques',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

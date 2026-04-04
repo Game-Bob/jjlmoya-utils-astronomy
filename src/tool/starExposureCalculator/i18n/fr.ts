@@ -52,7 +52,7 @@ const howTo: StarExposureCalculatorLocaleContent['howTo'] = [
 ];
 
 const bibliography: StarExposureCalculatorLocaleContent['bibliography'] = [
-  { name: 'Société Astronomique de France: Le Modèle NPF', url: 'https://www.snoop.fr/astrophoto/NPF-rule.html' },
+  { name: 'Société Astronomique de France: Le Modèle NPF', url: 'https://sahavre.fr/wp/regle-npf-rule/' },
   { name: 'PetaPixel: Pourquoi la Règle des 500 ne suffit plus', url: 'https://petapixel.com/2015/01/06/avoid-star-trails-following-500-rule/' },
   { name: 'Lonely Speck: Calculateur de Temps d\'Obturation', url: 'https://www.lonelyspeck.com/advanced-astrophotography-shutter-time-calculator/' },
 ];
@@ -150,7 +150,9 @@ export const content: StarExposureCalculatorLocaleContent = {
   ui,
   seo,
   faq,
+  faqTitle: 'Questions Fréquentes',
   bibliography,
+  bibliographyTitle: 'Références Bibliographiques',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

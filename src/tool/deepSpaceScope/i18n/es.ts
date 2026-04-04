@@ -47,8 +47,7 @@ const howTo: DeepSpaceScopeLocaleContent['howTo'] = [
 ];
 
 const bibliography: DeepSpaceScopeLocaleContent['bibliography'] = [
-  { name: 'Sky & Telescope - Limiting Magnitude Calculator', url: 'https://skyandtelescope.org/astronomy-resources/telescope-equations/' },
-  { name: 'Catálogo Messier Completo', url: 'https://www.messier.seds.org/' },
+  { name: 'Catálogo Messier Completo', url: 'https://www.skyatnightmagazine.com/space-science/messier-catalogue' },
   { name: 'Stellarium Web - Carta Celeste Interactiva', url: 'https://stellarium-web.org/' },
 ];
 
@@ -150,7 +149,9 @@ export const content: DeepSpaceScopeLocaleContent = {
   ui,
   seo,
   faq,
+  faqTitle: 'Preguntas Frecuentes',
   bibliography,
+  bibliographyTitle: 'Referencias Bibliográficas',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

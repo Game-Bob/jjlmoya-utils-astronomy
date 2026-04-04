@@ -51,7 +51,7 @@ const howTo: TelescopeResolutionLocaleContent['howTo'] = [
 ];
 
 const bibliography: TelescopeResolutionLocaleContent['bibliography'] = [
-  { name: 'Sky & Telescope - Telescope Resolution Explained', url: 'https://skyandtelescope.org/astronomy-resources/telescope-equations/' },
+  { name: 'Sky & Telescope - Telescope Resolution Explained', url: 'https://skyandtelescope.org/stargazing-and-observing/celestial-objects-to-watch/telescope-calculator/' },
   { name: 'British Astronomical Association - Seeing Scale', url: 'https://www.britastro.org/' },
   { name: 'Astronomical Seeing (Wikipedia)', url: 'https://en.wikipedia.org/wiki/Astronomical_seeing' },
 ];
@@ -160,7 +160,9 @@ export const content: TelescopeResolutionLocaleContent = {
   ui,
   seo,
   faq,
+  faqTitle: 'Frequently Asked Questions',
   bibliography,
+  bibliographyTitle: 'Bibliographic References',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

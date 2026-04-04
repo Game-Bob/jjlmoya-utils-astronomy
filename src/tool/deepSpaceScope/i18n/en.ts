@@ -47,8 +47,7 @@ const howTo: DeepSpaceScopeLocaleContent['howTo'] = [
 ];
 
 const bibliography: DeepSpaceScopeLocaleContent['bibliography'] = [
-  { name: 'Sky & Telescope - Telescope Equations', url: 'https://skyandtelescope.org/astronomy-resources/telescope-equations/' },
-  { name: 'Complete Messier Catalogue', url: 'https://www.messier.seds.org/' },
+  { name: 'Complete Messier Catalogue', url: 'https://www.skyatnightmagazine.com/space-science/messier-catalogue' },
   { name: 'Stellarium Web - Interactive Star Chart', url: 'https://stellarium-web.org/' },
 ];
 
@@ -150,7 +149,9 @@ export const content: DeepSpaceScopeLocaleContent = {
   ui,
   seo,
   faq,
+  faqTitle: 'Frequently Asked Questions',
   bibliography,
+  bibliographyTitle: 'Bibliographic References',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };
