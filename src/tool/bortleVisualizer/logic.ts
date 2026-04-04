@@ -114,5 +114,5 @@ export const BORTLE_SCALE: Record<number, BortleClass> = {
 
 export function getBortleData(level: number): BortleClass {
   const safeLevel = Math.max(1, Math.min(9, Math.floor(level)));
-  return BORTLE_SCALE[safeLevel];
+  return BORTLE_SCALE[safeLevel]!;
 }
