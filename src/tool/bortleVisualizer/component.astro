@@ -19,7 +19,7 @@ const { ui } = Astro.props;
     <div class="bortle-bg-gradient"></div>
 
     <div id="layer-stars" class="bortle-layer layer-stars">
-      <div class="stars-image"></div>
+      <canvas id="canvas-stars" class="stars-canvas"></canvas>
     </div>
 
     <div id="layer-milkyway" class="bortle-layer layer-milkyway">
@@ -96,6 +96,70 @@ const { ui } = Astro.props;
     slider: document.getElementById('bortle-slider'),
     thumb: document.getElementById('custom-thumb'),
   };
+
+  const canvas = document.getElementById('canvas-stars') as HTMLCanvasElement | null;
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    const STAR_COUNT = 2200;
+    type Star = { x: number; y: number; r: number; alpha: number; twinkle: number };
+    const stars: Star[] = [];
+    let cw = 0;
+    let ch = 0;
+
+    function resize(w: number, h: number) {
+      cw = w; ch = h;
+      canvas.width = w;
+      canvas.height = h;
+    }
+
+    function initStars(w: number, h: number) {
+      resize(w, h);
+      stars.length = 0;
+      for (let i = 0; i < STAR_COUNT; i++) {
+        stars.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          r: Math.random() < 0.6 ? Math.random() * 0.7 + 0.3 : Math.random() * 1.2 + 0.8,
+          alpha: Math.random() * 0.5 + 0.5,
+          twinkle: Math.random() * Math.PI * 2,
+        });
+      }
+    }
+
+    function drawStars() {
+      if (!ctx) return;
+      ctx.clearRect(0, 0, cw, ch);
+      const now = performance.now() / 1000;
+      ctx.fillStyle = '#fff';
+      stars.forEach((s) => {
+        ctx.globalAlpha = s.alpha * (0.85 + 0.15 * Math.sin(now * 1.5 + s.twinkle));
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      ctx.globalAlpha = 1;
+    }
+
+    let animFrame: number;
+    function animateStars() {
+      drawStars();
+      animFrame = requestAnimationFrame(animateStars);
+    }
+
+    const ro = new ResizeObserver(() => {
+      resize(canvas.offsetWidth, canvas.offsetHeight);
+      initStars(cw, ch);
+    });
+    ro.observe(canvas);
+
+    document.addEventListener('astro:before-swap', () => {
+      cancelAnimationFrame(animFrame);
+      ro.disconnect();
+    }, { once: true });
+
+    initStars(canvas.offsetWidth || 800, canvas.offsetHeight || 450);
+    animateStars();
+  }
 
   if (elements.slider) {
     function updateText(level: number, data: ReturnType<typeof getBortleData>) {
@@ -187,16 +251,14 @@ const { ui } = Astro.props;
 
   .layer-stars {
     z-index: 10;
-    mix-blend-mode: plus-lighter;
     opacity: 1;
   }
 
-  .stars-image {
+  .stars-canvas {
     position: absolute;
     inset: 0;
-    background-image: url('/images/utilities/dark-sky/stars-bg.webp');
-    background-size: cover;
-    background-position: center;
+    width: 100%;
+    height: 100%;
   }
 
   .layer-milkyway {

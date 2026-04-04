@@ -174,7 +174,7 @@ const { ui } = Astro.props;
       el.className = "scope-object";
       el.dataset.mag = obj.mag.toString();
       el.innerHTML = `
-        <div class="scope-obj-icon ${obj.color}">
+        <div class="scope-obj-icon" style="color:${obj.color}">
           <span class="iconify" data-icon="${obj.icon}"></span>
         </div>
         <div class="scope-obj-label">
@@ -203,7 +203,7 @@ const { ui } = Astro.props;
     document.getElementById("modal-alt")!.innerText = `Altitud: ${obj.alt}°`;
     const iconEl = document.getElementById("modal-icon");
     if (iconEl) {
-      iconEl.innerHTML = `<span class="iconify ${obj.color}" data-icon="${obj.icon}" style="font-size:2.5rem"></span>`;
+      iconEl.innerHTML = `<span class="iconify" data-icon="${obj.icon}" style="font-size:2.5rem;color:${obj.color}"></span>`;
     }
     const descEl = document.getElementById("modal-desc");
     if (descEl) {
