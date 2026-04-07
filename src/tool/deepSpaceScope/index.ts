@@ -4,7 +4,7 @@ import DeepSpaceScopeSEO from './seo.astro';
 import DeepSpaceScopeBibliography from './bibliography.astro';
 
 export interface DeepSpaceScopeUI {
-  [key: string]: string;
+  [key: string]: any;
   toolTitle: string;
   apertureLabel: string;
   bortleLabel: string;
@@ -17,6 +17,11 @@ export interface DeepSpaceScopeUI {
   deepSpaceLabel: string;
   magnitudeLabel: string;
   coordinatesLabel: string;
+  closeLabel: string;
+  altitudeLabel: string;
+  defaultObjDesc: string;
+  bortleClassPrefix: string;
+  deepSpaceObjects: any[];
 }
 
 export type DeepSpaceScopeLocaleContent = ToolLocaleContent<DeepSpaceScopeUI>;

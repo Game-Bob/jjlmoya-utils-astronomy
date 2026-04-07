@@ -11,6 +11,18 @@ const ui: BortleVisualizerUI = {
   classLabel: 'Bortle Class',
   nelmLabel: 'NELM',
   sqmLabel: 'SQM',
+  classPrefix: 'CLASS',
+  bortleData: {
+    1: { title: 'Excellent Dark Sky', description: 'Astronomer\'s paradise. Milky Way casts shadows. Zodiacal light visible and colorful. M33 naked-eye visible.', nelm: 8.0, sqm: '21.99 - 22.0', starsVisible: true, milkyWayVisible: true, cloudsLit: false, skyBrightness: 0.0 },
+    2: { title: 'Truly Dark', description: 'Really dark sites. Milky Way is highly structured. Clouds only visible as black holes in the sky.', nelm: 7.5, sqm: '21.89 - 21.99', starsVisible: true, milkyWayVisible: true, cloudsLit: false, skyBrightness: 0.1 },
+    3: { title: 'Rural Sky', description: 'Complex Milky Way. Some light pollution on horizon. Clouds lit near horizon but dark overhead.', nelm: 7.0, sqm: '21.69 - 21.89', starsVisible: true, milkyWayVisible: true, cloudsLit: true, skyBrightness: 0.2 },
+    4: { title: 'Rural/Suburban', description: 'Milky Way loses detail but visible. Light domes on horizon. Clouds lit from below.', nelm: 6.5, sqm: '20.49 - 21.69', starsVisible: true, milkyWayVisible: true, cloudsLit: true, skyBrightness: 0.35 },
+    5: { title: 'Suburban Sky', description: 'Milky Way very faint or invisible near horizon. Zodiacal light rarely visible. Sky appears grayish.', nelm: 6.0, sqm: '19.50 - 20.49', starsVisible: true, milkyWayVisible: true, cloudsLit: true, skyBrightness: 0.5 },
+    6: { title: 'Bright Suburban', description: 'Milky Way invisible. Sky is bright gray. Clouds very bright. M31 barely visible.', nelm: 5.5, sqm: '18.94 - 19.50', starsVisible: true, milkyWayVisible: false, cloudsLit: true, skyBrightness: 0.65 },
+    7: { title: 'Suburban/Urban', description: 'Sky grayish-white. Strong light sources in all directions. Only brightest stars visible.', nelm: 5.0, sqm: '18.38 - 18.94', starsVisible: true, milkyWayVisible: false, cloudsLit: true, skyBrightness: 0.8 },
+    8: { title: 'Urban Sky', description: 'Sky is grayish-white or orange. Can read newspaper headlines. Only major constellations visible.', nelm: 4.5, sqm: '< 18.38', starsVisible: true, milkyWayVisible: false, cloudsLit: true, skyBrightness: 0.9 },
+    9: { title: 'City Center', description: 'Sky bright as twilight. Moon visible but constellations not. Only planets and Moon visible.', nelm: 4.0, sqm: '< 18.00', starsVisible: false, milkyWayVisible: false, cloudsLit: true, skyBrightness: 1.0 },
+  },
 };
 
 const faq: BortleVisualizerLocaleContent['faq'] = [
@@ -138,6 +150,7 @@ const appSchema: WithContext<SoftwareApplication> = {
   inLanguage: 'en',
 };
 
+
 export const content: BortleVisualizerLocaleContent = {
   slug,
   title,
@@ -149,5 +162,6 @@ export const content: BortleVisualizerLocaleContent = {
   bibliography,
   bibliographyTitle: 'Bibliographic References',
   howTo,
+  bortleData: ui.bortleData,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

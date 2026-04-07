@@ -18,6 +18,27 @@ const ui: DeepSpaceScopeUI = {
   deepSpaceLabel: 'Espace Profond',
   magnitudeLabel: 'Magnitude',
   coordinatesLabel: 'Coordonnées',
+  closeLabel: 'Fermer',
+  altitudeLabel: 'Altitude',
+  defaultObjDesc: 'Un objet fascinant de l\'espace profond. Magnitude',
+  bortleClassPrefix: 'Classe',
+  deepSpaceObjects: [
+    { name: 'Vénus', type: 'Planète', mag: -4.5, az: 270, alt: 30, icon: 'mdi:circle', color: '#fef08a', desc: 'La planète la plus brillante du ciel nocturne. Visible en plein jour.' },
+    { name: 'Jupiter', type: 'Planète', mag: -2.5, az: 180, alt: 40, icon: 'mdi:circle', color: '#fef9c3', desc: 'Le géant du système solaire. Ses quatre lunes galiléennes sont visibles avec des jumelles.' },
+    { name: 'Saturne', type: 'Planète', mag: 0.8, az: 220, alt: 35, icon: 'mdi:circle', color: '#fefce8', desc: 'Ses anneaux sont visibles avec un télescope de 60mm à un grossissement de 50x.' },
+    { name: 'Mars', type: 'Planète', mag: 1.5, az: 150, alt: 25, icon: 'mdi:circle', color: '#f87171', desc: 'La planète rouge. Varie de la magnitude -2.9 en opposition à +1.8 en conjonction.' },
+    { name: 'Sirius', type: 'Étoile', mag: -1.46, az: 145, alt: 50, icon: 'mdi:star-four-points', color: '#bfdbfe', desc: 'L\'étoile la plus brillante du ciel nocturne. Située à seulement 8,6 années-lumière.' },
+    { name: 'Canope', type: 'Étoile', mag: -0.74, az: 200, alt: 20, icon: 'mdi:star-four-points', color: '#fef9c3', desc: 'La deuxième étoile la plus brillante, utilisée pour la navigation dans l\'hémisphère sud.' },
+    { name: 'Arcturus', type: 'Étoile', mag: -0.05, az: 60, alt: 55, icon: 'mdi:star-four-points', color: '#fdba74', desc: 'Géante orange dans la constellation du Bouvier. À 36 années-lumière de la Terre.' },
+    { name: 'Véga', type: 'Étoile', mag: 0.03, az: 40, alt: 70, icon: 'mdi:star-four-points', color: '#dbeafe', desc: 'Sommet du Triangle d\'Été. L\'étoile de référence pour la magnitude 0.' },
+    { name: 'M42 Orion', type: 'Nébuleuse', mag: 4.0, az: 140, alt: 45, icon: 'mdi:creation', color: '#a5b4fc', desc: 'La grande nébuleuse d\'Orion, à 1344 années-lumière. Une pouponnière d\'étoiles jeunes.' },
+    { name: 'M45 Pléiades', type: 'Amas', mag: 1.6, az: 100, alt: 60, icon: 'mdi:creation', color: '#93c5fd', desc: 'Les Sept Sœurs. À 444 années-lumière, l\'amas ouvert le plus célèbre du ciel.' },
+    { name: 'M31 Andromède', type: 'Galaxie', mag: 3.4, az: 30, alt: 50, icon: 'mdi:creation', color: '#d8b4fe', desc: 'La plus grande galaxie voisine. À 2,5 millions d\'années-lumière, visible à l\'œil nu sous un ciel sombre.' },
+    { name: 'M13 Hercule', type: 'Amas', mag: 5.8, az: 80, alt: 65, icon: 'mdi:creation', color: '#fde047', desc: 'Le grand amas globulaire d\'Hercule. Contiene 300 000 étoiles à 25 100 années-lumière.' },
+    { name: 'M57 Anneau', type: 'Nébuleuse', mag: 8.8, az: 50, alt: 58, icon: 'mdi:creation', color: '#67e8f9', desc: 'Nébuleuse planétaire dans la Lyre. Anneau de gaz expulsé par une naine blanche.' },
+    { name: 'M81 Bode', type: 'Galaxie', mag: 6.9, az: 340, alt: 55, icon: 'mdi:creation', color: '#c4b5fd', desc: 'Galaxie spirale dans la Grande Ourse. Interagissant gravitationnellement avec M82.' },
+    { name: 'Pluton', type: 'Planète naine', mag: 14.3, az: 195, alt: 22, icon: 'mdi:circle-small', color: '#cbd5e1', desc: 'La planète naine la plus célèbre. Nécessite un télescope de 250mm ou plus et un ciel sombre.' },
+  ],
 };
 
 const faq: DeepSpaceScopeLocaleContent['faq'] = [

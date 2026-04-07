@@ -23,7 +23,7 @@ export interface HowToStep {
   text: string;
 }
 
-export interface ToolLocaleContent<TUI extends Record<string, string> = Record<string, string>> {
+export interface ToolLocaleContent<TUI extends Record<string, any> = Record<string, any>> {
   slug: string;
   title: string;
   description: string;
@@ -34,7 +34,7 @@ export interface ToolLocaleContent<TUI extends Record<string, string> = Record<s
   bibliography: BibliographyEntry[];
   bibliographyTitle: string;
   howTo: HowToStep[];
-  schemas: WithContext<Thing>[];
+  schemas: any[];
 }
 
 export interface CategoryLocaleContent {
@@ -48,7 +48,7 @@ export type LocaleLoader<T> = () => Promise<T>;
 
 export type LocaleMap<T> = Partial<Record<KnownLocale, LocaleLoader<T>>>;
 
-export interface AstronomyToolEntry<TUI extends Record<string, string> = Record<string, string>> {
+export interface AstronomyToolEntry<TUI extends Record<string, any> = Record<string, any>> {
   id: string;
   icons: {
     bg: string;

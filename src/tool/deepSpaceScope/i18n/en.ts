@@ -18,6 +18,27 @@ const ui: DeepSpaceScopeUI = {
   deepSpaceLabel: 'Deep Space',
   magnitudeLabel: 'Magnitude',
   coordinatesLabel: 'Coordinates',
+  closeLabel: 'Close',
+  altitudeLabel: 'Altitude',
+  defaultObjDesc: 'A fascinating deep space object. Magnitude',
+  bortleClassPrefix: 'Class',
+  deepSpaceObjects: [
+    { name: 'Venus', type: 'Planet', mag: -4.5, az: 270, alt: 30, icon: 'mdi:circle', color: '#fef08a', desc: 'The brightest planet in the night sky. Visible in broad daylight.' },
+    { name: 'Jupiter', type: 'Planet', mag: -2.5, az: 180, alt: 40, icon: 'mdi:circle', color: '#fef9c3', desc: 'The giant of the solar system. Its four Galilean moons can be seen with binoculars.' },
+    { name: 'Saturn', type: 'Planet', mag: 0.8, az: 220, alt: 35, icon: 'mdi:circle', color: '#fefce8', desc: 'Its rings are visible with a 60mm telescope at 50x magnification.' },
+    { name: 'Mars', type: 'Planet', mag: 1.5, az: 150, alt: 25, icon: 'mdi:circle', color: '#f87171', desc: 'The Red Planet. Varies from magnitude -2.9 at opposition to +1.8 at conjunction.' },
+    { name: 'Sirius', type: 'Star', mag: -1.46, az: 145, alt: 50, icon: 'mdi:star-four-points', color: '#bfdbfe', desc: 'The brightest star in the night sky. Located just 8.6 light-years away.' },
+    { name: 'Canopus', type: 'Star', mag: -0.74, az: 200, alt: 20, icon: 'mdi:star-four-points', color: '#fef9c3', desc: 'The second brightest star, used for navigation in the Southern Hemisphere.' },
+    { name: 'Arcturus', type: 'Star', mag: -0.05, az: 60, alt: 55, icon: 'mdi:star-four-points', color: '#fdba74', desc: 'Orange giant in the Boötes constellation. 36 light-years from Earth.' },
+    { name: 'Vega', type: 'Star', mag: 0.03, az: 40, alt: 70, icon: 'mdi:star-four-points', color: '#dbeafe', desc: 'Vertex of the Summer Triangle. The reference star for magnitude 0.' },
+    { name: 'M42 Orion', type: 'Nebula', mag: 4.0, az: 140, alt: 45, icon: 'mdi:creation', color: '#a5b4fc', desc: 'The Great Orion Nebula, 1344 light-years away. A nursery for young stars.' },
+    { name: 'M45 Pleiades', type: 'Cluster', mag: 1.6, az: 100, alt: 60, icon: 'mdi:creation', color: '#93c5fd', desc: 'The Seven Sisters. At 444 light-years, the most famous open cluster in the sky.' },
+    { name: 'M31 Andromeda', type: 'Galaxy', mag: 3.4, az: 30, alt: 50, icon: 'mdi:creation', color: '#d8b4fe', desc: 'The largest neighboring galaxy. 2.5 million light-years away, visible to the naked eye in dark skies.' },
+    { name: 'M13 Hercules', type: 'Cluster', mag: 5.8, az: 80, alt: 65, icon: 'mdi:creation', color: '#fde047', desc: 'The Great Globular Cluster in Hercules. Contains 300,000 stars 25,100 light-years away.' },
+    { name: 'M57 Ring', type: 'Nebula', mag: 8.8, az: 50, alt: 58, icon: 'mdi:creation', color: '#67e8f9', desc: 'Planetary nebula in Lyra. Ring of gas ejected by a white dwarf.' },
+    { name: 'M81 Bode', type: 'Galaxy', mag: 6.9, az: 340, alt: 55, icon: 'mdi:creation', color: '#c4b5fd', desc: 'Spiral galaxy in Ursa Major. Interacting gravitationally with M82.' },
+    { name: 'Pluto', type: 'Dwarf Planet', mag: 14.3, az: 195, alt: 22, icon: 'mdi:circle-small', color: '#cbd5e1', desc: 'The most famous dwarf planet. Requires a 250mm or larger telescope and dark skies.' },
+  ],
 };
 
 const faq: DeepSpaceScopeLocaleContent['faq'] = [

@@ -22,6 +22,14 @@ const ui: TelescopeResolutionUI = {
   seeingAlertSuffix: 'impedirá que veas el potencial de tu telescopio',
   simLabel: 'Simulación: Estrellas Binarias',
   simExplanation: 'Dawes separa estrellas puntuales; Rayleigh define detalles planetarios.',
+  presets: [
+    { value: '70', label: '70mm (Refractor - Iniciación)' },
+    { value: '114', label: '114mm (4.5") Newtonian' },
+    { value: '150', label: '150mm (6") Dobson' },
+    { value: '200', label: '200mm (8") Dobson' },
+    { value: '254', label: '254mm (10") Dobson' },
+    { value: '304', label: '304mm (12") Profesional' },
+  ],
 };
 
 const faq: TelescopeResolutionLocaleContent['faq'] = [

@@ -105,9 +105,15 @@ const { ui } = Astro.props;
   </div>
 </div>
 
+<script define:vars={{ ui }} is:inline>
+  window.__starCalcUI = ui;
+</script>
+
 <script>
   import { calculateExposureTime } from './logic';
   import type { SensorCropFactor } from './logic';
+
+  const uiData = window.__starCalcUI;
 
   class StarCalculatorApp {
     mode = 'classic';
@@ -228,12 +234,12 @@ const { ui } = Astro.props;
         this.starPreview.style.width = `${trailLength + 4}px`;
         this.starPreview.style.borderRadius = '2px';
         this.starPreview.classList.add('is-trail');
-        if (info) info.textContent = 'Trazo de estrella visible';
+        if (info) info.textContent = uiData.trailStars;
       } else {
         this.starPreview.style.width = '4px';
         this.starPreview.style.borderRadius = '50%';
         this.starPreview.classList.remove('is-trail');
-        if (info) info.textContent = 'Estrellas como puntos';
+        if (info) info.textContent = uiData.pointStars;
       }
     }
   }

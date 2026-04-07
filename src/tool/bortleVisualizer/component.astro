@@ -8,6 +8,7 @@ interface Props {
 }
 
 const { ui } = Astro.props;
+const bortleData = ui.bortleData;
 ---
 
 <div class="bortle-wrapper" id="bortle-simulator">
@@ -80,8 +81,16 @@ const { ui } = Astro.props;
   </div>
 </div>
 
+<script define:vars={{ ui, bortleData }} is:inline>
+  window.__bortleUI = ui;
+  window.__bortleData = bortleData;
+</script>
+
 <script>
-  import { getBortleData } from './logic';
+  import { getBortleData as getDefaultBortleData } from './logic';
+
+  const uiData = window.__bortleUI || {};
+  const bortleDataMap = window.__bortleData || {};
 
   const elements = {
     stars: document.getElementById('layer-stars'),
@@ -162,9 +171,9 @@ const { ui } = Astro.props;
   }
 
   if (elements.slider) {
-    function updateText(level: number, data: ReturnType<typeof getBortleData>) {
+    function updateText(level: number, data: any) {
       if (elements.title) elements.title.innerText = data.title;
-      if (elements.classLabel) elements.classLabel.innerText = `CLASE ${level}`;
+      if (elements.classLabel) elements.classLabel.innerText = `${uiData.classPrefix} ${level}`;
       if (elements.nelm) elements.nelm.innerText = `NELM ${data.nelm.toFixed(1)}`;
       if (elements.desc) elements.desc.innerText = data.description;
       if (elements.descMobile) elements.descMobile.innerText = data.description;
@@ -194,7 +203,7 @@ const { ui } = Astro.props;
 
     function updateAll(val: number) {
       const level = Math.floor(val);
-      const data = getBortleData(level);
+      const data = bortleDataMap[level.toString()];
       updateText(level, data);
       updateThumb(val);
       updateLayers(level, data.skyBrightness);

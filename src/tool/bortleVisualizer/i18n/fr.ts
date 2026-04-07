@@ -11,6 +11,18 @@ const ui: BortleVisualizerUI = {
   classLabel: 'Classe Bortle',
   nelmLabel: 'NELM',
   sqmLabel: 'SQM',
+  classPrefix: 'CLASSE',
+  bortleData: {
+    1: { title: 'Ciel Noir Excellent', description: 'Paradis de l\'astronome. Voie lactée projette des ombres. Lumière zodiacale visible et colorée. M33 visible à l\'œil nu.', nelm: 8.0, sqm: '21.99 - 22.0', starsVisible: true, milkyWayVisible: true, cloudsLit: false, skyBrightness: 0.0 },
+    2: { title: 'Ciel Vraiment Sombre', description: 'Sites véritablement sombres. Voie lactée très structurée. Nuages visibles uniquement comme des trous noirs dans le ciel.', nelm: 7.5, sqm: '21.89 - 21.99', starsVisible: true, milkyWayVisible: true, cloudsLit: false, skyBrightness: 0.1 },
+    3: { title: 'Ciel Rural', description: 'Voie lactée complexe. Pollution lumineuse à l\'horizon. Nuages éclairés près de l\'horizon mais sombres au-dessus.', nelm: 7.0, sqm: '21.69 - 21.89', starsVisible: true, milkyWayVisible: true, cloudsLit: true, skyBrightness: 0.2 },
+    4: { title: 'Rural/Suburbain', description: 'Voie lactée perd en détail mais visible. Dômes de lumière à l\'horizon. Nuages éclairés d\'en bas.', nelm: 6.5, sqm: '20.49 - 21.69', starsVisible: true, milkyWayVisible: true, cloudsLit: true, skyBrightness: 0.35 },
+    5: { title: 'Ciel Suburbain', description: 'Voie lactée très faible ou invisible près de l\'horizon. Lumière zodiacale rarement visible. Ciel grisâtre.', nelm: 6.0, sqm: '19.50 - 20.49', starsVisible: true, milkyWayVisible: true, cloudsLit: true, skyBrightness: 0.5 },
+    6: { title: 'Suburbain Brillant', description: 'Voie lactée invisible. Ciel gris clair. Nuages très brillants. M31 à peine visible.', nelm: 5.5, sqm: '18.94 - 19.50', starsVisible: true, milkyWayVisible: false, cloudsLit: true, skyBrightness: 0.65 },
+    7: { title: 'Suburbain/Urbain', description: 'Ciel gris clair. Sources lumineuses fortes dans toutes les directions. Seules les plus brillantes étoiles visibles.', nelm: 5.0, sqm: '18.38 - 18.94', starsVisible: true, milkyWayVisible: false, cloudsLit: true, skyBrightness: 0.8 },
+    8: { title: 'Ciel Urbain', description: 'Ciel gris-blanc ou orange. Peut lire les gros titres des journaux. Seules les principales constellations visibles.', nelm: 4.5, sqm: '< 18.38', starsVisible: true, milkyWayVisible: false, cloudsLit: true, skyBrightness: 0.9 },
+    9: { title: 'Centre-Ville', description: 'Ciel lumineux comme le crépuscule. Lune visible mais constellations non. Seulement planètes et Lune visibles.', nelm: 4.0, sqm: '< 18.00', starsVisible: false, milkyWayVisible: false, cloudsLit: true, skyBrightness: 1.0 },
+  },
 };
 
 const faq: BortleVisualizerLocaleContent['faq'] = [
@@ -149,5 +161,6 @@ export const content: BortleVisualizerLocaleContent = {
   bibliography,
   bibliographyTitle: 'Références Bibliographiques',
   howTo,
+  bortleData: ui.bortleData,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

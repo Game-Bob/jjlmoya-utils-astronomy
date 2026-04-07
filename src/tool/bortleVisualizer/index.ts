@@ -4,15 +4,30 @@ import BortleVisualizerSEO from './seo.astro';
 import BortleVisualizerBibliography from './bibliography.astro';
 
 export interface BortleVisualizerUI {
-  [key: string]: string;
+  [key: string]: any;
   toolTitle: string;
   sliderLabel: string;
   classLabel: string;
   nelmLabel: string;
   sqmLabel: string;
+  classPrefix: string;
+  bortleData: Record<number, BortleLevel>;
 }
 
-export type BortleVisualizerLocaleContent = ToolLocaleContent<BortleVisualizerUI>;
+export interface BortleLevel {
+  title: string;
+  description: string;
+  nelm: number;
+  sqm: string;
+  starsVisible: boolean;
+  milkyWayVisible: boolean;
+  cloudsLit: boolean;
+  skyBrightness: number;
+}
+
+export interface BortleVisualizerLocaleContent extends ToolLocaleContent<BortleVisualizerUI> {
+  bortleData: Record<number, BortleLevel>;
+}
 
 import { content as es } from './i18n/es';
 import { content as en } from './i18n/en';

@@ -1,16 +1,17 @@
 ---
 import type { TelescopeResolutionUI } from './index';
-import type { KnownLocale } from '../../types';
-
 interface Props {
   ui: TelescopeResolutionUI;
-  locale?: KnownLocale;
 }
 
 const { ui } = Astro.props;
 ---
 
-<div class="tscope-wrapper">
+<script define:vars={{ ui }} is:inline>
+  window.__telescopeUI = ui;
+</script>
+
+<div class="tscope-wrapper" id="tscope-root">
   <div class="tscope-grid">
     <div class="tscope-controls">
       <div class="tscope-control-group">
@@ -40,12 +41,7 @@ const { ui } = Astro.props;
         <div class="tscope-select-wrapper">
           <select id="preset-selector" class="tscope-select">
             <option value="">{ui.presetsPlaceholder}</option>
-            <option value="70">70mm (Refractor - Iniciación)</option>
-            <option value="114">114mm (4.5") Newtonian</option>
-            <option value="150">150mm (6") Dobson</option>
-            <option value="200">200mm (8") Dobson</option>
-            <option value="254">254mm (10") Dobson</option>
-            <option value="304">304mm (12") Profesional</option>
+            {ui.presets.map((preset: any) => <option value={preset.value}>{preset.label}</option>)}
           </select>
           <svg class="tscope-select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <polyline points="6 9 12 15 18 9"></polyline>
@@ -70,6 +66,11 @@ const { ui } = Astro.props;
         </div>
       </div>
 
+      <div class="tscope-seeing-alert" id="seeing-alert">
+        <span id="seeing-alert-prefix">{ui.seeingAlertPrefix}</span>
+        <span id="seeing-alert-suffix">{ui.seeingAlertSuffix}</span>
+      </div>
+
       <div class="tscope-comp-grid">
         <div class="tscope-comp-card">
           <h4 class="tscope-comp-title">{ui.rayleighLabel}</h4>
@@ -79,10 +80,6 @@ const { ui } = Astro.props;
           <h4 class="tscope-comp-title">{ui.maxMagLabel}</h4>
           <span class="tscope-comp-value" id="max-mag-result">300</span>x
         </div>
-      </div>
-
-      <div id="seeing-alert" class="tscope-seeing-alert">
-        {ui.seeingAlertPrefix} (1.0") {ui.seeingAlertSuffix} (0.77").
       </div>
 
       <div class="tscope-visualization">
@@ -102,6 +99,18 @@ const { ui } = Astro.props;
 <script>
   import { calculateResolution, inchesToMm, mmToInches } from './logic';
 
+  const seeingAlertPrefix = document.getElementById('seeing-alert-prefix');
+  const seeingAlertSuffix = document.getElementById('seeing-alert-suffix');
+  const seeingValueDisplay = document.getElementById('seeing-value');
+
+  function updateSeeingAlert() {
+    if (seeingAlertPrefix && seeingValueDisplay) {
+      const seeingVal = seeingValueDisplay.textContent;
+      const originalPrefix = seeingAlertPrefix.textContent || '';
+      seeingAlertPrefix.textContent = `${originalPrefix} (${seeingVal}")`;
+    }
+  }
+
   class ResolutionApp {
     apertureInput: HTMLInputElement;
     unitSelector: HTMLSelectElement;
@@ -111,7 +120,6 @@ const { ui } = Astro.props;
     rayleighDisplay: HTMLElement;
     maxMagDisplay: HTMLElement;
     seeingDisplay: HTMLElement;
-    seeingAlert: HTMLElement;
     star1: HTMLElement;
     star2: HTMLElement;
     stepBtns: NodeListOf<HTMLButtonElement>;
@@ -125,7 +133,6 @@ const { ui } = Astro.props;
       this.rayleighDisplay = document.getElementById('rayleigh-result') as HTMLElement;
       this.maxMagDisplay = document.getElementById('max-mag-result') as HTMLElement;
       this.seeingDisplay = document.getElementById('seeing-value') as HTMLElement;
-      this.seeingAlert = document.getElementById('seeing-alert') as HTMLElement;
       this.star1 = document.getElementById('star-1') as HTMLElement;
       this.star2 = document.getElementById('star-2') as HTMLElement;
       this.stepBtns = document.querySelectorAll('.tscope-step-btn');
@@ -171,6 +178,7 @@ const { ui } = Astro.props;
       });
       this.seeingInput.addEventListener('input', () => {
         this.seeingDisplay.textContent = this.seeingInput.value;
+        updateSeeingAlert();
         this.calculate();
       });
       this.calculate();
@@ -187,13 +195,6 @@ const { ui } = Astro.props;
       this.dawesDisplay.textContent = result.dawes.toFixed(2);
       this.rayleighDisplay.textContent = result.rayleigh.toFixed(2);
       this.maxMagDisplay.textContent = Math.round(result.maxMagnification).toString();
-
-      if (result.seeingLimited) {
-        this.seeingAlert.classList.add('visible');
-        this.seeingAlert.textContent = `Atmosfera limitada: El seeing de hoy (${seeing}") impedirá que veas el potencial de tu telescopio (${result.dawes.toFixed(2)}").`;
-      } else {
-        this.seeingAlert.classList.remove('visible');
-      }
 
       this.updateSimulation(result.dawes);
     }
@@ -216,7 +217,8 @@ const { ui } = Astro.props;
     }
   }
 
-  new ResolutionApp();
+  const app = new ResolutionApp();
+  updateSeeingAlert();
 </script>
 
 <style>
@@ -463,11 +465,10 @@ const { ui } = Astro.props;
     font-size: 0.85rem;
     color: var(--text-muted);
     line-height: 1.6;
-    display: none;
+    display: block;
   }
 
   .tscope-seeing-alert.visible {
-    display: block;
     animation: tscope-slide-in 0.4s ease-out;
   }
 

@@ -18,10 +18,18 @@ const ui: TelescopeResolutionUI = {
   arcsecUnit: 'arcseconds',
   rayleighLabel: 'Rayleigh Limit',
   maxMagLabel: 'Max. Useful Magnification',
-  seeingAlertPrefix: 'Atmosphere limited: Today\'s seeing',
-  seeingAlertSuffix: 'will prevent you from seeing your telescope\'s full potential',
+  seeingAlertPrefix: "Atmosphere limited: Today's seeing",
+  seeingAlertSuffix: "will prevent you from seeing your telescope's full potential",
   simLabel: 'Simulation: Binary Stars',
   simExplanation: 'Dawes separates point stars; Rayleigh defines planetary details.',
+  presets: [
+    { value: '70', label: '70mm (Beginner Refractor)' },
+    { value: '114', label: '114mm (4.5") Newtonian' },
+    { value: '150', label: '150mm (6") Dobsonian' },
+    { value: '200', label: '200mm (8") Dobsonian' },
+    { value: '254', label: '254mm (10") Dobsonian' },
+    { value: '304', label: '304mm (12") Professional' },
+  ],
 };
 
 const faq: TelescopeResolutionLocaleContent['faq'] = [

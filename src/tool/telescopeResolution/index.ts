@@ -4,7 +4,7 @@ import TelescopeResolutionSEO from './seo.astro';
 import TelescopeResolutionBibliography from './bibliography.astro';
 
 export interface TelescopeResolutionUI {
-  [key: string]: string;
+  [key: string]: string | Array<{ value: string; label: string }>;
   toolTitle: string;
   apertureLabel: string;
   unitLabel: string;
@@ -21,6 +21,7 @@ export interface TelescopeResolutionUI {
   seeingAlertSuffix: string;
   simLabel: string;
   simExplanation: string;
+  presets: Array<{ value: string; label: string }>;
 }
 
 export type TelescopeResolutionLocaleContent = ToolLocaleContent<TelescopeResolutionUI>;

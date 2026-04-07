@@ -35,7 +35,7 @@ const { ui } = Astro.props;
             <p id="modal-type" class="modal-type">Type</p>
           </div>
         </div>
-        <button id="close-modal" class="modal-close" aria-label="Cerrar">
+        <button id="close-modal" class="modal-close" aria-label={ui.closeLabel}>
           <Icon name="mdi:close" />
         </button>
       </div>
@@ -128,14 +128,18 @@ const { ui } = Astro.props;
   </div>
 </div>
 
+<script define:vars={{ ui }} is:inline>
+  window.__deepSpaceUI = ui;
+</script>
+
 <script>
   import {
-    DEEP_SPACE_OBJECTS,
     calculateLimitingMagnitude,
     apertureSliderToMm,
   } from "./logic";
 
   const container = document.getElementById("scope-container");
+  const uiData = (window as any).__deepSpaceUI || {};
   const canvas = document.getElementById("sky-canvas") as HTMLCanvasElement;
   const ctx = canvas?.getContext("2d");
   const objectsLayer = document.getElementById("objects-layer");
@@ -168,7 +172,8 @@ const { ui } = Astro.props;
   function initObjectsDOM() {
     if (!objectsLayer) return;
     objectsLayer.innerHTML = "";
-    DEEP_SPACE_OBJECTS.forEach((obj, idx) => {
+    const objects = uiData.deepSpaceObjects || [];
+    objects.forEach((obj: any, idx: number) => {
       const el = document.createElement("div");
       el.id = `obj-${idx}`;
       el.className = "scope-object";
@@ -194,13 +199,13 @@ const { ui } = Astro.props;
   const modalContent = document.getElementById("modal-content");
   const closeModalBtn = document.getElementById("close-modal");
 
-  function openModal(obj: (typeof DEEP_SPACE_OBJECTS)[0]) {
+  function openModal(obj: any) {
     if (!modal || !modalContent) return;
     document.getElementById("modal-title")!.innerText = obj.name;
     document.getElementById("modal-type")!.innerText = obj.type;
     document.getElementById("modal-mag")!.innerText = obj.mag.toString();
-    document.getElementById("modal-az")!.innerText = `Azimuth: ${obj.az}°`;
-    document.getElementById("modal-alt")!.innerText = `Altitud: ${obj.alt}°`;
+    document.getElementById("modal-az")!.innerText = `${uiData.azimuthLabel}: ${obj.az}°`;
+    document.getElementById("modal-alt")!.innerText = `${uiData.altitudeLabel}: ${obj.alt}°`;
     const iconEl = document.getElementById("modal-icon");
     if (iconEl) {
       iconEl.innerHTML = `<span class="iconify" data-icon="${obj.icon}" style="font-size:2.5rem;color:${obj.color}"></span>`;
@@ -209,7 +214,7 @@ const { ui } = Astro.props;
     if (descEl) {
       descEl.innerText =
         obj.desc ||
-        `Un objeto fascinante del espacio profundo. Magnitud ${obj.mag}.`;
+        `${uiData.defaultObjDesc} ${obj.mag}.`;
     }
     modal.classList.remove("modal-hidden");
     modalContent.classList.remove("modal-scale-out");
@@ -235,10 +240,10 @@ const { ui } = Astro.props;
 
   function updateDisplays(limit: number, apertureMM: number, bortle: number) {
     document.getElementById("aperture-display")!.innerText = `${apertureMM}mm`;
-    document.getElementById("bortle-display")!.innerText = `Clase ${bortle}`;
+    document.getElementById("bortle-display")!.innerText = `${uiData.bortleClassPrefix} ${bortle}`;
     if (limitMagDisplay) limitMagDisplay.innerText = limit.toFixed(1);
     if (azimuthDisplay)
-      azimuthDisplay.innerText = `AZ: ${Math.round(panAngle)}°`;
+      azimuthDisplay.innerText = `${uiData.azimuthLabel}: ${Math.round(panAngle)}°`;
     if (pollutionLayer) {
       const opacity = (bortle - 1) * 0.08;
       pollutionLayer.style.backgroundColor = `rgba(217, 119, 6, ${opacity})`;
@@ -266,7 +271,7 @@ const { ui } = Astro.props;
 
   function updateObjectElement(
     el: HTMLElement,
-    obj: (typeof DEEP_SPACE_OBJECTS)[0],
+    obj: any,
     limit: number,
   ) {
     const delta = getShortestDelta(obj.az, panAngle);
@@ -282,7 +287,8 @@ const { ui } = Astro.props;
   }
 
   function renderObjects(limit: number) {
-    DEEP_SPACE_OBJECTS.forEach((obj, idx) => {
+    const objects = uiData.deepSpaceObjects || [];
+    objects.forEach((obj: any, idx: number) => {
       const el = document.getElementById(`obj-${idx}`);
       if (!el) return;
       if (obj.mag > limit) {
@@ -481,7 +487,7 @@ const { ui } = Astro.props;
     }
   }
 
-  .scope-object {
+  :global(.scope-object) {
     position: absolute;
     transform: translate(-50%, -50%);
     display: flex;
@@ -494,23 +500,23 @@ const { ui } = Astro.props;
     cursor: pointer;
   }
 
-  .scope-object:hover .scope-obj-icon {
+  :global(.scope-object:hover) :global(.scope-obj-icon) {
     transform: scale(1.25);
   }
 
-  .scope-obj-icon {
+  :global(.scope-obj-icon) {
     font-size: 2rem;
     transition: transform 0.3s ease;
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
   }
 
   @media (min-width: 768px) {
-    .scope-obj-icon {
+    :global(.scope-obj-icon) {
       font-size: 3rem;
     }
   }
 
-  .scope-obj-label {
+  :global(.scope-obj-label) {
     margin-top: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -519,7 +525,7 @@ const { ui } = Astro.props;
     transition: opacity 0.3s ease;
   }
 
-  .scope-obj-name {
+  :global(.scope-obj-name) {
     font-size: 0.625rem;
     font-weight: 700;
     color: var(--on-dark);
@@ -531,7 +537,7 @@ const { ui } = Astro.props;
     white-space: nowrap;
   }
 
-  .scope-obj-mag {
+  :global(.scope-obj-mag) {
     font-size: 0.5rem;
     color: rgba(148, 163, 184, 0.8);
     background: rgba(0, 0, 0, 0.8);
