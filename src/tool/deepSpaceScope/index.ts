@@ -3,7 +3,18 @@ import DeepSpaceScopeComponent from './component.astro';
 import DeepSpaceScopeSEO from './seo.astro';
 import DeepSpaceScopeBibliography from './bibliography.astro';
 
+export interface DeepSpaceObject {
+  name: string;
+  type: string;
+  mag: number;
+  az: number;
+  alt: number;
+  color: string;
+  icon: string;
+}
+
 export interface DeepSpaceScopeUI {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
   toolTitle: string;
   apertureLabel: string;
@@ -21,7 +32,7 @@ export interface DeepSpaceScopeUI {
   altitudeLabel: string;
   defaultObjDesc: string;
   bortleClassPrefix: string;
-  deepSpaceObjects: any[];
+  deepSpaceObjects: DeepSpaceObject[];
 }
 
 export type DeepSpaceScopeLocaleContent = ToolLocaleContent<DeepSpaceScopeUI>;

@@ -133,12 +133,14 @@ const { ui } = Astro.props;
 </script>
 
 <script>
+  import type { DeepSpaceObject } from "./index";
   import {
     calculateLimitingMagnitude,
     apertureSliderToMm,
   } from "./logic";
 
   const container = document.getElementById("scope-container");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const uiData = (window as any).__deepSpaceUI || {};
   const canvas = document.getElementById("sky-canvas") as HTMLCanvasElement;
   const ctx = canvas?.getContext("2d");
@@ -173,7 +175,7 @@ const { ui } = Astro.props;
     if (!objectsLayer) return;
     objectsLayer.innerHTML = "";
     const objects = uiData.deepSpaceObjects || [];
-    objects.forEach((obj: any, idx: number) => {
+    objects.forEach((obj: DeepSpaceObject, idx: number) => {
       const el = document.createElement("div");
       el.id = `obj-${idx}`;
       el.className = "scope-object";
@@ -199,7 +201,7 @@ const { ui } = Astro.props;
   const modalContent = document.getElementById("modal-content");
   const closeModalBtn = document.getElementById("close-modal");
 
-  function openModal(obj: any) {
+  function openModal(obj: DeepSpaceObject) {
     if (!modal || !modalContent) return;
     document.getElementById("modal-title")!.innerText = obj.name;
     document.getElementById("modal-type")!.innerText = obj.type;
@@ -271,7 +273,7 @@ const { ui } = Astro.props;
 
   function updateObjectElement(
     el: HTMLElement,
-    obj: any,
+    obj: DeepSpaceObject,
     limit: number,
   ) {
     const delta = getShortestDelta(obj.az, panAngle);
@@ -288,7 +290,7 @@ const { ui } = Astro.props;
 
   function renderObjects(limit: number) {
     const objects = uiData.deepSpaceObjects || [];
-    objects.forEach((obj: any, idx: number) => {
+    objects.forEach((obj: DeepSpaceObject, idx: number) => {
       const el = document.getElementById(`obj-${idx}`);
       if (!el) return;
       if (obj.mag > limit) {

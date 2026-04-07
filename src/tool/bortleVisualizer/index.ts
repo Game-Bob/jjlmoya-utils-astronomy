@@ -4,6 +4,7 @@ import BortleVisualizerSEO from './seo.astro';
 import BortleVisualizerBibliography from './bibliography.astro';
 
 export interface BortleVisualizerUI {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
   toolTitle: string;
   sliderLabel: string;

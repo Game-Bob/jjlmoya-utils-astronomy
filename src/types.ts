@@ -1,5 +1,4 @@
 import type { SEOSection } from '@jjlmoya/utils-shared';
-import type { WithContext, Thing } from 'schema-dts';
 
 export type { SEOSection };
 
@@ -23,6 +22,7 @@ export interface HowToStep {
   text: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface ToolLocaleContent<TUI extends Record<string, any> = Record<string, any>> {
   slug: string;
   title: string;
@@ -34,6 +34,7 @@ export interface ToolLocaleContent<TUI extends Record<string, any> = Record<stri
   bibliography: BibliographyEntry[];
   bibliographyTitle: string;
   howTo: HowToStep[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   schemas: any[];
 }
 
@@ -48,6 +49,7 @@ export type LocaleLoader<T> = () => Promise<T>;
 
 export type LocaleMap<T> = Partial<Record<KnownLocale, LocaleLoader<T>>>;
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface AstronomyToolEntry<TUI extends Record<string, any> = Record<string, any>> {
   id: string;
   icons: {

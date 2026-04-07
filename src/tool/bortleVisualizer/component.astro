@@ -87,8 +87,6 @@ const bortleData = ui.bortleData;
 </script>
 
 <script>
-  import { getBortleData as getDefaultBortleData } from './logic';
-
   const uiData = window.__bortleUI || {};
   const bortleDataMap = window.__bortleData || {};
 
@@ -171,7 +169,7 @@ const bortleData = ui.bortleData;
   }
 
   if (elements.slider) {
-    function updateText(level: number, data: any) {
+    function updateText(level: number, data: BortleLevel) {
       if (elements.title) elements.title.innerText = data.title;
       if (elements.classLabel) elements.classLabel.innerText = `${uiData.classPrefix} ${level}`;
       if (elements.nelm) elements.nelm.innerText = `NELM ${data.nelm.toFixed(1)}`;
