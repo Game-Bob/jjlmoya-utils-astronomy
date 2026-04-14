@@ -34,11 +34,11 @@ function extractSectionText(section: any): string {
 }
 
 function countWords(text: string): number {
-  return text
-    .replace(/<[^>]*>/g, '')
-    .trim()
-    .split(/\s+/)
-    .filter((w) => w.length > 0).length;
+  const cleanText = text.replace(/<[^>]*>/g, '').trim();
+  const standardWords = cleanText.split(/\s+/).filter((w) => w.length > 0).length;
+  const cjkChars = cleanText.match(/[\u4e00-\u9fa5\u3040-\u30ff\uac00-\ud7af]/g)?.length || 0;
+  const cjkBlocks = cleanText.split(/[^\u4e00-\u9fa5\u3040-\u30ff\uac00-\ud7af]+/).filter(w => w.length > 0).length;
+  return standardWords - cjkBlocks + cjkChars;
 }
 
 describe('Tool Validation Suite', () => {

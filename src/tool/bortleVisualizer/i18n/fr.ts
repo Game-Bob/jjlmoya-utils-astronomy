@@ -21,7 +21,7 @@ const ui: BortleVisualizerUI = {
     6: { title: 'Suburbain Brillant', description: 'Voie lactée invisible. Ciel gris clair. Nuages très brillants. M31 à peine visible.', nelm: 5.5, sqm: '18.94 - 19.50', starsVisible: true, milkyWayVisible: false, cloudsLit: true, skyBrightness: 0.65 },
     7: { title: 'Suburbain/Urbain', description: 'Ciel gris clair. Sources lumineuses fortes dans toutes les directions. Seules les plus brillantes étoiles visibles.', nelm: 5.0, sqm: '18.38 - 18.94', starsVisible: true, milkyWayVisible: false, cloudsLit: true, skyBrightness: 0.8 },
     8: { title: 'Ciel Urbain', description: 'Ciel gris-blanc ou orange. Peut lire les gros titres des journaux. Seules les principales constellations visibles.', nelm: 4.5, sqm: '< 18.38', starsVisible: true, milkyWayVisible: false, cloudsLit: true, skyBrightness: 0.9 },
-    9: { title: 'Centre-Ville', description: 'Ciel lumineux comme le crépuscule. Lune visible mais constellations non. Seulement planètes et Lune visibles.', nelm: 4.0, sqm: '< 18.00', starsVisible: false, milkyWayVisible: false, cloudsLit: true, skyBrightness: 1.0 },
+    9: { title: 'Centre Ville', description: 'Ciel lumineux comme le crépuscule. Lune visible mais constellations non. Seulement planètes et Lune visibles.', nelm: 4.0, sqm: '< 18.00', starsVisible: false, milkyWayVisible: false, cloudsLit: true, skyBrightness: 1.0 },
   },
 };
 
