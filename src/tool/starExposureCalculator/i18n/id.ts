@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { StarExposureCalculatorUI, StarExposureCalculatorLocaleContent } from '../index';
 
-const slug = '500-rule-calculator';
+const slug = 'kalkulator-aturan-500';
 const title = 'Kalkulator Aturan 500 dan NPF untuk Astrofotografi';
 const description = 'Hitung waktu eksposur maksimum untuk astrofotografi tanpa jejak bintang. Aturan klasik 500 dan model NPF presisi tinggi untuk sensor modern.';
 

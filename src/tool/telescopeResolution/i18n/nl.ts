@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { TelescopeResolutionUI, TelescopeResolutionLocaleContent } from '../index';
 
-const slug = 'telescope-resolution-calculator';
+const slug = 'telescoopresolutierekenmachine';
 const title = 'Telescoop Resolutie Calculator (Dawes Limiet)';
 const description = 'Bereken het scheidend vermogen van uw telescoop met de Dawes-limiet en de Rayleigh-limiet. Ontdek de maximale nuttige vergroting en de impact van atmosferische seeing.';
 

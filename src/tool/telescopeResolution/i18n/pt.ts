@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { TelescopeResolutionUI, TelescopeResolutionLocaleContent } from '../index';
 
-const slug = 'telescope-resolution-calculator';
+const slug = 'calculadora-resolucao-telescopio';
 const title = 'Calculadora de Resolução de Telescópio (Limite de Dawes)';
 const description = 'Calcule o poder de resolução do seu telescópio com o limite de Dawes e o critério de Rayleigh. Descubra a ampliação máxima útil e o impacto do seeing atmosférico.';
 

@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { StarExposureCalculatorUI, StarExposureCalculatorLocaleContent } from '../index';
 
-const slug = '500-rule-calculator';
+const slug = 'calcolatore-regola-500';
 const title = 'Calcolatore Regola del 500 e NPF per Astrofotografia';
 const description = 'Calcola il tempo di esposizione massimo per l\'astrofotografia senza tracce stellari. Regola classica del 500 e modello NPF ad alta precisione per sensori moderni.';
 

@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { DeepSpaceScopeUI, DeepSpaceScopeLocaleContent } from '../index';
 
-const slug = 'telescope-reach';
+const slug = 'zasieg-teleskopu';
 const title = 'Kalkulator zasięgu teleskopu';
 const description = 'Oblicz magnitudo graniczne swojego teleskopu i dowiedz się, jakie obiekty głębokiego nieba są widoczne przy użyciu Twojego sprzętu i warunków na niebie.';
 

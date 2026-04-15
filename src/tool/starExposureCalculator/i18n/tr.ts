@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { StarExposureCalculatorUI, StarExposureCalculatorLocaleContent } from '../index';
 
-const slug = '500-rule-calculator';
+const slug = '500-kurali-hesaplayici';
 const title = 'Astrofotoğrafçılık için 500 Kuralı ve NPF Hesaplayıcı';
 const description = 'Yıldız izi olmadan astrofotoğrafçılık için maksimum pozlama süresini hesaplayın. Klasik 500 kuralı ve modern sensörler için yüksek hassasiyetli NPF modeli.';
 

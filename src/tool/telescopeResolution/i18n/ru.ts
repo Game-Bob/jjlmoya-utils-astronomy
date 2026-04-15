@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { TelescopeResolutionUI, TelescopeResolutionLocaleContent } from '../index';
 
-const slug = 'telescope-resolution-calculator';
+const slug = 'kalkulyatorrazresheniatelesikopa';
 const title = 'Калькулятор разрешающей способности телескопа (предел Дауэса)';
 const description = 'Рассчитайте разрешающую способность вашего телескопа по пределу Дауэса и критерию Рэлея. Узнайте максимальное полезное увеличение и влияние атмосферного сиинга.';
 

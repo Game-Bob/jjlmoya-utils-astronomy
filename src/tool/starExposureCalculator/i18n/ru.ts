@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { StarExposureCalculatorUI, StarExposureCalculatorLocaleContent } from '../index';
 
-const slug = '500-rule-calculator';
+const slug = 'kalkulyatorregregli500';
 const title = 'Калькулятор правила 500 и NPF для астрофотографии';
 const description = 'Рассчитайте максимальную выдержку для съемки звезд без смаза (треков). Классическое правило 500 и высокоточная модель NPF для современных камер.';
 

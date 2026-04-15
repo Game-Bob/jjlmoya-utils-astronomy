@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { DeepSpaceScopeUI, DeepSpaceScopeLocaleContent } from '../index';
 
-const slug = 'telescope-reach';
+const slug = 'jangkauan-teleskop';
 const title = 'Kalkulator Jangkauan Teleskop';
 const description = 'Hitung magnitudo pembatas teleskop Anda dan temukan objek langit dalam mana yang terlihat dengan pelat peralatan Anda di bawah kondisi langit Anda.';
 

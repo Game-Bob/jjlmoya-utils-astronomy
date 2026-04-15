@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { BortleVisualizerUI, BortleVisualizerLocaleContent } from '../index';
 
-const slug = 'dark-sky-simulator';
+const slug = 'simulator-dunkler-himmel';
 const title = 'Dark Sky Simulator (Bortle Skala)';
 const description = 'Visualisieren Sie interaktiv die 9 Stufen der Bortle-Skala und entdecken Sie, wie die Lichtverschmutzung den sternenklaren Nachthimmel verblassen lässt.';
 

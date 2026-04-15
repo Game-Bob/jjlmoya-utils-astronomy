@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { TelescopeResolutionUI, TelescopeResolutionLocaleContent } from '../index';
 
-const slug = 'telescope-resolution-calculator';
+const slug = 'teleskop-cozunurluk-hesaplayici';
 const title = 'Teleskop Çözünürlük Hesaplayıcı (Dawes Limiti)';
 const description = 'Dawes Limiti ve Rayleigh Kriteri ile teleskobunuzun çözünürlük gücünü hesaplayın. Maksimum kullanışlı büyütmeyi ve atmosferik seeing etkisini keşfedin.';
 

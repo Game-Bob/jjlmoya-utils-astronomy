@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { DeepSpaceScopeUI, DeepSpaceScopeLocaleContent } from '../index';
 
-const slug = 'telescope-reach';
+const slug = 'teleskopransch';
 const title = 'Kalkylator för teleskopets räckvidd';
 const description = 'Beräkna ditt teleskops gränsmagnitud och upptäck vilka deep sky-objekt som är synliga med din utrustning under dina lokala himmelsförhållanden.';
 

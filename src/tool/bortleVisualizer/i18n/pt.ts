@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { BortleVisualizerUI, BortleVisualizerLocaleContent } from '../index';
 
-const slug = 'dark-sky-simulator';
+const slug = 'simulador-ceu-escuro';
 const title = 'Simulador de Céu Escuro (Escala de Bortle)';
 const description = 'Visualize interativamente os 9 níveis da Escala de Bortle e descubra como a poluição luminosa apaga o céu noturno estrelado.';
 

@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { DeepSpaceScopeUI, DeepSpaceScopeLocaleContent } from '../index';
 
-const slug = 'telescope-reach';
+const slug = 'teleskop-erisileri';
 const title = 'Teleskop Menzil Hesaplayıcı';
 const description = 'Teleskobunuzun sınır parlaklığını hesaplayın ve gökyüzü koşullarınız altında ekipmanınızla hangi derin uzay nesnelerinin görülebileceğini keşfedin.';
 

@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { DeepSpaceScopeUI, DeepSpaceScopeLocaleContent } from '../index';
 
-const slug = 'telescope-reach';
+const slug = 'telescoopbereik';
 const title = 'Telescoop Bereik Calculator';
 const description = 'Bereken de grensmagnitude van je telescoop en ontdek welke deep-sky objecten zichtbaar zijn met jouw apparatuur onder jouw lokale omstandigheden.';
 

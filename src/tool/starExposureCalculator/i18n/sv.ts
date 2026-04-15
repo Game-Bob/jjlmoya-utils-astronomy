@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { StarExposureCalculatorUI, StarExposureCalculatorLocaleContent } from '../index';
 
-const slug = '500-rule-calculator';
+const slug = 'minoraknare-500-regeln';
 const title = 'Kalkylator för 500 regeln och NPF inom astrofotografering';
 const description = 'Beräkna maximal exponeringstid för astrofotografering utan stjärnspår. Klassiska 500-regeln och den högprecisa NPF-modellen för moderna sensorer.';
 

@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { StarExposureCalculatorUI, StarExposureCalculatorLocaleContent } from '../index';
 
-const slug = '500-rule-calculator';
+const slug = '500er-regel-rechner';
 const title = '500er Regel und NPF Rechner für die Astrofotografie';
 const description = 'Berechnen Sie die maximale Belichtungszeit für die Astrofotografie ohne Strichspuren. Klassische 500er-Regel und hochpräzises NPF-Modell für moderne Sensoren.';
 

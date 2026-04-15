@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { BortleVisualizerUI, BortleVisualizerLocaleContent } from '../index';
 
-const slug = 'dark-sky-simulator';
+const slug = 'simulator-langit-gelap';
 const title = 'Simulator Langit Gelap (Skala Bortle)';
 const description = 'Visualisasikan secara interaktif 9 level Skala Bortle dan temukan bagaimana polusi cahaya menghapus keindahan langit malam berbintang.';
 

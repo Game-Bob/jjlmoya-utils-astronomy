@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { BortleVisualizerUI, BortleVisualizerLocaleContent } from '../index';
 
-const slug = 'dark-sky-simulator';
+const slug = 'simulator-temnoho-neba';
 const title = 'Симулятор темного неба (Шкала Бортля)';
 const description = 'Интерактивная визуализация 9 уровней шкалы Бортля: узнайте, как световое загрязнение стирает звездное небо.';
 

@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { DeepSpaceScopeUI, DeepSpaceScopeLocaleContent } from '../index';
 
-const slug = 'telescope-reach';
+const slug = 'portata-telescopica';
 const title = 'Calcolatore di Portata del Telescopio';
 const description = 'Calcola la magnitudine limite del tuo telescopio e scopri quali oggetti del cielo profondo sono visibili con la tua attrezzatura in base alle condizioni del cielo.';
 

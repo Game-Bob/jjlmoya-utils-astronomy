@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { TelescopeResolutionUI, TelescopeResolutionLocaleContent } from '../index';
 
-const slug = 'telescope-resolution-calculator';
+const slug = 'teleskopupploslingsminraknare';
 const title = 'Kalkylator för teleskopupplösning (Dawes gräns)';
 const description = 'Beräkna ditt teleskops upplösningsförmåga med Dawes gräns och Rayleigh-kriteriet. Upptäck maximal användbar förstoring och inverkan av atmosfärisk seeing.';
 

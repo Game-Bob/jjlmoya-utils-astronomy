@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { TelescopeResolutionUI, TelescopeResolutionLocaleContent } from '../index';
 
-const slug = 'telescope-resolution-calculator';
+const slug = 'kalkulator-rozdzielczosci-teleskopu';
 const title = 'Kalkulator zdolności rozdzielczej teleskopu (granica Dawesa)';
 const description = 'Oblicz zdolność rozdzielczą swojego teleskopu za pomocą granicy Dawesa i kryterium Rayleigha. Sprawdź maksymalne użyteczne powiększenie i wpływ seeingu atmosferycznego.';
 

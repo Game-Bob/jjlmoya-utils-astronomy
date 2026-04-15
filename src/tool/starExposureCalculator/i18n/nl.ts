@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { StarExposureCalculatorUI, StarExposureCalculatorLocaleContent } from '../index';
 
-const slug = '500-rule-calculator';
+const slug = 'rekenmachine-500-regel';
 const title = '500 Regel en NPF Astrofotografie Calculator';
 const description = 'Bereken de maximale belichtingstijd voor astrofotografie zonder stersporen. Klassieke 500-regel en precisie NPF-model voor moderne sensoren.';
 

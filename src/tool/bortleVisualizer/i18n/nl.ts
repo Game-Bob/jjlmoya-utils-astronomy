@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { BortleVisualizerUI, BortleVisualizerLocaleContent } from '../index';
 
-const slug = 'dark-sky-simulator';
+const slug = 'simulator-donkere-hemel';
 const title = 'Nachthemel Simulator (Bortle schaal)';
 const description = 'Visualiseer interactief de 9 niveaus van de Bortle-schaal en ontdek hoe lichtvervuiling de sterrenhemel doet vervagen.';
 

@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { TelescopeResolutionUI, TelescopeResolutionLocaleContent } from '../index';
 
-const slug = 'telescope-resolution-calculator';
+const slug = 'kalkulator-resolusi-teleskop';
 const title = 'Kalkulator Resolusi Teleskop (Batas Dawes)';
 const description = 'Hitung daya urai teleskop Anda dengan Batas Dawes dan Kriteria Rayleigh. Temukan pembesaran maksimum yang berguna dan dampak visual atmosfer (seeing).';
 

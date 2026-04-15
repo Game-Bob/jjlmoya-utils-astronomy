@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { BortleVisualizerUI, BortleVisualizerLocaleContent } from '../index';
 
-const slug = 'dark-sky-simulator';
+const slug = 'simulator-morka-himmel';
 const title = 'Simulator för mörk himmel (Bortle skalan)';
 const description = 'Visualisera interaktivt Bortle-skalans 9 nivåer och upptäck hur ljusföroreningar suddar ut den stjärnklara natthimlen.';
 

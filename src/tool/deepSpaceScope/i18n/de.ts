@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { DeepSpaceScopeUI, DeepSpaceScopeLocaleContent } from '../index';
 
-const slug = 'telescope-reach';
+const slug = 'teleskop-reichweite';
 const title = 'Teleskop Reichweitenrechner';
 const description = 'Berechnen Sie die Grenzgröße Ihres Teleskops und entdecken Sie, welche Deep-Sky-Objekte mit Ihrer Ausrüstung unter Ihren Himmelsbedingungen sichtbar sind.';
 

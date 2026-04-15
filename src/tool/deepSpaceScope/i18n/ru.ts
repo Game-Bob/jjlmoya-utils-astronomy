@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { DeepSpaceScopeUI, DeepSpaceScopeLocaleContent } from '../index';
 
-const slug = 'telescope-reach';
+const slug = 'diapazonteleiskopa';
 const title = 'Калькулятор возможностей телескопа';
 const description = 'Рассчитайте предельную звездную величину вашего телескопа и узнайте, какие объекты глубокого космоса можно увидеть с вашим оборудованием в текущих условиях неба.';
 

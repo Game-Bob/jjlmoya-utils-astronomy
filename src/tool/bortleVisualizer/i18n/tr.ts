@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { BortleVisualizerUI, BortleVisualizerLocaleContent } from '../index';
 
-const slug = 'dark-sky-simulator';
+const slug = 'karanlik-gok-simulatoru';
 const title = 'Karanlık Gökyüzü Simülatörü (Bortle Ölçeği)';
 const description = 'Bortle Ölçeği\'nin 9 seviyesini etkileşimli olarak görselleştirin ve ışık kirliliğinin yıldızlı gece gökyüzünü nasıl sildiğini keşfedin.';
 

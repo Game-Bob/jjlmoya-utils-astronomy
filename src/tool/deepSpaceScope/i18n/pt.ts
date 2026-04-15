@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { DeepSpaceScopeUI, DeepSpaceScopeLocaleContent } from '../index';
 
-const slug = 'telescope-reach';
+const slug = 'alcance-do-telescopio';
 const title = 'Calculadora de Alcance do Telescópio';
 const description = 'Calcule a magnitude limite do seu telescópio e descubra quais objetos do céu profundo são visíveis com o seu equipamento sob as condições do seu céu.';
 
