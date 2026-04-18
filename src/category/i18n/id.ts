@@ -1,7 +1,7 @@
 import type { CategoryLocaleContent } from '../../types';
 
 export const content: CategoryLocaleContent = {
-  slug: 'astronomi',
+  slug: 'astronomi-amatir',
   title: 'Alat Astronomi',
   description: 'Kalkulator dan simulator gratis untuk astronom amatir. Rencanakan sesi observasi dan astrofotografi Anda.',
   seo: [

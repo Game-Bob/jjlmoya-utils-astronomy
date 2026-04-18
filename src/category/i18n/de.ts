@@ -1,7 +1,7 @@
 import type { CategoryLocaleContent } from '../../types';
 
 export const content: CategoryLocaleContent = {
-  slug: 'astronomie',
+  slug: 'hobbyastronomie',
   title: 'Astronomie Tools',
   description: 'Kostenlose Rechner und Simulatoren für Hobbyastronomen. Planen Sie Ihre Beobachtungen und Astrofotografie.',
   seo: [

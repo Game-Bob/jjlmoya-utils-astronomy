@@ -2,7 +2,7 @@ export { bortleVisualizer } from './tool/bortleVisualizer';
 export { deepSpaceScope } from './tool/deepSpaceScope';
 export { starExposureCalculator } from './tool/starExposureCalculator';
 export { telescopeResolution } from './tool/telescopeResolution';
-export { astronomyCategory } from './category';
+export { toolsCategory as astronomyCategory } from './category';
 
 export type { BortleVisualizerUI, BortleVisualizerLocaleContent } from './tool/bortleVisualizer';
 export type { DeepSpaceScopeUI, DeepSpaceScopeLocaleContent } from './tool/deepSpaceScope';

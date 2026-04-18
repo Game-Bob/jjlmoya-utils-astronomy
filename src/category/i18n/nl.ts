@@ -1,7 +1,7 @@
 import type { CategoryLocaleContent } from '../../types';
 
 export const content: CategoryLocaleContent = {
-  slug: 'astronomie',
+  slug: 'amateur-astronomie',
   title: 'Astronomie instrumenten',
   description: 'Gratis rekenmachines en simulators voor amateurasronomen. Plan uw observatiesessies en astrofotografie.',
   seo: [

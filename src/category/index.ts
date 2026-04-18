@@ -4,7 +4,7 @@ import { deepSpaceScope } from '../tool/deepSpaceScope';
 import { starExposureCalculator } from '../tool/starExposureCalculator';
 import { telescopeResolution } from '../tool/telescopeResolution';
 
-export const astronomyCategory: AstronomyCategoryEntry = {
+export const toolsCategory: AstronomyCategoryEntry = {
   icon: 'mdi:telescope',
   tools: [bortleVisualizer, deepSpaceScope, starExposureCalculator, telescopeResolution],
   i18n: {
@@ -25,4 +25,5 @@ export const astronomyCategory: AstronomyCategoryEntry = {
     zh: () => import('./i18n/zh').then((m) => m.content),
   },
 };
+export const astronomyCategory = toolsCategory;
 

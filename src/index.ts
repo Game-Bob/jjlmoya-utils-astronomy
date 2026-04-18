@@ -3,7 +3,7 @@ export * from './tool/deepSpaceScope';
 export * from './tool/starExposureCalculator';
 export * from './tool/telescopeResolution';
 
-export { astronomyCategory } from './category';
+export { toolsCategory as astronomyCategory } from './category';
 export { default as AstronomyCategorySEO } from './category/seo.astro';
 
 export type {

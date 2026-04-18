@@ -1,7 +1,7 @@
 import type { CategoryLocaleContent } from '../../types';
 
 export const content: CategoryLocaleContent = {
-  slug: 'astronomia',
+  slug: 'astronomia-amatoriale',
   title: 'Strumenti di Astronomia',
   description: 'Calcolatori e simulatori gratuiti per astronomi dilettanti. Pianifica le tue sessioni di osservazione e astrofotografia.',
   seo: [
