@@ -1,12 +1,34 @@
-import type { AstronomyCategoryEntry } from '../types';
-import { bortleVisualizer } from '../tool/bortleVisualizer/entry';
-import { deepSpaceScope } from '../tool/deepSpaceScope/entry';
-import { starExposureCalculator } from '../tool/starExposureCalculator/entry';
-import { telescopeResolution } from '../tool/telescopeResolution/entry';
+import type { AstronomyToolEntry, ToolLocaleContent } from '../../types';
 
-export const toolsCategory: AstronomyCategoryEntry = {
-  icon: 'mdi:telescope',
-  tools: [bortleVisualizer, deepSpaceScope, starExposureCalculator, telescopeResolution],
+export interface TelescopeResolutionUI {
+  [key: string]: string | Array<{ value: string; label: string }>;
+  toolTitle: string;
+  apertureLabel: string;
+  unitLabel: string;
+  mmUnit: string;
+  inUnit: string;
+  presetsLabel: string;
+  presetsPlaceholder: string;
+  seeingLabel: string;
+  dawesLabel: string;
+  arcsecUnit: string;
+  rayleighLabel: string;
+  maxMagLabel: string;
+  seeingAlertPrefix: string;
+  seeingAlertSuffix: string;
+  simLabel: string;
+  simExplanation: string;
+  presets: Array<{ value: string; label: string }>;
+}
+
+export type TelescopeResolutionLocaleContent = ToolLocaleContent<TelescopeResolutionUI>;
+
+export const telescopeResolution: AstronomyToolEntry<TelescopeResolutionUI> = {
+  id: 'telescope-resolution',
+  icons: {
+    bg: 'mdi:telescope',
+    fg: 'mdi:flare',
+  },
   i18n: {
     de: () => import('./i18n/de').then((m) => m.content),
     en: () => import('./i18n/en').then((m) => m.content),
@@ -25,5 +47,3 @@ export const toolsCategory: AstronomyCategoryEntry = {
     zh: () => import('./i18n/zh').then((m) => m.content),
   },
 };
-export const astronomyCategory = toolsCategory;
-

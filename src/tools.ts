@@ -1,3 +1,4 @@
+export { ALL_ENTRIES } from './entries';
 import { BORTLE_VISUALIZER_TOOL } from './tool/bortleVisualizer';
 import { DEEP_SPACE_SCOPE_TOOL } from './tool/deepSpaceScope';
 import { STAR_EXPOSURE_CALCULATOR_TOOL } from './tool/starExposureCalculator';
@@ -18,4 +19,3 @@ export {
   TELESCOPE_RESOLUTION_TOOL,
 };
 
-export const ALL_ENTRIES = ALL_TOOLS.map(t => t.entry);
