@@ -1,7 +1,4 @@
 import type { AstronomyToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import TelescopeResolutionComponent from './component.astro';
-import TelescopeResolutionSEO from './seo.astro';
-import TelescopeResolutionBibliography from './bibliography.astro';
 
 export interface TelescopeResolutionUI {
   [key: string]: string | Array<{ value: string; label: string }>;
@@ -51,11 +48,10 @@ export const telescopeResolution: AstronomyToolEntry<TelescopeResolutionUI> = {
   },
 };
 
-export { TelescopeResolutionComponent, TelescopeResolutionSEO, TelescopeResolutionBibliography };
 
 export const TELESCOPE_RESOLUTION_TOOL: ToolDefinition = {
   entry: telescopeResolution,
-  Component: TelescopeResolutionComponent,
-  SEOComponent: TelescopeResolutionSEO,
-  BibliographyComponent: TelescopeResolutionBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

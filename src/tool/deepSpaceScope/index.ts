@@ -1,7 +1,4 @@
 import type { AstronomyToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import DeepSpaceScopeComponent from './component.astro';
-import DeepSpaceScopeSEO from './seo.astro';
-import DeepSpaceScopeBibliography from './bibliography.astro';
 
 export interface DeepSpaceObject {
   name: string;
@@ -62,11 +59,10 @@ export const deepSpaceScope: AstronomyToolEntry<DeepSpaceScopeUI> = {
   },
 };
 
-export { DeepSpaceScopeComponent, DeepSpaceScopeSEO, DeepSpaceScopeBibliography };
 
 export const DEEP_SPACE_SCOPE_TOOL: ToolDefinition = {
   entry: deepSpaceScope,
-  Component: DeepSpaceScopeComponent,
-  SEOComponent: DeepSpaceScopeSEO,
-  BibliographyComponent: DeepSpaceScopeBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

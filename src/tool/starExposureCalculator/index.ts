@@ -1,7 +1,4 @@
 import type { AstronomyToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import StarExposureCalculatorComponent from './component.astro';
-import StarExposureCalculatorSEO from './seo.astro';
-import StarExposureCalculatorBibliography from './bibliography.astro';
 
 export interface StarExposureCalculatorUI {
   [key: string]: string;
@@ -51,11 +48,10 @@ export const starExposureCalculator: AstronomyToolEntry<StarExposureCalculatorUI
   },
 };
 
-export { StarExposureCalculatorComponent, StarExposureCalculatorSEO, StarExposureCalculatorBibliography };
 
 export const STAR_EXPOSURE_CALCULATOR_TOOL: ToolDefinition = {
   entry: starExposureCalculator,
-  Component: StarExposureCalculatorComponent,
-  SEOComponent: StarExposureCalculatorSEO,
-  BibliographyComponent: StarExposureCalculatorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

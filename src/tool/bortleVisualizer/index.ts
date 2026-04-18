@@ -1,7 +1,4 @@
 import type { AstronomyToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import BortleVisualizerComponent from './component.astro';
-import BortleVisualizerSEO from './seo.astro';
-import BortleVisualizerBibliography from './bibliography.astro';
 
 export interface BortleVisualizerUI {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -55,11 +52,10 @@ export const bortleVisualizer: AstronomyToolEntry<BortleVisualizerUI> = {
   },
 };
 
-export { BortleVisualizerComponent, BortleVisualizerSEO, BortleVisualizerBibliography };
 
 export const BORTLE_VISUALIZER_TOOL: ToolDefinition = {
   entry: bortleVisualizer,
-  Component: BortleVisualizerComponent,
-  SEOComponent: BortleVisualizerSEO,
-  BibliographyComponent: BortleVisualizerBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };
