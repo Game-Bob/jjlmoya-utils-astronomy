@@ -1,3 +1,4 @@
+import { bortleVisualizer } from './entry';
 export * from './entry';
 export const BORTLE_VISUALIZER_TOOL: ToolDefinition = {
   entry: bortleVisualizer,

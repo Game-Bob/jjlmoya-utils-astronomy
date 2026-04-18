@@ -1,3 +1,4 @@
+import { deepSpaceScope } from './entry';
 export * from './entry';
 export const DEEP_SPACE_SCOPE_TOOL: ToolDefinition = {
   entry: deepSpaceScope,

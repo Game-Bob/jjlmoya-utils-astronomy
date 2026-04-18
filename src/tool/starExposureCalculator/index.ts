@@ -1,3 +1,4 @@
+import { starExposureCalculator } from './entry';
 export * from './entry';
 export const STAR_EXPOSURE_CALCULATOR_TOOL: ToolDefinition = {
   entry: starExposureCalculator,
