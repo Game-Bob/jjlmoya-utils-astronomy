@@ -17,3 +17,5 @@ export {
   STAR_EXPOSURE_CALCULATOR_TOOL,
   TELESCOPE_RESOLUTION_TOOL,
 };
+
+export const ALL_ENTRIES = ALL_TOOLS.map(t => t.entry);
