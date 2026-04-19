@@ -109,7 +109,7 @@
     }
   }
 
-  :global(.scope-object) {
+  .scope-object {
     position: absolute;
     transform: translate(-50%, -50%);
     display: flex;
@@ -122,23 +122,23 @@
     cursor: pointer;
   }
 
-  :global(.scope-object:hover) :global(.scope-obj-icon) {
+  .scope-object:hover .scope-obj-icon {
     transform: scale(1.25);
   }
 
-  :global(.scope-obj-icon) {
+  .scope-obj-icon {
     font-size: 2rem;
     transition: transform 0.3s ease;
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
   }
 
   @media (min-width: 768px) {
-    :global(.scope-obj-icon) {
+    .scope-obj-icon {
       font-size: 3rem;
     }
   }
 
-  :global(.scope-obj-label) {
+  .scope-obj-label {
     margin-top: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -147,7 +147,7 @@
     transition: opacity 0.3s ease;
   }
 
-  :global(.scope-obj-name) {
+  .scope-obj-name {
     font-size: 0.625rem;
     font-weight: 700;
     color: var(--on-dark);
@@ -159,7 +159,7 @@
     white-space: nowrap;
   }
 
-  :global(.scope-obj-mag) {
+  .scope-obj-mag {
     font-size: 0.5rem;
     color: rgba(148, 163, 184, 0.8);
     background: rgba(0, 0, 0, 0.8);
