@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { StarExposureCalculatorUI, StarExposureCalculatorLocaleContent } from '../index';
 
@@ -49,12 +50,6 @@ const howTo: StarExposureCalculatorLocaleContent['howTo'] = [
   { name: '2. Укажите параметры оборудования', text: 'Введите фокусное расстояние объектива и выберите кроп-фактор вашей камеры.' },
   { name: '3. Настройте склонение', text: 'При съемке вблизи небесного полюса увеличьте склонение, чтобы получить более длинные выдержки без смаза звезд.' },
   { name: '4. Симулируйте результат', text: 'Используйте слайдер симуляции, чтобы увидеть, как будет выглядеть звезда при превышении расчетного времени.' },
-];
-
-const bibliography: StarExposureCalculatorLocaleContent['bibliography'] = [
-  { name: 'Французское астрономическое общество: Модель NPF', url: 'https://sahavre.fr/wp/regle-npf-rule/' },
-  { name: 'PetaPixel: Почему правила 500 уже недостаточно', url: 'https://petapixel.com/2015/01/06/avoid-star-trails-following-500-rule/' },
-  { name: 'Lonely Speck: Калькулятор выдержки для астрофотографии', url: 'https://www.lonelyspeck.com/advanced-astrophotography-shutter-time-calculator/' },
 ];
 
 const seo: StarExposureCalculatorLocaleContent['seo'] = [
@@ -156,8 +151,7 @@ export const content: StarExposureCalculatorLocaleContent = {
   seo,
   faq,
   faqTitle: 'Часто задаваемые вопросы',
-  bibliography,
-  bibliographyTitle: 'Источники информации',
+  bibliography: 'Источники информации',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

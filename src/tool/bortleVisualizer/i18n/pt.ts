@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { BortleVisualizerUI, BortleVisualizerLocaleContent } from '../index';
 
@@ -48,13 +49,6 @@ const howTo: BortleVisualizerLocaleContent['howTo'] = [
   { name: '1. Ajuste o nível de Bortle', text: 'Arraste o cursor para simular como a poluição luminosa aumenta do nível 1 (deserto) para o nível 9 (centro da cidade).' },
   { name: '2. Observe os efeitos visuais', text: 'Note como as estrelas ténues desaparecem, a Via Láctea desvanece e o céu assume um tom alaranjado ou cinzento a cada nível.' },
   { name: '3. Identifique o seu nível atual', text: 'Compare o que vê do seu local de observação habitual com as simulações para identificar o seu nível de Bortle local.' },
-];
-
-const bibliography: BortleVisualizerLocaleContent['bibliography'] = [
-  { name: 'Artigo Original de Bortle (Sky & Telescope, 2001)', url: 'https://skyandtelescope.org/astronomy-resources/light-pollution-and-astronomy-the-bortle-dark-sky-scale/' },
-  { name: 'Mapa de Poluição Luminosa - Mapa Mundial', url: 'https://www.lightpollutionmap.info/' },
-  { name: 'International Dark-Sky Association', url: 'https://www.darksky.org/' },
-  { name: 'Globe at Night - Ciência Cidadã', url: 'https://www.globeatnight.org/' },
 ];
 
 const seo: BortleVisualizerLocaleContent['seo'] = [
@@ -159,8 +153,7 @@ export const content: BortleVisualizerLocaleContent = {
   seo,
   faq,
   faqTitle: 'Perguntas Frequentes',
-  bibliography,
-  bibliographyTitle: 'Referências Bibliográficas',
+  bibliography: 'Referências Bibliográficas',
   howTo,
   bortleData: ui.bortleData,
   schemas: [faqSchema as any, howToSchema as any, appSchema],

@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { BortleVisualizerUI, BortleVisualizerLocaleContent } from '../index';
 
@@ -48,13 +49,6 @@ const howTo: BortleVisualizerLocaleContent['howTo'] = [
   { name: '1. Bortle-Stufe anpassen', text: 'Ziehen Sie den Schieberegler, um zu simulieren, wie die Lichtverschmutzung von Stufe 1 (Wüste) bis Stufe 9 (Stadtzentrum) zunimmt.' },
   { name: '2. Visuelle Effekte beobachten', text: 'Achten Sie darauf, wie schwache Sterne verschwinden, die Milchstraße verblasst und der Himmel mit jeder Stufe einen orangefarbenen oder grauen Ton annimmt.' },
   { name: '3. Die eigene Stufe bestimmen', text: 'Vergleichen Sie den Anblick von Ihrem gewöhnlichen Beobachtungsort mit den Simulationen, um Ihre lokale Bortle-Stufe zu identifizieren.' },
-];
-
-const bibliography: BortleVisualizerLocaleContent['bibliography'] = [
-  { name: 'Originaler Bortle-Artikel (Sky & Telescope, 2001)', url: 'https://skyandtelescope.org/astronomy-resources/light-pollution-and-astronomy-the-bortle-dark-sky-scale/' },
-  { name: 'Lichtverschmutzungskarte - Weltkarte', url: 'https://www.lightpollutionmap.info/' },
-  { name: 'International Dark-Sky Association', url: 'https://www.darksky.org/' },
-  { name: 'Globe at Night - Bürgerwissenschaft', url: 'https://www.globeatnight.org/' },
 ];
 
 const seo: BortleVisualizerLocaleContent['seo'] = [
@@ -159,8 +153,7 @@ export const content: BortleVisualizerLocaleContent = {
   seo,
   faq,
   faqTitle: 'Häufig gestellte Fragen (FAQ)',
-  bibliography,
-  bibliographyTitle: 'Bibliographische Referenzen',
+  bibliography: 'Bibliographische Referenzen',
   howTo,
   bortleData: ui.bortleData,
   schemas: [faqSchema as any, howToSchema as any, appSchema],

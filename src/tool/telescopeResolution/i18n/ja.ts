@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { TelescopeResolutionUI, TelescopeResolutionLocaleContent } from '../index';
 
@@ -56,12 +57,6 @@ const howTo: TelescopeResolutionLocaleContent['howTo'] = [
   { name: '2. シーイングを調整する', text: 'シーイングのスライダーを動かして、観測当夜の大気の乱れをシミュレートします。' },
   { name: '3. 結果を確認する', text: 'ドーズとレイリーの限界値（秒）を確認します。数値が小さいほど、より高い分解能を持っていることを示します。' },
   { name: '4. 大気の制限を確認する', text: '「大気の制限」という警告が表示された場合、その夜はシーイングが望遠鏡の性能を上回って制限しています。' },
-];
-
-const bibliography: TelescopeResolutionLocaleContent['bibliography'] = [
-  { name: 'Sky & Telescope - Telescope Resolution Explained', url: 'https://skyandtelescope.org/stargazing-and-observing/celestial-objects-to-watch/telescope-calculator/' },
-  { name: 'British Astronomical Association - シーイング尺度', url: 'https://www.britastro.org/' },
-  { name: 'シーイング（Wikipedia）', url: 'https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0' },
 ];
 
 const seo: TelescopeResolutionLocaleContent['seo'] = [
@@ -169,8 +164,7 @@ export const content: TelescopeResolutionLocaleContent = {
   seo,
   faq,
   faqTitle: 'よくある質問 (FAQ)',
-  bibliography,
-  bibliographyTitle: '参考文献',
+  bibliography: '参考文献',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

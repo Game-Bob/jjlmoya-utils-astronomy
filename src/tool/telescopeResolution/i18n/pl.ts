@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { TelescopeResolutionUI, TelescopeResolutionLocaleContent } from '../index';
 
@@ -56,12 +57,6 @@ const howTo: TelescopeResolutionLocaleContent['howTo'] = [
   { name: '2. Dostosuj seeing', text: 'Przesuń suwak seeingu, aby zasymulować turbulencje atmosferyczne podczas nocy obserwacyjnej.' },
   { name: '3. Interpretuj wyniki', text: 'Obserwuj granice Dawesa i Rayleigha w sekundach łuku. Im niższa wartość, tym wyższa rozdzielczość.' },
   { name: '4. Sprawdź ograniczenia seeingu', text: 'Jeśli pojawi się alert seeingu, oznacza to, że tej nocy atmosfera ogranicza możliwości Twojego teleskopu.' },
-];
-
-const bibliography: TelescopeResolutionLocaleContent['bibliography'] = [
-  { name: 'Sky & Telescope - Wyjaśnienie rozdzielczości teleskopu', url: 'https://skyandtelescope.org/stargazing-and-observing/celestial-objects-to-watch/telescope-calculator/' },
-  { name: 'British Astronomical Association - Skala seeingu', url: 'https://www.britastro.org/' },
-  { name: 'Seeing astronomiczny (Wikipedia)', url: 'https://pl.wikipedia.org/wiki/Seeing' },
 ];
 
 const seo: TelescopeResolutionLocaleContent['seo'] = [
@@ -169,8 +164,7 @@ export const content: TelescopeResolutionLocaleContent = {
   seo,
   faq,
   faqTitle: 'Często zadawane pytania',
-  bibliography,
-  bibliographyTitle: 'Bibliografia',
+  bibliography: 'Bibliografia',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

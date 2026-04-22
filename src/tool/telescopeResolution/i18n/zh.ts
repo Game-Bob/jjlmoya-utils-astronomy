@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { TelescopeResolutionUI, TelescopeResolutionLocaleContent } from '../index';
 
@@ -56,12 +57,6 @@ const howTo: TelescopeResolutionLocaleContent['howTo'] = [
   { name: '2. 调整视宁度', text: '移动视宁度滑块，以模拟观测当晚的大气湍流情况。' },
   { name: '3. 解析结果', text: '观察以角秒为单位的道氏极限和瑞利极限。数值越低，分辨率越高。' },
   { name: '4. 检查大气限制', text: '如果出现视宁度警报，说明当晚的大气情况正限制着你望远镜的性能。' },
-];
-
-const bibliography: TelescopeResolutionLocaleContent['bibliography'] = [
-  { name: 'Sky & Telescope - 望远镜分辨率详解', url: 'https://skyandtelescope.org/stargazing-and-observing/celestial-objects-to-watch/telescope-calculator/' },
-  { name: '英国天文协会 - 视宁度等级', url: 'https://www.britastro.org/' },
-  { name: '天文视宁度 (维基百科)', url: 'https://zh.wikipedia.org/wiki/%E5%A4%A9%E6%96%87%E8%A7%86%E5%AE%81%E5%BA%A6' },
 ];
 
 const seo: TelescopeResolutionLocaleContent['seo'] = [
@@ -169,8 +164,7 @@ export const content: TelescopeResolutionLocaleContent = {
   seo,
   faq,
   faqTitle: '常见问题',
-  bibliography,
-  bibliographyTitle: '参考文献',
+  bibliography: '参考文献',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

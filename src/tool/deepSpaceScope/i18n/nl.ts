@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { DeepSpaceScopeUI, DeepSpaceScopeLocaleContent } from '../index';
 
@@ -65,11 +66,6 @@ const howTo: DeepSpaceScopeLocaleContent['howTo'] = [
   { name: '2. Pas de hemelkwaliteit aan', text: 'Stel het Bortle-niveau in van je gebruikelijke observatieplek om de werkelijke grensmagnitude te zien.' },
   { name: '3. Verken de sterrenkaart', text: 'Versleep de kaart om de volle 360° van de hemel te verkennen en ontdek welke objecten zichtbaar zijn met jouw apparatuur.' },
   { name: '4. Klik op objecten', text: 'Tik op een object in de lucht voor gedetailleerde informatie: type, magnitude en omschrijving.' },
-];
-
-const bibliography: DeepSpaceScopeLocaleContent['bibliography'] = [
-  { name: 'Complete Messier Catalogus', url: 'https://www.skyatnightmagazine.com/space-science/messier-catalogue' },
-  { name: 'Stellarium Web - Interactieve Sterrenkaart', url: 'https://stellarium-web.org/' },
 ];
 
 const seo: DeepSpaceScopeLocaleContent['seo'] = [
@@ -171,8 +167,7 @@ export const content: DeepSpaceScopeLocaleContent = {
   seo,
   faq,
   faqTitle: 'Veelgestelde Vragen',
-  bibliography,
-  bibliographyTitle: 'Bibliografische Referenties',
+  bibliography: 'Bibliografische Referenties',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

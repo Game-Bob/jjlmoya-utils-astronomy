@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { StarExposureCalculatorUI, StarExposureCalculatorLocaleContent } from '../index';
 
@@ -49,12 +50,6 @@ const howTo: StarExposureCalculatorLocaleContent['howTo'] = [
   { name: '2. Skonfiguruj swój sprzęt', text: 'Wprowadź ogniskową obiektywu i wybierz crop factor swojego aparatu.' },
   { name: '3. Dostosuj deklinację', text: 'Jeśli fotografujesz w pobliżu bieguna niebieskiego, zwiększ deklinację, aby pozwolić na dłuższą ekspozycję bez śladów ruchu.' },
   { name: '4. Symuluj przekroczenie czasu', text: 'Użyj suwaka symulacji, aby zobaczyć, jak wyglądałaby gwiazda po przekroczeniu obliczonego czasu ekspozycji.' },
-];
-
-const bibliography: StarExposureCalculatorLocaleContent['bibliography'] = [
-  { name: 'Francuskie Towarzystwo Astronomiczne: Model NPF', url: 'https://sahavre.fr/wp/regle-npf-rule/' },
-  { name: 'PetaPixel: Dlaczego reguła 500 już nie wystarcza', url: 'https://petapixel.com/2015/01/06/avoid-star-trails-following-500-rule/' },
-  { name: 'Lonely Speck: Kalkulator czasu ekspozycji w astrofotografii', url: 'https://www.lonelyspeck.com/advanced-astrophotography-shutter-time-calculator/' },
 ];
 
 const seo: StarExposureCalculatorLocaleContent['seo'] = [
@@ -156,8 +151,7 @@ export const content: StarExposureCalculatorLocaleContent = {
   seo,
   faq,
   faqTitle: 'Często zadawane pytania',
-  bibliography,
-  bibliographyTitle: 'Bibliografia',
+  bibliography: 'Bibliografia',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

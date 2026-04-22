@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { DeepSpaceScopeUI, DeepSpaceScopeLocaleContent } from '../index';
 
@@ -65,11 +66,6 @@ const howTo: DeepSpaceScopeLocaleContent['howTo'] = [
   { name: '2. Настройте качество неба', text: 'Установите уровень Бортля для вашего обычного места наблюдений, чтобы узнать реальную предельную величину.' },
   { name: '3. Изучите карту звездного неба', text: 'Перетаскивайте поле обзора на 360°, чтобы найти объекты, которые видны в ваш инструмент.' },
   { name: '4. Нажимайте на объекты', text: 'Нажмите на любой объект на небе, чтобы увидеть подробную информацию: тип, яркость и описание.' },
-];
-
-const bibliography: DeepSpaceScopeLocaleContent['bibliography'] = [
-  { name: 'Полный каталог Мессье', url: 'https://www.skyatnightmagazine.com/space-science/messier-catalogue' },
-  { name: 'Stellarium Web - интерактивная карта неба', url: 'https://stellarium-web.org/' },
 ];
 
 const seo: DeepSpaceScopeLocaleContent['seo'] = [
@@ -171,8 +167,7 @@ export const content: DeepSpaceScopeLocaleContent = {
   seo,
   faq,
   faqTitle: 'Часто задаваемые вопросы',
-  bibliography,
-  bibliographyTitle: 'Источники',
+  bibliography: 'Источники',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

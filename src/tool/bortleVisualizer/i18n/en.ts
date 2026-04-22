@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { BortleVisualizerUI, BortleVisualizerLocaleContent } from '../index';
 
@@ -48,13 +49,6 @@ const howTo: BortleVisualizerLocaleContent['howTo'] = [
   { name: '1. Adjust the Bortle level', text: 'Drag the slider to simulate how light pollution increases from level 1 (desert) to level 9 (city center).' },
   { name: '2. Observe the visual effects', text: 'Notice how faint stars disappear, the Milky Way fades, and the sky takes on an orange or grey tone with each level.' },
   { name: '3. Identify your current level', text: 'Compare what you see from your usual observing spot with the simulations to identify your local Bortle level.' },
-];
-
-const bibliography: BortleVisualizerLocaleContent['bibliography'] = [
-  { name: 'Original Bortle Article (Sky & Telescope, 2001)', url: 'https://skyandtelescope.org/astronomy-resources/light-pollution-and-astronomy-the-bortle-dark-sky-scale/' },
-  { name: 'Light Pollution Map - World Map', url: 'https://www.lightpollutionmap.info/' },
-  { name: 'International Dark-Sky Association', url: 'https://www.darksky.org/' },
-  { name: 'Globe at Night - Citizen Science', url: 'https://www.globeatnight.org/' },
 ];
 
 const seo: BortleVisualizerLocaleContent['seo'] = [
@@ -159,8 +153,7 @@ export const content: BortleVisualizerLocaleContent = {
   seo,
   faq,
   faqTitle: 'Frequently Asked Questions',
-  bibliography,
-  bibliographyTitle: 'Bibliographic References',
+  bibliography: 'Bibliographic References',
   howTo,
   bortleData: ui.bortleData,
   schemas: [faqSchema as any, howToSchema as any, appSchema],

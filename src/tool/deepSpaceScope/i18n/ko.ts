@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { DeepSpaceScopeUI, DeepSpaceScopeLocaleContent } from '../index';
 
@@ -65,11 +66,6 @@ const howTo: DeepSpaceScopeLocaleContent['howTo'] = [
   { name: '2. 하늘 조건 조정하기', text: '평소 관측하시는 장소의 보틀 등급을 설정하여 실제 한계 등급을 확인하세요.' },
   { name: '3. 성도 탐험하기', text: '화면을 드래그하여 전천 360°를 탐색하고, 현재 장비로 어떤 천체들이 보이는지 찾아보세요.' },
   { name: '4. 천체 클릭하기', text: '하늘의 천체를 탭하면 종류, 등급, 상세 설명 등 자세한 정보를 볼 수 있습니다.' },
-];
-
-const bibliography: DeepSpaceScopeLocaleContent['bibliography'] = [
-  { name: '메시에 목록 (전체 110개 천체)', url: 'https://www.skyatnightmagazine.com/space-science/messier-catalogue' },
-  { name: 'Stellarium Web - 대화형 성도', url: 'https://stellarium-web.org/' },
 ];
 
 const seo: DeepSpaceScopeLocaleContent['seo'] = [
@@ -171,8 +167,7 @@ export const content: DeepSpaceScopeLocaleContent = {
   seo,
   faq,
   faqTitle: '자주 묻는 질문 (FAQ)',
-  bibliography,
-  bibliographyTitle: '참고 문헌',
+  bibliography: '참고 문헌',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

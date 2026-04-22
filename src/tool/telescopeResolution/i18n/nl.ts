@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { TelescopeResolutionUI, TelescopeResolutionLocaleContent } from '../index';
 
@@ -56,12 +57,6 @@ const howTo: TelescopeResolutionLocaleContent['howTo'] = [
   { name: '2. Pas de seeing aan', text: 'Verschuif de seeing-regelaar om de atmosferische turbulentie van uw observatienacht te simuleren.' },
   { name: '3. Interpreteer de resultaten', text: 'Bekijk de Dawes- en Rayleigh-limieten in boogseconden. Hoe lager de waarde, hoe hoger de resolutie.' },
   { name: '4. Controleer op beperking door seeing', text: 'Als de seeing-waarschuwing verschijnt, beperkt de atmosfeer de prestaties van uw telescoop die nacht.' },
-];
-
-const bibliography: TelescopeResolutionLocaleContent['bibliography'] = [
-  { name: 'Sky & Telescope - Telescoop Resolutie Uitgelegd', url: 'https://skyandtelescope.org/stargazing-and-observing/celestial-objects-to-watch/telescope-calculator/' },
-  { name: 'British Astronomical Association - Seeing Schaal', url: 'https://www.britastro.org/' },
-  { name: 'Astronomische Seeing (Wikipedia)', url: 'https://nl.wikipedia.org/wiki/Seeing' },
 ];
 
 const seo: TelescopeResolutionLocaleContent['seo'] = [
@@ -169,8 +164,7 @@ export const content: TelescopeResolutionLocaleContent = {
   seo,
   faq,
   faqTitle: 'Veelgestelde Vragen',
-  bibliography,
-  bibliographyTitle: 'Bibliografische Referenties',
+  bibliography: 'Bibliografische Referenties',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { DeepSpaceScopeUI, DeepSpaceScopeLocaleContent } from '../index';
 
@@ -65,11 +66,6 @@ const howTo: DeepSpaceScopeLocaleContent['howTo'] = [
   { name: '2. Dostosuj jakość nieba', text: 'Ustaw poziom skali Bortle’a dla Twojego stałego miejsca obserwacji, aby zobaczyć rzeczywiste magnitudo graniczne.' },
   { name: '3. Eksploruj mapę gwiazd', text: 'Przeciągaj widok, aby przeszukać pełne 360° nieba i odkryć, jakie obiekty są widoczne przez Twój sprzęt.' },
   { name: '4. Klikaj w obiekty', text: 'Dotknij dowolnego obiektu na niebie, aby zobaczyć szczegółowe informacje: typ, jasność i opis.' },
-];
-
-const bibliography: DeepSpaceScopeLocaleContent['bibliography'] = [
-  { name: 'Pełny Katalog Messiera', url: 'https://www.skyatnightmagazine.com/space-science/messier-catalogue' },
-  { name: 'Stellarium Web - Interaktywna mapa nieba', url: 'https://stellarium-web.org/' },
 ];
 
 const seo: DeepSpaceScopeLocaleContent['seo'] = [
@@ -171,8 +167,7 @@ export const content: DeepSpaceScopeLocaleContent = {
   seo,
   faq,
   faqTitle: 'Często zadawane pytania',
-  bibliography,
-  bibliographyTitle: 'Bibliografia',
+  bibliography: 'Bibliografia',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

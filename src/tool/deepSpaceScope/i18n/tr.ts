@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { DeepSpaceScopeUI, DeepSpaceScopeLocaleContent } from '../index';
 
@@ -65,11 +66,6 @@ const howTo: DeepSpaceScopeLocaleContent['howTo'] = [
   { name: '2. Gökyüzü kalitesini ayarlayın', text: 'Gerçek sınır parlaklığı görmek için her zamanki gözlem yerinizin Bortle seviyesini ayarlayın.' },
   { name: '3. Yıldız haritasını keşfedin', text: 'Gökyüzünün tüm 360°\'sini keşfetmek ve ekipmanınızla hangi nesnelerin görülebildiğini keşfetmek için alanı sürükleyin.' },
   { name: '4. Nesnelere tıklayın', text: 'Ayrıntılı bilgilerini (tür, parlaklık ve açıklama) görmek için herhangi bir gökyüzü nesnesine dokunun.' },
-];
-
-const bibliography: DeepSpaceScopeLocaleContent['bibliography'] = [
-  { name: 'Tam Messier Kataloğu', url: 'https://www.skyatnightmagazine.com/space-science/messier-catalogue' },
-  { name: 'Stellarium Web - Etkileşimli Yıldız Haritası', url: 'https://stellarium-web.org/' },
 ];
 
 const seo: DeepSpaceScopeLocaleContent['seo'] = [
@@ -171,8 +167,7 @@ export const content: DeepSpaceScopeLocaleContent = {
   seo,
   faq,
   faqTitle: 'Sıkça Sorulan Sorular',
-  bibliography,
-  bibliographyTitle: 'Bibliyografik Referanslar',
+  bibliography: 'Bibliyografik Referanslar',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

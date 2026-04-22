@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { DeepSpaceScopeUI, DeepSpaceScopeLocaleContent } from '../index';
 
@@ -65,11 +66,6 @@ const howTo: DeepSpaceScopeLocaleContent['howTo'] = [
   { name: '2. Adjust sky quality', text: 'Set the Bortle level of your usual observing location to see the real limiting magnitude.' },
   { name: '3. Explore the star map', text: 'Drag the field to explore all 360° of sky and discover which objects are visible with your equipment.' },
   { name: '4. Click on objects', text: 'Tap any sky object to see its detailed information: type, magnitude, and description.' },
-];
-
-const bibliography: DeepSpaceScopeLocaleContent['bibliography'] = [
-  { name: 'Complete Messier Catalogue', url: 'https://www.skyatnightmagazine.com/space-science/messier-catalogue' },
-  { name: 'Stellarium Web - Interactive Star Chart', url: 'https://stellarium-web.org/' },
 ];
 
 const seo: DeepSpaceScopeLocaleContent['seo'] = [
@@ -171,8 +167,7 @@ export const content: DeepSpaceScopeLocaleContent = {
   seo,
   faq,
   faqTitle: 'Frequently Asked Questions',
-  bibliography,
-  bibliographyTitle: 'Bibliographic References',
+  bibliography: 'Bibliographic References',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

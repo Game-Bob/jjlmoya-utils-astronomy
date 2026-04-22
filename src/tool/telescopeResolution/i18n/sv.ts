@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { TelescopeResolutionUI, TelescopeResolutionLocaleContent } from '../index';
 
@@ -56,12 +57,6 @@ const howTo: TelescopeResolutionLocaleContent['howTo'] = [
   { name: '2. Justera seeing', text: 'Flytta seeing-reglaget för att simulera den atmosfäriska turbulensen under din observationsnatt.' },
   { name: '3. Tolka resultaten', text: 'Observera Dawes- och Rayleigh-gränserna i bågsekunder. Ju lägre värde, desto högre upplösning.' },
   { name: '4. Kontrollera om seeingen begränsar dig', text: 'Om seeing-varningen visas betyder det att atmosfären begränsar ditt teleskops prestanda den natten.' },
-];
-
-const bibliography: TelescopeResolutionLocaleContent['bibliography'] = [
-  { name: 'Sky & Telescope - Telescope Resolution Explained', url: 'https://skyandtelescope.org/stargazing-and-observing/celestial-objects-to-watch/telescope-calculator/' },
-  { name: 'British Astronomical Association - Seeing-skalan', url: 'https://www.britastro.org/' },
-  { name: 'Astronomisk seeing (Wikipedia)', url: 'https://sv.wikipedia.org/wiki/Seeing' },
 ];
 
 const seo: TelescopeResolutionLocaleContent['seo'] = [
@@ -169,8 +164,7 @@ export const content: TelescopeResolutionLocaleContent = {
   seo,
   faq,
   faqTitle: 'Vanliga frågor',
-  bibliography,
-  bibliographyTitle: 'Referenser',
+  bibliography: 'Referenser',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

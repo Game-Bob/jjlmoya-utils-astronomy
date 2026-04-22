@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { BortleVisualizerUI, BortleVisualizerLocaleContent } from '../index';
 
@@ -48,13 +49,6 @@ const howTo: BortleVisualizerLocaleContent['howTo'] = [
   { name: '1. Настройте уровень Бортля', text: 'Передвигайте ползунок, чтобы увидеть, как растет световое загрязнение от уровня 1 (пустыня) до уровня 9 (центр города).' },
   { name: '2. Наблюдайте визуальные эффекты', text: 'Обратите внимание, как исчезают тусклые звезды, меркнет Млечный Путь, а небо приобретает оранжевый или серый оттенок.' },
   { name: '3. Определите свой уровень', text: 'Сравните вид неба в вашем обычном месте наблюдений с симуляцией, чтобы узнать ваш локальный уровень по шкале Бортля.' },
-];
-
-const bibliography: BortleVisualizerLocaleContent['bibliography'] = [
-  { name: 'Оригинальная статья Джона Бортля (Sky & Telescope, 2001)', url: 'https://skyandtelescope.org/astronomy-resources/light-pollution-and-astronomy-the-bortle-dark-sky-scale/' },
-  { name: 'Карта светового загрязнения мира', url: 'https://www.lightpollutionmap.info/' },
-  { name: 'Международная ассоциация темного неба (IDA)', url: 'https://www.darksky.org/' },
-  { name: 'Проект Globe at Night - гражданская наука', url: 'https://www.globeatnight.org/' },
 ];
 
 const seo: BortleVisualizerLocaleContent['seo'] = [
@@ -159,8 +153,7 @@ export const content: BortleVisualizerLocaleContent = {
   seo,
   faq,
   faqTitle: 'Часто задаваемые вопросы',
-  bibliography,
-  bibliographyTitle: 'Библиография',
+  bibliography: 'Библиография',
   howTo,
   bortleData: ui.bortleData,
   schemas: [faqSchema as any, howToSchema as any, appSchema],

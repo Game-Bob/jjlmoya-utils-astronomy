@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { BortleVisualizerUI, BortleVisualizerLocaleContent } from '../index';
 
@@ -48,13 +49,6 @@ const howTo: BortleVisualizerLocaleContent['howTo'] = [
   { name: '1. ボートル・レベルを調整する', text: 'スライダーを動かして、レベル1（砂漠）からレベル9（都心部）まで光害がどのように増加するかをシミュレートします。' },
   { name: '2. 視覚的効果を観察する', text: 'レベルごとに暗い星が消え、天の川が薄れ、空がオレンジやグレーの色を帯びていく様子を確認してください。' },
   { name: '3. 現在のレベルを確認する', text: '普段の観測場所から見える景色とシミュレーションを比較して、現地のボートル・レベルを特定します。' },
-];
-
-const bibliography: BortleVisualizerLocaleContent['bibliography'] = [
-  { name: 'ボートル氏によるオリジナル記事（Sky & Telescope, 2001）', url: 'https://skyandtelescope.org/astronomy-resources/light-pollution-and-astronomy-the-bortle-dark-sky-scale/' },
-  { name: '光害マップ - 世界地図', url: 'https://www.lightpollutionmap.info/' },
-  { name: '国際ダークスカイ協会（IDA）', url: 'https://www.darksky.org/' },
-  { name: 'Globe at Night - シチズンサイエンス', url: 'https://www.globeatnight.org/' },
 ];
 
 const seo: BortleVisualizerLocaleContent['seo'] = [
@@ -159,8 +153,7 @@ export const content: BortleVisualizerLocaleContent = {
   seo,
   faq,
   faqTitle: 'よくある質問 (FAQ)',
-  bibliography,
-  bibliographyTitle: '参考文献',
+  bibliography: '参考文献',
   howTo,
   bortleData: ui.bortleData,
   schemas: [faqSchema as any, howToSchema as any, appSchema],

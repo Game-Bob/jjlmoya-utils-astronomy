@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { DeepSpaceScopeUI, DeepSpaceScopeLocaleContent } from '../index';
 
@@ -65,11 +66,6 @@ const howTo: DeepSpaceScopeLocaleContent['howTo'] = [
   { name: '2. 调整天空质量', text: '设置您常用观测地点的波特尔等级，以查看真实的极限星等。' },
   { name: '3. 探索星图', text: '拖动字段以探索 360° 的星空，发现您的设备可以观测到哪些天体。' },
   { name: '4. 点击天体', text: '点击任何天空天体以查看其详细信息：类型、星等和描述。' },
-];
-
-const bibliography: DeepSpaceScopeLocaleContent['bibliography'] = [
-  { name: '完整的梅西耶星表', url: 'https://www.skyatnightmagazine.com/space-science/messier-catalogue' },
-  { name: 'Stellarium Web - 交互式星图', url: 'https://stellarium-web.org/' },
 ];
 
 const seo: DeepSpaceScopeLocaleContent['seo'] = [
@@ -171,8 +167,7 @@ export const content: DeepSpaceScopeLocaleContent = {
   seo,
   faq,
   faqTitle: '常见问题',
-  bibliography,
-  bibliographyTitle: '参考文献',
+  bibliography: '参考文献',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { TelescopeResolutionUI, TelescopeResolutionLocaleContent } from '../index';
 
@@ -56,12 +57,6 @@ const howTo: TelescopeResolutionLocaleContent['howTo'] = [
   { name: '2. Sesuaikan seeing', text: 'Gerakkan slider seeing untuk mensimulasikan turbulensi atmosfer pada malam pengamatan Anda.' },
   { name: '3. Interpretasikan hasil', text: 'Amati batas Dawes dan Rayleigh dalam detik busur. Semakin rendah nilainya, semakin tinggi resolusinya.' },
   { name: '4. Periksa apakah seeing membatasi Anda', text: 'Jika peringatan seeing muncul, atmosfer membatasi kinerja teleskop Anda malam itu.' },
-];
-
-const bibliography: TelescopeResolutionLocaleContent['bibliography'] = [
-  { name: 'Sky & Telescope - Resolusi Teleskop Dijelaskan', url: 'https://skyandtelescope.org/stargazing-and-observing/celestial-objects-to-watch/telescope-calculator/' },
-  { name: 'British Astronomical Association - Skala Seeing', url: 'https://www.britastro.org/' },
-  { name: 'Seeing Astronomi (Wikipedia)', url: 'https://en.wikipedia.org/wiki/Astronomical_seeing' },
 ];
 
 const seo: TelescopeResolutionLocaleContent['seo'] = [
@@ -169,8 +164,7 @@ export const content: TelescopeResolutionLocaleContent = {
   seo,
   faq,
   faqTitle: 'Pertanyaan yang Sering Diajukan',
-  bibliography,
-  bibliographyTitle: 'Referensi Bibliografi',
+  bibliography: 'Referensi Bibliografi',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { StarExposureCalculatorUI, StarExposureCalculatorLocaleContent } from '../index';
 
@@ -49,12 +50,6 @@ const howTo: StarExposureCalculatorLocaleContent['howTo'] = [
   { name: '2. 機材の入力', text: 'レンズの焦点距離を入力し、カメラのセンサーサイズ（フルサイズ、APS-Cなど）を選択します。' },
   { name: '3. 赤緯の調整', text: '天の北極（北極星付近）などを撮る場合は、赤緯のスライダーを右に動かすことで、より長い露光が可能になります。' },
   { name: '4. シミュレーションで確認', text: 'スライダーを動かして、時間を超過した際に星がどのように流れて見えるかを確認できます。' },
-];
-
-const bibliography: StarExposureCalculatorLocaleContent['bibliography'] = [
-  { name: 'フランス天文学会：NPFモデルの解説', url: 'https://sahavre.fr/wp/regle-npf-rule/' },
-  { name: 'PetaPixel：なぜ500ルールでは不十分なのか', url: 'https://petapixel.com/2015/01/06/avoid-star-trails-following-500-rule/' },
-  { name: 'Lonely Speck：星空撮影シャッタースピード計算', url: 'https://www.lonelyspeck.com/advanced-astrophotography-shutter-time-calculator/' },
 ];
 
 const seo: StarExposureCalculatorLocaleContent['seo'] = [
@@ -156,8 +151,7 @@ export const content: StarExposureCalculatorLocaleContent = {
   seo,
   faq,
   faqTitle: 'よくある質問 (FAQ)',
-  bibliography,
-  bibliographyTitle: '参考文献',
+  bibliography: '参考文献',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

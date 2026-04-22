@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { TelescopeResolutionUI, TelescopeResolutionLocaleContent } from '../index';
 
@@ -56,12 +57,6 @@ const howTo: TelescopeResolutionLocaleContent['howTo'] = [
   { name: '2. Настройте сиинг', text: 'Передвиньте слайдер сиинга, чтобы симулировать атмосферную турбулентность в вашу ночь наблюдения.' },
   { name: '3. Интерпретируйте результаты', text: 'Обратите внимание на пределы Дауэса и Рэлея в угловых секундах. Чем ниже значение, тем выше разрешение.' },
   { name: '4. Проверьте ограничение атмосферы', text: 'Если появилось предупреждение о сиинге, значит, атмосфера ограничивает возможности вашего телескопа этой ночью.' },
-];
-
-const bibliography: TelescopeResolutionLocaleContent['bibliography'] = [
-  { name: 'Sky & Telescope - Разъяснение разрешения телескопа', url: 'https://skyandtelescope.org/stargazing-and-observing/celestial-objects-to-watch/telescope-calculator/' },
-  { name: 'British Astronomical Association - Шкала сиинга', url: 'https://www.britastro.org/' },
-  { name: 'Астрономическая видимость (Википедия)', url: 'https://ru.wikipedia.org/wiki/Астрономическая_видимость' },
 ];
 
 const seo: TelescopeResolutionLocaleContent['seo'] = [
@@ -169,8 +164,7 @@ export const content: TelescopeResolutionLocaleContent = {
   seo,
   faq,
   faqTitle: 'Часто задаваемые вопросы',
-  bibliography,
-  bibliographyTitle: 'Список литературы',
+  bibliography: 'Список литературы',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

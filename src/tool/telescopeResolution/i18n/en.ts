@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { TelescopeResolutionUI, TelescopeResolutionLocaleContent } from '../index';
 
@@ -56,12 +57,6 @@ const howTo: TelescopeResolutionLocaleContent['howTo'] = [
   { name: '2. Adjust seeing', text: 'Move the seeing slider to simulate the atmospheric turbulence on your observation night.' },
   { name: '3. Interpret results', text: 'Observe the Dawes and Rayleigh limits in arcseconds. The lower the value, the higher the resolution.' },
   { name: '4. Check if seeing limits you', text: 'If the seeing alert appears, the atmosphere is limiting your telescope\'s performance that night.' },
-];
-
-const bibliography: TelescopeResolutionLocaleContent['bibliography'] = [
-  { name: 'Sky & Telescope - Telescope Resolution Explained', url: 'https://skyandtelescope.org/stargazing-and-observing/celestial-objects-to-watch/telescope-calculator/' },
-  { name: 'British Astronomical Association - Seeing Scale', url: 'https://www.britastro.org/' },
-  { name: 'Astronomical Seeing (Wikipedia)', url: 'https://en.wikipedia.org/wiki/Astronomical_seeing' },
 ];
 
 const seo: TelescopeResolutionLocaleContent['seo'] = [
@@ -169,8 +164,7 @@ export const content: TelescopeResolutionLocaleContent = {
   seo,
   faq,
   faqTitle: 'Frequently Asked Questions',
-  bibliography,
-  bibliographyTitle: 'Bibliographic References',
+  bibliography: 'Bibliographic References',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

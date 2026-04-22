@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { TelescopeResolutionUI, TelescopeResolutionLocaleContent } from '../index';
 
@@ -56,12 +57,6 @@ const howTo: TelescopeResolutionLocaleContent['howTo'] = [
   { name: '2. 시잉 조정하기', text: '시잉 슬라이더를 움직여 관측 당일의 대기 상태를 시뮬레이션해 보세요.' },
   { name: '3. 결과 해석하기', text: '도즈 한계와 레이리 한계 값을 확인하세요. 수치가 낮을수록 분해능이 더 높다는 뜻입니다.' },
   { name: '4. 대기 제한 확인하기', text: '시잉 경고가 나타나면 해당 날은 대기가 망원경의 성능을 가로막고 있다는 뜻입니다.' },
-];
-
-const bibliography: TelescopeResolutionLocaleContent['bibliography'] = [
-  { name: 'Sky & Telescope - 망원경 분해능 설명', url: 'https://skyandtelescope.org/stargazing-and-observing/celestial-objects-to-watch/telescope-calculator/' },
-  { name: 'British Astronomical Association - 시잉 척도', url: 'https://www.britastro.org/' },
-  { name: '천문 시잉 (위키백과)', url: 'https://ko.wikipedia.org/wiki/%EC%8B%9C%EC%9E%89' },
 ];
 
 const seo: TelescopeResolutionLocaleContent['seo'] = [
@@ -169,8 +164,7 @@ export const content: TelescopeResolutionLocaleContent = {
   seo,
   faq,
   faqTitle: '자주 묻는 질문 (FAQ)',
-  bibliography,
-  bibliographyTitle: '참고 문헌',
+  bibliography: '참고 문헌',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { BortleVisualizerUI, BortleVisualizerLocaleContent } from '../index';
 
@@ -48,13 +49,6 @@ const howTo: BortleVisualizerLocaleContent['howTo'] = [
   { name: '1. 보틀 등급 조절하기', text: '슬라이더를 움직여 1단계(사막)부터 9단계(도심)까지 빛 공해가 어떻게 증가하는지 시뮬레이션해 보세요.' },
   { name: '2. 시각적 효과 관찰하기', text: '각 단계마다 어두운 별이 사라지고, 은하수가 흐려지며, 하늘이 주황색이나 회색 톤으로 변하는 과정을 확인해 보세요.' },
   { name: '3. 현재 등급 확인하기', text: '평소 관측 장소에서 보이는 모습과 시뮬레이션을 비교하여 현지의 보틀 등급을 파악해보세요.' },
-];
-
-const bibliography: BortleVisualizerLocaleContent['bibliography'] = [
-  { name: '보틀의 원본 기사 (Sky & Telescope, 2001)', url: 'https://skyandtelescope.org/astronomy-resources/light-pollution-and-astronomy-the-bortle-dark-sky-scale/' },
-  { name: '빛 공해 지도 - 세계 지도', url: 'https://www.lightpollutionmap.info/' },
-  { name: '국제 밤하늘 협회 (IDA)', url: 'https://www.darksky.org/' },
-  { name: 'Globe at Night - 시민 과학 프로젝트', url: 'https://www.globeatnight.org/' },
 ];
 
 const seo: BortleVisualizerLocaleContent['seo'] = [
@@ -159,8 +153,7 @@ export const content: BortleVisualizerLocaleContent = {
   seo,
   faq,
   faqTitle: '자주 묻는 질문 (FAQ)',
-  bibliography,
-  bibliographyTitle: '참고 문헌',
+  bibliography: '참고 문헌',
   howTo,
   bortleData: ui.bortleData,
   schemas: [faqSchema as any, howToSchema as any, appSchema],

@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { StarExposureCalculatorUI, StarExposureCalculatorLocaleContent } from '../index';
 
@@ -49,12 +50,6 @@ const howTo: StarExposureCalculatorLocaleContent['howTo'] = [
   { name: '2. Ekipmanınızı yapılandırın', text: 'Lensinizin odak uzaklığını girin ve kameranızın crop faktörünü seçin.' },
   { name: '3. Deklinasyonu ayarlayın', text: 'Gök kutbuna yakın fotoğraf çekiyorsanız, iz olmadan daha uzun pozlamalara izin vermek için deklinasyonu artırın.' },
   { name: '4. Süre aşımını simüle et', text: 'Hesaplanan süreyi aşarsanız bir yıldızın nasıl görüneceğini görselleştirmek için simülasyon kaydırıcısını kullanın.' },
-];
-
-const bibliography: StarExposureCalculatorLocaleContent['bibliography'] = [
-  { name: 'Fransız Astronomi Derneği: NPF Modeli', url: 'https://sahavre.fr/wp/regle-npf-rule/' },
-  { name: 'PetaPixel: 500 Kuralı Neden Artık Yeterli Değil', url: 'https://petapixel.com/2015/01/06/avoid-star-trails-following-500-rule/' },
-  { name: 'Lonely Speck: Astrofotoğrafçılık Perde Hızı Hesaplayıcı', url: 'https://www.lonelyspeck.com/advanced-astrophotography-shutter-time-calculator/' },
 ];
 
 const seo: StarExposureCalculatorLocaleContent['seo'] = [
@@ -156,8 +151,7 @@ export const content: StarExposureCalculatorLocaleContent = {
   seo,
   faq,
   faqTitle: 'Sıkça Sorulan Sorular',
-  bibliography,
-  bibliographyTitle: 'Bibliyografik Referanslar',
+  bibliography: 'Bibliyografik Referanslar',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { DeepSpaceScopeUI, DeepSpaceScopeLocaleContent } from '../index';
 
@@ -65,11 +66,6 @@ const howTo: DeepSpaceScopeLocaleContent['howTo'] = [
   { name: '2. 空の条件を調整する', text: '普段観測している場所のボートル・スケールを設定し、実際の限界等級を確認します。' },
   { name: '3. 星図を探索する', text: '画面をドラッグして360度の空を眺め、お使いの装備で見える天体を探してみましょう。' },
   { name: '4. 天体をクリックする', text: '気になる天体をタップすると、その種類や等級、詳しい解説が表示されます。' },
-];
-
-const bibliography: DeepSpaceScopeLocaleContent['bibliography'] = [
-  { name: 'メシエカタログ（全110天体解説）', url: 'https://www.skyatnightmagazine.com/space-science/messier-catalogue' },
-  { name: 'Stellarium Web - オンライン星図', url: 'https://stellarium-web.org/' },
 ];
 
 const seo: DeepSpaceScopeLocaleContent['seo'] = [
@@ -171,8 +167,7 @@ export const content: DeepSpaceScopeLocaleContent = {
   seo,
   faq,
   faqTitle: 'よくある質問 (FAQ)',
-  bibliography,
-  bibliographyTitle: '参考文献',
+  bibliography: '参考文献',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

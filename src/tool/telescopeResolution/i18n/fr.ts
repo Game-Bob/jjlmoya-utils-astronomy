@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { TelescopeResolutionUI, TelescopeResolutionLocaleContent } from '../index';
 
@@ -56,12 +57,6 @@ const howTo: TelescopeResolutionLocaleContent['howTo'] = [
   { name: '2. Ajustez le seeing', text: 'Déplacez le curseur de seeing pour simuler la turbulence atmosphérique de votre nuit d\'observation.' },
   { name: '3. Interprétez les résultats', text: 'Observez les limites de Dawes et Rayleigh en arcsecondes. Plus la valeur est faible, plus la résolution est élevée.' },
   { name: '4. Vérifiez si le seeing vous limite', text: 'Si l\'alerte de seeing apparaît, l\'atmosphère limite les performances de votre télescope cette nuit.' },
-];
-
-const bibliography: TelescopeResolutionLocaleContent['bibliography'] = [
-  { name: 'Sky & Telescope - Résolution du Télescope', url: 'https://skyandtelescope.org/stargazing-and-observing/celestial-objects-to-watch/telescope-calculator/' },
-  { name: 'British Astronomical Association - Échelle de Seeing', url: 'https://www.britastro.org/' },
-  { name: 'Turbulence Atmosphérique (Wikipedia)', url: 'https://en.wikipedia.org/wiki/Astronomical_seeing' },
 ];
 
 const seo: TelescopeResolutionLocaleContent['seo'] = [
@@ -169,8 +164,7 @@ export const content: TelescopeResolutionLocaleContent = {
   seo,
   faq,
   faqTitle: 'Questions Fréquentes',
-  bibliography,
-  bibliographyTitle: 'Références Bibliographiques',
+  bibliography: 'Références Bibliographiques',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

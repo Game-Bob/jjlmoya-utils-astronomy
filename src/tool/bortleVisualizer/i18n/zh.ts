@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { BortleVisualizerUI, BortleVisualizerLocaleContent } from '../index';
 
@@ -48,13 +49,6 @@ const howTo: BortleVisualizerLocaleContent['howTo'] = [
   { name: '1. 调整波特尔分级', text: '拖动滑块模拟光污染如何从 1 级（沙漠）增加到 9 级（市中心）。' },
   { name: '2. 观察视觉效果', text: '注意随着等级提升，暗星如何消失，银河如何变得模糊，以及天空如何呈现出橙色或灰色调。' },
   { name: '3. 确定你所在的等级', text: '将你在平时观测点观察到的情况与模拟效果进行对比，从而确定当地的波特尔等级。' },
-];
-
-const bibliography: BortleVisualizerLocaleContent['bibliography'] = [
-  { name: '波特尔原创文章 (Sky & Telescope, 2001)', url: 'https://skyandtelescope.org/astronomy-resources/light-pollution-and-astronomy-the-bortle-dark-sky-scale/' },
-  { name: '世界光污染地图', url: 'https://www.lightpollutionmap.info/' },
-  { name: '国际暗夜协会 (IDA)', url: 'https://www.darksky.org/' },
-  { name: '暗夜之球 (Globe at Night) - 公民科学项目', url: 'https://www.globeatnight.org/' },
 ];
 
 const seo: BortleVisualizerLocaleContent['seo'] = [
@@ -159,8 +153,7 @@ export const content: BortleVisualizerLocaleContent = {
   seo,
   faq,
   faqTitle: '常见问题',
-  bibliography,
-  bibliographyTitle: '参考文献',
+  bibliography: '参考文献',
   howTo,
   bortleData: ui.bortleData,
   schemas: [faqSchema as any, howToSchema as any, appSchema],

@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { BortleVisualizerUI, BortleVisualizerLocaleContent } from '../index';
 
@@ -48,13 +49,6 @@ const howTo: BortleVisualizerLocaleContent['howTo'] = [
   { name: '1. Bortle seviyesini ayarlayın', text: 'Işık kirliliğinin seviye 1\'den (çöl) seviye 9\'a (şehir merkezi) nasıl arttığını simüle etmek için kaydırıcıyı sürükleyin.' },
   { name: '2. Görsel efektleri gözlemleyin', text: 'Her seviyede sönük yıldızların nasıl kaybolduğuna, Samanyolu\'nun nasıl solduğuna ve gökyüzünün nasıl turuncu veya gri bir ton aldığına dikkat edin.' },
   { name: '3. Mevcut seviyenizi belirleyin', text: 'Yerel Bortle seviyenizi belirlemek için her zamanki gözlem noktanızdan gördüklerinizi simülasyonlarla karşılaştırın.' },
-];
-
-const bibliography: BortleVisualizerLocaleContent['bibliography'] = [
-  { name: 'Orijinal Bortle Makalesi (Sky & Telescope, 2001)', url: 'https://skyandtelescope.org/astronomy-resources/light-pollution-and-astronomy-the-bortle-dark-sky-scale/' },
-  { name: 'Işık Kirliliği Haritası - Dünya Haritası', url: 'https://www.lightpollutionmap.info/' },
-  { name: 'Uluslararası Karanlık Gökyüzü Birliği (IDA)', url: 'https://www.darksky.org/' },
-  { name: 'Geceleyin Dünya (Globe at Night) - Vatandaş Bilimi', url: 'https://www.globeatnight.org/' },
 ];
 
 const seo: BortleVisualizerLocaleContent['seo'] = [
@@ -159,8 +153,7 @@ export const content: BortleVisualizerLocaleContent = {
   seo,
   faq,
   faqTitle: 'Sıkça Sorulan Sorular',
-  bibliography,
-  bibliographyTitle: 'Bibliyografik Referanslar',
+  bibliography: 'Bibliyografik Referanslar',
   howTo,
   bortleData: ui.bortleData,
   schemas: [faqSchema as any, howToSchema as any, appSchema],

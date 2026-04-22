@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { StarExposureCalculatorUI, StarExposureCalculatorLocaleContent } from '../index';
 
@@ -49,12 +50,6 @@ const howTo: StarExposureCalculatorLocaleContent['howTo'] = [
   { name: '2. Konfigurasikan peralatan Anda', text: 'Masukkan panjang fokus lensa Anda dan pilih faktor crop kamera Anda.' },
   { name: '3. Sesuaikan deklinasi', text: 'Jika memotret di dekat kutub langit, tingkatkan deklinasi untuk memungkinkan eksposur yang lebih lama tanpa jejak.' },
   { name: '4. Simulasikan kelebihan waktu', text: 'Gunakan slider simulasi untuk memvisualisasikan bagaimana bintang akan terlihat jika Anda melebihi waktu yang dihitung.' },
-];
-
-const bibliography: StarExposureCalculatorLocaleContent['bibliography'] = [
-  { name: 'Masyarakat Astronomi Prancis: Model NPF', url: 'https://sahavre.fr/wp/regle-npf-rule/' },
-  { name: 'PetaPixel: Mengapa Aturan 500 Tidak Lagi Cukup', url: 'https://petapixel.com/2015/01/06/avoid-star-trails-following-500-rule/' },
-  { name: 'Lonely Speck: Kalkulator Waktu Rana Astrofotografi', url: 'https://www.lonelyspeck.com/advanced-astrophotography-shutter-time-calculator/' },
 ];
 
 const seo: StarExposureCalculatorLocaleContent['seo'] = [
@@ -156,8 +151,7 @@ export const content: StarExposureCalculatorLocaleContent = {
   seo,
   faq,
   faqTitle: 'Pertanyaan yang Sering Diajukan',
-  bibliography,
-  bibliographyTitle: 'Referensi Bibliografi',
+  bibliography: 'Referensi Bibliografi',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

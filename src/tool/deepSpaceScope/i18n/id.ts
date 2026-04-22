@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { DeepSpaceScopeUI, DeepSpaceScopeLocaleContent } from '../index';
 
@@ -65,11 +66,6 @@ const howTo: DeepSpaceScopeLocaleContent['howTo'] = [
   { name: '2. Sesuaikan kualitas langit', text: 'Atur level Bortle dari lokasi pengamatan biasa Anda untuk melihat magnitudo pembatas yang sebenarnya.' },
   { name: '3. Jelajahi peta bintang', text: 'Geser bidang untuk menjelajahi seluruh 360° langit dan temukan objek mana yang terlihat dengan peralatan Anda.' },
   { name: '4. Klik pada objek', text: 'Ketuk objek langit mana pun untuk melihat informasi detailnya: tipe, magnitudo, dan deskripsi.' },
-];
-
-const bibliography: DeepSpaceScopeLocaleContent['bibliography'] = [
-  { name: 'Katalog Messier Lengkap', url: 'https://www.skyatnightmagazine.com/space-science/messier-catalogue' },
-  { name: 'Stellarium Web - Peta Bintang Interaktif', url: 'https://stellarium-web.org/' },
 ];
 
 const seo: DeepSpaceScopeLocaleContent['seo'] = [
@@ -171,8 +167,7 @@ export const content: DeepSpaceScopeLocaleContent = {
   seo,
   faq,
   faqTitle: 'Pertanyaan yang Sering Diajukan',
-  bibliography,
-  bibliographyTitle: 'Referensi Bibliografi',
+  bibliography: 'Referensi Bibliografi',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { BortleVisualizerUI, BortleVisualizerLocaleContent } from '../index';
 
@@ -48,13 +49,6 @@ const howTo: BortleVisualizerLocaleContent['howTo'] = [
   { name: '1. Sesuaikan level Bortle', text: 'Geser slider untuk mensimulasikan bagaimana polusi cahaya meningkat dari level 1 (gurun) ke level 9 (pusat kota).' },
   { name: '2. Amati efek visualnya', text: 'Perhatikan bagaimana bintang-bintang redup menghilang, galaksi Bima Sakti memudar, dan langit berubah warna menjadi oranye atau abu-abu di setiap level.' },
   { name: '3. Identifikasi level Anda saat ini', text: 'Bandingkan apa yang Anda lihat dari tempat pengamatan biasa dengan simulasi kami untuk menentukan level Bortle lokal Anda.' },
-];
-
-const bibliography: BortleVisualizerLocaleContent['bibliography'] = [
-  { name: 'Artikel Asli Bortle (Sky & Telescope, 2001)', url: 'https://skyandtelescope.org/astronomy-resources/light-pollution-and-astronomy-the-bortle-dark-sky-scale/' },
-  { name: 'Peta Polusi Cahaya Dunia', url: 'https://www.lightpollutionmap.info/' },
-  { name: 'International Dark-Sky Association', url: 'https://www.darksky.org/' },
-  { name: 'Globe at Night - Sains Warga', url: 'https://www.globeatnight.org/' },
 ];
 
 const seo: BortleVisualizerLocaleContent['seo'] = [
@@ -159,8 +153,7 @@ export const content: BortleVisualizerLocaleContent = {
   seo,
   faq,
   faqTitle: 'Pertanyaan yang Sering Diajukan',
-  bibliography,
-  bibliographyTitle: 'Referensi Bibliografi',
+  bibliography: 'Referensi Bibliografi',
   howTo,
   bortleData: ui.bortleData,
   schemas: [faqSchema as any, howToSchema as any, appSchema],

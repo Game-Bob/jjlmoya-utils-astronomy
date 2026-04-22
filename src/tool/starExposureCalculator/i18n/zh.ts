@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { StarExposureCalculatorUI, StarExposureCalculatorLocaleContent } from '../index';
 
@@ -49,12 +50,6 @@ const howTo: StarExposureCalculatorLocaleContent['howTo'] = [
   { name: '2. 配置你的设备', text: '输入镜头的焦距并选择相机的传感器等效系数（Crop Factor）。' },
   { name: '3. 调整赤纬', text: '如果在天极附近拍摄，请增加赤纬，以允许更长的曝光时间而不产生拖尾。' },
   { name: '4. 模拟超时影响', text: '使用模拟滑块来可视化如果你超过计算时间，星星会是什么样子。' },
-];
-
-const bibliography: StarExposureCalculatorLocaleContent['bibliography'] = [
-  { name: '法国天文学会：NPF 模型', url: 'https://sahavre.fr/wp/regle-npf-rule/' },
-  { name: 'PetaPixel：为什么 500 法则不再足够', url: 'https://petapixel.com/2015/01/06/avoid-star-trails-following-500-rule/' },
-  { name: 'Lonely Speck：星空摄影快门时间计算器', url: 'https://www.lonelyspeck.com/advanced-astrophotography-shutter-time-calculator/' },
 ];
 
 const seo: StarExposureCalculatorLocaleContent['seo'] = [
@@ -156,8 +151,7 @@ export const content: StarExposureCalculatorLocaleContent = {
   seo,
   faq,
   faqTitle: '常见问题',
-  bibliography,
-  bibliographyTitle: '参考文献',
+  bibliography: '参考文献',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

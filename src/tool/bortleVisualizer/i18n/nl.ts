@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { BortleVisualizerUI, BortleVisualizerLocaleContent } from '../index';
 
@@ -48,13 +49,6 @@ const howTo: BortleVisualizerLocaleContent['howTo'] = [
   { name: '1. Pas de Bortle-schaal aan', text: 'Sleep de schuifregelaar om te simuleren hoe lichtvervuiling toeneemt van niveau 1 (woestijn) naar niveau 9 (stadscentrum).' },
   { name: '2. Observeer de visuele effecten', text: 'Zie hoe zwakkere sterren verdwijnen, de Melkweg vervaagt en de lucht een oranje of grijze tint krijgt bij elk niveau.' },
   { name: '3. Bepaal je huidige niveau', text: 'Vergelijk wat je ziet vanaf je gebruikelijke observatieplek met de simulaties om je lokale Bortle-niveau te bepalen.' },
-];
-
-const bibliography: BortleVisualizerLocaleContent['bibliography'] = [
-  { name: 'Origineel Bortle Artikel (Sky & Telescope, 2001)', url: 'https://skyandtelescope.org/astronomy-resources/light-pollution-and-astronomy-the-bortle-dark-sky-scale/' },
-  { name: 'Lichtvervuilingskaart - Wereldkaart', url: 'https://www.lightpollutionmap.info/' },
-  { name: 'International Dark-Sky Association', url: 'https://www.darksky.org/' },
-  { name: 'Globe at Night - Burgerwetenschap', url: 'https://www.globeatnight.org/' },
 ];
 
 const seo: BortleVisualizerLocaleContent['seo'] = [
@@ -159,8 +153,7 @@ export const content: BortleVisualizerLocaleContent = {
   seo,
   faq,
   faqTitle: 'Veelgestelde Vragen',
-  bibliography,
-  bibliographyTitle: 'Bibliografische Referenties',
+  bibliography: 'Bibliografische Referenties',
   howTo,
   bortleData: ui.bortleData,
   schemas: [faqSchema as any, howToSchema as any, appSchema],

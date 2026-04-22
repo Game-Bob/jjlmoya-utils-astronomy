@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { DeepSpaceScopeUI, DeepSpaceScopeLocaleContent } from '../index';
 
@@ -65,11 +66,6 @@ const howTo: DeepSpaceScopeLocaleContent['howTo'] = [
   { name: '2. Justera himmelskvaliteten', text: 'Ställ in Bortle-nivån för din vanliga observationsplats för att se den verkliga gränsmagnituden.' },
   { name: '3. Utforska stjärnkartan', text: 'Dra i fältet för att utforska hela himlavalvets 360° och upptäck vilka objekt som är synliga med din utrustning.' },
   { name: '4. Klicka på objekten', text: 'Tryck på valfritt himmelsobjekt för att se detaljerad information: typ, magnitud och beskrivning.' },
-];
-
-const bibliography: DeepSpaceScopeLocaleContent['bibliography'] = [
-  { name: 'Komplett Messier-katalog', url: 'https://www.skyatnightmagazine.com/space-science/messier-catalogue' },
-  { name: 'Stellarium Web - Interaktiv stjärnkarta', url: 'https://stellarium-web.org/' },
 ];
 
 const seo: DeepSpaceScopeLocaleContent['seo'] = [
@@ -171,8 +167,7 @@ export const content: DeepSpaceScopeLocaleContent = {
   seo,
   faq,
   faqTitle: 'Vanliga frågor',
-  bibliography,
-  bibliographyTitle: 'Referenser',
+  bibliography: 'Referenser',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

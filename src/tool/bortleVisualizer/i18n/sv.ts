@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { BortleVisualizerUI, BortleVisualizerLocaleContent } from '../index';
 
@@ -48,13 +49,6 @@ const howTo: BortleVisualizerLocaleContent['howTo'] = [
   { name: '1. Justera Bortle-nivån', text: 'Dra i reglaget för att simulera hur ljusföroreningen ökar från nivå 1 (öken) till nivå 9 (stadskärna).' },
   { name: '2. Observera de visuella effekterna', text: 'Notera hur svaga stjärnor försvinner, Vintergatan bleknar och himlen antar en orange eller grå ton för varje nivå.' },
   { name: '3. Identifiera din nuvarande nivå', text: 'Jämför vad du ser från din vanliga observationsplats med simuleringarna för att identifiera din lokala Bortle-nivå.' },
-];
-
-const bibliography: BortleVisualizerLocaleContent['bibliography'] = [
-  { name: 'Originalartikel av Bortle (Sky & Telescope, 2001)', url: 'https://skyandtelescope.org/astronomy-resources/light-pollution-and-astronomy-the-bortle-dark-sky-scale/' },
-  { name: 'Ljusföroreningskarta - Världskarta', url: 'https://www.lightpollutionmap.info/' },
-  { name: 'International Dark-Sky Association', url: 'https://www.darksky.org/' },
-  { name: 'Globe at Night - Medborgarforskning', url: 'https://www.globeatnight.org/' },
 ];
 
 const seo: BortleVisualizerLocaleContent['seo'] = [
@@ -159,8 +153,7 @@ export const content: BortleVisualizerLocaleContent = {
   seo,
   faq,
   faqTitle: 'Vanliga frågor',
-  bibliography,
-  bibliographyTitle: 'Bibliografiska referenser',
+  bibliography: 'Bibliografiska referenser',
   howTo,
   bortleData: ui.bortleData,
   schemas: [faqSchema as any, howToSchema as any, appSchema],

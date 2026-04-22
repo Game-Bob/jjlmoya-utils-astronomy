@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { StarExposureCalculatorUI, StarExposureCalculatorLocaleContent } from '../index';
 
@@ -49,12 +50,6 @@ const howTo: StarExposureCalculatorLocaleContent['howTo'] = [
   { name: '2. 장비 설정', text: '렌즈의 초점 거리를 입력하고 카메라의 크롭 계수(풀프레임, APS-C 등)를 선택하세요.' },
   { name: '3. 적위 조정', text: '천구의 극(북극성 부근) 근처를 촬영하는 경우 적위를 높여 궤적 없이 더 긴 노출이 가능하도록 계산하세요.' },
   { name: '4. 시간 초과 시뮬레이션', text: '시뮬레이션 슬라이더를 사용하여 계산된 시간을 초과했을 때 별이 어떻게 보이는지 미리 확인하세요.' },
-];
-
-const bibliography: StarExposureCalculatorLocaleContent['bibliography'] = [
-  { name: '프랑스 천문학회: NPF 모델 상세 설명', url: 'https://sahavre.fr/wp/regle-npf-rule/' },
-  { name: 'PetaPixel: 왜 더 이상 500 법칙만으로는 충분하지 않은가', url: 'https://petapixel.com/2015/01/06/avoid-star-trails-following-500-rule/' },
-  { name: 'Lonely Speck: 천체 사진 셔터 스피드 계산 도구', url: 'https://www.lonelyspeck.com/advanced-astrophotography-shutter-time-calculator/' },
 ];
 
 const seo: StarExposureCalculatorLocaleContent['seo'] = [
@@ -156,8 +151,7 @@ export const content: StarExposureCalculatorLocaleContent = {
   seo,
   faq,
   faqTitle: '자주 묻는 질문 (FAQ)',
-  bibliography,
-  bibliographyTitle: '참고 문헌',
+  bibliography: '참고 문헌',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

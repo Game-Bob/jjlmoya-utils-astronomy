@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { TelescopeResolutionUI, TelescopeResolutionLocaleContent } from '../index';
 
@@ -56,12 +57,6 @@ const howTo: TelescopeResolutionLocaleContent['howTo'] = [
   { name: '2. Seeing ayarını yapın', text: 'Gözlem gecenizdeki atmosferik türbülansı simüle etmek için seeing kaydırıcısını hareket ettirin.' },
   { name: '3. Sonuçları yorumlayın', text: 'Arksaniye cinsinden Dawes ve Rayleigh limitlerini gözlemleyin. Değer ne kadar düşükse, çözünürlük o kadar yüksektir.' },
   { name: '4. Seeing sınırını kontrol edin', text: 'Seeing uyarısı görünürse, atmosfer o gece teleskobunuzun performansını sınırlıyor demektir.' },
-];
-
-const bibliography: TelescopeResolutionLocaleContent['bibliography'] = [
-  { name: 'Sky & Telescope - Teleskop Çözünürlüğü Açıklaması', url: 'https://skyandtelescope.org/stargazing-and-observing/celestial-objects-to-watch/telescope-calculator/' },
-  { name: 'British Astronomical Association - Seeing Ölçeği', url: 'https://www.britastro.org/' },
-  { name: 'Astronomik Seeing (Vikipedi)', url: 'https://tr.wikipedia.org/wiki/Astronomik_g%C3%B6r%C3%BCnt%C3%BC' },
 ];
 
 const seo: TelescopeResolutionLocaleContent['seo'] = [
@@ -169,8 +164,7 @@ export const content: TelescopeResolutionLocaleContent = {
   seo,
   faq,
   faqTitle: 'Sıkça Sorulan Sorular',
-  bibliography,
-  bibliographyTitle: 'Bibliyografik Referanslar',
+  bibliography: 'Bibliyografik Referanslar',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

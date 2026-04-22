@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { StarExposureCalculatorUI, StarExposureCalculatorLocaleContent } from '../index';
 
@@ -49,12 +50,6 @@ const howTo: StarExposureCalculatorLocaleContent['howTo'] = [
   { name: '2. Konfigurera din utrustning', text: 'Ange objektivets brännvidd och välj din kameras crop-faktor.' },
   { name: '3. Justera deklinationen', text: 'Om du fotograferar nära den himmelska polen, öka deklinationen för att tillåta längre exponeringar utan spår.' },
   { name: '4. Simulera tidsöverskridande', text: 'Använd simuleringsreglaget för att visualisera hur en stjärna skulle se ut om du överskrider den beräknade tiden.' },
-];
-
-const bibliography: StarExposureCalculatorLocaleContent['bibliography'] = [
-  { name: 'Franska astronomiska sällskapet: NPF-modellen', url: 'https://sahavre.fr/wp/regle-npf-rule/' },
-  { name: 'PetaPixel: Varför 500-regeln inte längre räcker till', url: 'https://petapixel.com/2015/01/06/avoid-star-trails-following-500-rule/' },
-  { name: 'Lonely Speck: Kalkylator för exponeringstid inom astrofotografering', url: 'https://www.lonelyspeck.com/advanced-astrophotography-shutter-time-calculator/' },
 ];
 
 const seo: StarExposureCalculatorLocaleContent['seo'] = [
@@ -156,8 +151,7 @@ export const content: StarExposureCalculatorLocaleContent = {
   seo,
   faq,
   faqTitle: 'Vanliga frågor',
-  bibliography,
-  bibliographyTitle: 'Referenser',
+  bibliography: 'Referenser',
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };
