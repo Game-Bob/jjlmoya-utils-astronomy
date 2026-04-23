@@ -163,8 +163,7 @@ export const content: TelescopeResolutionLocaleContent = {
   ui,
   seo,
   faq,
-  faqTitle: 'Часто задаваемые вопросы',
-  bibliography: 'Список литературы',
+  bibliography,
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

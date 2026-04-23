@@ -150,8 +150,7 @@ export const content: StarExposureCalculatorLocaleContent = {
   ui,
   seo,
   faq,
-  faqTitle: 'Häufig gestellte Fragen (FAQ)',
-  bibliography: 'Bibliographische Referenzen',
+  bibliography,
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

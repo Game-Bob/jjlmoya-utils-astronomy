@@ -166,8 +166,7 @@ export const content: DeepSpaceScopeLocaleContent = {
   ui,
   seo,
   faq,
-  faqTitle: 'Часто задаваемые вопросы',
-  bibliography: 'Источники',
+  bibliography,
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };

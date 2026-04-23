@@ -30,9 +30,7 @@ export interface ToolLocaleContent<TUI extends Record<string, any> = Record<stri
   ui: TUI;
   seo: SEOSection[];
   faq: FAQItem[];
-  faqTitle: string;
   bibliography: BibliographyEntry[];
-  bibliographyTitle?: string;
   howTo: HowToStep[];
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   schemas: any[];

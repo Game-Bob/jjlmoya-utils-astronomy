@@ -163,8 +163,7 @@ export const content: TelescopeResolutionLocaleContent = {
   ui,
   seo,
   faq,
-  faqTitle: 'Pertanyaan yang Sering Diajukan',
-  bibliography: 'Referensi Bibliografi',
+  bibliography,
   howTo,
   schemas: [faqSchema as any, howToSchema as any, appSchema],
 };
