@@ -3,9 +3,7 @@ import type { SEOSection } from '@jjlmoya/utils-shared';
 export type { SEOSection };
 
 export type KnownLocale =
-  | 'ar' | 'da' | 'de' | 'en' | 'es' | 'fi'
-  | 'fr' | 'it' | 'ja' | 'ko' | 'nb' | 'nl'
-  | 'pl' | 'pt' | 'ru' | 'sv' | 'tr' | 'zh';
+  | 'de' | 'en' | 'es' | 'fr' | 'id' | 'it' | 'ja' | 'ko' | 'nl' | 'pl' | 'pt' | 'ru' | 'sv' | 'tr' | 'zh';
 
 export interface FAQItem {
   question: string;

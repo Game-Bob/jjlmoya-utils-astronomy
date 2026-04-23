@@ -76,6 +76,7 @@ describe('Tool Validation Suite', () => {
                   'alcance-telescopio',
                   'calculadora-regla-500',
                   'calculadora-resolucion-telescopio',
+                  'calculadora-oculares',
                 ];
                 expect(validSlugs).toContain(content.slug);
               }
@@ -101,12 +102,12 @@ describe('Tool Validation Suite', () => {
   });
 
   describe('Library Registration', () => {
-    it('should have 4 tools in ALL_TOOLS', () => {
-      expect(ALL_TOOLS.length).toBe(4);
+    it('should have 5 tools in ALL_TOOLS', () => {
+      expect(ALL_TOOLS.length).toBe(5);
     });
 
     it('should have all tools in astronomyCategory', () => {
-      expect(astronomyCategory.tools.length).toBe(4);
+      expect(astronomyCategory.tools.length).toBe(5);
       ALL_TOOLS.forEach(({ entry }) => {
         const exists = astronomyCategory.tools.some((t: any) => t.id === entry.id);
         expect(exists).toBe(true);

@@ -3,10 +3,11 @@ import { bortleVisualizer } from '../tool/bortleVisualizer/entry';
 import { deepSpaceScope } from '../tool/deepSpaceScope/entry';
 import { starExposureCalculator } from '../tool/starExposureCalculator/entry';
 import { telescopeResolution } from '../tool/telescopeResolution/entry';
+import { eyepieceCalculator } from '../tool/smartEyepieceCalculator/entry';
 
 export const toolsCategory: AstronomyCategoryEntry = {
   icon: 'mdi:telescope',
-  tools: [bortleVisualizer, deepSpaceScope, starExposureCalculator, telescopeResolution],
+  tools: [bortleVisualizer, deepSpaceScope, starExposureCalculator, telescopeResolution, eyepieceCalculator],
   i18n: {
     de: () => import('./i18n/de').then((m) => m.content),
     en: () => import('./i18n/en').then((m) => m.content),

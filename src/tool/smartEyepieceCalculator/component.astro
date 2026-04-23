@@ -1,0 +1,125 @@
+---
+import type { EyepieceCalculatorUI } from './entry';
+import './smart-eyepiece-calculator.css';
+
+interface Props {
+  ui: EyepieceCalculatorUI;
+}
+
+const { ui } = Astro.props;
+---
+
+<script define:vars={{ ui }} is:inline>
+  window.__epcUI = ui;
+</script>
+
+<div class="epc-wrapper" id="epc-root">
+  <div class="epc-layout">
+    <div class="epc-controls">
+      <section class="epc-section">
+        <h3 class="epc-section-title">{ui.telescopeTitle}</h3>
+        
+        <div class="epc-control-group">
+          <label class="epc-label">{ui.presetsLabel}</label>
+          <select id="epc-preset" class="epc-select">
+            <option value="">{ui.presetsPlaceholder}</option>
+            <option value="60,700">Refractor 60/700 (f/11.6)</option>
+            <option value="72,400">Apo ED72 Astrofoto 72/400 (f/5.5)</option>
+            <option value="80,400">Refractor Gran Campo 80/400 (f/5)</option>
+            <option value="127,1000">Celestron 127EQ (f/7.9)</option>
+            <option value="130,650">Sky-Watcher 130/650 (f/5)</option>
+            <option value="150,1500">Maksutov 150/1500 (f/10)</option>
+            <option value="200,1200">Dobson 8" 200/1200 (f/6)</option>
+            <option value="300,1500">Dobson 12" Gigante 300/1500 (f/5)</option>
+          </select>
+        </div>
+
+        <div class="epc-grid-2">
+          <div class="epc-control-group">
+            <label class="epc-label" title={ui.apertureHelp}>
+              {ui.apertureLabel}
+              <svg class="epc-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            </label>
+            <input type="number" id="epc-aperture" class="epc-input" placeholder="Ej: 150" />
+          </div>
+          <div class="epc-control-group">
+            <label class="epc-label" title={ui.focalHelp}>
+              {ui.focalLabel}
+              <svg class="epc-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            </label>
+            <input type="number" id="epc-focal" class="epc-input" placeholder="Ej: 750" />
+          </div>
+        </div>
+      </section>
+
+      <section class="epc-section">
+        <h3 class="epc-section-title">{ui.eyepiecesTitle}</h3>
+        <div id="epc-cards-container" class="epc-cards-container"></div>
+        <button id="epc-add-btn" class="epc-btn-primary">{ui.addEyepieceBtn}</button>
+      </section>
+    </div>
+
+    <div class="epc-simulator-panel">
+      <h3 class="epc-section-title">{ui.simulatorTitle}</h3>
+      
+      <div class="epc-control-group">
+        <select id="epc-target" class="epc-select">
+          <option value="moon">{ui.targetMoon} (0.5°)</option>
+          <option value="pleiades">{ui.targetPleiades} (1.8°)</option>
+          <option value="andromeda">{ui.targetAndromeda} (3.16°)</option>
+          <option value="m13">{ui.targetM13} (0.33°)</option>
+          <option value="saturn">{ui.targetSaturn} (0.012°)</option>
+        </select>
+      </div>
+
+      <div class="epc-sim-container">
+        <div class="epc-sim-canvas" id="epc-sim-canvas">
+          <div class="epc-sim-target" id="epc-sim-target"></div>
+          <div class="epc-sim-noise" id="epc-sim-noise"></div>
+          <div id="epc-sim-masks"></div>
+        </div>
+      </div>
+
+      <div id="epc-feedback-status" class="epc-feedback-card"></div>
+
+      <div class="epc-cta-box" id="epc-cta">
+         {ui.ctaText}
+      </div>
+    </div>
+  </div>
+</div>
+
+<template id="epc-card-template">
+  <div class="epc-card">
+    <div class="epc-card-header">
+      <span class="epc-card-title">Ocular</span>
+      <button class="epc-card-remove"><svg viewBox="0 0 24 24" fill="none" class="epc-icon"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="epc-grid-2">
+      <div class="epc-control-group">
+        <label class="epc-label" title="Focal del ocular en mm">Focal (mm)</label>
+        <input type="number" class="epc-input epc-ep-focal" placeholder="Ej: 10" />
+      </div>
+      <div class="epc-control-group">
+        <label class="epc-label" title="Campo aparente en grados">AFOV (°)</label>
+        <input type="number" class="epc-input epc-ep-afov" placeholder="Ej: 52" value="52" />
+      </div>
+    </div>
+    <div class="epc-card-results">
+      <div class="epc-stat"><span class="epc-stat-val" data-type="mag">--</span><span class="epc-stat-lbl">x</span></div>
+      <div class="epc-stat"><span class="epc-stat-val" data-type="tfov">--</span><span class="epc-stat-lbl">°</span></div>
+      <div class="epc-stat"><span class="epc-stat-val" data-type="pupil">--</span><span class="epc-stat-lbl">mm</span></div>
+    </div>
+  </div>
+</template>
+
+
+
+<script>
+  import { EyepieceApp } from './app';
+
+  if (typeof window !== 'undefined') {
+    const win = window as unknown as { __epcUI: Record<string, string> };
+    new EyepieceApp(win.__epcUI);
+  }
+</script>
