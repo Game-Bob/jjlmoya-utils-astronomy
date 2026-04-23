@@ -34,6 +34,8 @@ export async function getStaticPaths() {
       ]),
     ) as Partial<Record<KnownLocale, string>>;
 
+    const englishSlug = (await entry.i18n.en!()).slug;
+
     for (const { locale, content } of localeContents) {
       const allToolsNav = await Promise.all(
         ALL_TOOLS.map(async ({ entry: navEntry }) => ({
@@ -45,7 +47,7 @@ export async function getStaticPaths() {
       );
       paths.push({
         params: { locale, slug: content.slug },
-        props: { Component, locale, content, localeUrls, allToolsNav },
+        props: { Component, locale, content, localeUrls, allToolsNav, englishSlug },
       });
     }
   }
@@ -66,9 +68,14 @@ interface Props {
   content: ToolLocaleContent;
   localeUrls: Partial<Record<KnownLocale, string>>;
   allToolsNav: NavItem[];
+  englishSlug: string;
 }
 
-const { Component, locale, content, localeUrls, allToolsNav } = Astro.props;
+const { Component, locale, content, localeUrls, allToolsNav, englishSlug } = Astro.props;
+
+const cssFiles = import.meta.glob('../../tool/**/*.css', { query: '?raw', import: 'default' });
+const cssKey = Object.keys(cssFiles).find((k) => k.endsWith(`/${englishSlug}.css`));
+const toolCss = cssKey ? await cssFiles[cssKey]() as string : '';
 
 const seoContent: UtilitySEOContent = { locale, sections: content.seo };
 
@@ -89,6 +96,7 @@ const titleBase = words.slice(1).join(" ") || "";
     tools={allToolsNav}
   />
   <Fragment slot="head">
+    {toolCss && <style set:html={toolCss} />}
     {
       content.schemas.map((schema) => (
         <script
