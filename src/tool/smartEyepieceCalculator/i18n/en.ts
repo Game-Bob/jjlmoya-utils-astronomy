@@ -2,6 +2,7 @@ import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { EyepieceCalculatorLocaleContent } from '../entry';
 
+const slug = 'smart-eyepiece-calculator';
 const title = 'Eyepiece Calculator & Visual Simulator';
 const description = 'Calculate magnification, true field of view (TFOV), and exit pupil for any eyepiece with your telescope. Features an interactive visual simulator.';
 
@@ -153,7 +154,7 @@ const appSchema: WithContext<SoftwareApplication> = {
 };
 
 export const content: EyepieceCalculatorLocaleContent = {
-  slug: 'smart-eyepiece-calculator',
+  slug,
   title,
   description,
   ui,

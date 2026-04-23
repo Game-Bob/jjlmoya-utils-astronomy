@@ -4,7 +4,12 @@
       "Read(//d/code/**)",
       "Bash(find d:/code/jjlmoya-utils-* -path \"*/tool/*/seo.astro\")",
       "Bash(python3 -)",
-      "Bash(find d:/code/jjlmoya-utils-*/src/tool -name \"seo.astro\")"
+      "Bash(find d:/code/jjlmoya-utils-*/src/tool -name \"seo.astro\")",
+      "Bash(sed -i 's/fs\\\\.//' d:/code/jjlmoya-utils-astronomy/src/tests/tool_structure.test.ts)",
+      "Bash(sed -i 's/path\\\\.join/join/g' d:/code/jjlmoya-utils-astronomy/src/tests/tool_structure.test.ts)",
+      "Bash(sed -i 's/fs\\\\.existsSync/existsSync/g' d:/code/jjlmoya-utils-astronomy/src/tests/tool_structure.test.ts)",
+      "Bash(sed -i 's/fs\\\\.readFileSync/readFileSync/g' d:/code/jjlmoya-utils-astronomy/src/tests/tool_structure.test.ts)",
+      "Bash(sed -i 's/fs\\\\.readdirSync/readdirSync/g' d:/code/jjlmoya-utils-astronomy/src/tests/tool_structure.test.ts)"
     ]
   }
 }
