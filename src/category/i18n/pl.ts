@@ -12,12 +12,12 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Od oceny jakości nieba w skali Bortle\'a po precyzyjne obliczanie rozdzielczości optycznej teleskopu – każde narzędzie wykorzystuje wzory zatwierdzone przez międzynarodową społeczność astronomiczną, aby każda noc spędzona pod gwiazdami była produktywna i niezapomniana.',
+      html: 'Od oceny jakości nieba w skali Bortle\'a po precyzyjne obliczanie rozdzielczości optycznej teleskopu - każde narzędzie wykorzystuje wzory zatwierdzone przez międzynarodową społeczność astronomiczną, aby każda noc spędzona pod gwiazdami była produktywna i niezapomniana.',
     },
     { type: 'title', text: 'Zanieczyszczenie Światłem: Największy Wróg Astronoma', level: 2 },
     {
       type: 'paragraph',
-      html: 'Żyjemy w coraz bardziej oświetlonym świecie. <strong>Zanieczyszczenie światłem</strong> rośnie w tempie 10% rocznie i wymazuje nocne niebo dla ponad 80% populacji świata. Skala Bortle\'a, z jej 9 poziomami, jest międzynarodowym standardem ilościowego określania tej straty. Nasz symulator ciemnego nieba pozwala na interaktywną wizualizację tego, jak sztuczne światło zmienia firmament – od absolutnej czerni odległej pustyni po uciążliwy pomarańcz metropolii.',
+      html: 'Żyjemy w coraz bardziej oświetlonym świecie. <strong>Zanieczyszczenie światłem</strong> rośnie w tempie 10% rocznie i wymazuje nocne niebo dla ponad 80% populacji świata. Skala Bortle\'a, z jej 9 poziomami, jest międzynarodowym standardem ilościowego określania tej straty. Nasz symulator ciemnego nieba pozwala na interaktywną wizualizację tego, jak sztuczne światło zmienia firmament - od absolutnej czerni odległej pustyni po uciążliwy pomarańcz metropolii.',
     },
     { type: 'title', text: 'Twój Teleskop: Zrozumienie Jego Rzeczywistych Możliwości', level: 2 },
     {

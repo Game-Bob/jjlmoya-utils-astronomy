@@ -3,13 +3,13 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { BortleVisualizerUI, BortleVisualizerLocaleContent } from '../index';
 
 const slug = 'symulator-ciemnego-nieba';
-const title = 'Symulator ciemnego nieba (Skala Bortle’a)';
-const description = 'Interaktywna wizualizacja 9 poziomów skali Bortle’a. Odkryj, jak zanieczyszczenie światłem wymazuje rozgwieżdżone nocne niebo.';
+const title = 'Symulator ciemnego nieba (Skala Bortle\'a)';
+const description = 'Interaktywna wizualizacja 9 poziomów skali Bortle\'a. Odkryj, jak zanieczyszczenie światłem wymazuje rozgwieżdżone nocne niebo.';
 
 const ui: BortleVisualizerUI = {
   toolTitle: 'Symulator ciemnego nieba',
   sliderLabel: 'Przesuń, aby dostosować poziom zanieczyszczenia światłem',
-  classLabel: 'Klasa Bortle’a',
+  classLabel: 'Klasa Bortle\'a',
   nelmLabel: 'NELM',
   sqmLabel: 'SQM',
   classPrefix: 'KLASA',
@@ -28,11 +28,11 @@ const ui: BortleVisualizerUI = {
 
 const faq: BortleVisualizerLocaleContent['faq'] = [
   {
-    question: 'Czym jest skala Bortle’a?',
-    answer: 'To 9-punktowa skala numeryczna mierząca jasność nocnego nieba w danym miejscu. Została stworzona przez astronoma amatora Johna E. Bortle’a w 2001 roku i opublikowana w Sky & Telescope. Poziom 1 reprezentuje najciemniejsze możliwe niebo (odległe pustynie), a poziom 9 – najbardziej zanieczyszczone światłem (centra miast).',
+    question: 'Czym jest skala Bortle\'a?',
+    answer: 'To 9-punktowa skala numeryczna mierząca jasność nocnego nieba w danym miejscu. Została stworzona przez astronoma amatora Johna E. Bortle\'a w 2001 roku i opublikowana w Sky & Telescope. Poziom 1 reprezentuje najciemniejsze możliwe niebo (odległe pustynie), a poziom 9 - najbardziej zanieczyszczone światłem (centra miast).',
   },
   {
-    question: 'Przy jakim poziomie Bortle’a widać Drogę Mleczną?',
+    question: 'Przy jakim poziomie Bortle\'a widać Drogę Mleczną?',
     answer: 'Droga Mleczna zaczyna być wyraźnie widoczna od poziomu Bortle 4 (strefa wiejska/podmiejska). Na poziomach 1 i 2 jest spektakularna, z wyraźną strukturą zdolną nawet rzucać słabe cienie. Od poziomu Bortle 6 jest praktycznie niewidoczna gołym okiem.',
   },
   {
@@ -46,15 +46,15 @@ const faq: BortleVisualizerLocaleContent['faq'] = [
 ];
 
 const howTo: BortleVisualizerLocaleContent['howTo'] = [
-  { name: '1. Dostosuj poziom Bortle’a', text: 'Przesuń suwak, aby zasymulować wzrost zanieczyszczenia światłem od poziomu 1 (pustynia) do poziomu 9 (centrum miasta).' },
+  { name: '1. Dostosuj poziom Bortle\'a', text: 'Przesuń suwak, aby zasymulować wzrost zanieczyszczenia światłem od poziomu 1 (pustynia) do poziomu 9 (centrum miasta).' },
   { name: '2. Obserwuj efekty wizualne', text: 'Zwróć uwagę, jak na każdym poziomie znikają słabsze gwiazdy, Droga Mleczna blednie, a niebo przybiera pomarańczowy lub szary odcień.' },
-  { name: '3. Określ swój obecny poziom', text: 'Porównaj to, co widzisz ze swojego zwykłego miejsca obserwacji, z symulacjami, aby zidentyfikować lokalny poziom skali Bortle’a.' },
+  { name: '3. Określ swój obecny poziom', text: 'Porównaj to, co widzisz ze swojego zwykłego miejsca obserwacji, z symulacjami, aby zidentyfikować lokalny poziom skali Bortle\'a.' },
 ];
 
 const seo: BortleVisualizerLocaleContent['seo'] = [
   {
     type: 'summary',
-    title: 'Kluczowe punkty skali Bortle’a',
+    title: 'Kluczowe punkty skali Bortle\'a',
     items: [
       'Bortle 1-2: Referencyjne ciemne niebo, Droga Mleczna rzuca cienie, NELM > 7.5.',
       'Bortle 3-4: Optymalne niebo wiejskie, Droga Mleczna widoczna szczegółowo, ale horyzont rozjaśniony.',
@@ -62,10 +62,10 @@ const seo: BortleVisualizerLocaleContent['seo'] = [
       'Bortle 7-9: Niebo miejskie, gołym okiem widoczne tylko najjaśniejsze obiekty.',
     ],
   },
-  { type: 'title', text: 'Skala Bortle’a: Pomiar ciemności nieba', level: 2 },
+  { type: 'title', text: 'Skala Bortle\'a: Pomiar ciemności nieba', level: 2 },
   {
     type: 'paragraph',
-    html: '<strong>Skala Bortle’a</strong> to międzynarodowy system standardowy używany przez astronomów amatorów na całym świecie do określania jakości nocnego nieba. Została stworzona przez Johna E. Bortle’a, doświadczonego obserwatora komet i głębokiego nieba z Nowego Jorku, i opublikowana w 2001 roku w magazynie Sky & Telescope. Celem było zapewnienie obiektywnej i powtarzalnej skali do opisywania warunków obserwacyjnych.',
+    html: '<strong>Skala Bortle\'a</strong> to międzynarodowy system standardowy używany przez astronomów amatorów na całym świecie do określania jakości nocnego nieba. Została stworzona przez Johna E. Bortle\'a, doświadczonego obserwatora komet i głębokiego nieba z Nowego Jorku, i opublikowana w 2001 roku w magazynie Sky & Telescope. Celem było zapewnienie obiektywnej i powtarzalnej skali do opisywania warunków obserwacyjnych.',
   },
   {
     type: 'paragraph',
@@ -78,7 +78,7 @@ const seo: BortleVisualizerLocaleContent['seo'] = [
   },
   {
     type: 'table',
-    headers: ['Klasa Bortle’a', 'NELM', 'SQM (mag/arcsec²)', 'Droga Mleczna', 'Kluczowa cecha'],
+    headers: ['Klasa Bortle\'a', 'NELM', 'SQM (mag/arcsec²)', 'Droga Mleczna', 'Kluczowa cecha'],
     rows: [
       ['1 - Doskonała', '8.0', '21.99 - 22.0', 'Rzuca cienie', 'M33 widoczna gołym okiem'],
       ['2 - Typowa ciemna', '7.5', '21.89 - 21.99', 'Bardzo wyraźna', 'Chmury = czarne dziury'],
@@ -99,7 +99,7 @@ const seo: BortleVisualizerLocaleContent['seo'] = [
   { type: 'title', text: 'Znajdowanie rezerwatów ciemnego nieba w Twojej okolicy', level: 2 },
   {
     type: 'paragraph',
-    html: 'Mimo powszechnego zanieczyszczenia światłem, wciąż istnieją oazy ciemności. Parki narodowe, wyznaczone rezerwaty ciemnego nieba i odległe tereny górskie oferują warunki Bortle 2-4, dostępne w ciągu kilku godzin jazdy od większości dużych miast. IDA (International Dark-Sky Association) prowadzi globalny rejestr certyfikowanych miejsc ciemnego nieba – od małych parków po całe rezerwaty wyspiarskie. Zaplanowanie nocnej wyprawy do ciemniejszego miejsca odmieni Twoje wrażenia astronomiczne bardziej niż jakakolwiek modernizacja sprzętu.',
+    html: 'Mimo powszechnego zanieczyszczenia światłem, wciąż istnieją oazy ciemności. Parki narodowe, wyznaczone rezerwaty ciemnego nieba i odległe tereny górskie oferują warunki Bortle 2-4, dostępne w ciągu kilku godzin jazdy od większości dużych miast. IDA (International Dark-Sky Association) prowadzi globalny rejestr certyfikowanych miejsc ciemnego nieba - od małych parków po całe rezerwaty wyspiarskie. Zaplanowanie nocnej wyprawy do ciemniejszego miejsca odmieni Twoje wrażenia astronomiczne bardziej niż jakakolwiek modernizacja sprzętu.',
   },
   {
     type: 'diagnostic',

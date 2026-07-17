@@ -20,7 +20,7 @@ const { ui } = Astro.props;
         <h3 class="epc-section-title">{ui.telescopeTitle}</h3>
         
         <div class="epc-control-group">
-          <label class="epc-label">{ui.presetsLabel}</label>
+          <label class="epc-label" for="epc-preset">{ui.presetsLabel}</label>
           <select id="epc-preset" class="epc-select">
             <option value="">{ui.presetsPlaceholder}</option>
             <option value="60,700">Refractor 60/700 (f/11.6)</option>
@@ -36,14 +36,14 @@ const { ui } = Astro.props;
 
         <div class="epc-grid-2">
           <div class="epc-control-group">
-            <label class="epc-label" title={ui.apertureHelp}>
+            <label class="epc-label" title={ui.apertureHelp} for="epc-aperture">
               {ui.apertureLabel}
               <svg class="epc-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </label>
             <input type="number" id="epc-aperture" class="epc-input" placeholder="Ej: 150" />
           </div>
           <div class="epc-control-group">
-            <label class="epc-label" title={ui.focalHelp}>
+            <label class="epc-label" title={ui.focalHelp} for="epc-focal">
               {ui.focalLabel}
               <svg class="epc-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             </label>
@@ -63,7 +63,7 @@ const { ui } = Astro.props;
       <h3 class="epc-section-title">{ui.simulatorTitle}</h3>
       
       <div class="epc-control-group">
-        <select id="epc-target" class="epc-select">
+        <select id="epc-target" class="epc-select" aria-label={ui.targetLabel}>
           <option value="moon">{ui.targetMoon} (0.5°)</option>
           <option value="pleiades">{ui.targetPleiades} (1.8°)</option>
           <option value="andromeda">{ui.targetAndromeda} (3.16°)</option>
@@ -98,11 +98,11 @@ const { ui } = Astro.props;
     <div class="epc-grid-2">
       <div class="epc-control-group">
         <label class="epc-label" title="Focal del ocular en mm">Focal (mm)</label>
-        <input type="number" class="epc-input epc-ep-focal" placeholder="Ej: 10" />
+        <input type="number" class="epc-input epc-ep-focal" placeholder="Ej: 10" aria-label={ui.eyepieceFocal} />
       </div>
       <div class="epc-control-group">
         <label class="epc-label" title="Campo aparente en grados">AFOV (°)</label>
-        <input type="number" class="epc-input epc-ep-afov" placeholder="Ej: 52" value="52" />
+        <input type="number" class="epc-input epc-ep-afov" placeholder="Ej: 52" value="52" aria-label={ui.eyepieceAfov} />
       </div>
     </div>
     <div class="epc-card-results">

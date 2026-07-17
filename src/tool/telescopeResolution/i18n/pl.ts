@@ -13,7 +13,7 @@ const ui: TelescopeResolutionUI = {
   mmUnit: 'Milimetry (mm)',
   inUnit: 'Cale (in)',
   presetsLabel: 'Popularne modele',
-  presetsPlaceholder: '-- Wybierz model --',
+  presetsPlaceholder: '- Wybierz model -',
   seeingLabel: 'Jakość nieba (Seeing)',
   dawesLabel: 'Użyteczna rozdzielczość (Dawes)',
   arcsecUnit: 'sekund łuku',
@@ -48,7 +48,7 @@ const faq: TelescopeResolutionLocaleContent['faq'] = [
   },
   {
     question: 'Jakie jest maksymalne użyteczne powiększenie teleskopu?',
-    answer: 'Złota zasada to 2x apertura w mm (lub 50x na cal). Teleskop 150 mm ma użyteczne maksimum 300x. Przekroczenie tego limitu sprawia, że obraz jest większy, ale bez dodatkowych detali – staje się jedynie ciemniejszy i bardziej rozmazany. Seeing często ogranicza tę wartość do 100-150x w przeciętne noce.',
+    answer: 'Złota zasada to 2x apertura w mm (lub 50x na cal). Teleskop 150 mm ma użyteczne maksimum 300x. Przekroczenie tego limitu sprawia, że obraz jest większy, ale bez dodatkowych detali - staje się jedynie ciemniejszy i bardziej rozmazany. Seeing często ogranicza tę wartość do 100-150x w przeciętne noce.',
   },
 ];
 

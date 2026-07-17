@@ -13,7 +13,7 @@ const ui: TelescopeResolutionUI = {
   mmUnit: 'Millimeter (mm)',
   inUnit: 'Tum (in)',
   presetsLabel: 'Vanliga modeller',
-  presetsPlaceholder: '-- Välj förinställning --',
+  presetsPlaceholder: '- Välj förinställning -',
   seeingLabel: 'Himmelskvalitet (Seeing)',
   dawesLabel: 'Användbar upplösning (Dawes)',
   arcsecUnit: 'bågsekunder',

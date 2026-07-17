@@ -15,7 +15,7 @@ const { ui } = Astro.props;
   <div class="tscope-grid">
     <div class="tscope-controls">
       <div class="tscope-control-group">
-        <label class="tscope-control-label">{ui.apertureLabel}</label>
+        <label class="tscope-control-label" for="aperture-input">{ui.apertureLabel}</label>
         <div class="tscope-stepper">
           <button class="tscope-step-btn" data-action="dec" data-target="aperture">-</button>
           <input type="number" id="aperture-input" value="150" min="1" max="2000" class="tscope-stepper-input" />
@@ -24,7 +24,7 @@ const { ui } = Astro.props;
       </div>
 
       <div class="tscope-control-group">
-        <label class="tscope-control-label">{ui.unitLabel}</label>
+        <label class="tscope-control-label" for="unit-selector">{ui.unitLabel}</label>
         <div class="tscope-select-wrapper">
           <select id="unit-selector" class="tscope-select">
             <option value="mm">{ui.mmUnit}</option>
@@ -37,7 +37,7 @@ const { ui } = Astro.props;
       </div>
 
       <div class="tscope-control-group">
-        <label class="tscope-control-label">{ui.presetsLabel}</label>
+        <label class="tscope-control-label" for="preset-selector">{ui.presetsLabel}</label>
         <div class="tscope-select-wrapper">
           <select id="preset-selector" class="tscope-select">
             <option value="">{ui.presetsPlaceholder}</option>

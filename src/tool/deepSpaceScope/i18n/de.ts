@@ -76,7 +76,7 @@ const seo: DeepSpaceScopeLocaleContent['seo'] = [
       'Die Öffnung ist der entscheidende Faktor: Ein größerer Durchmesser bedeutet mehr Licht und eine höhere Grenzgröße.',
       'Ein dunkler Himmel (niedriger Bortle-Wert) kann gegenüber einem städtischen Himmel 2-3 Magnituden Gewinn bringen.',
       'Ein 200-mm-Teleskop erreicht bei Bortle 3 Magn. 13-14, bei Bortle 7 jedoch nur Magn. 11.',
-      'Helle Planeten und der Mond erfordern keinen dunklen Himmel – sie sind auch aus der Stadt sichtbar.',
+      'Helle Planeten und der Mond erfordern keinen dunklen Himmel - sie sind auch aus der Stadt sichtbar.',
     ],
   },
   { type: 'title', text: 'Die Physik der astronomischen Beobachtung: Öffnung und Magnitude', level: 2 },

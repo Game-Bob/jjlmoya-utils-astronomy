@@ -13,7 +13,7 @@ const ui: TelescopeResolutionUI = {
   mmUnit: 'Millimètres (mm)',
   inUnit: 'Pouces (in)',
   presetsLabel: 'Modèles Courants',
-  presetsPlaceholder: '-- Sélectionner un Modèle --',
+  presetsPlaceholder: '- Sélectionner un Modèle -',
   seeingLabel: 'Qualité du Ciel (Seeing)',
   dawesLabel: 'Résolution Utile (Dawes)',
   arcsecUnit: 'arcsecondes',
@@ -109,7 +109,7 @@ const seo: TelescopeResolutionLocaleContent['seo'] = [
   { type: 'title', text: 'Conseils Pratiques pour Maximiser la Résolution', level: 2 },
   {
     type: 'paragraph',
-    html: 'Au-delà de l\'ouverture et de la collimation, plusieurs habitudes d\'observation améliorent considérablement la résolution obtenue en pratique. Attendez toujours que le télescope atteigne l\'équilibre thermique avec l\'air extérieur — cela prend 30 à 60 minutes pour la plupart des instruments. Évitez d\'observer au-dessus des toits, parkings ou toute surface qui rayonne la chaleur emmagasinée. Choisissez des nuits après le passage de fronts froids, qui tendent à apporter des couches atmosphériques plus stables. Utilisez le grossissement maximum qui donne encore une image stable — si l\'image "bout", passez à un oculaire de plus faible grossissement. Enfin, l\'<strong>adaptation à l\'obscurité</strong> est importante même pour le travail planétaire: laissez vos yeux 20 minutes dans l\'obscurité complète pour maximiser la sensibilité aux détails colorés sur des planètes comme Mars ou Jupiter.',
+    html: 'Au-delà de l\'ouverture et de la collimation, plusieurs habitudes d\'observation améliorent considérablement la résolution obtenue en pratique. Attendez toujours que le télescope atteigne l\'équilibre thermique avec l\'air extérieur - cela prend 30 à 60 minutes pour la plupart des instruments. Évitez d\'observer au-dessus des toits, parkings ou toute surface qui rayonne la chaleur emmagasinée. Choisissez des nuits après le passage de fronts froids, qui tendent à apporter des couches atmosphériques plus stables. Utilisez le grossissement maximum qui donne encore une image stable - si l\'image "bout", passez à un oculaire de plus faible grossissement. Enfin, l\'<strong>adaptation à l\'obscurité</strong> est importante même pour le travail planétaire: laissez vos yeux 20 minutes dans l\'obscurité complète pour maximiser la sensibilité aux détails colorés sur des planètes comme Mars ou Jupiter.',
   },
   {
     type: 'stats',

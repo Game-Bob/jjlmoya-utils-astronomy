@@ -13,7 +13,7 @@ const ui: TelescopeResolutionUI = {
   mmUnit: '밀리미터 (mm)',
   inUnit: '인치 (in)',
   presetsLabel: '일반적인 모델',
-  presetsPlaceholder: '-- 모델 선택 --',
+  presetsPlaceholder: '- 모델 선택 -',
   seeingLabel: '하늘 상태 (시잉)',
   dawesLabel: '유효 분해능 (도즈)',
   arcsecUnit: '초',

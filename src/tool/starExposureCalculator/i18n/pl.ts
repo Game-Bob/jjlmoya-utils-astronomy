@@ -29,7 +29,7 @@ const ui: StarExposureCalculatorUI = {
 const faq: StarExposureCalculatorLocaleContent['faq'] = [
   {
     question: 'Co się stanie, jeśli przekroczę obliczony czas?',
-    answer: 'Jeśli przekroczysz maksymalny czas, gwiazdy zaczną się wydłużać, zamiast pozostać ostrymi punktami. Przy bardzo długich ekspozycjach otrzymasz ślady gwiazd (star trails) – jest to uznana technika artystyczna, ale wymaga znacznie dłuższych czasów, aby wyglądała estetycznie.',
+    answer: 'Jeśli przekroczysz maksymalny czas, gwiazdy zaczną się wydłużać, zamiast pozostać ostrymi punktami. Przy bardzo długich ekspozycjach otrzymasz ślady gwiazd (star trails) - jest to uznana technika artystyczna, ale wymaga znacznie dłuższych czasów, aby wyglądała estetycznie.',
   },
   {
     question: 'Kiedy powinienem używać NPF zamiast reguły 500?',

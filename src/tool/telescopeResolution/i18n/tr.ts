@@ -13,7 +13,7 @@ const ui: TelescopeResolutionUI = {
   mmUnit: 'Milimetre (mm)',
   inUnit: 'İnç (in)',
   presetsLabel: 'Yaygın Modeller',
-  presetsPlaceholder: '-- Model Seçin --',
+  presetsPlaceholder: '- Model Seçin -',
   seeingLabel: 'Gökyüzü Kalitesi (Seeing)',
   dawesLabel: 'Kullanışlı Çözünürlük (Dawes)',
   arcsecUnit: 'arksaniye',

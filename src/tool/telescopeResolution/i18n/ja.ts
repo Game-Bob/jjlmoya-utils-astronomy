@@ -13,7 +13,7 @@ const ui: TelescopeResolutionUI = {
   mmUnit: 'ミリメートル (mm)',
   inUnit: 'インチ (in)',
   presetsLabel: '一般的なモデル',
-  presetsPlaceholder: '-- モデルを選択 --',
+  presetsPlaceholder: '- モデルを選択 -',
   seeingLabel: '大気の安定度（シーイング）',
   dawesLabel: '有効分解能（ドーズ）',
   arcsecUnit: '秒',

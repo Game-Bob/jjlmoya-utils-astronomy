@@ -12,7 +12,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Från att utvärdera himmelskvalitet med Bortle-skalan till att exakt beräkna den optiska upplösningen på ditt teleskop – varje verktyg tillämpar formler som validerats av det internationella astronomiska samfundet så att varje natt du spenderar under stjärnorna blir produktiv och minnesvärd.',
+      html: 'Från att utvärdera himmelskvalitet med Bortle-skalan till att exakt beräkna den optiska upplösningen på ditt teleskop - varje verktyg tillämpar formler som validerats av det internationella astronomiska samfundet så att varje natt du spenderar under stjärnorna blir produktiv och minnesvärd.',
     },
     { type: 'title', text: 'Ljusföroreningar: Astronomens Fiende Nummer Ett', level: 2 },
     {

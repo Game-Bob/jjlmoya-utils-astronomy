@@ -12,12 +12,12 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Von der Bewertung der Himmelsqualität mit der Bortle-Skala bis hin zur präzisen Berechnung der optischen Auflösung Ihres Teleskops – jedes Tool nutzt von der internationalen Astronomie-Gemeinschaft validierte Formeln, damit jede Nacht unter den Sternen produktiv und unvergesslich wird.',
+      html: 'Von der Bewertung der Himmelsqualität mit der Bortle-Skala bis hin zur präzisen Berechnung der optischen Auflösung Ihres Teleskops - jedes Tool nutzt von der internationalen Astronomie-Gemeinschaft validierte Formeln, damit jede Nacht unter den Sternen produktiv und unvergesslich wird.',
     },
     { type: 'title', text: 'Lichtverschmutzung: Der größte Feind des Astronomen', level: 2 },
     {
       type: 'paragraph',
-      html: 'Wir leben in einer zunehmend beleuchteten Welt. Die <strong>Lichtverschmutzung</strong> wächst jährlich um 10 % und löscht den Nachthimmel für mehr als 80 % der Weltbevölkerung aus. Die Bortle-Skala mit ihren 9 Stufen ist der internationale Standard zur Quantifizierung dieses Verlusts. Unser Dunkelhimmel-Simulator ermöglicht es Ihnen, interaktiv zu visualisieren, wie künstliches Licht das Firmament verändert – vom absoluten Schwarz einer entlegenen Wüste bis zum bedrückenden Orange einer Metropole.',
+      html: 'Wir leben in einer zunehmend beleuchteten Welt. Die <strong>Lichtverschmutzung</strong> wächst jährlich um 10 % und löscht den Nachthimmel für mehr als 80 % der Weltbevölkerung aus. Die Bortle-Skala mit ihren 9 Stufen ist der internationale Standard zur Quantifizierung dieses Verlusts. Unser Dunkelhimmel-Simulator ermöglicht es Ihnen, interaktiv zu visualisieren, wie künstliches Licht das Firmament verändert - vom absoluten Schwarz einer entlegenen Wüste bis zum bedrückenden Orange einer Metropole.',
     },
     { type: 'title', text: 'Ihr Teleskop: Die wahren Möglichkeiten verstehen', level: 2 },
     {

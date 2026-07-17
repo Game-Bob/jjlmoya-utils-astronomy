@@ -13,7 +13,7 @@ const ui: TelescopeResolutionUI = {
   mmUnit: 'Milímetros (mm)',
   inUnit: 'Polegadas (in)',
   presetsLabel: 'Modelos Comuns',
-  presetsPlaceholder: '-- Selecionar Predefinição --',
+  presetsPlaceholder: '- Selecionar Predefinição -',
   seeingLabel: 'Qualidade do Céu (Seeing)',
   dawesLabel: 'Resolução Útil (Dawes)',
   arcsecUnit: 'arcosegundos',

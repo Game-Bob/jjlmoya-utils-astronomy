@@ -45,11 +45,11 @@ const ui: DeepSpaceScopeUI = {
 const faq: DeepSpaceScopeLocaleContent['faq'] = [
   {
     question: 'Co to jest magnitudo graniczne teleskopu?',
-    answer: 'To jasność najsłabszego obiektu, jaki teleskop może wykryć w danych warunkach nieba. Zależy od średnicy apertury (większa apertura = więcej zebranego światła) oraz jakości nieba (skala Bortle’a). Ludzkie oko w optymalnych warunkach sięga 6,5 magnitudo; teleskop 200 mm może osiągnąć 13-14 magnitudo.',
+    answer: 'To jasność najsłabszego obiektu, jaki teleskop może wykryć w danych warunkach nieba. Zależy od średnicy apertury (większa apertura = więcej zebranego światła) oraz jakości nieba (skala Bortle\'a). Ludzkie oko w optymalnych warunkach sięga 6,5 magnitudo; teleskop 200 mm może osiągnąć 13-14 magnitudo.',
   },
   {
-    question: 'Jak skala Bortle’a wpływa na to, co widzę?',
-    answer: 'Każdy poziom skali Bortle’a zmniejsza zasięg o około 0,5 magnitudo. Teleskop 200 mm pod niebem klasy 2 może sięgnąć 14,5 magnitudo, ale pod niebem klasy 7 ta sama apertura pozwoli na dostrzeżenie obiektów tylko do 11-12 magnitudo. Ciemne niebo wielokrotnie zwiększa możliwości każdego instrumentu.',
+    question: 'Jak skala Bortle\'a wpływa na to, co widzę?',
+    answer: 'Każdy poziom skali Bortle\'a zmniejsza zasięg o około 0,5 magnitudo. Teleskop 200 mm pod niebem klasy 2 może sięgnąć 14,5 magnitudo, ale pod niebem klasy 7 ta sama apertura pozwoli na dostrzeżenie obiektów tylko do 11-12 magnitudo. Ciemne niebo wielokrotnie zwiększa możliwości każdego instrumentu.',
   },
   {
     question: 'Jakie obiekty są widoczne z miasta?',
@@ -63,7 +63,7 @@ const faq: DeepSpaceScopeLocaleContent['faq'] = [
 
 const howTo: DeepSpaceScopeLocaleContent['howTo'] = [
   { name: '1. Ustaw aperturę', text: 'Przesuń suwak apertury, aby dopasować go do Twojego teleskopu. Zakres obejmuje od 50 mm (lornetka) do 400 mm (zaawansowany teleskop).' },
-  { name: '2. Dostosuj jakość nieba', text: 'Ustaw poziom skali Bortle’a dla Twojego stałego miejsca obserwacji, aby zobaczyć rzeczywiste magnitudo graniczne.' },
+  { name: '2. Dostosuj jakość nieba', text: 'Ustaw poziom skali Bortle\'a dla Twojego stałego miejsca obserwacji, aby zobaczyć rzeczywiste magnitudo graniczne.' },
   { name: '3. Eksploruj mapę gwiazd', text: 'Przeciągaj widok, aby przeszukać pełne 360° nieba i odkryć, jakie obiekty są widoczne przez Twój sprzęt.' },
   { name: '4. Klikaj w obiekty', text: 'Dotknij dowolnego obiektu na niebie, aby zobaczyć szczegółowe informacje: typ, jasność i opis.' },
 ];
@@ -74,9 +74,9 @@ const seo: DeepSpaceScopeLocaleContent['seo'] = [
     title: 'Kluczowe punkty dotyczące zasięgu teleskopu',
     items: [
       'Apertura jest decydującym czynnikiem: większa średnica to więcej światła i wyższe magnitudo graniczne.',
-      'Ciemne niebo (niski poziom Bortle’a) pozwala zyskać 2-3 magnitudo w porównaniu z niebem miejskim.',
+      'Ciemne niebo (niski poziom Bortle\'a) pozwala zyskać 2-3 magnitudo w porównaniu z niebem miejskim.',
       'Teleskop 200 mm sięga 13-14 mag przy klasie Bortle 3, a tylko 11 mag przy klasie 7.',
-      'Jasne planety i Księżyc nie wymagają ciemnego nieba – są widoczne także z miasta.',
+      'Jasne planety i Księżyc nie wymagają ciemnego nieba - są widoczne także z miasta.',
     ],
   },
   { type: 'title', text: 'Fizyka obserwacji astronomicznych: apertura i magnitudo', level: 2 },
@@ -91,7 +91,7 @@ const seo: DeepSpaceScopeLocaleContent['seo'] = [
   { type: 'title', text: 'Wpływ zanieczyszczenia światłem na zasięg', level: 2 },
   {
     type: 'paragraph',
-    html: 'Nawet przy użyciu największego teleskopu świata nie dostrzeżesz słabych galaktyk z centrum miasta. Jasność tła nieba „wymazuje” niezbędny kontrast. <strong>Skala Bortle’a</strong> określa ten efekt ilościowo: każdy dodatkowy poziom klasy Bortle odejmuje około 0,5 magnitudo od zasięgu teleskopu.',
+    html: 'Nawet przy użyciu największego teleskopu świata nie dostrzeżesz słabych galaktyk z centrum miasta. Jasność tła nieba \"wymazuje\" niezbędny kontrast. <strong>Skala Bortle\'a</strong> określa ten efekt ilościowo: każdy dodatkowy poziom klasy Bortle odejmuje około 0,5 magnitudo od zasięgu teleskopu.',
   },
   {
     type: 'table',

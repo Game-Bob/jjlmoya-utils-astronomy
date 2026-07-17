@@ -13,7 +13,7 @@ const ui: TelescopeResolutionUI = {
   mmUnit: 'Milimeter (mm)',
   inUnit: 'Inci (in)',
   presetsLabel: 'Model Umum',
-  presetsPlaceholder: '-- Pilih Preset --',
+  presetsPlaceholder: '- Pilih Preset -',
   seeingLabel: 'Kualitas Langit (Seeing)',
   dawesLabel: 'Resolusi Berguna (Dawes)',
   arcsecUnit: 'detik busur',

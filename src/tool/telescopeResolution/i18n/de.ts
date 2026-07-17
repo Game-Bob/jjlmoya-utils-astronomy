@@ -13,7 +13,7 @@ const ui: TelescopeResolutionUI = {
   mmUnit: 'Millimeter (mm)',
   inUnit: 'Zoll (in)',
   presetsLabel: 'Gängige Modelle',
-  presetsPlaceholder: '-- Modell wählen --',
+  presetsPlaceholder: '- Modell wählen -',
   seeingLabel: 'Himmelsqualität (Seeing)',
   dawesLabel: 'Nützliche Auflösung (Dawes)',
   arcsecUnit: 'Bogensekunden',
@@ -48,7 +48,7 @@ const faq: TelescopeResolutionLocaleContent['faq'] = [
   },
   {
     question: 'Was ist die maximale sinnvolle Vergrößerung eines Teleskops?',
-    answer: 'Die goldene Regel lautet: 2x die Öffnung in mm (oder 50x pro Zoll). Ein 150-mm-Teleskop hat ein sinnvolles Maximum von 300x. Wird diese Grenze überschritten, wird das Bild zwar größer, aber nicht detailreicher – es wird lediglich dunkler und unschärfer. Das Seeing begrenzt diesen Wert in durchschnittlichen Nächten oft auf 100-150x.',
+    answer: 'Die goldene Regel lautet: 2x die Öffnung in mm (oder 50x pro Zoll). Ein 150-mm-Teleskop hat ein sinnvolles Maximum von 300x. Wird diese Grenze überschritten, wird das Bild zwar größer, aber nicht detailreicher - es wird lediglich dunkler und unschärfer. Das Seeing begrenzt diesen Wert in durchschnittlichen Nächten oft auf 100-150x.',
   },
 ];
 
@@ -109,7 +109,7 @@ const seo: TelescopeResolutionLocaleContent['seo'] = [
   { type: 'title', text: 'Praktische Tipps zur Maximierung der Auflösung', level: 2 },
   {
     type: 'paragraph',
-    html: 'Warten Sie immer, bis das Teleskop ein thermisches Gleichgewicht mit der Außenluft erreicht hat. Vermeiden Sie Beobachtungen über Hausdächern oder Asphaltflächen, die gespeicherte Wärme abgeben. Wählen Sie Nächte nach einem Kaltfrontdurchgang für stabilere Luftschichten. Nutzen Sie die höchste Vergrößerung, die noch ein ruhiges Bild liefert – "kocht" das Bild, reduzieren Sie die Vergrößerung. Geben Sie Ihren Augen zudem 20 Minuten Zeit für die <strong>Dunkeladaptation</strong>, um die Empfindlichkeit für Farbdetails auf Planeten zu maximieren.',
+    html: 'Warten Sie immer, bis das Teleskop ein thermisches Gleichgewicht mit der Außenluft erreicht hat. Vermeiden Sie Beobachtungen über Hausdächern oder Asphaltflächen, die gespeicherte Wärme abgeben. Wählen Sie Nächte nach einem Kaltfrontdurchgang für stabilere Luftschichten. Nutzen Sie die höchste Vergrößerung, die noch ein ruhiges Bild liefert - "kocht" das Bild, reduzieren Sie die Vergrößerung. Geben Sie Ihren Augen zudem 20 Minuten Zeit für die <strong>Dunkeladaptation</strong>, um die Empfindlichkeit für Farbdetails auf Planeten zu maximieren.',
   },
   {
     type: 'stats',

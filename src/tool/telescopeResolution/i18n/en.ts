@@ -13,7 +13,7 @@ const ui: TelescopeResolutionUI = {
   mmUnit: 'Millimeters (mm)',
   inUnit: 'Inches (in)',
   presetsLabel: 'Common Models',
-  presetsPlaceholder: '-- Select Preset --',
+  presetsPlaceholder: '- Select Preset -',
   seeingLabel: 'Sky Quality (Seeing)',
   dawesLabel: 'Useful Resolution (Dawes)',
   arcsecUnit: 'arcseconds',
@@ -109,7 +109,7 @@ const seo: TelescopeResolutionLocaleContent['seo'] = [
   { type: 'title', text: 'Practical Tips to Maximize Resolution', level: 2 },
   {
     type: 'paragraph',
-    html: 'Beyond aperture and collimation, several observational habits dramatically improve the resolution you achieve in practice. Always wait for the telescope to reach thermal equilibrium with outdoor air — this takes 30-60 minutes for most instruments. Avoid observing over rooftops, parking lots, or any surface that radiates stored heat. Choose nights after cold fronts pass, which tend to bring more stable atmospheric layers. Use the highest magnification that still gives a steady image — if the image is "boiling", drop to a lower power eyepiece and wait for a steadier moment to push higher. Finally, <strong>dark adaptation</strong> matters even for planetary work: give your eyes 20 minutes of complete darkness to maximize cone sensitivity for color detail on planets like Mars or Jupiter.',
+    html: 'Beyond aperture and collimation, several observational habits dramatically improve the resolution you achieve in practice. Always wait for the telescope to reach thermal equilibrium with outdoor air - this takes 30-60 minutes for most instruments. Avoid observing over rooftops, parking lots, or any surface that radiates stored heat. Choose nights after cold fronts pass, which tend to bring more stable atmospheric layers. Use the highest magnification that still gives a steady image - if the image is "boiling", drop to a lower power eyepiece and wait for a steadier moment to push higher. Finally, <strong>dark adaptation</strong> matters even for planetary work: give your eyes 20 minutes of complete darkness to maximize cone sensitivity for color detail on planets like Mars or Jupiter.',
   },
   {
     type: 'stats',

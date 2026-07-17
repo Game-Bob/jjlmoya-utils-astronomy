@@ -13,7 +13,7 @@ const ui: TelescopeResolutionUI = {
   mmUnit: '毫米 (mm)',
   inUnit: '英寸 (in)',
   presetsLabel: '常见型号',
-  presetsPlaceholder: '-- 选择预设 --',
+  presetsPlaceholder: '- 选择预设 -',
   seeingLabel: '天空质量 (视宁度)',
   dawesLabel: '有用分辨率 (道氏)',
   arcsecUnit: '角秒',
@@ -104,7 +104,7 @@ const seo: TelescopeResolutionLocaleContent['seo'] = [
   { type: 'title', text: '校准：解锁潜力的对准过程', level: 2 },
   {
     type: 'paragraph',
-    html: '一台校准不良（镜片未对齐）的望远镜，无论其口径多大，都永远无法达到道氏极限。<strong>校准 (Collimation)</strong> 是指将主镜和副镜与调焦座完美对齐的过程。对于反射镜（牛顿式、杜布森镜），校准是一项必要的定期任务。通过对亮星进行“星点测试”来练习这一技能。',
+    html: '一台校准不良（镜片未对齐）的望远镜，无论其口径多大，都永远无法达到道氏极限。<strong>校准 (Collimation)</strong> 是指将主镜和副镜与调焦座完美对齐的过程。对于反射镜（牛顿式、杜布森镜），校准是一项必要的定期任务。通过对亮星进行\"星点测试\"来练习这一技能。',
   },
   { type: 'title', text: '最大化分辨率的实用提示', level: 2 },
   {

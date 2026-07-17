@@ -13,7 +13,7 @@ const ui: TelescopeResolutionUI = {
   mmUnit: 'Millimeters (mm)',
   inUnit: 'Inches (in)',
   presetsLabel: 'Veelvoorkomende Modellen',
-  presetsPlaceholder: '-- Selecteer Model --',
+  presetsPlaceholder: '- Selecteer Model -',
   seeingLabel: 'Hemelkwaliteit (Seeing)',
   dawesLabel: 'Nuttige Resolutie (Dawes)',
   arcsecUnit: 'boogseconden',
