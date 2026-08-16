@@ -73,6 +73,11 @@ const seo: StarExposureCalculatorLocaleContent['seo'] = [
     type: 'paragraph',
     html: 'La <strong>Règle des 500</strong> est une formule empirique simplifiée qui a été la norme en astrophotographie de paysage depuis des décennies. Sa formule est: <code>Temps = 500 / (Longueur Focale × Facteur de Recadrage)</code>. Elle est rapide, mentale et suffisamment précise pour les capteurs basse résolution et la visualisation en petits formats.',
   },
+  { type: 'title', text: 'Le Facteur de Recadrage et son Impact', level: 2 },
+  {
+    type: 'paragraph',
+    html: 'Beaucoup de débutants oublient que la Règle des 500 est basée sur le standard 35mm (Plein Format). Si votre appareil photo a un capteur plus petit, le champ de vision est plus étroit et le mouvement des étoiles est amplifié. Un objectif de 14mm sur un APS-C (recadrage 1,5x) se comporte comme un 21mm équivalent, réduisant le temps maximum de 35.7s à seulement 23.8s.',
+  },
   { type: 'title', text: 'Le Modèle NPF: Précision pour Capteurs Modernes', level: 2 },
   {
     type: 'paragraph',

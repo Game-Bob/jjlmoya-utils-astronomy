@@ -74,11 +74,7 @@ const seo: BortleVisualizerLocaleContent['seo'] = [
   { type: 'title', text: 'Contaminación Lumínica: Una Crisis Global Silenciosa', level: 2 },
   {
     type: 'paragraph',
-    html: 'El crecimiento de la contaminación lumínica es uno de los problemas medioambientales menos discutidos pero más extendidos. Según estudios recientes, más del <strong>80% de la población mundial</strong> vive bajo cielos contaminados lumínicamente, y en Europa y Norteamérica el porcentaje supera el 99%. En España, la situación varía enormemente: desde las ciudades costeras con Bortle 8-9 hasta las zonas protegidas de la España interior con Bortle 2-3.',
-  },
-  {
-    type: 'paragraph',
-    html: 'Las consecuencias van más allá de la astronomía. La <strong>luz artificial nocturna</strong> altera los ritmos circadianos de humanos y animales, desorienta a aves migratorias, afecta a la reproducción de tortugas marinas y suprime la producción de melatonina en mamíferos. La IDA (International Dark-Sky Association) trabaja para designar Reservas de Cielo Oscuro en todo el mundo, y en España el programa Starlight ha certificado varias zonas de excelencia astronómica.',
+    html: 'El crecimiento de la contaminación lumínica es uno de los problemas medioambientales menos discutidos pero más extendidos. Según estudios recientes, más del <strong>80% de la población mundial</strong> vive bajo cielos contaminados lumínicamente. Las consecuencias van más allá de la astronomía: la luz artificial nocturna altera los ritmos circadianos y la biodiversidad.',
   },
   {
     type: 'table',

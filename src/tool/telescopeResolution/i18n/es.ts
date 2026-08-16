@@ -106,6 +106,11 @@ const seo: TelescopeResolutionLocaleContent['seo'] = [
     type: 'paragraph',
     html: 'Un telescopio mal colimado (con los espejos desalineados) nunca rendirá al límite de Dawes, independientemente de la apertura. La <strong>colimación</strong> es el proceso de alinear perfectamente los espejos secundario y primario con el portaocular. Para telescopios reflectores (Newtonianos, Dobsonianos), la colimación es una tarea periódica imprescindible. Practica la colimación en la estrella artificial de Polaris o en una estrella brillante usando la técnica del "star test".',
   },
+  { type: 'title', text: 'Consejos Prácticos para Maximizar la Resolución', level: 2 },
+  {
+    type: 'paragraph',
+    html: 'Más allá de la apertura y la colimación, varios hábitos de observación mejoran drásticamente la resolución práctica. Espera siempre a que el telescopio alcance el equilibrio térmico con el aire exterior (30-60 minutos). Evita observar sobre tejados, aparcamientos o superficies que irradien calor. Elige noches tras el paso de frentes fríos con capas atmosféricas estables. Usa el aumento más alto que mantenga una imagen estable y permite 20 minutos de adaptación a la oscuridad.',
+  },
   {
     type: 'stats',
     columns: 2,
