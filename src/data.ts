@@ -5,6 +5,7 @@ export type { DeepSpaceScopeUI, DeepSpaceScopeLocaleContent } from './tool/deepS
 export type { StarExposureCalculatorUI, StarExposureCalculatorLocaleContent } from './tool/starExposureCalculator';
 export type { TelescopeResolutionUI, TelescopeResolutionLocaleContent } from './tool/telescopeResolution';
 export type { EyepieceCalculatorUI, EyepieceCalculatorLocaleContent } from './tool/smartEyepieceCalculator/entry';
+export type { TelescopeExitPupilPlannerUI, TelescopeExitPupilPlannerLocaleContent } from './tool/telescopeExitPupilPlanner/entry';
 
 export type {
   KnownLocale,

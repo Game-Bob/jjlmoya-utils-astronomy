@@ -1,0 +1,93 @@
+---
+import type { TelescopeExitPupilPlannerUI } from './ui';
+import { calculateOptics, DEFAULT_INPUTS } from './logic';
+
+interface Props {
+  ui: TelescopeExitPupilPlannerUI;
+}
+
+const { ui } = Astro.props;
+const initial = calculateOptics(DEFAULT_INPUTS);
+const uiJson = JSON.stringify(ui).replace(/</g, '\\u003c');
+---
+
+<script is:inline type="application/json" id="tep-ui-data" set:html={uiJson}></script>
+
+<div class="tep-root" id="tep-root">
+  <div class="tep-layout">
+    <section class="tep-inputs" aria-label="Optical setup">
+      <div class="tep-input-grid">
+        <label class="tep-field">
+          <span>{ui.apertureLabel}</span>
+          <div class="tep-number-wrap">
+            <input data-input="aperture" type="number" min="1" max="2000" step="1" value={DEFAULT_INPUTS.apertureMm} inputmode="decimal" />
+            <b>{ui.millimetreUnit}</b>
+          </div>
+        </label>
+        <label class="tep-field">
+          <span>{ui.scopeFocalLengthLabel}</span>
+          <div class="tep-number-wrap">
+            <input data-input="scope-focal-length" type="number" min="1" max="10000" step="1" value={DEFAULT_INPUTS.scopeFocalLengthMm} inputmode="decimal" />
+            <b>{ui.millimetreUnit}</b>
+          </div>
+        </label>
+        <label class="tep-field">
+          <span>{ui.eyepieceFocalLengthLabel}</span>
+          <div class="tep-number-wrap">
+            <input data-input="eyepiece-focal-length" type="number" min="1" max="200" step="0.1" value={DEFAULT_INPUTS.eyepieceFocalLengthMm} inputmode="decimal" />
+            <b>{ui.millimetreUnit}</b>
+          </div>
+        </label>
+        <div class="tep-field" data-select="barlow">
+          <span>{ui.barlowLabel}</span>
+          <input data-select-value type="hidden" value={DEFAULT_INPUTS.barlowFactor} />
+          <button class="tep-select-trigger" type="button" data-select-trigger aria-expanded="false" aria-haspopup="listbox">{ui.barlowOptions[0].label}</button>
+          <div class="tep-select-menu" data-select-menu hidden role="listbox">
+            {ui.barlowOptions.map((option) => <button type="button" data-select-option data-value={option.value} aria-selected={option.value === String(DEFAULT_INPUTS.barlowFactor)} role="option">{option.label}</button>)}
+          </div>
+        </div>
+        <div class="tep-field" data-select="apparent-field">
+          <span>{ui.apparentFieldLabel}</span>
+          <input data-select-value type="hidden" value={DEFAULT_INPUTS.apparentFieldDeg} />
+          <button class="tep-select-trigger" type="button" data-select-trigger aria-expanded="false" aria-haspopup="listbox">{ui.apparentFieldOptions[1].label}</button>
+          <div class="tep-select-menu" data-select-menu hidden role="listbox">
+            {ui.apparentFieldOptions.map((option) => <button type="button" data-select-option data-value={option.value} aria-selected={option.value === String(DEFAULT_INPUTS.apparentFieldDeg)} role="option">{option.label}</button>)}
+          </div>
+        </div>
+      </div>
+      <p class="tep-hint">{ui.presetHint}</p>
+      <button class="tep-reset" type="button" data-reset>{ui.resetLabel}</button>
+    </section>
+
+    <section class="tep-output" aria-live="polite">
+      <div class="tep-primary-result">
+        <span>{ui.magnificationLabel}</span>
+        <strong data-result="magnification">{initial.magnification.toFixed(1)}</strong><b>{ui.magnificationUnit}</b>
+        <small>{ui.magnificationHint}</small>
+      </div>
+      <div class="tep-metrics">
+        <div><span>{ui.exitPupilLabel}</span><div class="tep-metric-value"><strong data-result="exit-pupil">{initial.exitPupilMm.toFixed(2)}</strong><b>{ui.exitPupilUnit}</b></div></div>
+        <div><span>{ui.trueFieldLabel}</span><div class="tep-metric-value"><strong data-result="true-field">{initial.trueFieldDeg.toFixed(2)}</strong><b>{ui.fieldUnit}</b></div></div>
+        <div><span>{ui.focalRatioLabel}</span><div class="tep-metric-value"><strong data-result="focal-ratio">f/{initial.focalRatio.toFixed(1)}</strong><b>{ui.focalRatioUnit}</b></div></div>
+      </div>
+      <div class="tep-scene-wrap">
+        <div class="tep-scene-heading"><span>{ui.opticalPathLabel}</span><strong data-result="pupil-status">{ui.pupilWorking}</strong></div>
+        <div data-scene class="tep-scene" aria-label={ui.opticalPathLabel}></div>
+        <p class="tep-scene-copy" data-result="pupil-detail">{ui.pupilWorkingDetail}</p>
+      </div>
+      <div class="tep-footnotes">
+        <p><span>{ui.effectiveEyepieceLabel}</span><strong data-result="effective-eyepiece">{initial.effectiveEyepieceMm.toFixed(2)} {ui.millimetreUnit}</strong></p>
+        <p><span>{ui.assumptionLabel}</span>{ui.assumptionText}</p>
+        <p class="tep-hint">{ui.trueFieldHint}</p>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+  import { mountTelescopeExitPupilPlanner } from './controller';
+
+  const root = document.getElementById('tep-root');
+  const data = document.getElementById('tep-ui-data');
+  if (root && data) mountTelescopeExitPupilPlanner(root, JSON.parse(data.textContent || '{}'));
+</script>

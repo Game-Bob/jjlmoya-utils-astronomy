@@ -77,6 +77,7 @@ describe('Tool Validation Suite', () => {
                   'calculadora-regla-500',
                   'calculadora-resolucion-telescopio',
                   'calculadora-oculares',
+                  'planificador-pupila-salida-aumentos-telescopio',
                 ];
                 expect(validSlugs).toContain(content.slug);
               }
@@ -102,12 +103,12 @@ describe('Tool Validation Suite', () => {
   });
 
   describe('Library Registration', () => {
-    it('should have 5 tools in ALL_TOOLS', () => {
-      expect(ALL_TOOLS.length).toBe(5);
+    it('should have 6 tools in ALL_TOOLS', () => {
+      expect(ALL_TOOLS.length).toBe(6);
     });
 
     it('should have all tools in astronomyCategory', () => {
-      expect(astronomyCategory.tools.length).toBe(5);
+      expect(astronomyCategory.tools.length).toBe(6);
       ALL_TOOLS.forEach(({ entry }) => {
         const exists = astronomyCategory.tools.some((t: any) => t.id === entry.id);
         expect(exists).toBe(true);
