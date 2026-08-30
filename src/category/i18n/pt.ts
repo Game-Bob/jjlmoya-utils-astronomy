@@ -12,7 +12,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Desde a avaliação da qualidade do céu com a escala de Bortle até ao cálculo preciso da resolução ótica do seu telescópio, cada ferramenta aplica fórmulas validadas pela comunidade astronómica internacional para que cada noite que passe sob as estrelas seja produtiva e memorável.',
+      html: 'Desde a avaliação da qualidade do céu com a escala de Bortle até ao cálculo da resolução ótica do seu telescópio, cada ferramenta explica a fórmula usada para planear uma sessão com expectativas realistas.',
     },
     { type: 'title', text: 'Poluição Luminosa: O Inimigo Número Um do Astrônomo', level: 2 },
     {

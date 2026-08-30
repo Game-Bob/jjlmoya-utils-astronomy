@@ -12,7 +12,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'De l\'évaluation de la qualité de votre ciel avec l\'échelle de Bortle au calcul précis de la résolution optique de votre télescope, chaque outil applique des formules validées par la communauté astronomique internationale pour que chaque nuit passée sous les étoiles soit productive et mémorable.',
+      html: 'De l\'évaluation de la qualité de votre ciel avec l\'échelle de Bortle au calcul précis de la résolution optique de votre télescope, chaque outil explique la formule utilisée pour vous aider à préparer une session d\'observation avec des attentes réalistes.',
     },
     { type: 'title', text: 'La Pollution Lumineuse: L\'Ennemi Numéro Un de l\'Astronome', level: 2 },
     {

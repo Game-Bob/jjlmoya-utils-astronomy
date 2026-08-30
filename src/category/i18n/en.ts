@@ -12,7 +12,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'From evaluating sky quality with the Bortle scale to precisely calculating the optical resolution of your telescope, each tool applies formulas validated by the international astronomical community so that every night you spend under the stars is productive and memorable.',
+      html: 'From evaluating sky quality with the Bortle scale to calculating the optical resolution of your telescope, each tool explains the formula it uses so that you can plan an observation session with realistic expectations.',
     },
     { type: 'title', text: 'Light Pollution: The Astronomer\'s Number One Enemy', level: 2 },
     {

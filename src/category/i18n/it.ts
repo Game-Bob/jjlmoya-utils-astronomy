@@ -12,7 +12,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Dalla valutazione della qualità del cielo con la scala di Bortle al calcolo preciso della risoluzione ottica del tuo telescopio, ogni strumento applica formule validate dalla comunità astronomica internazionale affinché ogni notte trascorsa sotto le stelle sia produttiva e memorabile.',
+      html: 'Dalla valutazione della qualità del cielo con la scala di Bortle al calcolo della risoluzione ottica del tuo telescopio, ogni strumento spiega la formula usata per pianificare una sessione con aspettative realistiche.',
     },
     { type: 'title', text: 'Inquinamento Luminoso: Il Nemico Numero Uno dell\'Astronomo', level: 2 },
     {
