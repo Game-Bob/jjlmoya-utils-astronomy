@@ -156,28 +156,24 @@ export const content: MeteorShowerObservingPlannerLocaleContent = {
       answer: 'No los telescopios y prismáticos reducen demasiado el campo de visión. La observación a simple vista es ideal para abarcar amplias zonas del cielo.',
     },
   ],
-  howTo: {
-    name: 'Cómo Usar el Planificador de Observación de Lluvias de Meteoros',
-    description: 'Sigue estos pasos para hallar tu mejor ventana de observación de meteoros en cualquier lluvia importante.',
-    steps: [
-      {
-        name: 'Selecciona la Lluvia de Meteoros',
-        text: 'Escoge una lluvia predefinida como las Perseidas o Gemínidas o introduce valores de ZHR personalizados.',
-      },
-      {
-        name: 'Ajusta tu Latitud de Observación',
-        text: 'Desliza el control de latitud hasta coincidir con tu ubicación geográfica.',
-      },
-      {
-        name: 'Configura la Oscuridad y Fase Lunar',
-        text: 'Establece tu clase Bortle local y el porcentaje de iluminación lunar actual.',
-      },
-      {
-        name: 'Revisa el Pronóstico de Tasa Horaria',
-        text: 'Examina el gráfico de tasa visible para identificar la ventana horaria óptima.',
-      },
-    ],
-  },
+  howTo: [
+    {
+      name: 'Selecciona la Lluvia de Meteoros',
+      text: 'Escoge una lluvia predefinida como las Perseidas o Gemínidas o introduce valores de ZHR personalizados.',
+    },
+    {
+      name: 'Ajusta tu Latitud de Observación',
+      text: 'Desliza el control de latitud hasta coincidir con tu ubicación geográfica.',
+    },
+    {
+      name: 'Configura la Oscuridad y Fase Lunar',
+      text: 'Establece tu clase Bortle local y el porcentaje de iluminación lunar actual.',
+    },
+    {
+      name: 'Revisa el Pronóstico de Tasa Horaria',
+      text: 'Examina el gráfico de tasa visible para identificar la ventana horaria óptima.',
+    },
+  ],
   bibliography: METEOR_PLANNER_BIBLIOGRAPHY,
   schemas: [
     {

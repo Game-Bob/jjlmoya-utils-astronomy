@@ -156,28 +156,24 @@ export const content: MeteorShowerObservingPlannerLocaleContent = {
       answer: 'Non un télescope réduit trop le champ de vision. L observation à l œil nu est la méthode la plus adaptée.',
     },
   ],
-  howTo: {
-    name: 'Comment utiliser le planificateur de pluies de météores',
-    description: 'Étapes pour identifier le meilleur créneau d observation des étoiles filantes.',
-    steps: [
-      {
-        name: 'Sélectionner l essaim',
-        text: 'Choisissez une pluie de météores comme les Perseides ou saisissez une valeur ZHR.',
-      },
-      {
-        name: 'Régler la latitude',
-        text: 'Ajustez le curseur selon votre position géographique.',
-      },
-      {
-        name: 'Configurer l obscurité et la Lune',
-        text: 'Indiquez la classe Bortle locale et l illumination de la Lune.',
-      },
-      {
-        name: 'Analyser la prévision',
-        text: 'Consultez le graphique horaire pour déterminer le créneau idéal.',
-      },
-    ],
-  },
+  howTo: [
+    {
+      name: 'Sélectionner l essaim',
+      text: 'Choisissez une pluie de météores comme les Perseides ou saisissez une valeur ZHR.',
+    },
+    {
+      name: 'Régler la latitude',
+      text: 'Ajustez le curseur selon votre position géographique.',
+    },
+    {
+      name: 'Configurer l obscurité et la Lune',
+      text: 'Indiquez la classe Bortle locale et l illumination de la Lune.',
+    },
+    {
+      name: 'Analyser la prévision',
+      text: 'Consultez le graphique horaire pour déterminer le créneau idéal.',
+    },
+  ],
   bibliography: METEOR_PLANNER_BIBLIOGRAPHY,
   schemas: [
     {

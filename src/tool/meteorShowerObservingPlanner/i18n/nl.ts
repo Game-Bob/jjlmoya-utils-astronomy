@@ -160,28 +160,24 @@ export const content: MeteorShowerObservingPlannerLocaleContent = {
       answer: 'Nee een telescoop beperkt het gezichtsveld te veel. Kijken met het blote oog is het beste.',
     },
   ],
-  howTo: {
-    name: 'Hoe de Meteorietenregen Planner te gebruiken',
-    description: 'Stappen om het beste observatievenster voor vallende sterren te vinden.',
-    steps: [
-      {
-        name: 'Selecteer een regen',
-        text: 'Kies een zwerm zoals de Perseïden of voer ZHR waarden in.',
-      },
-      {
-        name: 'Stel breedtegraad in',
-        text: 'Pas de schuifregelaar aan op uw locatie.',
-      },
-      {
-        name: 'Stel donkerte en maan in',
-        text: 'Voer de Bortle klasse en maanverlichting in.',
-      },
-      {
-        name: 'Bekijk de voorspelling',
-        text: 'Bekijk het diagram om het ideale venster te vinden.',
-      },
-    ],
-  },
+  howTo: [
+    {
+      name: 'Selecteer een regen',
+      text: 'Kies een zwerm zoals de Perseïden of voer ZHR waarden in.',
+    },
+    {
+      name: 'Stel breedtegraad in',
+      text: 'Pas de schuifregelaar aan op uw locatie.',
+    },
+    {
+      name: 'Stel donkerte en maan in',
+      text: 'Voer de Bortle klasse en maanverlichting in.',
+    },
+    {
+      name: 'Bekijk de voorspelling',
+      text: 'Bekijk de grafiek om het optimale observatievenster te bepalen.',
+    },
+  ],
   bibliography: METEOR_PLANNER_BIBLIOGRAPHY,
   schemas: [
     {

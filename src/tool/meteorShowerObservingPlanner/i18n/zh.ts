@@ -156,28 +156,24 @@ export const content: MeteorShowerObservingPlannerLocaleContent = {
       answer: '不需要，望远镜视野太窄。肉眼全天域观测是最佳选择。',
     },
   ],
-  howTo: {
-    name: '如何使用流星雨观测规划器',
-    description: '寻找最佳流星观测时间窗口的步骤。',
-    steps: [
-      {
-        name: '选择流星雨',
-        text: '选择英仙座流星雨等预设流星雨或输入自定义 ZHR。',
-      },
-      {
-        name: '设置纬度',
-        text: '调整滑块至您所在的观测纬度。',
-      },
-      {
-        name: '设置暗空与月相',
-        text: '输入波特尔等级与月球照度。',
-      },
-      {
-        name: '查看预测',
-        text: '分析图表确定最佳观测窗口。',
-      },
-    ],
-  },
+  howTo: [
+    {
+      name: '选择流星雨',
+      text: '选择英仙座流星雨等预设流星雨或输入自定义 ZHR。',
+    },
+    {
+      name: '设置纬度',
+      text: '调整滑块至您所在的观测纬度。',
+    },
+    {
+      name: '设置暗空与月相',
+      text: '输入波特尔等级与月球照度。',
+    },
+    {
+      name: '查看预测',
+      text: '分析图表确定最佳观测窗口。',
+    },
+  ],
   bibliography: METEOR_PLANNER_BIBLIOGRAPHY,
   schemas: [
     {

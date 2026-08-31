@@ -156,28 +156,24 @@ export const content: MeteorShowerObservingPlannerLocaleContent = {
       answer: 'No telescopes or binoculars restrict your field of view too much. Naked eye observing is best for catching meteors across wide sky areas.',
     },
   ],
-  howTo: {
-    name: 'How to Use the Meteor Shower Observing Window Planner',
-    description: 'Follow these steps to find your best meteor observing window for any major shower.',
-    steps: [
-      {
-        name: 'Select Meteor Shower',
-        text: 'Choose a preset meteor shower such as Perseids or Geminids or enter custom ZHR values.',
-      },
-      {
-        name: 'Set Your Location Latitude',
-        text: 'Adjust the latitude slider to match your viewing location.',
-      },
-      {
-        name: 'Configure Sky Darkness and Moon Phase',
-        text: 'Set your local Bortle scale value and current Moon illumination percentage.',
-      },
-      {
-        name: 'Review Hourly Rate Forecast',
-        text: 'Examine the peak visible rate chart to identify your optimal observing window.',
-      },
-    ],
-  },
+  howTo: [
+    {
+      name: 'Select Meteor Shower',
+      text: 'Choose a preset meteor shower such as Perseids or Geminids or enter custom ZHR values.',
+    },
+    {
+      name: 'Set Your Location Latitude',
+      text: 'Adjust the latitude slider to match your viewing location.',
+    },
+    {
+      name: 'Configure Sky Darkness and Moon Phase',
+      text: 'Set your local Bortle scale value and current Moon illumination percentage.',
+    },
+    {
+      name: 'Review Hourly Rate Forecast',
+      text: 'Examine the peak visible rate chart to identify your optimal observing window.',
+    },
+  ],
   bibliography: METEOR_PLANNER_BIBLIOGRAPHY,
   schemas: [
     {

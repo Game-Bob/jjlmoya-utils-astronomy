@@ -160,28 +160,24 @@ export const content: MeteorShowerObservingPlannerLocaleContent = {
       answer: 'Nie teleskopy zbyt mocno zwężają pole widzenia. Najlepsze są obserwacje gołym okiem.',
     },
   ],
-  howTo: {
-    name: 'Jak używać planera obserwacji meteorów',
-    description: 'Kroki do znalezienia najlepszego okna obserwacji spadających gwiazd.',
-    steps: [
-      {
-        name: 'Wybierz rój',
-        text: 'Wybierz znany rój taki jak Perseidy lub wpisz własne wartości ZHR.',
-      },
-      {
-        name: 'Ustaw szerokość geograficzną',
-        text: 'Dostosuj suwak do swojej lokalizacji.',
-      },
-      {
-        name: 'Ustaw ciemność i Księżyc',
-        text: 'Wprowadź klasę Bortle a oraz oświetlenie Księżyca.',
-      },
-      {
-        name: 'Sprawdź prognozę',
-        text: 'Przeanalizuj wykres aby wybrać najlepsze okno.',
-      },
-    ],
-  },
+  howTo: [
+    {
+      name: 'Wybierz rój',
+      text: 'Wybierz znany rój taki jak Perseidy lub wpisz własne wartości ZHR.',
+    },
+    {
+      name: 'Ustaw szerokość geograficzną',
+      text: 'Dostosuj suwak do swojej lokalizacji.',
+    },
+    {
+      name: 'Ustaw ciemność i Księżyc',
+      text: 'Wprowadź klasę Bortle a oraz oświetlenie Księżyca.',
+    },
+    {
+      name: 'Sprawdź prognozę',
+      text: 'Przeanalizuj wykres godzinowy aby znaleźć optymalne okno obserwacyjne.',
+    },
+  ],
   bibliography: METEOR_PLANNER_BIBLIOGRAPHY,
   schemas: [
     {
