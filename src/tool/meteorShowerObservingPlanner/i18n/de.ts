@@ -156,28 +156,24 @@ export const content: MeteorShowerObservingPlannerLocaleContent = {
       answer: 'Nein Teleskope verengen das Blickfeld zu stark. Die Beobachtung mit bloßem Auge ist am besten geeignet.',
     },
   ],
-  howTo: {
-    name: 'So nutzen Sie den Meteorstrom Beobachtungsplaner',
-    description: 'Anleitung zur Ermittlung des besten Beobachtungsfensters für Sternschnuppen.',
-    steps: [
-      {
-        name: 'Meteorstrom auswählen',
-        text: 'Wählen Sie einen vorgegebenen Meteorstrom wie die Perseiden oder geben Sie eigene Werte ein.',
-      },
-      {
-        name: 'Breitengrad einstellen',
-        text: 'Passen Sie den Regler an Ihren aktuellen Standort an.',
-      },
-      {
-        name: 'Dunkelheit und Mondphase konfigurieren',
-        text: 'Stellen Sie die lokale Bortle Klasse und die aktuelle Mondbeleuchtung ein.',
-      },
-      {
-        name: 'Vorhersage prüfen',
-        text: 'Analysieren Sie das Diagramm für Ihr optimales Fenster.',
-      },
-    ],
-  },
+  howTo: [
+    {
+      name: 'Meteorstrom auswählen',
+      text: 'Wählen Sie einen vorgegebenen Meteorstrom wie die Perseiden oder geben Sie eigene Werte ein.',
+    },
+    {
+      name: 'Breitengrad einstellen',
+      text: 'Passen Sie den Regler an Ihren aktuellen Standort an.',
+    },
+    {
+      name: 'Dunkelheit und Mondphase konfigurieren',
+      text: 'Stellen Sie die lokale Bortle Klasse und die aktuelle Mondbeleuchtung ein.',
+    },
+    {
+      name: 'Vorhersage prüfen',
+      text: 'Analysieren Sie das Diagramm für Ihr optimales Fenster.',
+    },
+  ],
   bibliography: METEOR_PLANNER_BIBLIOGRAPHY,
   schemas: [
     {

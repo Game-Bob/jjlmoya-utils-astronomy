@@ -81,11 +81,7 @@ export interface MeteorShowerObservingPlannerLocaleContent {
   ui: MeteorShowerObservingPlannerUI;
   seo: unknown[];
   faq: Array<{ question: string; answer: string }>;
-  howTo: {
-    name: string;
-    description: string;
-    steps: Array<{ name: string; text: string }>;
-  };
+  howTo: Array<{ name: string; text: string }>;
   bibliography: BibliographyEntry[];
   schemas: unknown[];
 }

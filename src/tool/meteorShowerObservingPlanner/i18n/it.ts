@@ -160,28 +160,24 @@ export const content: MeteorShowerObservingPlannerLocaleContent = {
       answer: 'No i telescopi riducono troppo il campo visivo. L osservazione a occhio nudo è la scelta migliore.',
     },
   ],
-  howTo: {
-    name: 'Come usare il pianificatore di sciami meteorici',
-    description: 'Passaggi per trovare la migliore finestra di osservazione delle stelle cadenti.',
-    steps: [
-      {
-        name: 'Seleziona lo sciame',
-        text: 'Scegli uno sciame come le Perseidi o inserisci valori ZHR personalizzati.',
-      },
-      {
-        name: 'Imposta la latitudine',
-        text: 'Regola il cursore sulla tua posizione geografica.',
-      },
-      {
-        name: 'Configura buio e Luna',
-        text: 'Imposta la classe Bortle e la percentuale di illuminazione lunare.',
-      },
-      {
-        name: 'Controlla le previsioni',
-        text: 'Esamina il grafico per individuare la finestra ideale.',
-      },
-    ],
-  },
+  howTo: [
+    {
+      name: 'Seleziona lo sciame',
+      text: 'Scegli uno sciame come le Perseidi o inserisci valori ZHR personalizzati.',
+    },
+    {
+      name: 'Imposta la latitudine',
+      text: 'Regola il cursore sulla tua posizione geografica.',
+    },
+    {
+      name: 'Configura buio e Luna',
+      text: 'Imposta la classe Bortle e la percentuale di illuminazione lunare.',
+    },
+    {
+      name: 'Controlla le previsioni',
+      text: 'Esamina il grafico per trovare la finestra di osservazione ideale.',
+    },
+  ],
   bibliography: METEOR_PLANNER_BIBLIOGRAPHY,
   schemas: [
     {

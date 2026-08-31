@@ -160,28 +160,24 @@ export const content: MeteorShowerObservingPlannerLocaleContent = {
       answer: 'Não os telescópios reduzem muito o campo de visão. A observação a olho nu é a melhor escolha.',
     },
   ],
-  howTo: {
-    name: 'Como usar o planejador de chuva de meteoros',
-    description: 'Passos para encontrar a melhor janela de observação de estrelas cadentes.',
-    steps: [
-      {
-        name: 'Selecionar chuva',
-        text: 'Escolha uma chuva como Perseidas ou digite valores de ZHR.',
-      },
-      {
-        name: 'Ajustar latitude',
-        text: 'Ajuste o slider para sua localização geográfica.',
-      },
-      {
-        name: 'Configurar escuridão e Lua',
-        text: 'Defina a classe Bortle e a porcentagem de iluminação lunar.',
-      },
-      {
-        name: 'Analisar a previsão',
-        text: 'Verifique o gráfico para encontrar a melhor janela.',
-      },
-    ],
-  },
+  howTo: [
+    {
+      name: 'Selecionar chuva',
+      text: 'Escolha uma chuva como Perseidas ou digite valores de ZHR.',
+    },
+    {
+      name: 'Ajustar latitude',
+      text: 'Ajuste o slider para sua localização geográfica.',
+    },
+    {
+      name: 'Configurar escuridão e Lua',
+      text: 'Defina a classe Bortle e a porcentagem de iluminação lunar.',
+    },
+    {
+      name: 'Analisar a previsão',
+      text: 'Examine o gráfico para encontrar a melhor janela de observação.',
+    },
+  ],
   bibliography: METEOR_PLANNER_BIBLIOGRAPHY,
   schemas: [
     {

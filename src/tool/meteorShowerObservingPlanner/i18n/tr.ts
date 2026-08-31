@@ -160,28 +160,24 @@ export const content: MeteorShowerObservingPlannerLocaleContent = {
       answer: 'Hayır teleskoplar görüş alanını çok daraltır. En iyisi çıplak gözle gözlem yapmaktır.',
     },
   ],
-  howTo: {
-    name: 'Göktaşı Yağmuru Planlayıcı Nasıl Kullanılır',
-    description: 'En iyi gözlem zamanını bulmak için izlenecek adımlar.',
-    steps: [
-      {
-        name: 'Yağmuru seçin',
-        text: 'Perseid gibi bilinen bir yağmuru seçin veya ZHR değeri girin.',
-      },
-      {
-        name: 'Enlemi ayarlayın',
-        text: 'Kaydırıcıyı konumunuza göre ayarlayın.',
-      },
-      {
-        name: 'Karanlık ve Ay durumunu ayarlayın',
-        text: 'Bortle sınıfı ve Ay aydınlanmasını girin.',
-      },
-      {
-        name: 'Tahmini inceleyin',
-        text: 'En iyi zamanı bulmak için grafiği inceleyin.',
-      },
-    ],
-  },
+  howTo: [
+    {
+      name: 'Yağmuru seçin',
+      text: 'Perseid gibi bilinen bir yağmuru seçin veya ZHR değeri girin.',
+    },
+    {
+      name: 'Enlemi ayarlayın',
+      text: 'Kaydırıcıyı konumunuza göre ayarlayın.',
+    },
+    {
+      name: 'Karanlık ve Ay durumunu ayarlayın',
+      text: 'Bortle sınıfı ve Ay aydınlanmasını girin.',
+    },
+    {
+      name: 'Tahmini inceleyin',
+      text: 'En iyi zamanı bulmak için grafiği inceleyin.',
+    },
+  ],
   bibliography: METEOR_PLANNER_BIBLIOGRAPHY,
   schemas: [
     {

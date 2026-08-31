@@ -160,28 +160,24 @@ export const content: MeteorShowerObservingPlannerLocaleContent = {
       answer: 'Nej teleskop begränsar synfältet för mycket. Blotta ögat är bäst.',
     },
   ],
-  howTo: {
-    name: 'Hur du använder meteorskurplaneraren',
-    description: 'Steg för att hitta det bästa observationstillfället för stjärnfall.',
-    steps: [
-      {
-        name: 'Välj meteorskur',
-        text: 'Välj en skur som Perseiderna eller ange egna ZHR värden.',
-      },
-      {
-        name: 'Ställ in breddgrad',
-        text: 'Anpassa reglaget efter din position.',
-      },
-      {
-        name: 'Ställ in mörker och måne',
-        text: 'Ange Bortle klass och månbelysning.',
-      },
-      {
-        name: 'Granska prognosen',
-        text: 'Se diagrammet för att hitta den bästa tiden.',
-      },
-    ],
-  },
+  howTo: [
+    {
+      name: 'Välj meteorskur',
+      text: 'Välj en skur som Perseiderna eller ange egna ZHR värden.',
+    },
+    {
+      name: 'Ställ in breddgrad',
+      text: 'Anpassa reglaget efter din position.',
+    },
+    {
+      name: 'Ställ in mörker och måne',
+      text: 'Ange Bortle klass och månbelysning.',
+    },
+    {
+      name: 'Granska prognosen',
+      text: 'Granska diagrammet för att hitta den bästa observationstiden.',
+    },
+  ],
   bibliography: METEOR_PLANNER_BIBLIOGRAPHY,
   schemas: [
     {

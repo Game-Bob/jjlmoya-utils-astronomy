@@ -156,28 +156,24 @@ export const content: MeteorShowerObservingPlannerLocaleContent = {
       answer: '아닙니다. 망원경은 시야가 너무 좁습니다. 맨눈 관측이 가장 좋습니다.',
     },
   ],
-  howTo: {
-    name: '유성우 관측 플래너 사용법',
-    description: '최적의 유성 관측 시간대를 찾는 단계입니다.',
-    steps: [
-      {
-        name: '유성우 선택',
-        text: '페르세우스자리 유성우 등 원하는 유성우를 선택하거나 ZHR 값을 입력합니다.',
-      },
-      {
-        name: '위도 설정',
-        text: '슬라이더를 사용해 현재 관측지 위도를 맞춥니다.',
-      },
-      {
-        name: '광해 및 달 위상 설정',
-        text: '보틀 등급과 달 조도를 입력합니다.',
-      },
-      {
-        name: '예측 수치 확인',
-        text: '차트를 통해 최적의 시간대를 확인합니다.',
-      },
-    ],
-  },
+  howTo: [
+    {
+      name: '유성우 선택',
+      text: '페르세우스자리 유성우 등 원하는 유성우를 선택하거나 ZHR 값을 입력합니다.',
+    },
+    {
+      name: '위도 설정',
+      text: '슬라이더를 사용해 현재 관측지 위도를 맞춥니다.',
+    },
+    {
+      name: '광해 및 달 위상 설정',
+      text: '보틀 등급과 달 조도를 입력합니다.',
+    },
+    {
+      name: '예측 수치 확인',
+      text: '차트를 통해 최적의 시간대를 확인합니다.',
+    },
+  ],
   bibliography: METEOR_PLANNER_BIBLIOGRAPHY,
   schemas: [
     {

@@ -160,28 +160,24 @@ export const content: MeteorShowerObservingPlannerLocaleContent = {
       answer: 'Tidak teleskop menyempitkan bidang pandang. Mata telanjang adalah yang terbaik.',
     },
   ],
-  howTo: {
-    name: 'Cara Menggunakan Perencana Hujan Meteor',
-    description: 'Langkah menemukan waktu pengamatan hujan meteor terbaik.',
-    steps: [
-      {
-        name: 'Pilih hujan meteor',
-        text: 'Pilih hujan meteor seperti Perseid atau masukkan nilai ZHR.',
-      },
-      {
-        name: 'Atur lintang',
-        text: 'Sesuaikan slider dengan lokasi Anda.',
-      },
-      {
-        name: 'Atur kegelapan dan Bulan',
-        text: 'Masukkan kelas Bortle dan persentase cahaya Bulan.',
-      },
-      {
-        name: 'Tinjau prakiraan',
-        text: 'Periksa grafik untuk menemukan waktu terbaik.',
-      },
-    ],
-  },
+  howTo: [
+    {
+      name: 'Pilih hujan meteor',
+      text: 'Pilih hujan meteor seperti Perseid atau masukkan nilai ZHR.',
+    },
+    {
+      name: 'Atur lintang',
+      text: 'Sesuaikan slider dengan lokasi Anda.',
+    },
+    {
+      name: 'Atur kegelapan dan Bulan',
+      text: 'Masukkan kelas Bortle dan persentase cahaya Bulan.',
+    },
+    {
+      name: 'Tinjau prakiraan',
+      text: 'Periksa grafik jam untuk menemukan jendela optimal.',
+    },
+  ],
   bibliography: METEOR_PLANNER_BIBLIOGRAPHY,
   schemas: [
     {
