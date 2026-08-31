@@ -1,15 +1,14 @@
-import type { AstronomyCategoryEntry } from '../types';
-import { bortleVisualizer } from '../tool/bortleVisualizer/entry';
-import { deepSpaceScope } from '../tool/deepSpaceScope/entry';
-import { starExposureCalculator } from '../tool/starExposureCalculator/entry';
-import { telescopeResolution } from '../tool/telescopeResolution/entry';
-import { eyepieceCalculator } from '../tool/smartEyepieceCalculator/entry';
-import { telescopeExitPupilPlanner } from '../tool/telescopeExitPupilPlanner/entry';
-import { meteorShowerObservingPlanner } from '../tool/meteorShowerObservingPlanner/entry';
+import type { AstronomyToolEntry } from '../../types';
+import type { MeteorShowerObservingPlannerUI, MeteorShowerObservingPlannerLocaleContent } from './ui';
 
-export const toolsCategory: AstronomyCategoryEntry = {
-  icon: 'mdi:telescope',
-  tools: [bortleVisualizer, deepSpaceScope, starExposureCalculator, telescopeResolution, eyepieceCalculator, telescopeExitPupilPlanner, meteorShowerObservingPlanner],
+export type { MeteorShowerObservingPlannerUI, MeteorShowerObservingPlannerLocaleContent };
+
+export const meteorShowerObservingPlanner: AstronomyToolEntry<MeteorShowerObservingPlannerUI> = {
+  id: 'meteor-shower-observing-planner',
+  icons: {
+    bg: 'mdi:weather-night',
+    fg: 'mdi:star-shooting',
+  },
   i18n: {
     de: () => import('./i18n/de').then((m) => m.content),
     en: () => import('./i18n/en').then((m) => m.content),
@@ -28,4 +27,3 @@ export const toolsCategory: AstronomyCategoryEntry = {
     zh: () => import('./i18n/zh').then((m) => m.content),
   },
 };
-export const astronomyCategory = toolsCategory;

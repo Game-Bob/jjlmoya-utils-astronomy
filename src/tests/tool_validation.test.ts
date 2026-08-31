@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import * as fs from 'fs';
 import * as path from 'path';
 import { ALL_TOOLS } from '../tools';
-import { astronomyCategory } from '../data';
+import { astronomyCategory } from '../category';
 import type { ToolDefinition } from '../types';
 
 function extractSeoText(sections: any[]): string {
@@ -37,7 +37,7 @@ function countWords(text: string): number {
   const cleanText = text.replace(/<[^>]*>/g, '').trim();
   const standardWords = cleanText.split(/\s+/).filter((w) => w.length > 0).length;
   const cjkChars = cleanText.match(/[\u4e00-\u9fa5\u3040-\u30ff\uac00-\ud7af]/g)?.length || 0;
-  const cjkBlocks = cleanText.split(/[^\u4e00-\u9fa5\u3040-\u30ff\uac00-\ud7af]+/).filter(w => w.length > 0).length;
+  const cjkBlocks = cleanText.split(/[^\u4e00-\u9fa5\u3040-\u30ff\uac00-\ud7af]+/).filter((w) => w.length > 0).length;
   return standardWords - cjkBlocks + cjkChars;
 }
 
@@ -78,6 +78,8 @@ describe('Tool Validation Suite', () => {
                   'calculadora-resolucion-telescopio',
                   'calculadora-oculares',
                   'planificador-pupila-salida-aumentos-telescopio',
+                  'planificador-observacion-lluvia-meteoros',
+                  'meteor-shower-observing-planner',
                 ];
                 expect(validSlugs).toContain(content.slug);
               }
@@ -103,12 +105,12 @@ describe('Tool Validation Suite', () => {
   });
 
   describe('Library Registration', () => {
-    it('should have 6 tools in ALL_TOOLS', () => {
-      expect(ALL_TOOLS.length).toBe(6);
+    it('should have 7 tools in ALL_TOOLS', () => {
+      expect(ALL_TOOLS.length).toBe(7);
     });
 
     it('should have all tools in astronomyCategory', () => {
-      expect(astronomyCategory.tools.length).toBe(6);
+      expect(astronomyCategory.tools.length).toBe(7);
       ALL_TOOLS.forEach(({ entry }) => {
         const exists = astronomyCategory.tools.some((t: any) => t.id === entry.id);
         expect(exists).toBe(true);
@@ -144,4 +146,3 @@ describe('Tool Validation Suite', () => {
     });
   });
 });
-

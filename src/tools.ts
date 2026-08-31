@@ -5,6 +5,7 @@ import { STAR_EXPOSURE_CALCULATOR_TOOL } from './tool/starExposureCalculator';
 import { TELESCOPE_RESOLUTION_TOOL } from './tool/telescopeResolution';
 import { EYEPIECE_CALCULATOR_TOOL } from './tool/smartEyepieceCalculator';
 import { TELESCOPE_EXIT_PUPIL_PLANNER_TOOL } from './tool/telescopeExitPupilPlanner';
+import { METEOR_SHOWER_OBSERVING_PLANNER_TOOL } from './tool/meteorShowerObservingPlanner';
 import type { ToolDefinition } from './types';
 
 export const ALL_TOOLS: ToolDefinition[] = [
@@ -14,6 +15,7 @@ export const ALL_TOOLS: ToolDefinition[] = [
   TELESCOPE_RESOLUTION_TOOL,
   EYEPIECE_CALCULATOR_TOOL,
   TELESCOPE_EXIT_PUPIL_PLANNER_TOOL,
+  METEOR_SHOWER_OBSERVING_PLANNER_TOOL,
 ];
 
 export {
@@ -23,4 +25,6 @@ export {
   TELESCOPE_RESOLUTION_TOOL,
   EYEPIECE_CALCULATOR_TOOL,
   TELESCOPE_EXIT_PUPIL_PLANNER_TOOL,
+  METEOR_SHOWER_OBSERVING_PLANNER_TOOL,
 };
+

@@ -1,0 +1,146 @@
+---
+import { meteorShowerObservingPlanner } from './index';
+import './meteor-shower-observing-planner.css';
+
+interface Props {
+  locale: string;
+}
+
+const { locale } = Astro.props;
+const entryLoader = meteorShowerObservingPlanner.i18n[locale as keyof typeof meteorShowerObservingPlanner.i18n] || meteorShowerObservingPlanner.i18n.en;
+const localeModule = await entryLoader();
+const content = typeof localeModule === 'function' ? localeModule() : localeModule;
+const ui = content.ui;
+---
+
+<div class="meteor-shower-planner-card" id="meteor-shower-planner-root">
+  <div class="planner-layout-grid">
+    <div class="planner-control-section">
+      <div class="input-control-group">
+        <span class="input-label-row">{ui.presetLabel}</span>
+        <div class="presets-chip-grid">
+          <button type="button" class="preset-chip-btn active" data-shower-id="perseids">{ui.presets['perseids'] || 'Perseids'}</button>
+          <button type="button" class="preset-chip-btn" data-shower-id="geminids">{ui.presets['geminids'] || 'Geminids'}</button>
+          <button type="button" class="preset-chip-btn" data-shower-id="quadrantids">{ui.presets['quadrantids'] || 'Quadrantids'}</button>
+          <button type="button" class="preset-chip-btn" data-shower-id="lyrids">{ui.presets['lyrids'] || 'Lyrids'}</button>
+          <button type="button" class="preset-chip-btn" data-shower-id="orionids">{ui.presets['orionids'] || 'Orionids'}</button>
+          <button type="button" class="preset-chip-btn" data-shower-id="eta-aquariids">{ui.presets['eta-aquariids'] || 'Eta Aquariids'}</button>
+          <button type="button" class="preset-chip-btn" data-shower-id="custom">{ui.presets['custom'] || 'Custom'}</button>
+        </div>
+      </div>
+
+      <div class="input-control-group custom-zhr-group" style="display: none;">
+        <label for="planner-custom-zhr-input" class="input-label-row">{ui.customZhrLabel}</label>
+        <input type="number" id="planner-custom-zhr-input" class="hours-select-input" value="100" min="1" max="1000" aria-label={ui.customZhrLabel} />
+      </div>
+
+      <div class="input-control-group">
+        <label for="planner-latitude-input" class="input-label-row">
+          <span>{ui.latitudeLabel}</span>
+          <span class="input-val-badge" id="planner-latitude-val">+40°</span>
+        </label>
+        <input type="range" id="planner-latitude-input" class="planner-slider-range" min="-80" max="80" value="40" step="1" aria-label={ui.latitudeLabel} />
+      </div>
+
+      <div class="input-control-group">
+        <label for="planner-bortle-input" class="input-label-row">
+          <span>{ui.bortleLabel}</span>
+          <span class="input-val-badge" id="planner-bortle-val">Class 4</span>
+        </label>
+        <input type="range" id="planner-bortle-input" class="planner-slider-range" min="1" max="9" value="4" step="1" aria-label={ui.bortleLabel} />
+      </div>
+
+      <div class="input-control-group">
+        <label for="planner-moon-input" class="input-label-row">
+          <span>{ui.moonPhaseLabel}</span>
+          <span class="input-val-badge" id="planner-moon-val">15%</span>
+        </label>
+        <input type="range" id="planner-moon-input" class="planner-slider-range" min="0" max="1" value="0.15" step="0.05" aria-label={ui.moonPhaseLabel} />
+      </div>
+
+      <div class="input-control-group">
+        <span class="input-label-row">{ui.sessionHoursLabel}</span>
+        <div class="hours-select-row">
+          <label for="planner-start-hour-select" class="sr-only">Start Hour</label>
+          <select id="planner-start-hour-select" class="hours-select-input" aria-label="Start Hour">
+            <option value="21">21:00</option>
+            <option value="22" selected>22:00</option>
+            <option value="23">23:00</option>
+            <option value="0">00:00</option>
+          </select>
+          <span>to</span>
+          <label for="planner-end-hour-select" class="sr-only">End Hour</label>
+          <select id="planner-end-hour-select" class="hours-select-input" aria-label="End Hour">
+            <option value="3">03:00</option>
+            <option value="4">04:00</option>
+            <option value="5" selected>05:00</option>
+            <option value="6">06:00</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="planner-results-section">
+      <div class="results-metrics-grid">
+        <div class="metric-card-box">
+          <div class="metric-lbl-txt">{ui.bestWindowLabel}</div>
+          <div class="metric-val-txt res-best-window">02:00 - 04:00</div>
+        </div>
+        <div class="metric-card-box">
+          <div class="metric-lbl-txt">{ui.maxRateLabel}</div>
+          <div class="metric-val-txt res-max-rate">45.0 / hr</div>
+        </div>
+        <div class="metric-card-box">
+          <div class="metric-lbl-txt">{ui.skyQualityLabel}</div>
+          <div class="metric-val-txt res-score-val badge-excellent">85/100</div>
+        </div>
+      </div>
+
+      <div class="res-badges-list"></div>
+
+      <div class="sky-dome-container"></div>
+
+      <div class="hourly-timeline-panel">
+        <div class="panel-title-lbl">{ui.hourlyChartTitle}</div>
+        <div class="hourly-bars-track"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="checklist-card-panel">
+    <div class="panel-title-lbl">{ui.checklistTitle}</div>
+    <ul class="checklist-ul">
+      {ui.checklistItems.map((item) => (
+        <li class="checklist-li">
+          <span class="checklist-icon-bullet"></span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <script is:inline type="application/json" id="meteor-planner-ui-data" set:html={JSON.stringify(ui)}></script>
+</div>
+
+<script>
+  import { MeteorShowerPlannerController } from './controller';
+  import { loadSavedInput } from './storage';
+
+  function initPlanner() {
+    const root = document.getElementById('meteor-shower-planner-root');
+    const dataEl = document.getElementById('meteor-planner-ui-data');
+    if (root && dataEl) {
+      try {
+        const ui = JSON.parse(dataEl.textContent || '{}');
+        const input = loadSavedInput();
+        new MeteorShowerPlannerController(root, input, ui);
+      } catch {}
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPlanner);
+  } else {
+    initPlanner();
+  }
+</script>

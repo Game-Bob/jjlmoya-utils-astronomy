@@ -1,0 +1,14 @@
+---
+import { SEORenderer } from '@jjlmoya/utils-shared';
+import { meteorShowerObservingPlanner } from './index';
+
+interface Props {
+  locale: string;
+}
+
+const { locale } = Astro.props;
+const entry = await meteorShowerObservingPlanner.i18n[locale as keyof typeof meteorShowerObservingPlanner.i18n]();
+const content = entry();
+---
+
+<SEORenderer locale={locale} sections={content.seo} />

@@ -10,6 +10,8 @@ export { eyepieceCalculator } from './tool/smartEyepieceCalculator/entry';
 export type { EyepieceCalculatorUI, EyepieceCalculatorLocaleContent } from './tool/smartEyepieceCalculator/entry';
 export { telescopeExitPupilPlanner } from './tool/telescopeExitPupilPlanner/entry';
 export type { TelescopeExitPupilPlannerUI, TelescopeExitPupilPlannerLocaleContent } from './tool/telescopeExitPupilPlanner/entry';
+export { meteorShowerObservingPlanner } from './tool/meteorShowerObservingPlanner/entry';
+export type { MeteorShowerObservingPlannerUI, MeteorShowerObservingPlannerLocaleContent } from './tool/meteorShowerObservingPlanner/entry';
 export { toolsCategory, astronomyCategory } from './category';
 import { bortleVisualizer } from './tool/bortleVisualizer/entry';
 import { deepSpaceScope } from './tool/deepSpaceScope/entry';
@@ -17,4 +19,6 @@ import { starExposureCalculator } from './tool/starExposureCalculator/entry';
 import { telescopeResolution } from './tool/telescopeResolution/entry';
 import { eyepieceCalculator } from './tool/smartEyepieceCalculator/entry';
 import { telescopeExitPupilPlanner } from './tool/telescopeExitPupilPlanner/entry';
-export const ALL_ENTRIES = [bortleVisualizer, deepSpaceScope, starExposureCalculator, telescopeResolution, eyepieceCalculator, telescopeExitPupilPlanner];
+import { meteorShowerObservingPlanner } from './tool/meteorShowerObservingPlanner/entry';
+export const ALL_ENTRIES = [bortleVisualizer, deepSpaceScope, starExposureCalculator, telescopeResolution, eyepieceCalculator, telescopeExitPupilPlanner, meteorShowerObservingPlanner];
+

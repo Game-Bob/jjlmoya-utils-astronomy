@@ -1,5 +1,8 @@
 import { starExposureCalculator } from './entry';
+import type { ToolDefinition } from '../../types';
+
 export * from './entry';
+
 export const STAR_EXPOSURE_CALCULATOR_TOOL: ToolDefinition = {
   entry: starExposureCalculator,
   Component: () => import('./component.astro'),

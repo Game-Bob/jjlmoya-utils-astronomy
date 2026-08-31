@@ -2,6 +2,7 @@ export * from './tool/bortleVisualizer';
 export * from './tool/deepSpaceScope';
 export * from './tool/starExposureCalculator';
 export * from './tool/telescopeResolution';
+export * from './tool/meteorShowerObservingPlanner';
 
 export { toolsCategory as astronomyCategory } from './category';
 export const AstronomyCategorySEO = () => import('./category/seo.astro').then((m) => m.default);
