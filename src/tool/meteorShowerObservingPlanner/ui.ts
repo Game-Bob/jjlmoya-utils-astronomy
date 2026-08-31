@@ -1,3 +1,5 @@
+import type { BibliographyEntry } from '../../types';
+
 export interface ShowerPreset {
   id: string;
   name: string;
@@ -77,6 +79,6 @@ export interface MeteorShowerObservingPlannerLocaleContent {
     description: string;
     steps: Array<{ name: string; text: string }>;
   };
-  bibliography: Array<{ title: string; url: string; author?: string; year?: number }>;
+  bibliography: BibliographyEntry[];
   schemas: any[];
 }

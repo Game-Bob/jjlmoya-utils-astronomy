@@ -61,21 +61,33 @@ const ui = content.ui;
       <div class="input-control-group">
         <span class="input-label-row">{ui.sessionHoursLabel}</span>
         <div class="hours-select-row">
-          <label for="planner-start-hour-select" class="sr-only">Start Hour</label>
-          <select id="planner-start-hour-select" class="hours-select-input" aria-label="Start Hour">
-            <option value="21">21:00</option>
-            <option value="22" selected>22:00</option>
-            <option value="23">23:00</option>
-            <option value="0">00:00</option>
-          </select>
-          <span>to</span>
-          <label for="planner-end-hour-select" class="sr-only">End Hour</label>
-          <select id="planner-end-hour-select" class="hours-select-input" aria-label="End Hour">
-            <option value="3">03:00</option>
-            <option value="4">04:00</option>
-            <option value="5" selected>05:00</option>
-            <option value="6">06:00</option>
-          </select>
+          <div class="custom-select-wrap">
+            <button type="button" class="custom-select-trigger" id="planner-start-hour-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Start Hour">
+              <span id="planner-start-hour-label">22:00</span>
+              <svg class="select-arrow-icon" viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            </button>
+            <div class="custom-select-menu" id="planner-start-hour-menu" role="listbox" hidden>
+              {[20, 21, 22, 23, 0, 1, 2].map((h) => (
+                <button type="button" class={`custom-select-opt ${h === 22 ? 'active' : ''}`} data-val={h}>
+                  {String(h).padStart(2, '0')}:00
+                </button>
+              ))}
+            </div>
+          </div>
+          <span class="hours-sep-txt">to</span>
+          <div class="custom-select-wrap">
+            <button type="button" class="custom-select-trigger" id="planner-end-hour-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="End Hour">
+              <span id="planner-end-hour-label">05:00</span>
+              <svg class="select-arrow-icon" viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            </button>
+            <div class="custom-select-menu" id="planner-end-hour-menu" role="listbox" hidden>
+              {[3, 4, 5, 6, 7].map((h) => (
+                <button type="button" class={`custom-select-opt ${h === 5 ? 'active' : ''}`} data-val={h}>
+                  {String(h).padStart(2, '0')}:00
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
