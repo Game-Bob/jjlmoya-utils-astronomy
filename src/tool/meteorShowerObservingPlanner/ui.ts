@@ -55,9 +55,16 @@ export interface MeteorShowerObservingPlannerUI {
   bortleLabel: string;
   moonPhaseLabel: string;
   sessionHoursLabel: string;
+  toLabel: string;
+  classLabel: string;
+  radiantTelemetryLabel: string;
+  belowHorizonLabel: string;
+  altLabel: string;
+  hrUnit: string;
   presets: Record<string, string>;
   bortleDescriptions: Record<number, string>;
   moonPhaseNames: Record<string, string>;
+  badgeLabels: Record<string, string>;
   resultsTitle: string;
   bestWindowLabel: string;
   maxRateLabel: string;

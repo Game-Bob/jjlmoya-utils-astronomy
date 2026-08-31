@@ -1,4 +1,4 @@
-import type { EvaluationResult } from './ui';
+import type { EvaluationResult, MeteorShowerObservingPlannerUI } from './ui';
 
 export function getQualityBadgeClass(score: number): string {
   if (score >= 70) {
@@ -10,8 +10,9 @@ export function getQualityBadgeClass(score: number): string {
   return 'badge-poor';
 }
 
-export function formatZHRDisplay(val: number): string {
-  return `${val.toFixed(1)} / hr`;
+export function formatZHRDisplay(val: number, ui?: MeteorShowerObservingPlannerUI): string {
+  const unit = ui?.hrUnit || '/ hr';
+  return `${val.toFixed(1)} ${unit}`;
 }
 
 export function calculateSummaryBadges(evaluation: EvaluationResult): Array<{ label: string; type: string }> {

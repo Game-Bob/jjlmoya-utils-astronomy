@@ -236,21 +236,22 @@ export function evaluateObservingSession(
   const bestEnd = formatHourLabel(windowEndHour);
 
   const badges: EvaluationResult['badges'] = [];
-  
+  const bLabels = ui.badgeLabels || {};
+
   if (input.bortleClass <= 3) {
-    badges.push({ label: 'Pristine Dark Sky', type: 'success' });
+    badges.push({ label: bLabels.darkSky || 'Pristine Dark Sky', type: 'success' });
   } else if (input.bortleClass >= 7) {
-    badges.push({ label: 'High Light Pollution', type: 'warning' });
+    badges.push({ label: bLabels.lightPollution || 'High Light Pollution', type: 'warning' });
   }
 
   if (calculateMoonInterference(input.moonPhase) < 30) {
-    badges.push({ label: 'Favorable Moon', type: 'success' });
+    badges.push({ label: bLabels.favorableMoon || 'Favorable Moon', type: 'success' });
   } else {
-    badges.push({ label: 'Moon Washout Risk', type: 'info' });
+    badges.push({ label: bLabels.moonWashout || 'Moon Washout Risk', type: 'info' });
   }
 
   if (maxRate >= 20) {
-    badges.push({ label: 'Prime Activity Window', type: 'success' });
+    badges.push({ label: bLabels.primeWindow || 'Prime Activity Window', type: 'success' });
   }
 
   return {

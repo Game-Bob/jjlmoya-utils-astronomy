@@ -163,7 +163,7 @@ export class MeteorShowerPlannerController {
 
     const maxRateEl = this.rootEl.querySelector('.res-max-rate');
     if (maxRateEl) {
-      maxRateEl.textContent = formatZHRDisplay(evaluation.maxEffectiveRate);
+      maxRateEl.textContent = formatZHRDisplay(evaluation.maxEffectiveRate, this.ui);
     }
 
     const scoreValEl = this.rootEl.querySelector('.res-score-val');
@@ -181,7 +181,7 @@ export class MeteorShowerPlannerController {
 
     const domeContainer = this.rootEl.querySelector('.sky-dome-container');
     if (domeContainer) {
-      domeContainer.innerHTML = renderSkyDomeSvg(this.input, evaluation);
+      domeContainer.innerHTML = renderSkyDomeSvg(this.input, evaluation, this.ui);
     }
 
     const barsContainer = this.rootEl.querySelector('.hourly-bars-track');

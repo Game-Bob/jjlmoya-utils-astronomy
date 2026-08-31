@@ -1,12 +1,12 @@
-import type { EvaluationResult, HourlyCalculation, ObservingPlannerInput } from './ui';
+import type { EvaluationResult, HourlyCalculation, ObservingPlannerInput, MeteorShowerObservingPlannerUI } from './ui';
 import { getShowerById, calculateRadiantElevation } from './logic';
 
-export function renderSkyDomeSvg(input: ObservingPlannerInput, evaluation: EvaluationResult): string {
+export function renderSkyDomeSvg(input: ObservingPlannerInput, evaluation: EvaluationResult, ui?: MeteorShowerObservingPlannerUI): string {
   const shower = getShowerById(input.showerId);
   const peakHourItem = evaluation.hourlyBreakdown.find((h) => h.isPeakHour) || evaluation.hourlyBreakdown[0];
   const peakHour = peakHourItem ? peakHourItem.hour : 2;
 
-  const elevationDeg = Math.round(calculateRadiantElevation(shower.radiantConstellation, input.latitude, peakHour));
+  const elevationDeg = Math.round(calculateRadiantElevation(peakHour, input.latitude, input.showerId));
   const effectiveZhr = peakHourItem ? peakHourItem.effectiveZhr : 0;
   const isAboveHorizon = elevationDeg > 0;
 
@@ -20,6 +20,12 @@ export function renderSkyDomeSvg(input: ObservingPlannerInput, evaluation: Evalu
   const moonGlowOpacity = (input.moonPhase * 0.5).toFixed(2);
   const moonX = Math.round(80 + ((peakHour % 10) / 10) * 240);
   const moonY = Math.round(70 + Math.sin(peakHour * 0.5) * 30);
+
+  const telemetryTitle = ui?.radiantTelemetryLabel || 'RADIANT TELEMETRY';
+  const constName = ui?.constellations?.[shower.radiantConstellation] || shower.radiantConstellation;
+  const altText = ui?.altLabel || 'Alt';
+  const belowTxt = ui?.belowHorizonLabel || 'Below Horizon';
+  const moonTxt = ui?.moonLabel || 'Moon';
 
   let meteorStreaks = '';
   if (isAboveHorizon && effectiveZhr > 2) {
@@ -41,7 +47,7 @@ export function renderSkyDomeSvg(input: ObservingPlannerInput, evaluation: Evalu
   }
 
   const statusBadgeColor = isAboveHorizon ? '#10b981' : '#f43f5e';
-  const statusTxt = isAboveHorizon ? `+${elevationDeg}° Alt` : `${elevationDeg}° Below Horizon`;
+  const statusTxt = isAboveHorizon ? `+${elevationDeg}° ${altText}` : `${belowTxt}`;
 
   return `
     <svg class="sky-dome-svg" viewBox="0 0 400 230" role="img" aria-label="Celestial Sky Dome and Radiant Elevation">
@@ -79,9 +85,9 @@ export function renderSkyDomeSvg(input: ObservingPlannerInput, evaluation: Evalu
       <line x1="20" y1="180" x2="380" y2="180" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
 
       <g transform="translate(14, 20)">
-        <rect width="135" height="34" rx="6" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-        <text x="8" y="14" fill="#94a3b8" font-size="9" font-weight="600">RADIANT TELEMETRY</text>
-        <text x="8" y="27" fill="${statusBadgeColor}" font-size="11" font-weight="700">${shower.radiantConstellation} (${statusTxt})</text>
+        <rect width="145" height="34" rx="6" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+        <text x="8" y="14" fill="#94a3b8" font-size="9" font-weight="600">${telemetryTitle}</text>
+        <text x="8" y="27" fill="${statusBadgeColor}" font-size="11" font-weight="700">${constName} (${statusTxt})</text>
       </g>
 
       ${
@@ -90,7 +96,7 @@ export function renderSkyDomeSvg(input: ObservingPlannerInput, evaluation: Evalu
         <circle cx="${moonX}" cy="${moonY}" r="28" fill="url(#moonGlowGrad)"/>
         <circle cx="${moonX}" cy="${moonY}" r="10" fill="#e2e8f0"/>
         <path d="M ${moonX} ${moonY - 10} A 10 10 0 0 1 ${moonX} ${moonY + 10} A ${(10 * (1 - input.moonPhase * 2)).toFixed(1)} 10 0 0 1 ${moonX} ${moonY - 10}" fill="#090d16"/>
-        <text x="${moonX}" y="${moonY + 20}" text-anchor="middle" fill="#94a3b8" font-size="9">${moonPhasePercent}% Moon</text>
+        <text x="${moonX}" y="${moonY + 20}" text-anchor="middle" fill="#94a3b8" font-size="9">${moonPhasePercent}% ${moonTxt}</text>
       `
           : ''
       }
@@ -111,7 +117,7 @@ export function renderSkyDomeSvg(input: ObservingPlannerInput, evaluation: Evalu
           : `
         <g transform="translate(${radiantX}, 195)">
           <circle r="10" fill="none" stroke="#f43f5e" stroke-width="1.5" stroke-dasharray="2,2"/>
-          <text x="0" y="16" text-anchor="middle" fill="#f43f5e" font-size="9" font-weight="600">Below Horizon</text>
+          <text x="0" y="16" text-anchor="middle" fill="#f43f5e" font-size="9" font-weight="600">${belowTxt}</text>
         </g>
       `
       }
