@@ -92,7 +92,7 @@ export function calculateRadiantElevation(hour: number, latitude: number, shower
   const shower = getShowerById(showerId);
   const hourNormalized = (hour + 24) % 24;
   const isNorthern = latitude >= 0;
-  
+
   let peakHour = 3;
   if (shower.id === 'eta-aquariids') {
     peakHour = 4;
@@ -123,62 +123,23 @@ export function calculateEffectiveZHR(
   if (radiantElevation <= 0) {
     return 0;
   }
-  const radRad = (radiantElevation * Math.PI) / 180;
-  const elevationFactor = Math.sin(radRad);
 
-  const safeBortle = Math.max(1, Math.min(9, bortleClass));
-  const bortleFactor = Math.pow(10, -0.15 * (safeBortle - 1));
-
-  const moonWashout = calculateMoonInterference(moonPhase) / 100;
-  const moonFactor = Math.max(0.15, 1 - 0.75 * moonWashout);
+  const elevationFactor = Math.sin((radiantElevation * Math.PI) / 180);
+  const bortleFactor = Math.max(0.1, 1 - (bortleClass - 1) * 0.1);
+  const moonInterference = calculateMoonInterference(moonPhase);
+  const moonFactor = Math.max(0.2, 1 - (moonInterference / 100) * 0.6);
 
   const effective = zhr * elevationFactor * bortleFactor * moonFactor;
   return Math.max(0, Math.round(effective * 10) / 10);
 }
 
 export function formatHourLabel(hour: number): string {
-  const h = (hour + 24) % 24;
-  const padded = h < 10 ? `0${h}` : `${h}`;
-  return `${padded}:00`;
+  const normalized = (hour + 24) % 24;
+  return `${String(normalized).padStart(2, '0')}:00`;
 }
 
-export function calculateHourlyBreakdown(input: ObservingPlannerInput): HourlyCalculation[] {
-  const shower = getShowerById(input.showerId);
-  const baseZhr = input.showerId === 'custom' ? input.customZhr : shower.zhr;
-  const list: HourlyCalculation[] = [];
-
-  let start = input.sessionStartHour;
-  let end = input.sessionEndHour;
-  if (start > end) {
-    end += 24;
-  }
-
-  for (let current = start; current <= end; current++) {
-    const actualHour = current % 24;
-    const elevation = calculateRadiantElevation(actualHour, input.latitude, input.showerId);
-    const effZhr = calculateEffectiveZHR(baseZhr, elevation, input.bortleClass, input.moonPhase);
-    const moonPercent = calculateMoonInterference(input.moonPhase);
-
-    const quality = Math.min(100, Math.round((effZhr / Math.max(1, baseZhr)) * 100));
-
-    list.push({
-      hour: actualHour,
-      formattedTime: formatHourLabel(actualHour),
-      radiantElevationDeg: elevation,
-      effectiveZhr: effZhr,
-      qualityScore: quality,
-      moonInterferencePercent: moonPercent,
-      isPeakHour: false,
-    });
-  }
-
-  let maxZhr = -1;
-  list.forEach((item) => {
-    if (item.effectiveZhr > maxZhr) {
-      maxZhr = item.effectiveZhr;
-    }
-  });
-
+function markPeakHours(list: HourlyCalculation[]): void {
+  const maxZhr = Math.max(...list.map((item) => item.effectiveZhr), -1);
   if (maxZhr > 0) {
     list.forEach((item) => {
       if (item.effectiveZhr === maxZhr) {
@@ -186,7 +147,34 @@ export function calculateHourlyBreakdown(input: ObservingPlannerInput): HourlyCa
       }
     });
   }
+}
 
+export function calculateHourlyBreakdown(input: ObservingPlannerInput): HourlyCalculation[] {
+  const shower = getShowerById(input.showerId);
+  const baseZhr = input.showerId === 'custom' ? input.customZhr : shower.zhr;
+  const list: HourlyCalculation[] = [];
+
+  const start = input.sessionStartHour;
+  const end = input.sessionStartHour > input.sessionEndHour ? input.sessionEndHour + 24 : input.sessionEndHour;
+
+  for (let current = start; current <= end; current++) {
+    const actualHour = current % 24;
+    const elevation = calculateRadiantElevation(actualHour, input.latitude, input.showerId);
+    const effZhr = calculateEffectiveZHR(baseZhr, elevation, input.bortleClass, input.moonPhase);
+    const moonPercent = calculateMoonInterference(input.moonPhase);
+
+    list.push({
+      hour: actualHour,
+      formattedTime: formatHourLabel(actualHour),
+      radiantElevationDeg: elevation,
+      effectiveZhr: effZhr,
+      qualityScore: Math.min(100, Math.round((effZhr / Math.max(1, baseZhr)) * 100)),
+      moonInterferencePercent: moonPercent,
+      isPeakHour: false,
+    });
+  }
+
+  markPeakHours(list);
   return list;
 }
 
@@ -211,48 +199,56 @@ function evaluateMoonRating(moonPhase: number, ui: MeteorShowerObservingPlannerU
   return ui.moonPhaseNames['full'] || 'Severe Moon Interference';
 }
 
+function getBortleBadge(bortleClass: number, bLabels: Record<string, string>): EvaluationResult['badges'][number] | null {
+  if (bortleClass <= 3) {
+    return { label: bLabels.darkSky || 'Pristine Dark Sky', type: 'success' };
+  }
+  if (bortleClass >= 7) {
+    return { label: bLabels.lightPollution || 'High Light Pollution', type: 'warning' };
+  }
+  return null;
+}
+
+function getMoonBadge(moonPhase: number, bLabels: Record<string, string>): EvaluationResult['badges'][number] {
+  const isLow = calculateMoonInterference(moonPhase) < 30;
+  return {
+    label: isLow ? bLabels.favorableMoon || 'Favorable Moon' : bLabels.moonWashout || 'Moon Washout Risk',
+    type: isLow ? 'success' : 'info',
+  };
+}
+
+function buildSessionBadges(
+  input: ObservingPlannerInput,
+  ui: MeteorShowerObservingPlannerUI,
+  maxRate: number
+): EvaluationResult['badges'] {
+  const badges: EvaluationResult['badges'] = [];
+  const bLabels = ui.badgeLabels || {};
+
+  const bBadge = getBortleBadge(input.bortleClass, bLabels);
+  if (bBadge) badges.push(bBadge);
+
+  badges.push(getMoonBadge(input.moonPhase, bLabels));
+
+  if (maxRate >= 20) {
+    badges.push({ label: bLabels.primeWindow || 'Prime Activity Window', type: 'success' });
+  }
+
+  return badges;
+}
+
 export function evaluateObservingSession(
   input: ObservingPlannerInput,
   ui: MeteorShowerObservingPlannerUI
 ): EvaluationResult {
   const hourly = calculateHourlyBreakdown(input);
-  
-  let maxRate = 0;
-  let peakItem: HourlyCalculation | null = null;
-  let totalScore = 0;
-
-  hourly.forEach((item) => {
-    totalScore += item.qualityScore;
-    if (item.effectiveZhr > maxRate) {
-      maxRate = item.effectiveZhr;
-      peakItem = item;
-    }
-  });
+  const maxRate = Math.max(...hourly.map((h) => h.effectiveZhr), 0);
+  const peakItem = hourly.find((h) => h.effectiveZhr === maxRate) || null;
+  const totalScore = hourly.reduce((sum, h) => sum + h.qualityScore, 0);
 
   const avgScore = hourly.length > 0 ? Math.round(totalScore / hourly.length) : 0;
-  const peakTime = peakItem ? (peakItem as HourlyCalculation).formattedTime : '23:00';
-
-  const windowEndHour = peakItem ? (((peakItem as HourlyCalculation).hour + 2) % 24) : 1;
-  const bestEnd = formatHourLabel(windowEndHour);
-
-  const badges: EvaluationResult['badges'] = [];
-  const bLabels = ui.badgeLabels || {};
-
-  if (input.bortleClass <= 3) {
-    badges.push({ label: bLabels.darkSky || 'Pristine Dark Sky', type: 'success' });
-  } else if (input.bortleClass >= 7) {
-    badges.push({ label: bLabels.lightPollution || 'High Light Pollution', type: 'warning' });
-  }
-
-  if (calculateMoonInterference(input.moonPhase) < 30) {
-    badges.push({ label: bLabels.favorableMoon || 'Favorable Moon', type: 'success' });
-  } else {
-    badges.push({ label: bLabels.moonWashout || 'Moon Washout Risk', type: 'info' });
-  }
-
-  if (maxRate >= 20) {
-    badges.push({ label: bLabels.primeWindow || 'Prime Activity Window', type: 'success' });
-  }
+  const peakTime = peakItem ? peakItem.formattedTime : '23:00';
+  const bestEnd = formatHourLabel(peakItem ? (peakItem.hour + 2) % 24 : 1);
 
   return {
     overallScore: avgScore,
@@ -261,7 +257,7 @@ export function evaluateObservingSession(
     maxEffectiveRate: maxRate,
     skyDarknessRating: evaluateDarknessRating(input.bortleClass, ui),
     moonImpactRating: evaluateMoonRating(input.moonPhase, ui),
-    badges,
+    badges: buildSessionBadges(input, ui, maxRate),
     hourlyBreakdown: hourly,
   };
 }

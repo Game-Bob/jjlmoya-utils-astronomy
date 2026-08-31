@@ -1,16 +1,23 @@
 ---
 import { meteorShowerObservingPlanner } from './index';
+import type { MeteorShowerObservingPlannerUI } from './ui';
 import './meteor-shower-observing-planner.css';
 
 interface Props {
-  locale: string;
+  ui?: MeteorShowerObservingPlannerUI;
+  locale?: string;
 }
 
-const { locale } = Astro.props;
-const entryLoader = meteorShowerObservingPlanner.i18n[locale as keyof typeof meteorShowerObservingPlanner.i18n] || meteorShowerObservingPlanner.i18n.en;
-const localeModule = await entryLoader();
-const content = typeof localeModule === 'function' ? localeModule() : localeModule;
-const ui = content.ui;
+const { ui: passedUi, locale } = Astro.props;
+
+let ui = passedUi;
+if (!ui) {
+  const currentLocale = locale || 'en';
+  const entryLoader = meteorShowerObservingPlanner.i18n[currentLocale as keyof typeof meteorShowerObservingPlanner.i18n] || meteorShowerObservingPlanner.i18n.en;
+  const localeModule = await entryLoader();
+  const content = typeof localeModule === 'function' ? localeModule() : localeModule;
+  ui = content.ui;
+}
 ---
 
 <div class="meteor-shower-planner-card" id="meteor-shower-planner-root">
@@ -45,7 +52,7 @@ const ui = content.ui;
       <div class="input-control-group">
         <label for="planner-bortle-input" class="input-label-row">
           <span>{ui.bortleLabel}</span>
-          <span class="input-val-badge" id="planner-bortle-val">Class 4</span>
+          <span class="input-val-badge" id="planner-bortle-val">{ui.classLabel || 'Class'} 4</span>
         </label>
         <input type="range" id="planner-bortle-input" class="planner-slider-range" min="1" max="9" value="4" step="1" aria-label={ui.bortleLabel} />
       </div>
@@ -100,7 +107,7 @@ const ui = content.ui;
         </div>
         <div class="metric-card-box">
           <div class="metric-lbl-txt">{ui.maxRateLabel}</div>
-          <div class="metric-val-txt res-max-rate">45.0 / hr</div>
+          <div class="metric-val-txt res-max-rate">45.0 {ui.hrUnit || '/ hr'}</div>
         </div>
         <div class="metric-card-box">
           <div class="metric-lbl-txt">{ui.skyQualityLabel}</div>

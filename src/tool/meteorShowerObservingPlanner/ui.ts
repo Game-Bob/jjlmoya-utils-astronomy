@@ -46,7 +46,7 @@ export interface EvaluationResult {
 }
 
 export interface MeteorShowerObservingPlannerUI {
-  [key: string]: any;
+  [key: string]: unknown;
   title: string;
   subtitle: string;
   presetLabel: string;
@@ -79,7 +79,7 @@ export interface MeteorShowerObservingPlannerLocaleContent {
   title: string;
   description: string;
   ui: MeteorShowerObservingPlannerUI;
-  seo: any[];
+  seo: unknown[];
   faq: Array<{ question: string; answer: string }>;
   howTo: {
     name: string;
@@ -87,5 +87,5 @@ export interface MeteorShowerObservingPlannerLocaleContent {
     steps: Array<{ name: string; text: string }>;
   };
   bibliography: BibliographyEntry[];
-  schemas: any[];
+  schemas: unknown[];
 }
