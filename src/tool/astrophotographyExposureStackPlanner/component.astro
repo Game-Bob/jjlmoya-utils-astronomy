@@ -1,0 +1,149 @@
+---
+import type { ExposurePlannerUI } from './ui';
+import { DEFAULT_INPUT } from './logic';
+
+interface Props {
+  ui: ExposurePlannerUI;
+}
+
+const { ui } = Astro.props;
+const config = JSON.stringify({ defaults: DEFAULT_INPUT, ui });
+---
+
+<div class="astrophotography-exposure-stack-planner" data-exposure-planner>
+  <form class="exposure-planner-form" onsubmit="return false">
+    <section class="control-rail" aria-label={ui.cameraLegend}>
+      <fieldset class="camera-fields">
+        <legend>{ui.cameraLegend}</legend>
+        <label class="field-control">
+          <span>{ui.focalLabel}</span>
+          <input data-field="focalLength" type="number" min="5" max="600" step="1" value={DEFAULT_INPUT.focalLength} inputmode="decimal" />
+          <small>{ui.focalHelp}</small>
+        </label>
+        <label class="field-control">
+          <span>{ui.apertureLabel}</span>
+          <input data-field="aperture" type="number" min="1" max="32" step="0.1" value={DEFAULT_INPUT.aperture} inputmode="decimal" />
+          <small>{ui.apertureHelp}</small>
+        </label>
+        <label class="field-control">
+          <span>{ui.pixelPitchLabel}</span>
+          <input data-field="pixelPitch" type="number" min="0.5" max="30" step="0.1" value={DEFAULT_INPUT.pixelPitch} inputmode="decimal" />
+          <small>{ui.pixelPitchHelp}</small>
+        </label>
+        <label class="field-control">
+          <span>{ui.declinationLabel}</span>
+          <input data-field="declination" type="number" min="0" max="89" step="1" value={DEFAULT_INPUT.declination} inputmode="decimal" />
+          <small>{ui.declinationHelp}</small>
+        </label>
+      </fieldset>
+
+      <fieldset class="choice-fieldset">
+        <legend>{ui.sensorLabel}</legend>
+        <div class="choice-grid sensor-grid">
+          {Object.entries(ui.sensorOptions).map(([value, label]) => (
+            <button type="button" data-sensor data-value={value} aria-pressed="false">{label}</button>
+          ))}
+        </div>
+      </fieldset>
+
+      <fieldset class="choice-fieldset">
+        <legend>{ui.ruleLabel}</legend>
+        <div class="choice-grid two-up">
+          <button type="button" data-rule data-value="npf" aria-pressed="false">{ui.ruleNpf}</button>
+          <button type="button" data-rule data-value="rule500" aria-pressed="false">{ui.rule500}</button>
+        </div>
+      </fieldset>
+
+      <fieldset class="choice-fieldset">
+        <legend>{ui.trackingLabel}</legend>
+        <div class="choice-grid two-up">
+          <button type="button" data-tracking data-value="untracked" aria-pressed="false">{ui.untracked}</button>
+          <button type="button" data-tracking data-value="tracked" aria-pressed="false">{ui.tracked}</button>
+        </div>
+      </fieldset>
+
+      <fieldset class="timing-fields">
+        <legend>{ui.trackingExposureLabel}</legend>
+        <label class="field-control">
+          <span>{ui.trackingExposureLabel}</span>
+          <input data-field="trackingExposureSeconds" type="number" min="5" max="900" step="5" value={DEFAULT_INPUT.trackingExposureSeconds} inputmode="decimal" />
+          <small>{ui.trackingExposureHelp}</small>
+        </label>
+        <label class="field-control">
+          <span>{ui.deadTimeLabel}</span>
+          <input data-field="deadTimeSeconds" type="number" min="0" max="120" step="1" value={DEFAULT_INPUT.deadTimeSeconds} inputmode="decimal" />
+          <small>{ui.deadTimeHelp}</small>
+        </label>
+      </fieldset>
+
+      <label class="field-control integration-field">
+        <span>{ui.totalIntegrationLabel}</span>
+        <input data-field="totalIntegrationMinutes" type="number" min="1" max="1440" step="5" value={DEFAULT_INPUT.totalIntegrationMinutes} inputmode="decimal" />
+        <small>{ui.totalIntegrationHelp}</small>
+      </label>
+    </section>
+  </form>
+
+  <section class="exposure-result" aria-live="polite">
+    <div class="result-topline">
+      <span class="result-kicker">{ui.resultKicker}</span>
+      <span class="status-pill" data-status data-tone="attention">{ui.startingStatus}</span>
+    </div>
+    <div class="result-heading">
+      <div>
+        <h2>{ui.resultTitle}</h2>
+        <p data-note></p>
+      </div>
+      <div class="hero-output">
+        <strong data-output="ceiling">0.0 s</strong>
+        <span>{ui.secondsUnit}</span>
+      </div>
+    </div>
+
+    <div class="timeline-panel">
+      <div class="timeline-header">
+        <h3>{ui.timelineTitle}</h3>
+        <span><span data-output="frames">0</span> {ui.framesLabel}</span>
+      </div>
+      <div class="timeline" data-timeline></div>
+      <div class="timeline-labels"><span data-output="timeline-start">{ui.timelineStart}</span><span data-output="timeline-end">{ui.timelineEnd}</span></div>
+    </div>
+
+    <div class="metric-strip">
+      <div><span>{ui.totalTimeLabel}</span><strong data-output="total">0.0 min</strong></div>
+      <div><span>{ui.sessionTimeLabel}</span><strong data-output="session">0.0 min</strong></div>
+      <div><span>{ui.gainLabel}</span><strong data-output="gain">0.0 stops</strong></div>
+    </div>
+    <p class="session-detail" data-output="session-detail"></p>
+    <aside class="workload-note" data-workload></aside>
+    <aside class="sensor-warning" data-sensor-warning hidden></aside>
+
+    <section class="comparison-panel">
+      <h3>{ui.comparisonTitle}</h3>
+      <div class="comparison-row"><span>{ui.npfLabel}</span><strong data-output="npf">0.0 s</strong></div>
+      <div class="comparison-row"><span>{ui.rule500Label}</span><strong data-output="rule500">0.0 s</strong></div>
+      <div class="comparison-row"><span>{ui.deltaLabel}</span><strong data-output="delta">0%</strong></div>
+    </section>
+
+    <details class="method-details">
+      <summary>{ui.methodTitle}</summary>
+      <p>{ui.methodText}</p>
+      <p><strong>{ui.formulaLabel}</strong></p>
+      <p>{ui.formulaNpf}</p>
+      <p>{ui.formula500}</p>
+    </details>
+    <aside class="limits-note">
+      <strong>{ui.limitsTitle}</strong>
+      <p>{ui.limitsText}</p>
+    </aside>
+  </section>
+
+  <script is:inline type="application/json" data-planner-config set:html={config}></script>
+</div>
+
+<script>
+  import { mountExposurePlanner } from './controller';
+
+  const root = document.querySelector<HTMLElement>('[data-exposure-planner]');
+  if (root) mountExposurePlanner(root);
+</script>

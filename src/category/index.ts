@@ -6,10 +6,11 @@ import { telescopeResolution } from '../tool/telescopeResolution/entry';
 import { eyepieceCalculator } from '../tool/smartEyepieceCalculator/entry';
 import { telescopeExitPupilPlanner } from '../tool/telescopeExitPupilPlanner/entry';
 import { meteorShowerObservingPlanner } from '../tool/meteorShowerObservingPlanner/entry';
+import { astrophotographyExposureStackPlanner } from '../tool/astrophotographyExposureStackPlanner/entry';
 
 export const toolsCategory: AstronomyCategoryEntry = {
   icon: 'mdi:telescope',
-  tools: [bortleVisualizer, deepSpaceScope, starExposureCalculator, telescopeResolution, eyepieceCalculator, telescopeExitPupilPlanner, meteorShowerObservingPlanner],
+  tools: [bortleVisualizer, deepSpaceScope, starExposureCalculator, telescopeResolution, eyepieceCalculator, telescopeExitPupilPlanner, meteorShowerObservingPlanner, astrophotographyExposureStackPlanner],
   i18n: {
     de: () => import('./i18n/de').then((m) => m.content),
     en: () => import('./i18n/en').then((m) => m.content),

@@ -129,39 +129,61 @@ function calculateDomeCoords(input: ObservingPlannerInput, evaluation: Evaluatio
   return { peakHour, elev, isAbove, radiantX, radiantY, moonX, moonY };
 }
 
-function getConstellationName(constKey: string, ui?: MeteorShowerObservingPlannerUI): string {
-  if (!ui || !ui.constellations) return constKey;
-  return ui.constellations[constKey] || constKey;
-}
-
 function getStatusText(isAbove: boolean, elev: number, ui?: MeteorShowerObservingPlannerUI): string {
   const alt = ui && ui.altLabel ? ui.altLabel : 'Alt';
   const below = ui && ui.belowHorizonLabel ? ui.belowHorizonLabel : 'Below Horizon';
   return isAbove ? `+${elev}° ${alt}` : below;
 }
 
-export function renderSkyDomeSvg(input: ObservingPlannerInput, evaluation: EvaluationResult, ui?: MeteorShowerObservingPlannerUI): string {
+function getConstellationName(constKey: string, ui?: MeteorShowerObservingPlannerUI): string {
+  if (!ui?.constellations) return constKey;
+  return ui.constellations[constKey] || constKey;
+}
+
+interface DomePresentation {
+  coords: DomeCoords;
+  peakZhr: number;
+  constName: string;
+  statusTxt: string;
+  moonLabelTxt: string;
+  belowHorizonTxt: string;
+  telemetryTitle: string;
+}
+
+function createDomePresentation(
+  input: ObservingPlannerInput,
+  evaluation: EvaluationResult,
+  ui?: MeteorShowerObservingPlannerUI,
+): DomePresentation {
   const shower = getShowerById(input.showerId);
   const coords = calculateDomeCoords(input, evaluation);
   const peakItem = evaluation.hourlyBreakdown.find((h) => h.isPeakHour) || evaluation.hourlyBreakdown[0];
+  const labels = ui ?? {};
+  return {
+    coords,
+    peakZhr: peakItem?.effectiveZhr ?? 0,
+    constName: getConstellationName(shower.radiantConstellation, ui),
+    statusTxt: getStatusText(coords.isAbove, coords.elev, ui),
+    moonLabelTxt: labels.moonLabel ?? 'Moon',
+    belowHorizonTxt: labels.belowHorizonLabel ?? 'Below Horizon',
+    telemetryTitle: labels.radiantTelemetryLabel ?? 'RADIANT TELEMETRY',
+  };
+}
 
+export function renderSkyDomeSvg(input: ObservingPlannerInput, evaluation: EvaluationResult, ui?: MeteorShowerObservingPlannerUI): string {
+  const presentation = createDomePresentation(input, evaluation, ui);
   const moonOpacity = (input.moonPhase * 0.5).toFixed(2);
-  const constName = getConstellationName(shower.radiantConstellation, ui);
-  const statusTxt = getStatusText(coords.isAbove, coords.elev, ui);
-  const moonLabelTxt = ui && ui.moonLabel ? ui.moonLabel : 'Moon';
-  const belowHorizonTxt = ui && ui.belowHorizonLabel ? ui.belowHorizonLabel : 'Below Horizon';
-  const telemetryTitle = ui && ui.radiantTelemetryLabel ? ui.radiantTelemetryLabel : 'RADIANT TELEMETRY';
-
-  const moonParams: MoonGraphicParams = { moonPhase: input.moonPhase, x: coords.moonX, y: coords.moonY, moonTxt: moonLabelTxt };
+  const { coords } = presentation;
+  const moonParams: MoonGraphicParams = { moonPhase: input.moonPhase, x: coords.moonX, y: coords.moonY, moonTxt: presentation.moonLabelTxt };
 
   return `
     <svg class="sky-dome-svg" viewBox="0 0 400 230" role="img" aria-label="Celestial Sky Dome">
       ${renderSkyDomeBackground(moonOpacity)}
       ${renderSkyDomeGrid()}
-      ${renderTelemetryCard(telemetryTitle, constName, statusTxt, coords.isAbove ? '#10b981' : '#f43f5e')}
+      ${renderTelemetryCard(presentation.telemetryTitle, presentation.constName, presentation.statusTxt, coords.isAbove ? '#10b981' : '#f43f5e')}
       ${renderMoonGraphic(moonParams)}
-      ${renderMeteorStreaks(coords.isAbove, peakItem ? peakItem.effectiveZhr : 0, coords.radiantX, coords.radiantY)}
-      ${renderRadiantMarker(coords.isAbove, coords.radiantX, coords.radiantY, belowHorizonTxt)}
+      ${renderMeteorStreaks(coords.isAbove, presentation.peakZhr, coords.radiantX, coords.radiantY)}
+      ${renderRadiantMarker(coords.isAbove, coords.radiantX, coords.radiantY, presentation.belowHorizonTxt)}
     </svg>
   `;
 }

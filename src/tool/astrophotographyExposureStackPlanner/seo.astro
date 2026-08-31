@@ -1,0 +1,14 @@
+---
+import { SEORenderer } from '@jjlmoya/utils-shared';
+import { astrophotographyExposureStackPlanner } from './index';
+import type { KnownLocale } from '../../types';
+
+interface Props {
+  locale?: KnownLocale;
+}
+
+const { locale = 'en' } = Astro.props;
+const content = await astrophotographyExposureStackPlanner.i18n[locale]?.();
+---
+
+{content && <SEORenderer content={{ locale, sections: content.seo }} />}

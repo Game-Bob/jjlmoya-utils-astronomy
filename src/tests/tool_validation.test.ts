@@ -79,6 +79,7 @@ describe('Tool Validation Suite', () => {
                   'calculadora-oculares',
                   'planificador-pupila-salida-aumentos-telescopio',
                   'planificador-observacion-lluvia-meteoros',
+                  'planificador-apilado-exposiciones-astrofotografia',
                   'meteor-shower-observing-planner',
                 ];
                 expect(validSlugs).toContain(content.slug);
@@ -105,12 +106,12 @@ describe('Tool Validation Suite', () => {
   });
 
   describe('Library Registration', () => {
-    it('should have 7 tools in ALL_TOOLS', () => {
-      expect(ALL_TOOLS.length).toBe(7);
+    it('should have 8 tools in ALL_TOOLS', () => {
+      expect(ALL_TOOLS.length).toBe(8);
     });
 
     it('should have all tools in astronomyCategory', () => {
-      expect(astronomyCategory.tools.length).toBe(7);
+      expect(astronomyCategory.tools.length).toBe(8);
       ALL_TOOLS.forEach(({ entry }) => {
         const exists = astronomyCategory.tools.some((t: any) => t.id === entry.id);
         expect(exists).toBe(true);
