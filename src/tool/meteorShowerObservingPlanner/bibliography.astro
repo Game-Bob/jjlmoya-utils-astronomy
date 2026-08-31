@@ -1,14 +1,14 @@
 ---
 import { Bibliography as SharedBibliography } from '@jjlmoya/utils-shared';
 import { meteorShowerObservingPlanner } from './index';
+import type { KnownLocale } from '../../types';
 
 interface Props {
-  locale: string;
+  locale?: KnownLocale;
 }
 
-const { locale } = Astro.props;
-const entry = await meteorShowerObservingPlanner.i18n[locale as keyof typeof meteorShowerObservingPlanner.i18n]();
-const content = entry();
+const { locale = 'es' } = Astro.props;
+const content = await meteorShowerObservingPlanner.i18n[locale]?.();
 ---
 
-<SharedBibliography links={content.bibliography} />
+{content && <SharedBibliography links={content.bibliography} />}
