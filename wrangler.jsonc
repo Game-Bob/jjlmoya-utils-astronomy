@@ -1,0 +1,268 @@
+{
+    "$schema": "./node_modules/wrangler/config-schema.json",
+    "name": "gamebob-utilities-astronomy",
+    "main": "src/worker.ts",
+    "compatibility_date": "2026-07-22",
+    "workers_dev": false,
+    "preview_urls": true,
+    "routes": [
+        {
+            "pattern": "www.jjlmoya.es/utilidades/categorias/astronomia",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/categorias/astronomia/*",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/planificador-apilado-exposiciones-astrofotografia",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/planificador-apilado-exposiciones-astrofotografia/*",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/simulador-cielo-oscuro",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/simulador-cielo-oscuro/*",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/alcance-telescopio",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/alcance-telescopio/*",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/planificador-observacion-lluvia-meteoros",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/planificador-observacion-lluvia-meteoros/*",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/calculadora-oculares",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/calculadora-oculares/*",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/calculadora-regla-500",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/calculadora-regla-500/*",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/telescope-exit-pupil-magnification-planner",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/telescope-exit-pupil-magnification-planner/*",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/calculadora-resolucion-telescopio",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/calculadora-resolucion-telescopio/*",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.gamebob.dev/en/utilities/categories/astronomy",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/en/utilities/categories/astronomy/*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/fr/utilitaires/categories/astronomie",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/fr/utilitaires/categories/astronomie/*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/de/werkzeuge/kategorien/hobbyastronomie",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/de/werkzeuge/kategorien/hobbyastronomie/*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/it/utilita/categorie/astronomia-amatoriale",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/it/utilita/categorie/astronomia-amatoriale/*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/pt/utilidades/categorias/astronomia-amadora",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/pt/utilidades/categorias/astronomia-amadora/*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/nl/hulpmiddelen/categorieen/amateur-astronomie",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/nl/hulpmiddelen/categorieen/amateur-astronomie/*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/sv/verktyg/kategorier/amatorastronomi",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/sv/verktyg/kategorier/amatorastronomi/*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/pl/narzedzia/kategorie/astronomia-amatorska",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/pl/narzedzia/kategorie/astronomia-amatorska/*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/id/utilitas/kategori/astronomi-amatir",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/id/utilitas/kategori/astronomi-amatir/*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/tr/araclar/kategoriler/astronomi",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/tr/araclar/kategoriler/astronomi/*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/ru/instrumenty/kategorii/astronomiya",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/ru/instrumenty/kategorii/astronomiya/*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/ja/utilities/categories/astronomy",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/ja/utilities/categories/astronomy/*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/ko/utilities/categories/astronomy",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/ko/utilities/categories/astronomy/*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/zh/utilities/categories/astronomy",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/zh/utilities/categories/astronomy/*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.jjlmoya.es/_utilities/es/astronomy/sitemap.xml",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.gamebob.dev/_utilities/en/astronomy/sitemap.xml",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/_utilities/fr/astronomy/sitemap.xml",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/_utilities/de/astronomy/sitemap.xml",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/_utilities/it/astronomy/sitemap.xml",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/_utilities/pt/astronomy/sitemap.xml",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/_utilities/nl/astronomy/sitemap.xml",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/_utilities/sv/astronomy/sitemap.xml",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/_utilities/pl/astronomy/sitemap.xml",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/_utilities/id/astronomy/sitemap.xml",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/_utilities/tr/astronomy/sitemap.xml",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/_utilities/ru/astronomy/sitemap.xml",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/_utilities/ja/astronomy/sitemap.xml",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/_utilities/ko/astronomy/sitemap.xml",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/_utilities/zh/astronomy/sitemap.xml",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/_utilities/astronomy/*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.jjlmoya.es/_utilities/astronomy/*",
+            "zone_name": "jjlmoya.es"
+        }
+    ],
+    "assets": {
+        "directory": "./dist",
+        "binding": "ASSETS",
+        "html_handling": "force-trailing-slash",
+        "not_found_handling": "404-page"
+    }
+}

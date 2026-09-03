@@ -1,9 +1,9 @@
 import type { SEOSection } from '@jjlmoya/utils-shared';
+import type { UtilityLocale } from '@jjlmoya/utils-shared/routing';
 
 export type { SEOSection };
 
-export type KnownLocale =
-  | 'de' | 'en' | 'es' | 'fr' | 'id' | 'it' | 'ja' | 'ko' | 'nl' | 'pl' | 'pt' | 'ru' | 'sv' | 'tr' | 'zh';
+export type KnownLocale = UtilityLocale;
 
 export interface FAQItem {
   question: string;
