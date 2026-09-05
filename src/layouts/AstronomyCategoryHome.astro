@@ -1,0 +1,224 @@
+---
+import { Icon } from "astro-icon/components";
+import { SEORenderer } from "@jjlmoya/utils-shared";
+import ProductionBreadcrumb from "../components/ProductionBreadcrumb.astro";
+import ProductionPage from "./ProductionPage.astro";
+import { getCategoryPath } from "../mfe/routes";
+import { getCategoryUi } from "../mfe/category-ui";
+import type { CategoryLocaleContent, KnownLocale } from "../types";
+import "../category/astronomy-category-home.css";
+
+interface CategoryTool {
+    id: string;
+    icon: string;
+    title: string;
+    description: string;
+    href: string;
+}
+
+interface Props {
+    locale: KnownLocale;
+    category: CategoryLocaleContent;
+    tools: CategoryTool[];
+    alternates: { language: KnownLocale; url: string }[];
+    image?: string | undefined;
+}
+
+const { locale, category, tools, alternates, image } = Astro.props;
+const publicPath = getCategoryPath(locale, category.slug);
+const ui = getCategoryUi(locale);
+const firstTool = tools[0];
+const constellationTools = tools;
+const getToolPointSize = (count: number): string => {
+    if (count > 500) return "0.28rem";
+    if (count > 80) return "0.4rem";
+    return "0.72rem";
+};
+const toolPointSize = getToolPointSize(tools.length);
+const getStarSize = (index: number): string => {
+    if (index % 11 === 0) return "0.28rem";
+    if (index % 4 === 0) return "0.16rem";
+    return "0.1rem";
+};
+const getStarOpacity = (index: number): string => {
+    if (index % 7 === 0) return "0.95";
+    if (index % 3 === 0) return "0.65";
+    return "0.38";
+};
+const stars = Array.from({ length: 72 }, (_, index) => ({
+    left: `${((index * 47) % 97) + 1}%`,
+    top: `${((index * 61) % 91) + 3}%`,
+    size: getStarSize(index),
+    opacity: getStarOpacity(index),
+    delay: `${index % 9}`,
+}));
+const getConstellationSide = (left: number, top: number): "left" | "right" | "bottom" | "top" => {
+    if (left > 62) return "right";
+    if (left < 38) return "left";
+    return top > 50 ? "bottom" : "top";
+};
+const handPlacedPositions = [
+    [55, 12],
+    [80, 28],
+    [88, 57],
+    [69, 81],
+    [43, 91],
+    [17, 73],
+    [11, 43],
+    [30, 20],
+    [63, 24],
+    [83, 73],
+    [25, 57],
+    [39, 11],
+] as const;
+const constellationPositions = constellationTools.map((_, index) => {
+    const count = Math.max(constellationTools.length, 1);
+    const handPlaced = handPlacedPositions[index];
+    const drift = ((index * 17) % 13) - 6;
+    const angle = index * 2.399963 + drift * 0.025;
+    const radius = 12 + Math.sqrt((index + 0.5) / count) * 34 + drift * 0.25;
+    const left = handPlaced?.[0] ?? 50 + Math.cos(angle) * radius;
+    const top = handPlaced?.[1] ?? 50 + Math.sin(angle) * radius;
+    return {
+        left: `${left.toFixed(2)}%`,
+        top: `${top.toFixed(2)}%`,
+        side: getConstellationSide(left, top),
+    };
+});
+---
+
+<ProductionPage
+    title={category.title}
+    description={category.description}
+    {locale}
+    {publicPath}
+    {alternates}
+    {image}
+>
+    <div class="astronomy-home" data-astronomy-home>
+        <div class="astronomy-page-stars" aria-hidden="true">
+            {stars.slice(0, 42).map((star) => (
+                <i
+                    class="astronomy-page-star"
+                    style={`--star-left: ${star.left}; --star-top: ${star.top}; --star-size: ${star.size}; --star-opacity: ${star.opacity}; --star-delay: ${star.delay}s;`}
+                ></i>
+            ))}
+        </div>
+        <div class="astronomy-shell">
+            <ProductionBreadcrumb locale={locale} currentTitle={category.title} />
+
+            <section class="astronomy-orbit" aria-labelledby="astronomy-title">
+                <div id="astronomy-sky" class:list={["astronomy-sky", tools.length > 12 && "astronomy-sky-dense"]} aria-label={category.title}>
+                    <div class="astronomy-sky-stars" aria-hidden="true">
+                        {stars.map((star) => (
+                            <i
+                                class="astronomy-star"
+                                style={`--star-left: ${star.left}; --star-top: ${star.top}; --star-size: ${star.size}; --star-opacity: ${star.opacity}; --star-delay: ${star.delay}s;`}
+                            ></i>
+                        ))}
+                    </div>
+                    <div class="astronomy-sky-dust" aria-hidden="true"></div>
+                    <div class="astronomy-sky-coordinates" aria-hidden="true">
+                        <span>α 05h 55m 10s</span>
+                        <span>δ +07° 24′ 25″</span>
+                    </div>
+                    <div class="astronomy-celestial-scene" aria-hidden="true">
+                        <div class="astronomy-orbit-track astronomy-orbit-track-one"><span class="astronomy-orbit-body astronomy-orbit-body-one"></span></div>
+                        <div class="astronomy-orbit-track astronomy-orbit-track-two"><span class="astronomy-orbit-body astronomy-orbit-body-two"></span></div>
+                        <div class="astronomy-orbit-track astronomy-orbit-track-three"><span class="astronomy-orbit-body astronomy-orbit-body-three"></span></div>
+                        <div class="astronomy-planet"><span></span></div>
+                    </div>
+                    <div class="astronomy-constellation-center" aria-hidden="true">
+                        <span>ASTRONOMIA</span>
+                        <b>*</b>
+                    </div>
+
+                    {constellationTools.map((tool, index) => (
+                        <a
+                            class:list={["astronomy-star-link", `astronomy-star-link-${constellationPositions[index]?.side ?? "top"}`]}
+                            href={tool.href}
+                            data-tool-node
+                            data-tool-index={index}
+                            style={`--node-left: ${constellationPositions[index]?.left}; --node-top: ${constellationPositions[index]?.top}; --node-size: ${toolPointSize};`}
+                            aria-label={`${tool.title}: ${ui.openTool}`}
+                        >
+                            <span class="astronomy-star-link-point" aria-hidden="true"></span>
+                            <span class="astronomy-star-link-label">
+                                <span class="astronomy-star-link-icon" aria-hidden="true"><Icon name={tool.icon} /></span>
+                                <b>{String(index + 1).padStart(2, "0")}</b>
+                                <strong>{tool.title}</strong>
+                                <small>{tool.description}</small>
+                            </span>
+                        </a>
+                    ))}
+
+                    <p class="astronomy-sky-caption">{String(tools.length).padStart(2, "0")} {ui.catalogLabel}</p>
+                </div>
+
+                <div class="astronomy-editorial">
+                    <p class="astronomy-overline">{ui.observationEyebrow}</p>
+                    <h1 id="astronomy-title">{category.title}</h1>
+                    <p class="astronomy-lede">{category.description}</p>
+
+                    {firstTool && (
+                        <div class="astronomy-observation" data-mission-panel>
+                            <div class="astronomy-observation-heading">
+                                <span class="astronomy-observation-dot" aria-hidden="true"></span>
+                                <p>{ui.missionLabel}</p>
+                            </div>
+                            <h2 data-mission-title>{firstTool.title}</h2>
+                            <p data-mission-description>{firstTool.description}</p>
+                            <div class="astronomy-observation-actions">
+                                <button type="button" data-route-button aria-controls="astronomy-sky">
+                                    {ui.exploreRoute}<span aria-hidden="true">↗</span>
+                                </button>
+                                <a data-mission-link href={firstTool.href}>
+                                    {ui.openTool}<span aria-hidden="true">→</span>
+                                </a>
+                            </div>
+                            <p class="astronomy-observation-status" aria-live="polite" data-mission-status>
+                                {firstTool.title}
+                            </p>
+                        </div>
+                    )}
+
+                    <nav class="astronomy-tool-index" aria-label={category.title}>
+                        <details open={tools.length <= 12}>
+                            <summary class="astronomy-tool-index-title">
+                                <span>{ui.toolIndexLabel}</span>
+                                <span>{String(tools.length).padStart(2, "0")}</span>
+                            </summary>
+                            <ol>
+                                {tools.map((tool, index) => (
+                                    <li>
+                                        <a href={tool.href} data-tool-index-link data-tool-index={index}>
+                                            <span>{String(index + 1).padStart(2, "0")}</span>
+                                            <strong>{tool.title}</strong>
+                                            <i aria-hidden="true">↗</i>
+                                        </a>
+                                    </li>
+                                ))}
+                            </ol>
+                        </details>
+                    </nav>
+                </div>
+            </section>
+
+            <section class="astronomy-field-notes" aria-labelledby="astronomy-notes-title">
+                <div class="astronomy-field-notes-title">
+                    <span class="astronomy-overline">{ui.fieldNotesLabel}</span>
+                    <h2 id="astronomy-notes-title">{ui.fieldNotesTitle}</h2>
+                </div>
+                <div class="astronomy-seo">
+                    <SEORenderer content={{ locale, sections: category.seo }} />
+                </div>
+            </section>
+        </div>
+    </div>
+</ProductionPage>
+
+<script>
+    import { enhanceAstronomyHome } from "../category/astronomy-category-home";
+
+    enhanceAstronomyHome();
+</script>

@@ -1,0 +1,921 @@
+.astronomy-home {
+    --astronomy-bg: #efe8d9;
+    --astronomy-ink: #14243b;
+    --astronomy-muted: #5c6570;
+    --astronomy-line: rgba(20, 36, 59, 0.23);
+    --astronomy-accent: #c95732;
+    --astronomy-star: #dd812f;
+    --astronomy-sky: #d8e3e2;
+    --astronomy-sky-ink: #132943;
+    --astronomy-sky-line: rgba(20, 36, 59, 0.48);
+    --astronomy-sky-muted: rgba(20, 36, 59, 0.7);
+    --astronomy-star-bright: #14243b;
+
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background: var(--astronomy-bg);
+    color: var(--astronomy-ink);
+    isolation: isolate;
+}
+
+html.theme-dark .astronomy-home {
+    --astronomy-bg: #030912;
+    --astronomy-ink: #f1eadc;
+    --astronomy-muted: #9aa8b8;
+    --astronomy-line: rgba(241, 234, 220, 0.25);
+    --astronomy-accent: #ff8061;
+    --astronomy-star: #f6bf74;
+    --astronomy-sky: #061525;
+    --astronomy-sky-ink: #eff4f0;
+    --astronomy-sky-line: rgba(188, 226, 220, 0.58);
+    --astronomy-sky-muted: rgba(188, 226, 220, 0.72);
+    --astronomy-star-bright: #f7dfb2;
+}
+
+body.production-page { overflow-x: clip; }
+
+.astronomy-shell {
+    position: relative;
+    z-index: 1;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 1.4rem clamp(1rem, 5vw, 5.5rem) 7rem;
+}
+
+.astronomy-home .production-breadcrumb {
+    position: relative;
+    z-index: 4;
+    margin-bottom: clamp(1.25rem, 3vw, 3rem);
+    color: var(--astronomy-muted);
+}
+
+.astronomy-home .production-breadcrumb-item,
+.astronomy-home .production-breadcrumb-current,
+.astronomy-home .production-breadcrumb-item a {
+    color: var(--astronomy-muted);
+}
+
+.astronomy-home .production-breadcrumb-item a:hover,
+.astronomy-home .production-breadcrumb-item a:focus-visible {
+    color: var(--astronomy-accent);
+}
+
+.astronomy-home .production-breadcrumb-separator { color: var(--astronomy-accent); }
+
+.astronomy-orbit {
+    display: grid;
+    grid-template-columns: minmax(0, 1.18fr) minmax(22rem, 0.82fr);
+    gap: clamp(2rem, 6vw, 7rem);
+    align-items: center;
+    min-height: min(790px, calc(100vh - 8rem));
+}
+
+.astronomy-page-stars {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.astronomy-page-star {
+    position: absolute;
+    top: var(--star-top);
+    left: var(--star-left);
+    width: var(--star-size);
+    height: var(--star-size);
+    border-radius: 50%;
+    background: var(--astronomy-ink);
+    opacity: calc(var(--star-opacity) * 0.4);
+    animation: astronomy-twinkle 5s ease-in-out infinite alternate;
+    animation-delay: calc(var(--star-delay) * -1);
+}
+
+.astronomy-sky {
+    position: relative;
+    min-height: min(720px, 72vw);
+    overflow: hidden;
+    border: 1px solid var(--astronomy-sky-line);
+    border-radius: 0;
+    background: var(--astronomy-sky);
+    color: var(--astronomy-sky-ink);
+    isolation: isolate;
+}
+
+html.theme-dark .astronomy-sky {
+    background: #061525;
+}
+
+html.theme-light .astronomy-sky {
+    --astronomy-sky: #061525;
+    --astronomy-sky-ink: #eff4f0;
+    --astronomy-sky-line: rgba(188, 226, 220, 0.58);
+    --astronomy-sky-muted: rgba(188, 226, 220, 0.72);
+    --astronomy-star-bright: #f7dfb2;
+
+    background: #061525;
+}
+
+.astronomy-sky-stars,
+.astronomy-sky-dust,
+.astronomy-celestial-scene,
+.astronomy-planet,
+.astronomy-constellation-center,
+.astronomy-sky-coordinates,
+.astronomy-sky-caption {
+    position: absolute;
+}
+
+.astronomy-sky-stars {
+    inset: 0;
+    z-index: -1;
+}
+
+.astronomy-star {
+    position: absolute;
+    top: var(--star-top);
+    left: var(--star-left);
+    width: var(--star-size);
+    height: var(--star-size);
+    border-radius: 50%;
+    background: currentcolor;
+    color: var(--astronomy-sky-ink);
+    opacity: var(--star-opacity);
+    animation: astronomy-twinkle 5s ease-in-out infinite alternate;
+    animation-delay: calc(var(--star-delay) * -1);
+}
+
+html.theme-dark .astronomy-star {
+    color: var(--astronomy-star-bright);
+    box-shadow: 0 0 0.5rem var(--astronomy-star-bright);
+}
+
+.astronomy-sky-dust {
+    top: 16%;
+    left: 4%;
+    width: 78%;
+    height: 36%;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--astronomy-accent) 8%, transparent);
+    filter: blur(1rem);
+    opacity: 0.35;
+    transform: rotate(-18deg);
+}
+
+.astronomy-sky-coordinates {
+    top: 1.5rem;
+    right: 1.5rem;
+    left: 1.5rem;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    color: var(--astronomy-sky-muted);
+    font: 0.65rem var(--font-family, Inter, system-ui, sans-serif);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.astronomy-celestial-scene {
+    z-index: 1;
+    inset: 0;
+}
+
+.astronomy-orbit-track {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid color-mix(in srgb, var(--astronomy-sky-ink) 35%, transparent);
+    border-radius: 50%;
+
+    --orbit-angle: -18deg;
+
+    transform: translate(-50%, -50%) rotate(var(--orbit-angle));
+}
+
+.astronomy-orbit-track-one {
+    width: 84%;
+    height: 28%;
+}
+
+.astronomy-orbit-track-two {
+    width: 58%;
+    height: 58%;
+    border-style: dashed;
+
+    --orbit-angle: 47deg;
+
+    transform: translate(-50%, -50%) rotate(var(--orbit-angle));
+}
+
+.astronomy-orbit-track-three {
+    width: 39%;
+    height: 74%;
+    border-color: color-mix(in srgb, var(--astronomy-accent) 46%, transparent);
+
+    --orbit-angle: -52deg;
+
+    transform: translate(-50%, -50%) rotate(var(--orbit-angle));
+}
+
+.astronomy-orbit-body {
+    position: absolute;
+    inset: 0;
+    width: 0.55rem;
+    aspect-ratio: 1;
+    border: 1px solid var(--astronomy-star-bright);
+    border-radius: 50%;
+    background: var(--astronomy-star);
+    box-shadow: 0 0 0.75rem var(--astronomy-star);
+    offset-path: ellipse(50% 50% at 50% 50%);
+    offset-distance: 0%;
+    offset-rotate: 0deg;
+    animation: astronomy-orbit-body-travel 30s linear infinite;
+}
+
+.astronomy-orbit-body-two {
+    width: 0.38rem;
+    background: #8ddad2;
+    box-shadow: 0 0 0.55rem #8ddad2;
+    offset-distance: 36%;
+    animation-duration: 38s;
+    animation-direction: reverse;
+}
+
+.astronomy-orbit-body-three {
+    width: 0.28rem;
+    background: var(--astronomy-accent);
+    box-shadow: 0 0 0.5rem var(--astronomy-accent);
+    offset-distance: 68%;
+    animation-duration: 46s;
+}
+
+.astronomy-planet {
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    width: clamp(4rem, 13%, 7.5rem);
+    aspect-ratio: 1;
+    border: 1px solid color-mix(in srgb, var(--astronomy-star-bright) 85%, transparent);
+    border-radius: 50%;
+    background: var(--astronomy-star);
+    box-shadow: 0 0 0 0.75rem color-mix(in srgb, var(--astronomy-accent) 10%, transparent), 0 0 3.5rem color-mix(in srgb, var(--astronomy-star) 45%, transparent);
+    transform: translate(-50%, -50%);
+}
+
+.astronomy-planet span {
+    position: absolute;
+    top: 12%;
+    left: 18%;
+    width: 12%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #fff8d8;
+    box-shadow: 0 0 0.8rem #fff8d8;
+}
+
+.astronomy-constellation-center {
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    display: grid;
+    width: 8rem;
+    height: 8rem;
+    place-content: center;
+    border: 1px solid var(--astronomy-sky-line);
+    border-radius: 50%;
+    color: var(--astronomy-sky-ink);
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.astronomy-constellation-center::before {
+    position: absolute;
+    inset: -0.7rem;
+    border: 1px solid var(--astronomy-sky-line);
+    border-radius: 50%;
+    content: "";
+}
+
+.astronomy-constellation-center span {
+    font: 0.55rem var(--font-family, Inter, system-ui, sans-serif);
+    letter-spacing: 0.16em;
+}
+
+.astronomy-constellation-center b {
+    margin-top: 0.25rem;
+    color: var(--astronomy-accent);
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.astronomy-star-link {
+    position: absolute;
+    top: var(--node-top);
+    left: var(--node-left);
+    z-index: 4;
+    display: block;
+    width: 2.75rem;
+    height: 2.75rem;
+    color: var(--astronomy-sky-ink);
+    text-decoration: none;
+    transform: translate(-50%, -50%);
+}
+
+.astronomy-star-link-point {
+    display: grid;
+    width: var(--node-size);
+    height: var(--node-size);
+    flex: 0 0 auto;
+    place-items: center;
+    clip-path: polygon(50% 0, 63% 37%, 100% 50%, 63% 63%, 50% 100%, 37% 63%, 0 50%, 37% 37%);
+    background: var(--astronomy-star-bright);
+    color: var(--astronomy-accent);
+    filter: drop-shadow(0 0 0.3rem color-mix(in srgb, var(--astronomy-star-bright) 65%, transparent));
+    transition: background-color 180ms ease, filter 180ms ease, transform 180ms ease;
+}
+
+.astronomy-star-link-label {
+    position: absolute;
+    z-index: 6;
+    display: none;
+    grid-template-columns: auto 1fr;
+    min-width: 10rem;
+    max-width: min(15rem, 26vw);
+    gap: 0.15rem;
+    padding: 0.35rem 0.5rem;
+    border: 1px solid var(--astronomy-sky-line);
+    background: color-mix(in srgb, var(--astronomy-sky) 84%, transparent);
+    box-shadow: 0 0.6rem 1.5rem color-mix(in srgb, var(--astronomy-sky-ink) 18%, transparent);
+    pointer-events: none;
+}
+
+.astronomy-star-link:hover,
+.astronomy-star-link:focus-visible,
+.astronomy-star-link.is-active {
+    z-index: 10;
+}
+
+.astronomy-star-link:hover .astronomy-star-link-label,
+.astronomy-star-link:focus-visible .astronomy-star-link-label,
+.astronomy-star-link.is-active .astronomy-star-link-label {
+    display: grid;
+}
+
+.astronomy-star-link-icon {
+    display: grid;
+    width: 1.4rem;
+    height: 1.4rem;
+    grid-row: 1 / 3;
+    place-items: center;
+    margin-right: 0.2rem;
+    border: 1px solid var(--astronomy-accent);
+    border-radius: 50%;
+    color: var(--astronomy-accent);
+}
+
+.astronomy-star-link-label b {
+    color: var(--astronomy-accent);
+    font: 0.6rem var(--font-family, Inter, system-ui, sans-serif);
+}
+
+.astronomy-star-link-label strong {
+    font-size: 0.75rem;
+    line-height: 1.15;
+}
+
+.astronomy-star-link-label small {
+    display: -webkit-box;
+    grid-column: 2;
+    margin-top: 0.15rem;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    color: var(--astronomy-sky-muted);
+    font-size: 0.65rem;
+    line-height: 1.3;
+}
+
+.astronomy-star-link-left .astronomy-star-link-label {
+    top: 50%;
+    left: calc(100% + 0.8rem);
+    transform: translateY(-50%);
+}
+
+.astronomy-star-link-right .astronomy-star-link-label {
+    top: 50%;
+    right: calc(100% + 0.8rem);
+    transform: translateY(-50%);
+}
+
+.astronomy-star-link-top .astronomy-star-link-label {
+    top: calc(100% + 0.8rem);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.astronomy-star-link-bottom .astronomy-star-link-label {
+    bottom: calc(100% + 0.8rem);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.astronomy-star-link:hover .astronomy-star-link-point,
+.astronomy-star-link:focus-visible .astronomy-star-link-point,
+.astronomy-star-link.is-active .astronomy-star-link-point {
+    background: var(--astronomy-accent);
+    color: var(--astronomy-bg);
+    filter: drop-shadow(0 0 0.35rem color-mix(in srgb, var(--astronomy-accent) 90%, transparent)) drop-shadow(0 0 0.8rem color-mix(in srgb, var(--astronomy-accent) 50%, transparent));
+    transform: scale(1.12);
+}
+
+.astronomy-star-link:nth-of-type(3n) .astronomy-star-link-point {
+    clip-path: polygon(50% 4%, 58% 42%, 96% 50%, 58% 58%, 50% 96%, 42% 58%, 4% 50%, 42% 42%);
+}
+
+.astronomy-star-link:nth-of-type(4n) .astronomy-star-link-point {
+    clip-path: polygon(50% 0, 57% 43%, 100% 50%, 57% 57%, 50% 100%, 43% 57%, 0 50%, 43% 43%);
+}
+
+.astronomy-star-link:focus-visible {
+    outline: 3px solid var(--astronomy-accent);
+    outline-offset: 5px;
+}
+
+.astronomy-sky-dense .astronomy-star-link {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.astronomy-sky-dense .astronomy-star-link-label {
+    max-width: min(13rem, 24vw);
+}
+
+.astronomy-star-link-left {
+    transform: translate(0, -50%);
+}
+
+.astronomy-star-link-right {
+    flex-direction: row-reverse;
+    transform: translate(-100%, -50%);
+}
+
+.astronomy-star-link-top {
+    flex-direction: column-reverse;
+    transform: translate(-50%, -50%);
+}
+
+.astronomy-star-link-bottom {
+    flex-direction: column;
+    transform: translate(-50%, -50%);
+}
+
+.astronomy-star-link-left:hover,
+.astronomy-star-link-left:focus-visible,
+.astronomy-star-link-right:hover,
+.astronomy-star-link-right:focus-visible {
+    transform: translate(0, -50%);
+}
+
+.astronomy-star-link-right:hover,
+.astronomy-star-link-right:focus-visible {
+    transform: translate(-100%, -50%);
+}
+
+.astronomy-star-link-top:hover,
+.astronomy-star-link-top:focus-visible,
+.astronomy-star-link-bottom:hover,
+.astronomy-star-link-bottom:focus-visible {
+    transform: translate(-50%, -50%) translateY(-0.2rem);
+}
+
+.astronomy-sky-caption {
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 2;
+    margin: 0;
+    color: var(--astronomy-sky-muted);
+    font: 0.65rem var(--font-family, Inter, system-ui, sans-serif);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.astronomy-editorial { min-width: 0; }
+
+.astronomy-overline {
+    margin: 0 0 1.3rem;
+    color: var(--astronomy-accent);
+    font: 0.7rem var(--font-family, Inter, system-ui, sans-serif);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.astronomy-editorial h1 {
+    max-width: 11ch;
+    margin: 0;
+    color: var(--astronomy-ink);
+    font: 400 clamp(3.8rem, 6.5vw, 7.7rem) / 0.82 var(--font-family, Inter, system-ui, sans-serif);
+    letter-spacing: -0.09em;
+    line-height: 0.82;
+    overflow-wrap: normal;
+}
+
+.astronomy-lede {
+    max-width: 28rem;
+    margin: 2.1rem 0 0;
+    color: var(--astronomy-muted);
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    line-height: 1.65;
+}
+
+.astronomy-observation {
+    max-width: 30rem;
+    margin-top: 2.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--astronomy-line);
+}
+
+.astronomy-observation-heading {
+    display: flex;
+    gap: 0.55rem;
+    align-items: center;
+}
+
+.astronomy-observation-heading p {
+    margin: 0;
+    color: var(--astronomy-accent);
+    font: 0.67rem var(--font-family, Inter, system-ui, sans-serif);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.astronomy-observation-dot {
+    width: 0.48rem;
+    height: 0.48rem;
+    border-radius: 50%;
+    background: var(--astronomy-star);
+    box-shadow: 0 0 0.7rem var(--astronomy-star);
+}
+
+.astronomy-observation h2 {
+    margin: 0.8rem 0 0;
+    color: var(--astronomy-ink);
+    font-size: 1.35rem;
+    line-height: 1.15;
+}
+
+.astronomy-observation > p:not(.astronomy-observation-status) {
+    margin: 0.5rem 0 0;
+    color: var(--astronomy-muted);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.astronomy-observation-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+.astronomy-observation-actions button,
+.astronomy-observation-actions a {
+    display: inline-flex;
+    min-height: 2.65rem;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.55rem 0;
+    border: 0;
+    border-bottom: 1px solid var(--astronomy-accent);
+    background: transparent;
+    color: var(--astronomy-ink);
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.astronomy-observation-actions button:hover,
+.astronomy-observation-actions button:focus-visible,
+.astronomy-observation-actions a:hover,
+.astronomy-observation-actions a:focus-visible {
+    color: var(--astronomy-accent);
+}
+
+.astronomy-observation-actions button:focus-visible,
+.astronomy-observation-actions a:focus-visible {
+    outline: 3px solid var(--astronomy-accent);
+    outline-offset: 4px;
+}
+
+.astronomy-observation-status {
+    margin: 0.8rem 0 0;
+    color: var(--astronomy-muted);
+    font: 0.62rem var(--font-family, Inter, system-ui, sans-serif);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.astronomy-tool-index {
+    margin-top: 3.5rem;
+}
+
+.astronomy-tool-index-title {
+    margin: 0 0 0.4rem;
+    color: var(--astronomy-muted);
+    font: 0.65rem var(--font-family, Inter, system-ui, sans-serif);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.astronomy-tool-index ol {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(1.5rem, 4vw, 4rem);
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--astronomy-line);
+    list-style: none;
+}
+
+.astronomy-tool-index li { border-bottom: 1px solid var(--astronomy-line); }
+
+.astronomy-tool-index a {
+    display: grid;
+    grid-template-columns: 2rem 1fr auto;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.55rem 0;
+    color: var(--astronomy-ink);
+    text-decoration: none;
+}
+
+.astronomy-tool-index a:hover,
+.astronomy-tool-index a:focus-visible { color: var(--astronomy-accent); }
+
+.astronomy-tool-index a:focus-visible {
+    outline: 3px solid var(--astronomy-accent);
+    outline-offset: 3px;
+}
+
+.astronomy-tool-index a span,
+.astronomy-tool-index a i {
+    color: var(--astronomy-accent);
+    font: 0.62rem var(--font-family, Inter, system-ui, sans-serif);
+    font-style: normal;
+}
+
+.astronomy-tool-index a strong { font-size: 0.8rem; }
+
+.astronomy-field-notes {
+    display: block;
+    margin-top: 6rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--astronomy-line);
+}
+
+.astronomy-field-notes-title {
+    display: flex;
+    gap: 2rem;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.astronomy-field-notes h2 {
+    max-width: 14ch;
+    margin: 0;
+    color: var(--astronomy-ink);
+    font: 400 clamp(1.8rem, 3.2vw, 3.4rem) / 0.95 var(--font-family, Inter, system-ui, sans-serif);
+    letter-spacing: -0.06em;
+    line-height: 0.95;
+}
+
+.astronomy-seo {
+    max-width: 72rem;
+    color: var(--astronomy-muted);
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.astronomy-seo .seo-article {
+    max-width: none;
+}
+
+.astronomy-seo .seo-title {
+    display: block;
+    max-width: 42rem;
+    margin: 3.5rem 0 1rem;
+}
+
+.astronomy-seo .seo-title:first-child { margin-top: 0; }
+
+.astronomy-seo .seo-title .prefix { display: none; }
+
+.astronomy-seo .seo-article > p {
+    max-width: 68rem;
+    margin: 0 0 1.1rem;
+}
+
+.astronomy-seo .seo-list-premium {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 2rem;
+    margin: 2.5rem 0;
+}
+
+.astronomy-seo .list-card {
+    min-height: 100%;
+    gap: 0.8rem;
+    padding: 1rem 0;
+    border: 0;
+    border-top: 1px solid var(--astronomy-line);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.astronomy-seo .list-card:hover {
+    border-color: var(--astronomy-line);
+    background: transparent;
+    box-shadow: none;
+    transform: none;
+}
+
+.astronomy-seo .marker-box {
+    width: 1.4rem;
+    height: 1.4rem;
+    border: 0;
+    border-radius: 50%;
+    background: var(--astronomy-accent);
+    color: var(--astronomy-bg);
+}
+
+.astronomy-seo .marker-svg {
+    width: 0.8rem;
+    height: 0.8rem;
+}
+
+.astronomy-seo .card-content {
+    color: var(--astronomy-muted);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.astronomy-seo .card-content strong { color: var(--astronomy-ink); }
+
+.astronomy-seo .seo-tip {
+    margin: 3rem 0;
+    padding: 1.25rem 0 1.25rem 1.25rem;
+    border-top: 1px solid var(--astronomy-accent);
+    border-right: 0;
+    border-bottom: 1px solid var(--astronomy-line);
+    border-left: 3px solid var(--astronomy-accent);
+    border-radius: 0;
+    background: transparent;
+}
+
+.astronomy-seo .seo-tip h5 {
+    color: var(--astronomy-ink);
+    font: 400 1.35rem/1.1 var(--font-family, Inter, system-ui, sans-serif);
+}
+
+.astronomy-seo .seo-tip p { color: var(--astronomy-muted); }
+
+.astronomy-seo .seo-stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 3rem 0 0;
+}
+
+.astronomy-seo .stat-card {
+    min-height: 0;
+    padding: 1rem 0;
+    border: 0;
+    border-top: 1px solid var(--astronomy-line);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.astronomy-seo .stat-card:hover {
+    border-color: var(--astronomy-line);
+    box-shadow: none;
+    transform: none;
+}
+
+.astronomy-seo .stat-icon,
+.astronomy-seo .stat-value { color: var(--astronomy-accent); }
+
+.astronomy-seo .stat-label {
+    color: var(--astronomy-muted);
+    font-size: 0.72rem;
+}
+
+.astronomy-seo h2,
+.astronomy-seo h3 {
+    color: var(--astronomy-ink);
+    font: 400 1.8rem/1.1 var(--font-family, Inter, system-ui, sans-serif);
+    letter-spacing: -0.03em;
+}
+
+.astronomy-seo h3 { font-size: 1.35rem; }
+.astronomy-seo a { color: var(--astronomy-accent); }
+
+@keyframes astronomy-twinkle {
+    from { opacity: calc(var(--star-opacity) * 0.55); }
+    to { opacity: var(--star-opacity); }
+}
+
+@keyframes astronomy-orbit-body-travel {
+    from { offset-distance: 0%; }
+    to { offset-distance: 100%; }
+}
+
+@media (width <= 1100px) {
+    .astronomy-orbit {
+        grid-template-columns: minmax(0, 1fr) minmax(19rem, 0.8fr);
+        gap: 3rem;
+    }
+    .astronomy-sky { min-height: 620px; }
+    .astronomy-star-link-label { max-width: 8rem; }
+}
+
+@media (width <= 820px) {
+    .astronomy-orbit {
+        display: flex;
+        min-height: 0;
+        flex-direction: column-reverse;
+        align-items: stretch;
+        gap: 3rem;
+    }
+    .astronomy-editorial { padding-top: 1rem; }
+    .astronomy-sky { min-height: min(680px, 90vw); }
+
+    .astronomy-field-notes-title { display: block; }
+
+    .astronomy-seo .seo-list-premium,
+    .astronomy-seo .seo-stats-grid { grid-template-columns: 1fr; }
+}
+
+@media (width <= 560px) {
+    .astronomy-shell {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+    .astronomy-sky { min-height: 118vw; }
+
+    .astronomy-sky-coordinates {
+        top: 1rem;
+        right: 1rem;
+        left: 1rem;
+        gap: 1rem;
+        font-size: 0.55rem;
+    }
+    .astronomy-planet { width: 33%; }
+
+    .astronomy-constellation-center {
+        width: 5.7rem;
+        height: 5.7rem;
+    }
+    .astronomy-constellation-center span { font-size: 0.45rem; }
+
+    .astronomy-star-link-label {
+        min-width: 8.5rem;
+        max-width: 8.5rem;
+        padding: 0.2rem 0.35rem;
+    }
+    .astronomy-star-link-label strong { font-size: 0.62rem; }
+    .astronomy-star-link-label b { font-size: 0.5rem; }
+
+    .astronomy-sky-caption {
+        right: 1rem;
+        bottom: 1rem;
+    }
+
+    .astronomy-editorial h1 {
+        max-width: 10ch;
+        font-size: clamp(3.6rem, 18vw, 6rem);
+    }
+    .astronomy-lede { margin-top: 1.5rem; }
+    .astronomy-observation { margin-top: 2rem; }
+
+    .astronomy-observation-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+    }
+    .astronomy-tool-index { margin-top: 2.5rem; }
+    .astronomy-tool-index ol { grid-template-columns: 1fr; }
+    .astronomy-field-notes { margin-top: 4rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .astronomy-page-star,
+    .astronomy-star { animation: none; }
+    .astronomy-orbit-body { animation: none; }
+    .astronomy-star-link-point { transition: none; }
+}

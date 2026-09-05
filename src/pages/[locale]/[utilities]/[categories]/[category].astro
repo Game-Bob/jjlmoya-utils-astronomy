@@ -1,5 +1,5 @@
 ---
-import ProductionCategoryPage from "../../../../layouts/ProductionCategoryPage.astro";
+import AstronomyCategoryHome from "../../../../layouts/AstronomyCategoryHome.astro";
 import { ALL_TOOLS, astronomyCategory } from "../../../../index";
 import { LANGUAGE_CODES, type Language } from "../../../../i18n/languages";
 import { getCategoryNamespace, getCategoryPath, getUtilityNamespace, getUtilityPath } from "../../../../mfe/routes";
@@ -41,4 +41,4 @@ const tools = await Promise.all(ALL_TOOLS.map(async ({ entry }) => {
 }));
 ---
 
-<ProductionCategoryPage locale={locale} {category} {tools} {alternates} image={CATEGORY_OG_IMAGE} />
+<AstronomyCategoryHome locale={locale} {category} {tools} {alternates} image={CATEGORY_OG_IMAGE} />
