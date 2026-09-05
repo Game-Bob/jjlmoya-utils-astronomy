@@ -1,545 +1,545 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-05T09:46:45.998Z",
+  "generatedAt": "2026-09-05T11:06:25.562Z",
   "pages": {
     "https://www.gamebob.dev/de/werkzeuge/kategorien/hobbyastronomie/500er-regel-rechner/": {
-      "hash": "004f3182f55fe58038b6ddee4bf277f3447ff44179142d5425bdf774627e1a70",
+      "hash": "de00eb5245c632af74b2ccd014bbbce99e0305d16370decd0793302477dacc5e",
       "route": "/de/werkzeuge/kategorien/hobbyastronomie/500er-regel-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/hobbyastronomie/astrophotografie-belichtungsstapel-planer/": {
-      "hash": "29961509a30a00e326e0b3a57630a2287813e4b9c7874e01626422ecee0f96b9",
+      "hash": "df170c6b1dcb0b287232b5bab7119f437a25915246e114a37fd90abfb01ef708",
       "route": "/de/werkzeuge/kategorien/hobbyastronomie/astrophotografie-belichtungsstapel-planer/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/hobbyastronomie/": {
-      "hash": "37bbf7d69bb44b83e06d0fcffd7dfe5ee09a60c09b2eba2301e96e7bd513f399",
+      "hash": "f6473a77ccb75c4227618ce4829a81c1ae7bec1feee4b8c79b942b9d24ff2e7d",
       "route": "/de/werkzeuge/kategorien/hobbyastronomie/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/hobbyastronomie/okular-rechner/": {
-      "hash": "d85dee3590d31ef6eb5fcf1e7a451e5b9850361c35e3e958aa4cccd58fb31676",
+      "hash": "60365ff31fe3e5a43f50f557f399d7def9db74e5f1c4ddaa1da5f08535f4b8c2",
       "route": "/de/werkzeuge/kategorien/hobbyastronomie/okular-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/hobbyastronomie/planer-fuer-meteorstrom-beobachtung/": {
-      "hash": "d12a811a05e2b999f69db74cc7335b31aa8116d5115fc42a0d6284941b3fa535",
+      "hash": "b2a7c4c00943bcd98644140436846b26e41aaccb4cb65460d448f2aeee2853d5",
       "route": "/de/werkzeuge/kategorien/hobbyastronomie/planer-fuer-meteorstrom-beobachtung/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/hobbyastronomie/simulator-dunkler-himmel/": {
-      "hash": "8f9d37972ef63fbfa503a43718338eace25a7106126f37241809cf8730912b84",
+      "hash": "2d5029ec8efce5affdd7279f692fa32318efbf3f8dba94c0c300e6530cf2c1a4",
       "route": "/de/werkzeuge/kategorien/hobbyastronomie/simulator-dunkler-himmel/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/hobbyastronomie/teleskop-aufloesungs-rechner/": {
-      "hash": "20c1959dcf2f5f6f99d18254999246116ce199f0e098ee4de62d47c7ca7f6d90",
+      "hash": "dbddde8661206e0280f115e74b29c79268de4f95c80dc3584e45de5e4bb9ad31",
       "route": "/de/werkzeuge/kategorien/hobbyastronomie/teleskop-aufloesungs-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/hobbyastronomie/teleskop-austrittspupille-vergroesserungsplaner/": {
-      "hash": "2f824d0f938a8ab9891dd25b773ff5f43d49b4cbcb5cbad7b362c7d6a7771065",
+      "hash": "1db183de829bf33a2c30ff036310ce2ed31ff30c59431c52331e8118c57141be",
       "route": "/de/werkzeuge/kategorien/hobbyastronomie/teleskop-austrittspupille-vergroesserungsplaner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/hobbyastronomie/teleskop-reichweite/": {
-      "hash": "5b217d7472af1b5764eca0bb2524846ca4d9d512296f9db8fab293df05553e51",
+      "hash": "28f23c2b3abebe083feac4c0918248fe7db71b00beeb2ffa7f42f0ddd9280731",
       "route": "/de/werkzeuge/kategorien/hobbyastronomie/teleskop-reichweite/"
     },
     "https://www.gamebob.dev/en/utilities/categories/astronomy/500-rule-calculator/": {
-      "hash": "514a8a8867bf2bb6b37338fbb71cb82a1fdcbe17982314a909ca919bd92f83e3",
+      "hash": "dbe23005c48686e62ce0a27ea7e0f0d0f9356d8c9782cf1cf8d85ebee2bb3ca1",
       "route": "/en/utilities/categories/astronomy/500-rule-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/astronomy/astrophotography-exposure-stacking-planner/": {
-      "hash": "0b96022416f403f3d7984f06cd256cc50937322e4145855e10e8ce83660b9822",
+      "hash": "26c141f4b702c71305532ec1784e96648bb8e296087c3e7a86e4e89afc70aec8",
       "route": "/en/utilities/categories/astronomy/astrophotography-exposure-stacking-planner/"
     },
     "https://www.gamebob.dev/en/utilities/categories/astronomy/dark-sky-simulator/": {
-      "hash": "f0aaff93559eaa527504d3007fdf9d256a2ed995c57c7442ba339487b2d919d9",
+      "hash": "aa25fd17ac1f56aefba4e67bb38e88dee4d76e92990ae5375b79b330f605f611",
       "route": "/en/utilities/categories/astronomy/dark-sky-simulator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/astronomy/": {
-      "hash": "bfb6d284f89552a62466247d5faaf9768244c52209c0d3b730e8c617de88e430",
+      "hash": "ae0221ae788222b6bf447e013d8f46be465cfab7a1f638b5112773396d60d244",
       "route": "/en/utilities/categories/astronomy/"
     },
     "https://www.gamebob.dev/en/utilities/categories/astronomy/meteor-shower-observing-planner/": {
-      "hash": "d4a412db47dd94d121f1130a3a817428d554f2ea473063fda8844499e030abac",
+      "hash": "38613fe945b6b152bc46c06e7718dcbdc4d6fa1e0b5f2e9bb3811a3211f15e97",
       "route": "/en/utilities/categories/astronomy/meteor-shower-observing-planner/"
     },
     "https://www.gamebob.dev/en/utilities/categories/astronomy/smart-eyepiece-calculator/": {
-      "hash": "ab5d16c6c4f77929013023e34828c5e75349184f9532e0fbec1cc6c04b250ada",
+      "hash": "9da2da5f5303e7d5534464f5a414462f97de15e9fc742425e052f451f341cdc7",
       "route": "/en/utilities/categories/astronomy/smart-eyepiece-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/astronomy/telescope-exit-pupil-magnification-planner/": {
-      "hash": "ba228aa680289d85a011fab00d5bbbf4bde735c99639445e59b005f7502f3cd8",
+      "hash": "1629de14987ef1c6fe9ef2796bdaa7428d324dc3b119a8c8c6181d1736dcde91",
       "route": "/en/utilities/categories/astronomy/telescope-exit-pupil-magnification-planner/"
     },
     "https://www.gamebob.dev/en/utilities/categories/astronomy/telescope-reach/": {
-      "hash": "ed4cb7c38b5b379dd04ab2ae84118773718c2270d8e755fdb56c19a07b2a1871",
+      "hash": "539a43aec5310825476ef506cc67530125c9ce81756b5794a16caddd5598a4e2",
       "route": "/en/utilities/categories/astronomy/telescope-reach/"
     },
     "https://www.gamebob.dev/en/utilities/categories/astronomy/telescope-resolution-calculator/": {
-      "hash": "603b8791bedd6ce1910b510f02131a4a41bf30a489cb6a330ce8c52fa606e194",
+      "hash": "c228a0671048efc4437fe59c083049e0704fcaf396afa5e7707e45b965daee63",
       "route": "/en/utilities/categories/astronomy/telescope-resolution-calculator/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/astronomie/calculateur-oculaire/": {
-      "hash": "44a2657ab8c431ac2962c669174d361be75e0ab2618f4338e1611af4d164ba7d",
+      "hash": "9e3358adcb8bb0031962610f75620071fdb0d61d6606774c35e983d35a553bcd",
       "route": "/fr/utilitaires/categories/astronomie/calculateur-oculaire/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/astronomie/calculateur-regle-500/": {
-      "hash": "751731c13d715fe929eca44456b17a81ae705450a08ce0ab8aed4e215e09d637",
+      "hash": "b821aea318e6fe474f8a8a2b47c437d483de012850c2ba28f8c70e89f8675be6",
       "route": "/fr/utilitaires/categories/astronomie/calculateur-regle-500/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/astronomie/calculateur-resolution-telescope/": {
-      "hash": "c9dd081136a0fa44fc2daa9189c29518b79412e4038399a99d1793bb3e390f15",
+      "hash": "5a4a96bb85ea48eb022cbc785a1b6fcbeb8f7437fbf355259322b42b729e364d",
       "route": "/fr/utilitaires/categories/astronomie/calculateur-resolution-telescope/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/astronomie/": {
-      "hash": "4e2c97abfcca02a869b3fc32cfcdcc07286c810681b62eaf4b547f53600ff4e9",
+      "hash": "468b83dc33c0c50a311848efacdc766da134f30d06e1412595af4374357c5c4f",
       "route": "/fr/utilitaires/categories/astronomie/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/astronomie/planificateur-empilement-expositions-astrophotographie/": {
-      "hash": "36c2c0150fb763a021ab3ec7637d8c938f3d7fc5376a4847faf3e1909563549a",
+      "hash": "de97820a71b0a1835c4e721e4b1f55968fd89efa038da6faaa3f24e3399fd64b",
       "route": "/fr/utilitaires/categories/astronomie/planificateur-empilement-expositions-astrophotographie/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/astronomie/planificateur-observation-pluie-meteores/": {
-      "hash": "2b2aa7cac5e65a14f982840f80280ea616c743cf307135a54759d10f8c684e21",
+      "hash": "d68d8fd22ca86eec7ac458b07de84194ebca7eb73244be9cc679cafcffe509bf",
       "route": "/fr/utilitaires/categories/astronomie/planificateur-observation-pluie-meteores/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/astronomie/planificateur-pupille-sortie-grossissement-telescope/": {
-      "hash": "7d01b78ee1499922a9362b69ece303585802f27553412583783fcf3cb4a64863",
+      "hash": "a780ccbaf3f8f84980a3623a3ce14e772c0208076be12a6f2100ce3bdc2f62dc",
       "route": "/fr/utilitaires/categories/astronomie/planificateur-pupille-sortie-grossissement-telescope/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/astronomie/portee-telescope/": {
-      "hash": "0062b9f952d3398bbd2fd03ed67689abcce525b8bee569b916e454b32383fda2",
+      "hash": "c75e2730fd0f3f6195ddb252ad7cc3fb4a8c60e284dde008cdc668581a63a9f4",
       "route": "/fr/utilitaires/categories/astronomie/portee-telescope/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/astronomie/simulateur-ciel-sombre/": {
-      "hash": "8e9d5f21168a309fba95bf9f125d00fbdfe69cbd6175953e220099e9a8f8d2a0",
+      "hash": "49c80760312d74da036eeed91941d4fd69a716534fa128009fad0cf82092bf1f",
       "route": "/fr/utilitaires/categories/astronomie/simulateur-ciel-sombre/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/astronomi-amatir/": {
-      "hash": "2d68655403774bd8574a445c124e168ef7567febc626a9e9ec00e1f9e41c82ee",
+      "hash": "754f0c30eb61243a40f4db70f30003d7071010736900d9ad7c4a95b75c431300",
       "route": "/id/utilitas/kategori/astronomi-amatir/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/astronomi-amatir/jangkauan-teleskop/": {
-      "hash": "1d1def0a4582fdf3c7b79fde7fbd0b101d5954762f80ffc75963a968c62ba3e3",
+      "hash": "d6b4df3d925a18b7e4933b7b49cfcb09136665849342df9b8950c48e61911bf6",
       "route": "/id/utilitas/kategori/astronomi-amatir/jangkauan-teleskop/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/astronomi-amatir/kalkulator-aturan-500/": {
-      "hash": "72aa964bf7debea06e483d2cf501ac0769e9408f6f53689213cf60d9d68165ed",
+      "hash": "6d4451e9ef8d0609fb3e1d509c3933afe62377968e884595b14fc07a25435d99",
       "route": "/id/utilitas/kategori/astronomi-amatir/kalkulator-aturan-500/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/astronomi-amatir/kalkulator-eyepiece/": {
-      "hash": "2f183a78d62e9ed66166720040233661cbc4876375911fd86ab65d1a8c8be2ff",
+      "hash": "907d0b194866c06db06f51a332cf6a7747e1f4dac95f0a8954e7d4f50787fc12",
       "route": "/id/utilitas/kategori/astronomi-amatir/kalkulator-eyepiece/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/astronomi-amatir/kalkulator-resolusi-teleskop/": {
-      "hash": "0ab66dae039379d47293a6e2d2f7e511baf6c03b4d58b630d679ceda776dc690",
+      "hash": "b392ee081349f86cbbeb9fde5c34a9d32fed035e7ed870d63f9739ef6b30c6be",
       "route": "/id/utilitas/kategori/astronomi-amatir/kalkulator-resolusi-teleskop/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/astronomi-amatir/perencana-pengamatan-hujan-meteor/": {
-      "hash": "4dd43dd4c20b736829be81fd3bad18f7b7cbc5380ff4177926d79284c18e64eb",
+      "hash": "bafbf3180f7a54de120d43c599800fb8a48d8446c75a2ddd8b78c7d069a849f4",
       "route": "/id/utilitas/kategori/astronomi-amatir/perencana-pengamatan-hujan-meteor/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/astronomi-amatir/perencana-pupil-keluar-pembesaran-teleskop/": {
-      "hash": "9365758da78c64511a3fd0d1f3c5c705dc9d6c2f3adfcea1676fb6766bad970d",
+      "hash": "c93374a1d1887cb9eb76ae6e50514c4e488e995f7d8fe232ffab5f900d316de3",
       "route": "/id/utilitas/kategori/astronomi-amatir/perencana-pupil-keluar-pembesaran-teleskop/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/astronomi-amatir/perencana-tumpukan-eksposur-astrofotografi/": {
-      "hash": "8e37236aa0115a8a23b9ae0b790c55942a13e983794cb7c8b4b1ec41b01c6518",
+      "hash": "9f68c6266943c6c99666f6f6990bb932b4428667214be7dcf70332e7dbdf39a8",
       "route": "/id/utilitas/kategori/astronomi-amatir/perencana-tumpukan-eksposur-astrofotografi/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/astronomi-amatir/simulator-langit-gelap/": {
-      "hash": "e6bd8dda2394bf34a91d6c965d014aa24b14993792b53565aa15d4f7d48d53b1",
+      "hash": "cd009558eb8f7d6286294d279e31a3cb4b319f56dca122ed5b086797c223b20c",
       "route": "/id/utilitas/kategori/astronomi-amatir/simulator-langit-gelap/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/astronomia-amatoriale/calcolatore-oculari/": {
-      "hash": "318db8082b3b1604bd154dd1e5bc9bffcbcc2721c190ba9a1e36e6a27f0f6c9d",
+      "hash": "d7a4b0f017069925276b4eaf85eee048af99f3688cb7529290827cc3d3f68f75",
       "route": "/it/utilita/categorie/astronomia-amatoriale/calcolatore-oculari/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/astronomia-amatoriale/calcolatore-regola-500/": {
-      "hash": "8070205d770e7dc1d198ad492657db7dc01a534c01c7c7d4eb4ad7fb43b82d92",
+      "hash": "9e30e4e7c9575c71e5c68a1c89325cd3c414011d0f6dc216ddfddbf94a068af0",
       "route": "/it/utilita/categorie/astronomia-amatoriale/calcolatore-regola-500/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/astronomia-amatoriale/calcolatore-risoluzione-telescopio/": {
-      "hash": "27be7fe6104ca741357cf6340ab5394bf480e3e19d8efcce430d169d1b7e01a2",
+      "hash": "611fb09b537f054f675d4ac10162056ca7431d8abb85168cecfb03173a5b35f7",
       "route": "/it/utilita/categorie/astronomia-amatoriale/calcolatore-risoluzione-telescopio/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/astronomia-amatoriale/": {
-      "hash": "b8be879b167be45a7bc7dcba37012f3d59200dd22495f5f849ce7a3f95b3cbc5",
+      "hash": "d9df911a205624d737103a4b3c64afed17ea35476676ab083f405664dbfee30c",
       "route": "/it/utilita/categorie/astronomia-amatoriale/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/astronomia-amatoriale/pianificatore-osservazione-sciame-meteorico/": {
-      "hash": "ca7c88ad628d60f0be7e308dbdfde997e2195695cb998630e89394d31b5dec02",
+      "hash": "620b4bd22afdd1d15e6751eda0356de3613d06432043440788c4bcbd7e13656c",
       "route": "/it/utilita/categorie/astronomia-amatoriale/pianificatore-osservazione-sciame-meteorico/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/astronomia-amatoriale/pianificatore-pupilla-uscita-ingrandimento-telescopio/": {
-      "hash": "b322645487049e3cfb43ae5b81d06f86395adc4e73010ca105810f10e58ec2af",
+      "hash": "3b505c5efeb61a31fb073f89b1389da7ad2eef1d3f68944d7551e9a70e372ff6",
       "route": "/it/utilita/categorie/astronomia-amatoriale/pianificatore-pupilla-uscita-ingrandimento-telescopio/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/astronomia-amatoriale/pianificatore-stacking-esposizioni-astrofotografia/": {
-      "hash": "f69af8bdd494a1c872efe4a8ec7c4601ac99381eb00ba630015ab02f48c1c55d",
+      "hash": "2f7e36fdf5251c2e6f630454e9fe2428cb97a6f0ac032b608b6ff3f26dacb8e4",
       "route": "/it/utilita/categorie/astronomia-amatoriale/pianificatore-stacking-esposizioni-astrofotografia/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/astronomia-amatoriale/portata-telescopica/": {
-      "hash": "2a086fb76da57151cfe30b8598c9a55bd570bf0d056f66abcd2dcc3d5a78cb81",
+      "hash": "9fd086a03b1ead06489a1f940808e108186e7c8046d624e879e3bdbd79dd493d",
       "route": "/it/utilita/categorie/astronomia-amatoriale/portata-telescopica/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/astronomia-amatoriale/simulatore-cielo-scuro/": {
-      "hash": "6a48e5d8f4bc1d6900b058bd9d9ceebacc938a8b6cdea42cbb9c0768a904f9c6",
+      "hash": "581b389711bb4e496cfaab3acc5732efef4c5af493e246894b6c4eca49619f3a",
       "route": "/it/utilita/categorie/astronomia-amatoriale/simulatore-cielo-scuro/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/astronomy/500-rule-calculator/": {
-      "hash": "80be8e4f32616403e871b44017c21eaa676a2f8153097ba3ef36302250137df5",
+      "hash": "3b88f0027cefac974f2241505c6c68942c0dcdbdc17fe3b079f64961e374cc46",
       "route": "/ja/utilities/categories/astronomy/500-rule-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/astronomy/astrophotography-exposure-stacking-planner/": {
-      "hash": "ee7fa83ce2cad4ff19325226a8d9c6382f0c506c041960be7ddbb4e58209ab87",
+      "hash": "54d6a58ed32b12f207ebfc33b0c683ff7d3edf542a2174ee71ea2b42c2b6bb42",
       "route": "/ja/utilities/categories/astronomy/astrophotography-exposure-stacking-planner/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/astronomy/dark-sky-simulator/": {
-      "hash": "bdb1c48cae28adc028a0990c3e204114603d5ac340060b35a855ac596323d796",
+      "hash": "17ac0e94865767f9bf5c5959cc2505d290dae1b9e112a0d54e89900eeb5ca7af",
       "route": "/ja/utilities/categories/astronomy/dark-sky-simulator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/astronomy/": {
-      "hash": "6c8b12ce7e963b3aba60637b90e0f73acaf67f4ef810767ad09d9d34d7dffac1",
+      "hash": "f8298faf403c218d8208e19a0593c6160562f33805182f487411becb583db385",
       "route": "/ja/utilities/categories/astronomy/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/astronomy/meteor-shower-observing-planner/": {
-      "hash": "c0ce0a9855d1ca1bd0f4ed9ad346cb68cbd37cea1a95916119d234e234bd2be3",
+      "hash": "ba2ae99952676804ee91a8d216ccda75af224618cc1a41ef059b9455a2d24718",
       "route": "/ja/utilities/categories/astronomy/meteor-shower-observing-planner/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/astronomy/smart-eyepiece-calculator/": {
-      "hash": "f4d530ab20204007f8926cd6004cd69f6a8ed7ee48dc52435637814517fdeb95",
+      "hash": "34e0542d177d72dd2f6dc159d834c9f9c0fff31a0313282f5085f6ab61d476ed",
       "route": "/ja/utilities/categories/astronomy/smart-eyepiece-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/astronomy/telescope-exit-pupil-magnification-planner/": {
-      "hash": "f9606e686c18ee29f5567420a9891a92b4cd6fce7eee91cec6e8505312f41ed8",
+      "hash": "1524859c01ee779dd528dc48991f0eab1266a73d8f729c9b7ff0ca2ccc411aef",
       "route": "/ja/utilities/categories/astronomy/telescope-exit-pupil-magnification-planner/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/astronomy/telescope-reach/": {
-      "hash": "b88e01148d3f8af703ec6d48040c776ecb26b33f9444f458183af47335dc1a31",
+      "hash": "733783d254757e589ebae41816f8710192f068517f6cbd18c47c39fd55517f88",
       "route": "/ja/utilities/categories/astronomy/telescope-reach/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/astronomy/telescope-resolution-calculator/": {
-      "hash": "dcccaefa2f812414cf3aca2124081b61eaeef7879196b6de181edf56e27180c0",
+      "hash": "7255e8e5f71d84e5488ccee15a14841690b32fd5aa2fdeae94219f5315d81f49",
       "route": "/ja/utilities/categories/astronomy/telescope-resolution-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/astronomy/500-rule-calculator/": {
-      "hash": "653a7a0331e5d752d3f8918f09833152a1cc648cdd36bf5a1a944549d4b57253",
+      "hash": "916515c36d8193636739d9347cccb4c62b52ced95a8f9162d4f68b10e1a054d0",
       "route": "/ko/utilities/categories/astronomy/500-rule-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/astronomy/astrophotography-exposure-stacking-planner/": {
-      "hash": "fcdf9d0c661723484b3ff956d53043d005ee5d0b0688869bfce9ccfddd47c932",
+      "hash": "dedd29721a43e0b13e6ef1407d16582ee93d06d5be8c132703f82abc9adf806d",
       "route": "/ko/utilities/categories/astronomy/astrophotography-exposure-stacking-planner/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/astronomy/dark-sky-simulator/": {
-      "hash": "1b3b13de221eeabfbd3611f218c711a1ebeccf092db4d05c2c14ed456ad465ef",
+      "hash": "fbf71a7d9a2af724b356be887f40ff119f597b4ef618c04b78d3649456a4d532",
       "route": "/ko/utilities/categories/astronomy/dark-sky-simulator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/astronomy/": {
-      "hash": "5204f653faccf655122018764213114d9273b73c1841a3757edc3298db99a24c",
+      "hash": "d521981ebbc118c7477cf64bfb39744f766f561f96322bc15ca9b8afabe6948a",
       "route": "/ko/utilities/categories/astronomy/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/astronomy/meteor-shower-observing-planner/": {
-      "hash": "c025dcb23c5a93334edebfcaa05d0992e1028bc02cd9608e564a2b9c8a987951",
+      "hash": "7bd4e89daeb3b6979a91f3de0110465a813231efd09f138b43efd48219afb2b6",
       "route": "/ko/utilities/categories/astronomy/meteor-shower-observing-planner/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/astronomy/smart-eyepiece-calculator/": {
-      "hash": "1e1a4cbe9389f5ff276b1077e70d9433bc9de91ee3278574636500b6516b0797",
+      "hash": "6235be4908dca374e6f430dbee290cef4d535df9789e72839100e12330c6ab9c",
       "route": "/ko/utilities/categories/astronomy/smart-eyepiece-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/astronomy/telescope-exit-pupil-magnification-planner/": {
-      "hash": "23e8d71cdb8bee817bab6f65fbf59112781829d582d9214fc751e7f9015aa741",
+      "hash": "81091b9580eedc280517be3377d48f4b9e111466811b2f918cf45699c8bdb831",
       "route": "/ko/utilities/categories/astronomy/telescope-exit-pupil-magnification-planner/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/astronomy/telescope-reach/": {
-      "hash": "8777a3dad29f6a41fd31cbf007b5d1fdf13d74c5a41646dccddc97b34df98774",
+      "hash": "934aff359639f21acaecab225f080aa17d0dfc8b6378c510163fa84413b61442",
       "route": "/ko/utilities/categories/astronomy/telescope-reach/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/astronomy/telescope-resolution-calculator/": {
-      "hash": "64e9bee6a646b08370d0d3a86330cc77bc5cf8f23fe9461772209876fce40ac5",
+      "hash": "b23e5d8920c65719823518755dd8741c4c7ef23e07a863c7be8f19dc53075979",
       "route": "/ko/utilities/categories/astronomy/telescope-resolution-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/amateur-astronomie/": {
-      "hash": "b4517b078faa5f408d455120b9f3ba1c63cc87e58f3773b093cffb5d2c7c47e6",
+      "hash": "984ab2807293093545e93c36043ff7b738a7fddd59f1284bbb3513b78c739003",
       "route": "/nl/hulpmiddelen/categorieen/amateur-astronomie/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/amateur-astronomie/meteorietenregen-observatie-planner/": {
-      "hash": "4b4e9072c4e48a080068e07106531ee564d9a10cebf149c53bb00d6291cea575",
+      "hash": "bfb2a0fa57c4bfe752ac218e857f682c2000f5049b1fda4a80048192ec12dea7",
       "route": "/nl/hulpmiddelen/categorieen/amateur-astronomie/meteorietenregen-observatie-planner/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/amateur-astronomie/oculair-calculator/": {
-      "hash": "5f690a75913e9d551a9a65b73b94f53187fa1ad49703d56ecdff1368f464341e",
+      "hash": "3648354784a6739af52bef9316dcef18f48767caf46ea01dfe862117b8521cc6",
       "route": "/nl/hulpmiddelen/categorieen/amateur-astronomie/oculair-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/amateur-astronomie/planner-astrofotografie-belichtingsstapeling/": {
-      "hash": "49b16c9a3c07aafa233945848e24b938e0c7cc7eea850875a6ddc188336f933c",
+      "hash": "85e7d29e4c55b334f5614a7895e9ead19199e0e6501dec6f732203bde1c5f60b",
       "route": "/nl/hulpmiddelen/categorieen/amateur-astronomie/planner-astrofotografie-belichtingsstapeling/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/amateur-astronomie/rekenmachine-500-regel/": {
-      "hash": "dac4e4a8ab19e2fcc120ee8a046e11e98edeca83292c2777e597e70585085d3a",
+      "hash": "dcb63a8a71dcfee546f75df35d2e059fcd0bafe6fb99ff6288bad25109c3966f",
       "route": "/nl/hulpmiddelen/categorieen/amateur-astronomie/rekenmachine-500-regel/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/amateur-astronomie/simulator-donkere-hemel/": {
-      "hash": "1145436340411bcc2b685a741e94c1503a51afc71914987d71f4c08a89ea1f09",
+      "hash": "fafb1748edd662a3f27a9f2dab2f8c537f44b578f3b476e5cec826ffbf8ec66c",
       "route": "/nl/hulpmiddelen/categorieen/amateur-astronomie/simulator-donkere-hemel/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/amateur-astronomie/telescoop-uittreepupil-vergrotingsplanner/": {
-      "hash": "89f298a36d0531765365ae3418c0a62f00f4eaea3c4fb73a9107fe3ade10f58d",
+      "hash": "f0f608b43b0a70f3edc8eb632331341e969119941b495fbef74129ba55164c78",
       "route": "/nl/hulpmiddelen/categorieen/amateur-astronomie/telescoop-uittreepupil-vergrotingsplanner/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/amateur-astronomie/telescoopbereik/": {
-      "hash": "8c35a8cddad0a5a8c44577f775651d6d13413472717267dc4ea4d4847143f7f5",
+      "hash": "add0eeadfaff40723ee28fadad8a843b860446df4d41103d97d68ad6a4519450",
       "route": "/nl/hulpmiddelen/categorieen/amateur-astronomie/telescoopbereik/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/amateur-astronomie/telescoopresolutierekenmachine/": {
-      "hash": "199f1fd81d91208e39c69d71a90bb2a93846c176aca0c23de935b96c2a09b21c",
+      "hash": "6f8f15c56b5c05b31cbf6196cb6f7d1bfca52b7501fbdd32363fd2744b0f5ab4",
       "route": "/nl/hulpmiddelen/categorieen/amateur-astronomie/telescoopresolutierekenmachine/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/astronomia-amatorska/": {
-      "hash": "c0e12e7fba1a00d82171e49d50f99e42e991c797f40a4859ed6f1b7864caac8c",
+      "hash": "03e0c63ce38cc1d23bf4ef142ddb4c956b161e37eb8ea42782c2abb4cac16e99",
       "route": "/pl/narzedzia/kategorie/astronomia-amatorska/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/astronomia-amatorska/kalkulator-okularow/": {
-      "hash": "802abeb4212264ac0b59878663aecbc2b8b7452f2801275c193c1067826fcc6d",
+      "hash": "4a5ce23e01e421a1f2f5fcd1a6d45f8edebf18cb5533aa54eaac146f6956cebe",
       "route": "/pl/narzedzia/kategorie/astronomia-amatorska/kalkulator-okularow/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/astronomia-amatorska/kalkulator-reguly-500/": {
-      "hash": "37015fcb87956b3c3ccfdd34be66ba7d884e38c4b668408c3c94529639889b74",
+      "hash": "f49950c4c08e0a73bcde9ae154bcacf6f087976b4c8fec197cc5ac8fd5c74808",
       "route": "/pl/narzedzia/kategorie/astronomia-amatorska/kalkulator-reguly-500/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/astronomia-amatorska/kalkulator-rozdzielczosci-teleskopu/": {
-      "hash": "9e2ed5a374221602d32778aee401e7339ad9b1ca2f2265e4ba5122446eb328b9",
+      "hash": "cc1afdc4f2f24d67db5746f96c6cb5f109d20d8f68392ab63891e72520f8659e",
       "route": "/pl/narzedzia/kategorie/astronomia-amatorska/kalkulator-rozdzielczosci-teleskopu/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/astronomia-amatorska/planer-obserwacji-deszczu-meteorow/": {
-      "hash": "0911eb5cf32d64179769b891f3ba79cbaadc90ffc1c099898444a8e78c70afa4",
+      "hash": "874b3022baef8c104d3e5f61fac8006cc01e1043c83a7815dd9a8cb473a073ae",
       "route": "/pl/narzedzia/kategorie/astronomia-amatorska/planer-obserwacji-deszczu-meteorow/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/astronomia-amatorska/planer-stosowania-ekspozycji-astrofotografii/": {
-      "hash": "a7955601e9059f8d54c1fc7a91e59300cb8b614e2106c7a3d69dd6c0c1c8c98d",
+      "hash": "4f97297249ab1f0020cfa54e4ae3bc5e7d08f749ebcb8deaa756f4e6bbc5eb7c",
       "route": "/pl/narzedzia/kategorie/astronomia-amatorska/planer-stosowania-ekspozycji-astrofotografii/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/astronomia-amatorska/planer-zrenicy-wyjscia-powiekszenia-teleskopu/": {
-      "hash": "296711b071f537ba261f24cee62ae921a0a0fe2676c9fca5dab4f463209b4a3d",
+      "hash": "1ca76ca7748b1469496a3c2e489eda4ea565cbd46ad1803ab3dd7889f20f4b20",
       "route": "/pl/narzedzia/kategorie/astronomia-amatorska/planer-zrenicy-wyjscia-powiekszenia-teleskopu/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/astronomia-amatorska/symulator-ciemnego-nieba/": {
-      "hash": "288531bf564e2a33503659040012fdaada06fb6144d1ce60fa06c59f10c3f814",
+      "hash": "7ca03f38919d50dfa62fd71689b65992f6ac6d7b55451ccc0febf6ef87434e0f",
       "route": "/pl/narzedzia/kategorie/astronomia-amatorska/symulator-ciemnego-nieba/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/astronomia-amatorska/zasieg-teleskopu/": {
-      "hash": "45eab57049d937c6e406e12b45984cbdf8448e87b40b086e3ca4e17f29db9745",
+      "hash": "4551b4c01cd1007b45289a878b95f30c6e6feb10f8223541cf640746f4ef539a",
       "route": "/pl/narzedzia/kategorie/astronomia-amatorska/zasieg-teleskopu/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/astronomia-amadora/alcance-do-telescopio/": {
-      "hash": "7e139f586bc336f82ed6ab203bdc3f9c0083302a7fa59309bb5ef51676d73c39",
+      "hash": "935e993a655444911e00fc518654fcdd61620d4f32eda4dd6ac5db69f7d61cc6",
       "route": "/pt/utilidades/categorias/astronomia-amadora/alcance-do-telescopio/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/astronomia-amadora/calculadora-de-oculares/": {
-      "hash": "97ec7bde9099c094b55826add21d779da330ca1770f5a191544b58a5f2921dba",
+      "hash": "992441dd90103f189ff8ecd946f61ab47649952c145bceb8fb1cbe9ca6f1b387",
       "route": "/pt/utilidades/categorias/astronomia-amadora/calculadora-de-oculares/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/astronomia-amadora/calculadora-regra-500/": {
-      "hash": "d971932a982090d178d2669fb3edbd8840cf12538bfd6e13af703f1f66a8f367",
+      "hash": "b8b18ab3c82c3ae875cbc490604e7cce8ef427bf4349944192828d0c4159d4c2",
       "route": "/pt/utilidades/categorias/astronomia-amadora/calculadora-regra-500/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/astronomia-amadora/calculadora-resolucao-telescopio/": {
-      "hash": "92463cb19b50b93d1dfc478c72bb3bda93bdb18f1f40adefe1896ed209d849c6",
+      "hash": "63601b095ad60dd03f97759e772b3c4cc3dbc7d2513ff123c10a808517d64df6",
       "route": "/pt/utilidades/categorias/astronomia-amadora/calculadora-resolucao-telescopio/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/astronomia-amadora/": {
-      "hash": "1ccab992496740af6e3cc79f7d12fbd5d325d42f935ec5a1eb4a69434708d548",
+      "hash": "d5ae7a7fbcb799a4b56d343fff1db710efb2219248e4c705349c12b8d5090fe6",
       "route": "/pt/utilidades/categorias/astronomia-amadora/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/astronomia-amadora/planeador-empilhamento-exposicoes-astrofotografia/": {
-      "hash": "0687d75bbdb89fa263a419b6b55a2f6c6a66dc640df357d2b57bfa0d40aa91d9",
+      "hash": "8ff4334d68d6c9b0555ea3ca3d43f5768903c5f00f58d6b2b275d54e443d5f19",
       "route": "/pt/utilidades/categorias/astronomia-amadora/planeador-empilhamento-exposicoes-astrofotografia/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/astronomia-amadora/planeador-pupila-saida-ampliacao-telescopio/": {
-      "hash": "f6819511bc438bb48e720101873c0c897164bd1f51816f309fc2134fa31fcf1d",
+      "hash": "6f3c59e513ca259fd63461c14782bd54bcbcbf5d5f9d4f8407f1e6d825d207c5",
       "route": "/pt/utilidades/categorias/astronomia-amadora/planeador-pupila-saida-ampliacao-telescopio/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/astronomia-amadora/planejador-observacao-chuva-meteoros/": {
-      "hash": "2ef1134fa3c1b6b9d29a2007712adb1f8eaeaa13e66cd918c8bc5bfaaf45801f",
+      "hash": "3be3959af5732411834c735f8e57eae803496aa27d6d790f18f6d6a6fdd5b074",
       "route": "/pt/utilidades/categorias/astronomia-amadora/planejador-observacao-chuva-meteoros/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/astronomia-amadora/simulador-ceu-escuro/": {
-      "hash": "de2d84c653097e86228e5fce6f500e35a3eb50d10a58a0beee2dc428449e73c4",
+      "hash": "7722c12f59378b6a3fc34976237f5b9feee4a93e6a10d67d6b348f81cd44e578",
       "route": "/pt/utilidades/categorias/astronomia-amadora/simulador-ceu-escuro/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/astronomiya/diapazonteleiskopa/": {
-      "hash": "5b469e11df1c1e0feb3d868078c3da94937b77d0bfcbc392f838dce870213b8a",
+      "hash": "b4a391b92a52c911033306dc9f9b35d9a6b8186d4cf4614dec87238468d3e76c",
       "route": "/ru/instrumenty/kategorii/astronomiya/diapazonteleiskopa/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/astronomiya/": {
-      "hash": "4474616ecb604ba93c692d9d928d60daba28874555be8f8339845460ed025d40",
+      "hash": "e7cc38d5c16a46e804f1b95fc82d4ab8241e8986d3272fb9ad4679b1dd53d21d",
       "route": "/ru/instrumenty/kategorii/astronomiya/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/astronomiya/kalkulyatorrazresheniatelesikopa/": {
-      "hash": "465582d267cab22f74f8dbd7583fc7c407eeb1d9a12f0082b1cc99419f9b493c",
+      "hash": "906f569d2d4280c440103bd56718b5abb6281ed10c2e15ae1bc60c59f4f9f3d0",
       "route": "/ru/instrumenty/kategorii/astronomiya/kalkulyatorrazresheniatelesikopa/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/astronomiya/kalkulyatorregregli500/": {
-      "hash": "779ee6243cb33e2fff3b86a122fdb79a8c9b2ee38a8a5171eb1c82b7d71a945c",
+      "hash": "39009c9fab7c766ca628e871a0c556627e6167be5402949da3861c62f08c1369",
       "route": "/ru/instrumenty/kategorii/astronomiya/kalkulyatorregregli500/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/astronomiya/kalykulyator-okulyarov/": {
-      "hash": "d2211b0b37e7b7b907fc331f704d6af7e64d09c5d841e66a91ad87ae568e6c7b",
+      "hash": "44281e3fac85101945a8b7069c161814dc8d81c6c7ca1da34eb387983769a652",
       "route": "/ru/instrumenty/kategorii/astronomiya/kalykulyator-okulyarov/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/astronomiya/planirovshchik-nablyudeniya-meteornogo-potoka/": {
-      "hash": "8ca6c31980c87820b05396d5c90f21a06e61a0c68ba0e5087917c08a22f1b966",
+      "hash": "cb178709c913d6c2261b74de9cb510667e8778c1fd5feb896ebfc462dc6a6a62",
       "route": "/ru/instrumenty/kategorii/astronomiya/planirovshchik-nablyudeniya-meteornogo-potoka/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/astronomiya/planirovshchik-steka-ekspozitsiy-astrofotografii/": {
-      "hash": "250c8b90da8b5dd835de63fe1536505ac50fd53080671c6f5a9dcd2feeb1a16b",
+      "hash": "aa56f5cc1afc0423a902b41558060d678db103b6040088f12222061597f46550",
       "route": "/ru/instrumenty/kategorii/astronomiya/planirovshchik-steka-ekspozitsiy-astrofotografii/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/astronomiya/planirovshchik-vykhodnogo-zrachka-uvelicheniya-teleskopa/": {
-      "hash": "801832cfa15938f253ae427acc987258b86b05e4dd38dfe13e50e17ab7b8d4fb",
+      "hash": "4516d36fd426cde11bb695c2b25a01c9ba4d17a3c76c2a285d2e4e5b35d22c29",
       "route": "/ru/instrumenty/kategorii/astronomiya/planirovshchik-vykhodnogo-zrachka-uvelicheniya-teleskopa/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/astronomiya/simulator-temnoho-neba/": {
-      "hash": "e6614c78e2b20714853502abaec66ca54e844121bc4291b6db916e655de13368",
+      "hash": "ac2c2d302cfbda6820d70d2b57f1402cdfe86966aaaedbe5b24d4daaf6fdac67",
       "route": "/ru/instrumenty/kategorii/astronomiya/simulator-temnoho-neba/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/amatorastronomi/": {
-      "hash": "835aea9b2c7affbbe2e7853116829cc9a29ae7d05ceb5745c82885262304e992",
+      "hash": "e6fb4a2077fd22f90eb008fe2031d9c7c86582b3c69e0d249c87b62a4b3e8ea6",
       "route": "/sv/verktyg/kategorier/amatorastronomi/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/amatorastronomi/minoraknare-500-regeln/": {
-      "hash": "c5c45b2667aa807c827360829391b8ea19361fe00f20e401ee5f8c8502e297de",
+      "hash": "7f20b9af0e60f8d4c5cd524b57d76b761f59929d58ac9e1b196fd217f71badf4",
       "route": "/sv/verktyg/kategorier/amatorastronomi/minoraknare-500-regeln/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/amatorastronomi/okularkalkylator/": {
-      "hash": "753b6f27b99d743e5fc294754181fea9f47204760166e746e80f696ef5dd02bf",
+      "hash": "7d80b90797d584ea541e86c12a6b2f9f9f157bed7dd6b44c2f0067721e7c9170",
       "route": "/sv/verktyg/kategorier/amatorastronomi/okularkalkylator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/amatorastronomi/planerare-astrofotografi-exponeringsstack/": {
-      "hash": "33ac654152ff5e0a4e5330c42a0be2cb44328501a7b6db69543ea280e1fc605a",
+      "hash": "80f28ecd005aa34f2ccf3b7a16c5175967031abe2afb88f8d1b1a40d1f4c4a9e",
       "route": "/sv/verktyg/kategorier/amatorastronomi/planerare-astrofotografi-exponeringsstack/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/amatorastronomi/planerare-for-meteorskur-observation/": {
-      "hash": "12c2b0af026ede3acc24b9ee977182f4e1f44490f3fd7e3950bd920f0b3f0b8d",
+      "hash": "af90c3d0058fa13b322df82e60b7fdb1ffd79b2d0f0b7dbd197f36f6a9c99ddc",
       "route": "/sv/verktyg/kategorier/amatorastronomi/planerare-for-meteorskur-observation/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/amatorastronomi/simulator-morka-himmel/": {
-      "hash": "9664a666b60449cf991989158ae7bcfeb37f8c799411af43e153b2e5a48c01ed",
+      "hash": "a68529f09cff9f261e3335252d6b70fc6be4ed858e37b23ac17256eee6d23bd8",
       "route": "/sv/verktyg/kategorier/amatorastronomi/simulator-morka-himmel/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/amatorastronomi/teleskop-planer-utgangspupill-forstoring/": {
-      "hash": "53325ee2354ef680490c0cbaf7fe08cb10c5574da28fce3e790f89698732f3f0",
+      "hash": "85d82ddf1c834a728896c4af0b7d5b2154701b33ff794c96c8cc228232176980",
       "route": "/sv/verktyg/kategorier/amatorastronomi/teleskop-planer-utgangspupill-forstoring/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/amatorastronomi/teleskopransch/": {
-      "hash": "4e72e406ac1a5ec51a8c9c340553ee58d1968cca0f124fe06d7cf635e1d50622",
+      "hash": "8a64aadd6bebe40d519491a428e88b45548952101b07576e081bf7525504ba27",
       "route": "/sv/verktyg/kategorier/amatorastronomi/teleskopransch/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/amatorastronomi/teleskopupploslingsminraknare/": {
-      "hash": "520986e9b423c87c058769dfa228b2be511d5f4df87fcae15fa84a962b1e2985",
+      "hash": "924af7f7f972ca1e3e810fb8d8b38105ca3baa2ece0cfffa08b9525d032c192e",
       "route": "/sv/verktyg/kategorier/amatorastronomi/teleskopupploslingsminraknare/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/astronomi/500-kurali-hesaplayici/": {
-      "hash": "cb12550164983e03032ed3170ebae9a98f97446a6fc2e56eabd1b0061926af6f",
+      "hash": "498d75b2bcebb1dd0e879d3990d048a82d162d50249be7535da702678316180c",
       "route": "/tr/araclar/kategoriler/astronomi/500-kurali-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/astronomi/astrofotografi-pozlama-yigin-planlayici/": {
-      "hash": "584b698095c4f6e06a90af62433e049e75c8ab3fee002a460e2a753da150b349",
+      "hash": "deceffbcbaf31a02813de469f93afe78b5a76272f5b9d626f1f7f041878eda3e",
       "route": "/tr/araclar/kategoriler/astronomi/astrofotografi-pozlama-yigin-planlayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/astronomi/goktasi-yagmuru-gozlem-planlayici/": {
-      "hash": "4b04f0d844502502c58403c029815e0e6adf67f3480e36d4a65401155989415f",
+      "hash": "4582dfe59ea4bfb7b6e9c2173cdbbeb598e337c7f4f4e1613bca7de8effdd3a5",
       "route": "/tr/araclar/kategoriler/astronomi/goktasi-yagmuru-gozlem-planlayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/astronomi/": {
-      "hash": "5b762fc4f7de6f6aa703617f10eb74b98fe92d3e8e104a38ac78291945da8edb",
+      "hash": "1c18c4c5cbd336ad622a33acad1708cf5c2293848d2ef6e7b7bde7a3fa22c63c",
       "route": "/tr/araclar/kategoriler/astronomi/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/astronomi/karanlik-gok-simulatoru/": {
-      "hash": "578527ac2a18ce0b61a4499714d50d8b822e5e7c444d0978c12cbdd7047970c0",
+      "hash": "8be03b1b6d6edb62d64baee9eed4ee38302c0b6385d1c9be81f42cb2e8a405da",
       "route": "/tr/araclar/kategoriler/astronomi/karanlik-gok-simulatoru/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/astronomi/okuler-hesaplayici/": {
-      "hash": "1cb1d4793bb148ca41ca11c2b6249aefb783ae83b377b492f374563f86db2b95",
+      "hash": "c7777c3d4a5417219e39e9ee802e0e37eb01ed888a78c0564e7fd4f05c64039c",
       "route": "/tr/araclar/kategoriler/astronomi/okuler-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/astronomi/teleskop-cikis-gozu-buyutme-plani/": {
-      "hash": "8984ebdd5aad7c5aae0599faaaada489089335816de6d308357e520b213e1ae0",
+      "hash": "62acaced6bd85f37328663c8904458965e5833d9bdb40341d2b657aa772fee8a",
       "route": "/tr/araclar/kategoriler/astronomi/teleskop-cikis-gozu-buyutme-plani/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/astronomi/teleskop-cozunurluk-hesaplayici/": {
-      "hash": "5855f0ff24940c9dd613abc4a468abf4d9f03c93dabd1f65f1ae62cc1362a188",
+      "hash": "977d9e014c0e2c5ebf5fffc65eedd55ed7c9e7e377349edebab0209ce1b812a4",
       "route": "/tr/araclar/kategoriler/astronomi/teleskop-cozunurluk-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/astronomi/teleskop-erisileri/": {
-      "hash": "7379d2dd564d61d869ac9a1a4e38b9acca0df4d873bc65c1c8959b613e6af89f",
+      "hash": "f48cc0a89830a1443ae0f21ff14dfce8d25b1138b70c3cdc70e7953b2d4be254",
       "route": "/tr/araclar/kategoriler/astronomi/teleskop-erisileri/"
     },
     "https://www.jjlmoya.es/utilidades/alcance-telescopio/": {
-      "hash": "29dc56b84a24a4362bf7aab5233cc0b972d4a589d66186472a8293f26f7d44a0",
+      "hash": "073e026d51b0a5801d1ac8529d3deeddbe2b1dc12f6fc9a0d7adf581fdae819a",
       "route": "/utilidades/alcance-telescopio/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-oculares/": {
-      "hash": "9f42ca63272f61814e3d2b338170c2162145807f9aa99799081603a7fcaf73c8",
+      "hash": "789726ffb081c0abc628f7e7a3d36e2ca6717ba9e1f35a0e9fce6eb6987b16a5",
       "route": "/utilidades/calculadora-oculares/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-regla-500/": {
-      "hash": "53a5d9fdc88d0abaf2028b8dfa328a1b15a612ad654fa4925b90d27acfe5dbd5",
+      "hash": "2da17e3cbb2409810aaaf9ffd999891d5c869100d8e455cee589a742e5a25bce",
       "route": "/utilidades/calculadora-regla-500/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-resolucion-telescopio/": {
-      "hash": "33d47a8858ba8408df4777b52948e48a7d795f3b7a2b4ed05f648c9a0b3abbd2",
+      "hash": "a9d87c539fbd703f76a63ee8352e142e5150bc9112e47ff4778f8b81eec6c990",
       "route": "/utilidades/calculadora-resolucion-telescopio/"
     },
     "https://www.jjlmoya.es/utilidades/categorias/astronomia/": {
-      "hash": "5488fda60429189ae954ad200acd966b798b7edc972d179dcb38ed4345d62b90",
+      "hash": "ba34ff5cdaac30b447cd134208d4f340b24ce5046277a6c74554a6b11b0f10cf",
       "route": "/utilidades/categorias/astronomia/"
     },
     "https://www.jjlmoya.es/utilidades/planificador-apilado-exposiciones-astrofotografia/": {
-      "hash": "3b4778d93d02732170ad05724a77876373dd1ff61eba35bccd666e317d0819cf",
+      "hash": "5677c905dae17e544c69e667d062543a2074ad70344c98800a2f1e78ca0c8ee5",
       "route": "/utilidades/planificador-apilado-exposiciones-astrofotografia/"
     },
     "https://www.jjlmoya.es/utilidades/planificador-observacion-lluvia-meteoros/": {
-      "hash": "559217b3590dd4553a192dec4cc30eaa32e56b553b48c43aea2887a8675e8888",
+      "hash": "f44c0acfda3b51d68896bf1daa065851b0db6d38e5619b9dbab0dbbf4edbdb4c",
       "route": "/utilidades/planificador-observacion-lluvia-meteoros/"
     },
     "https://www.jjlmoya.es/utilidades/planificador-pupila-salida-aumentos-telescopio/": {
-      "hash": "35a81da8555bbc49bdc6b6a9d2fc5b0baf5a9f8c5c70c49c0594a40184300391",
+      "hash": "ad809d11b4b854155247ba6d2e7ab7ade633eac801ee7061aae01c4052552cc4",
       "route": "/utilidades/planificador-pupila-salida-aumentos-telescopio/"
     },
     "https://www.jjlmoya.es/utilidades/simulador-cielo-oscuro/": {
-      "hash": "3edbe7b944997d1b19699d15f6b836dad8af2ef2bb2f3087f9128c838623e792",
+      "hash": "106833ef7f45af6630793d5f2db75dfc760f15ddd684ca5696eac5032ecbb36d",
       "route": "/utilidades/simulador-cielo-oscuro/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/astronomy/500-rule-calculator/": {
-      "hash": "224750a19b0e7f0701a95c258da0e3276583f1585b54bf03e4b2a0f182e92fce",
+      "hash": "3cc2a35c44c7da8bdda313cd0bb3d46c56ab1c35f1796e8544c2298a188b2666",
       "route": "/zh/utilities/categories/astronomy/500-rule-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/astronomy/astrophotography-exposure-stacking-planner/": {
-      "hash": "2a2ef9dd1a0fc1cd9e73652fad53cba39469df275495072fb9413b539892fcf9",
+      "hash": "faac3aa5d1ac738969fe4c4abb5da68b1db7e0a4d477a9ab4137038fae4f8b01",
       "route": "/zh/utilities/categories/astronomy/astrophotography-exposure-stacking-planner/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/astronomy/dark-sky-simulator/": {
-      "hash": "b447d42e760bdf274ede029b1d45656a48771ed095c3a58520811fed980c8c59",
+      "hash": "7eabbd572f82aa9b657644b51722d1405fc2221baab439f070437bbe40b09f5a",
       "route": "/zh/utilities/categories/astronomy/dark-sky-simulator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/astronomy/": {
-      "hash": "80bace9b5a5d8ce207bbe22e8a3a2ae1938bbda7872138f7145e527f85c2a5c1",
+      "hash": "dc179af3adb1d2c649080835f0266c2fd3df00b2f34a3e6888d751b22f7865a0",
       "route": "/zh/utilities/categories/astronomy/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/astronomy/meteor-shower-observing-planner/": {
-      "hash": "0b4df4f6b3da729fec1e82544038854888be085ff268c2a8be4da5005abc7588",
+      "hash": "b57b7a1e9db17de42a7c437ed0724e9b1d9dbbc30431632501c4cf9ee0265472",
       "route": "/zh/utilities/categories/astronomy/meteor-shower-observing-planner/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/astronomy/smart-eyepiece-calculator/": {
-      "hash": "82b18c56ed3d7c87acc3b7d325be55e3bcfc461c262e0ac1f46499720c40c1c1",
+      "hash": "0928a016db893937a2e5852c20cd6c23272514e12a2ea6bcebf72927a50e16e3",
       "route": "/zh/utilities/categories/astronomy/smart-eyepiece-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/astronomy/telescope-exit-pupil-magnification-planner/": {
-      "hash": "550b3cd30009fee5ed9748f64a24f8d0c0494e01db0270505ce915488762a215",
+      "hash": "6e70fced602679b5a34257b065d258a160e585dc83089076b500430b65d2cb00",
       "route": "/zh/utilities/categories/astronomy/telescope-exit-pupil-magnification-planner/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/astronomy/telescope-reach/": {
-      "hash": "f3103742cfeaf59d62c6587b72840233475a0a47375e8ed9482e9f0f64a2c6ac",
+      "hash": "1833b7bc13463084d56b20792b9143f93ab1908454432fb807d6ee9a52e1b6ec",
       "route": "/zh/utilities/categories/astronomy/telescope-reach/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/astronomy/telescope-resolution-calculator/": {
-      "hash": "bfcf95c0d8001f4bcfeb74134282a7df40ed2994e1fadf8569e13d724ca1a5f3",
+      "hash": "b6baf913078e5c6de8ad38e555e9bb0917a90d7b4f442d91f2dbf9f209ff5efa",
       "route": "/zh/utilities/categories/astronomy/telescope-resolution-calculator/"
     }
   }
