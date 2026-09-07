@@ -39,6 +39,10 @@
             "zone_name": "jjlmoya.es"
         },
         {
+            "pattern": "www.jjlmoya.es/utilidades/planificador-pupila-salida-aumentos-telescopio*",
+            "zone_name": "jjlmoya.es"
+        },
+        {
             "pattern": "www.jjlmoya.es/utilidades/calculadora-resolucion-telescopio*",
             "zone_name": "jjlmoya.es"
         },
